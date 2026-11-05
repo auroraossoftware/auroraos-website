@@ -63,6 +63,7 @@ html {
   color: var(--text-primary);
   line-height: 1.5;
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 2rem);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -1234,7 +1235,8 @@ a {
   transition: color var(--trans-fast);
 }
 
-.faq-summary::-webkit-details-marker {
+.faq-summary::-webkit-details-marker,
+.faq-summary::marker {
   display: none;
 }
 
@@ -1467,9 +1469,40 @@ a {
 @media (max-width: 780px) {
   .nav-menu {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    top: var(--nav-h);
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.96);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    padding: 1.75rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    gap: 1.25rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+    z-index: 999;
+  }
+  .nav-menu.is-open {
+    display: flex;
   }
   .mobile-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+  }
+  .showcase-nav-bar {
+    border-radius: 20px;
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+  .showcase-tab {
+    padding: 0.55rem 0.85rem;
+    font-size: 0.8rem;
+    flex: 1 1 calc(50% - 0.5rem);
+    text-align: center;
   }
   .footer-nav-grid {
     grid-template-columns: 1fr;
