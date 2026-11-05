@@ -1,0 +1,21 @@
+{
+  "name": "auroraos-website",
+  "version": "1.0.0",
+  "description": "Official static website for Aurora OS - The AI-Native Linux Desktop Platform",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve -l 3000 .",
+    "start": "npx serve -l 3000 .",
+    "build": "echo 'Static website ready for Cloudflare Pages (no build step required).'"
+  },
+  "keywords": [
+    "aurora-os",
+    "linux",
+    "operating-system",
+    "ai",
+    "rust",
+    "cloudflare-pages"
+  ],
+  "author": "Aurora OS Contributors",
+  "license": "MIT"
+}
