@@ -1,11 +1,11 @@
 /**
  * Aurora OS — Apple-Grade Minimalist Interaction Scripts
- * Smooth ambient canvas aurora animation, sticky subnav spy, and mobile navigation
+ * Smooth ambient canvas aurora animation, single-bar scroll spy, and mobile navigation
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initAmbientAurora();
-  initSubnavScrollSpy();
+  initNavScrollSpy();
   initMobileMenu();
 });
 
@@ -125,24 +125,24 @@ function initAmbientAurora() {
 }
 
 /* ==========================================================================
-   2. Sticky Subnav Scroll Spy
+   2. Single-Bar Navigation Scroll Spy & Blur Intensifier
    ========================================================================== */
-function initSubnavScrollSpy() {
-  const globalNav = document.getElementById('global-nav');
-  const subnavLinks = document.querySelectorAll('.subnav-links a:not(.subnav-github-link)');
+function initNavScrollSpy() {
+  const siteNav = document.getElementById('site-nav');
+  const navLinks = document.querySelectorAll('.nav-menu a');
   const sections = document.querySelectorAll('section[id]');
 
   window.addEventListener('scroll', () => {
     // Nav background blur intensify on scroll
-    if (window.scrollY > 30) {
-      globalNav?.classList.add('scrolled');
+    if (window.scrollY > 20) {
+      siteNav?.classList.add('scrolled');
     } else {
-      globalNav?.classList.remove('scrolled');
+      siteNav?.classList.remove('scrolled');
     }
 
-    // Scroll spy for subnav
+    // Scroll spy for active section indicator
     let current = '';
-    const scrollPos = window.scrollY + 140;
+    const scrollPos = window.scrollY + 120;
 
     sections.forEach(section => {
       const top = section.offsetTop;
@@ -152,7 +152,7 @@ function initSubnavScrollSpy() {
       }
     });
 
-    subnavLinks.forEach(link => {
+    navLinks.forEach(link => {
       link.classList.remove('active');
       if (link.getAttribute('href') === `#${current}`) {
         link.classList.add('active');
@@ -180,8 +180,9 @@ function initMobileMenu() {
       menu.style.top = 'var(--nav-h)';
       menu.style.left = '0';
       menu.style.width = '100%';
-      menu.style.background = 'rgba(0, 0, 0, 0.96)';
-      menu.style.padding = '1.75rem';
+      menu.style.background = 'rgba(0, 0, 0, 0.95)';
+      menu.style.backdropFilter = 'blur(24px)';
+      menu.style.padding = '1.75rem 2rem';
       menu.style.borderBottom = '1px solid rgba(255, 255, 255, 0.12)';
       menu.style.gap = '1.25rem';
     }
@@ -189,7 +190,7 @@ function initMobileMenu() {
 
   menu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      if (window.innerWidth <= 680) {
+      if (window.innerWidth <= 780) {
         menu.style.display = 'none';
       }
     });
