@@ -1,16 +1,20 @@
 /**
  * Aurora OS — Apple-Grade Minimalist Interaction Scripts
- * Smooth ambient canvas aurora animation, single-bar scroll spy, and mobile navigation
+ * Specular Cursor Glare, Interactive Apple Feature Switcher,
+ * Kinetic Scroll Reveals, Ambient Aurora Canvas, and Nav Spy
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initAmbientAurora();
+  initSpecularGlassGlare();
+  initShowcaseSwitcher();
+  initScrollReveals();
   initNavScrollSpy();
   initMobileMenu();
 });
 
 /* ==========================================================================
-   1. Dynamic Ethereal Northern Lights Canvas
+   1. Dynamic Ethereal Northern Lights Canvas (Apple Celestial Palette)
    ========================================================================== */
 function initAmbientAurora() {
   const canvas = document.getElementById('aurora-canvas');
@@ -37,30 +41,29 @@ function initAmbientAurora() {
     mouse.targetY = e.clientY / height;
   });
 
-  // Soft atmospheric luminous aurora ribbons (Apple celestial palette)
   const ribbons = [
     {
       color: 'rgba(41, 151, 255, ', // Apple Blue
-      speed: 0.0009,
+      speed: 0.0008,
       wavelength: 0.0016,
       amplitude: 70,
-      yOffset: 0.20,
+      yOffset: 0.18,
       alpha: 0.14
     },
     {
       color: 'rgba(48, 209, 88, ',  // Apple Emerald Green
-      speed: 0.0007,
-      wavelength: 0.0013,
+      speed: 0.0006,
+      wavelength: 0.0012,
       amplitude: 85,
-      yOffset: 0.24,
+      yOffset: 0.22,
       alpha: 0.16
     },
     {
       color: 'rgba(191, 90, 242, ', // Apple Purple
-      speed: 0.0011,
-      wavelength: 0.0020,
+      speed: 0.0010,
+      wavelength: 0.0019,
       amplitude: 60,
-      yOffset: 0.28,
+      yOffset: 0.26,
       alpha: 0.12
     }
   ];
@@ -79,13 +82,13 @@ function initAmbientAurora() {
 
     ribbons.forEach((ribbon, index) => {
       ctx.beginPath();
-      const currentY = height * ribbon.yOffset + (mouse.y - 0.5) * 50;
+      const currentY = height * ribbon.yOffset + (mouse.y - 0.5) * 45;
       ctx.moveTo(0, currentY);
 
       for (let x = 0; x <= width; x += 16) {
         const angle1 = (x * ribbon.wavelength) + (time * ribbon.speed) + index;
         const angle2 = (x * ribbon.wavelength * 0.5) - (time * ribbon.speed * 0.6);
-        const mouseShift = Math.sin((x / width) * Math.PI) * (mouse.x - 0.5) * 40;
+        const mouseShift = Math.sin((x / width) * Math.PI) * (mouse.x - 0.5) * 35;
 
         const y = currentY + 
                   Math.sin(angle1) * ribbon.amplitude + 
@@ -125,7 +128,71 @@ function initAmbientAurora() {
 }
 
 /* ==========================================================================
-   2. Single-Bar Navigation Scroll Spy & Blur Intensifier
+   2. Liquid Glass 2.0 Dynamic Cursor Specular Glare
+   ========================================================================== */
+function initSpecularGlassGlare() {
+  const cards = document.querySelectorAll('.liquid-glass, .hardware-chassis');
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
+}
+
+/* ==========================================================================
+   3. Interactive Apple-Style Feature Switcher
+   ========================================================================== */
+function initShowcaseSwitcher() {
+  const tabs = document.querySelectorAll('.showcase-tab');
+  const panels = document.querySelectorAll('.showcase-panel');
+
+  if (!tabs.length || !panels.length) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetId = tab.getAttribute('data-target');
+      if (!targetId) return;
+
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+
+      tab.classList.add('active');
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
+    });
+  });
+}
+
+/* ==========================================================================
+   4. Kinetic Scroll Reveals (Apple IntersectionObserver Easing)
+   ========================================================================== */
+function initScrollReveals() {
+  const reveals = document.querySelectorAll('.reveal-on-scroll');
+  if (!reveals.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  reveals.forEach(el => observer.observe(el));
+}
+
+/* ==========================================================================
+   5. Single-Bar Navigation Scroll Spy & Blur Intensifier
    ========================================================================== */
 function initNavScrollSpy() {
   const siteNav = document.getElementById('site-nav');
@@ -133,16 +200,14 @@ function initNavScrollSpy() {
   const sections = document.querySelectorAll('section[id]');
 
   window.addEventListener('scroll', () => {
-    // Nav background blur intensify on scroll
     if (window.scrollY > 20) {
       siteNav?.classList.add('scrolled');
     } else {
       siteNav?.classList.remove('scrolled');
     }
 
-    // Scroll spy for active section indicator
     let current = '';
-    const scrollPos = window.scrollY + 120;
+    const scrollPos = window.scrollY + 130;
 
     sections.forEach(section => {
       const top = section.offsetTop;
@@ -162,7 +227,7 @@ function initNavScrollSpy() {
 }
 
 /* ==========================================================================
-   3. Mobile Navigation Menu
+   6. Mobile Navigation Menu
    ========================================================================== */
 function initMobileMenu() {
   const toggle = document.getElementById('mobile-toggle');
@@ -180,7 +245,7 @@ function initMobileMenu() {
       menu.style.top = 'var(--nav-h)';
       menu.style.left = '0';
       menu.style.width = '100%';
-      menu.style.background = 'rgba(0, 0, 0, 0.95)';
+      menu.style.background = 'rgba(0, 0, 0, 0.96)';
       menu.style.backdropFilter = 'blur(24px)';
       menu.style.padding = '1.75rem 2rem';
       menu.style.borderBottom = '1px solid rgba(255, 255, 255, 0.12)';

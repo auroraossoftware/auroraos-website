@@ -1,31 +1,35 @@
 /* ==========================================================================
    Aurora OS — Apple-Grade Minimalist Product Landing Page
-   Aesthetic: Deep Obsidian Black, Frosted Liquid Glass, Refined Apple Typography
+   Aesthetic: Deep Obsidian Black, Frosted Liquid Glass 2.0, VisionOS Depth,
+              Apple Typographic Scale, Pro Hardware Bezel & Kinetic Motion
    ========================================================================== */
 
 :root {
-  /* Apple Color System */
+  /* Apple OLED Color System */
   --bg-black: #000000;
   --bg-surface: #0a0a0c;
-  --bg-card: rgba(255, 255, 255, 0.04);
-  --bg-card-hover: rgba(255, 255, 255, 0.07);
+  --bg-card: rgba(255, 255, 255, 0.035);
+  --bg-card-hover: rgba(255, 255, 255, 0.065);
   --bg-glass-nav: rgba(0, 0, 0, 0.72);
 
-  /* Frosted Glass Lighting & Specular Edge */
+  /* Frosted Liquid Glass 2.0 Specular Edge & Caustics */
   --glass-border: rgba(255, 255, 255, 0.12);
-  --glass-border-hover: rgba(255, 255, 255, 0.25);
-  --glass-highlight: inset 0 1px 1px 0 rgba(255, 255, 255, 0.22);
-  --glass-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.65);
+  --glass-border-hover: rgba(255, 255, 255, 0.28);
+  --glass-highlight: inset 0 1px 1px 0 rgba(255, 255, 255, 0.3);
+  --glass-inner-bevel: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  --glass-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.8);
 
-  /* Apple Natural Accent Palette (Restrained, Organic, High Contrast) */
+  /* Apple Natural Accent Palette */
   --accent-blue: #2997ff;
+  --accent-blue-glow: rgba(41, 151, 255, 0.35);
   --accent-cyan: #30d1d6;
   --accent-emerald: #30d158;
+  --accent-emerald-glow: rgba(48, 209, 88, 0.35);
   --accent-purple: #bf5af2;
 
   /* Typography Colors (Apple Human Interface Guidelines) */
   --text-primary: #f5f5f7;    /* Primary crisp off-white */
-  --text-secondary: #a1a1a6;  /* Secondary readable slate */
+  --text-secondary: #a1a1a6;  /* Secondary slate */
   --text-tertiary: #6e6e73;   /* Muted captions */
   --text-headline: #ffffff;
 
@@ -33,14 +37,15 @@
   --font-apple: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "Inter", sans-serif;
   --font-mono: "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
 
-  /* Transitions */
-  --ease-apple: cubic-bezier(0.25, 1, 0.5, 1);
-  --trans-fast: 200ms var(--ease-apple);
-  --trans-smooth: 400ms var(--ease-apple);
+  /* Apple Characteristic Spring Motion */
+  --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);
+  --trans-fast: 180ms var(--ease-apple);
+  --trans-smooth: 350ms var(--ease-apple);
+  --trans-slow: 600ms var(--ease-apple);
 
   /* Dimensions */
-  --max-w: 1140px;
-  --nav-h: 60px;
+  --max-w: 1160px;
+  --nav-h: 62px;
 }
 
 /* ==========================================================================
@@ -70,7 +75,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom Scrollbar */
+/* Custom Minimal Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -106,9 +111,25 @@ a {
   padding-right: 1.5rem;
 }
 
+.text-center {
+  text-align: center;
+}
+
 /* ==========================================================================
-   Ambient Celestial Canvas
+   Tactile Micro-Grain Overlay & Dynamic Aurora Canvas
    ========================================================================== */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
 #aurora-canvas {
   position: fixed;
   top: 0;
@@ -117,23 +138,23 @@ a {
   height: 100%;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.45;
+  opacity: 0.42;
 }
 
 .site-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* ==========================================================================
-   Single, Unified Apple-Style Liquid Frosted Navigation Bar
+   Single, Unified Apple-Style Frosted Navigation Bar
    ========================================================================== */
 .site-nav {
   position: sticky;
   top: 0;
   width: 100%;
   height: var(--nav-h);
-  background: rgba(0, 0, 0, 0.72);
+  background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -142,9 +163,9 @@ a {
 }
 
 .site-nav.scrolled {
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.92);
   border-bottom-color: rgba(255, 255, 255, 0.16);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.6);
 }
 
 .nav-inner {
@@ -157,7 +178,7 @@ a {
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.75rem;
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--text-headline);
@@ -175,17 +196,18 @@ a {
 .brand-icon svg {
   width: 100%;
   height: 100%;
+  filter: drop-shadow(0 0 8px rgba(48, 209, 88, 0.4));
 }
 
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.2rem;
   list-style: none;
 }
 
 .nav-link {
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
   font-weight: 500;
   transition: color var(--trans-fast);
@@ -201,7 +223,7 @@ a {
 .nav-link.active::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 50%;
   transform: translateX(-50%);
   width: 14px;
@@ -233,9 +255,9 @@ a {
 .nav-github-icon-btn:hover {
   color: #ffffff;
   background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(255, 255, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.3);
   transform: scale(1.06);
-  box-shadow: 0 0 18px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.22);
 }
 
 .btn-source-pill {
@@ -247,7 +269,7 @@ a {
   color: #ffffff;
   font-size: 0.825rem;
   font-weight: 600;
-  padding: 0.45rem 1.1rem;
+  padding: 0.45rem 1.15rem;
   border-radius: 9999px;
   transition: all var(--trans-fast);
 }
@@ -257,7 +279,7 @@ a {
   color: #000000;
   border-color: #ffffff;
   transform: scale(1.02);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.35);
 }
 
 .btn-source-pill .pill-arrow {
@@ -281,25 +303,66 @@ a {
 }
 
 /* ==========================================================================
-   Liquid Frosted Glass Utility
+   Liquid Frosted Glass 2.0 Utility (VisionOS Specular Caustics)
    ========================================================================== */
 .liquid-glass {
+  position: relative;
   background: var(--bg-card);
-  backdrop-filter: blur(32px) saturate(180%);
-  -webkit-backdrop-filter: blur(32px) saturate(180%);
+  backdrop-filter: blur(36px) saturate(190%);
+  -webkit-backdrop-filter: blur(36px) saturate(190%);
   border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow), var(--glass-highlight);
+  box-shadow: var(--glass-shadow), var(--glass-highlight), var(--glass-inner-bevel);
   border-radius: 28px;
+  overflow: hidden;
   transition: all var(--trans-smooth);
 }
 
+/* Interactive Cursor-Following Specular Glare */
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    650px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.08),
+    transparent 45%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 300ms ease;
+  z-index: 1;
+}
+
+.liquid-glass:hover::before {
+  opacity: 1;
+}
+
 .liquid-glass:hover {
-  background: var(--bg-card-hover);
   border-color: var(--glass-border-hover);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
 }
 
 /* ==========================================================================
-   Hero Section
+   Scroll-Driven Kinetic Reveal Utility
+   ========================================================================== */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s var(--ease-apple), transform 0.8s var(--ease-apple);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   Hero Section & Apple Display Cadence
    ========================================================================== */
 .hero-section {
   padding: 6.5rem 0 5rem;
@@ -318,7 +381,7 @@ a {
 }
 
 .hero-title {
-  font-size: clamp(3rem, 7vw, 5.8rem);
+  font-size: clamp(3.2rem, 7.5vw, 6rem);
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.04em;
@@ -328,17 +391,17 @@ a {
 }
 
 .text-gradient-apple {
-  background: linear-gradient(180deg, #ffffff 40%, rgba(255, 255, 255, 0.65) 100%);
+  background: linear-gradient(180deg, #ffffff 45%, rgba(255, 255, 255, 0.65) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
   font-weight: 400;
   color: var(--text-secondary);
-  line-height: 1.45;
-  max-width: 760px;
+  line-height: 1.5;
+  max-width: 780px;
   margin: 0 auto 2.8rem;
   letter-spacing: -0.015em;
 }
@@ -360,7 +423,7 @@ a {
   color: #000000;
   font-size: 0.95rem;
   font-weight: 600;
-  padding: 0.85rem 1.85rem;
+  padding: 0.85rem 1.95rem;
   border-radius: 9999px;
   transition: all var(--trans-fast);
 }
@@ -368,7 +431,7 @@ a {
 .btn-apple-primary:hover {
   background: #f5f5f7;
   transform: scale(1.02);
-  box-shadow: 0 0 24px rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 28px rgba(255, 255, 255, 0.4);
 }
 
 .btn-apple-link {
@@ -385,112 +448,178 @@ a {
 }
 
 /* ==========================================================================
-   Hero Desktop Device Mockup (Liquid Frosted Glass Window)
+   Apple Pro Display Hardware Bezel Frame
    ========================================================================== */
 .hero-device-wrapper {
   max-width: 1040px;
   margin: 0 auto;
 }
 
-.liquid-desktop-window {
-  border-radius: 28px;
-  background: rgba(18, 18, 22, 0.65);
-  backdrop-filter: blur(40px) saturate(190%);
-  -webkit-backdrop-filter: blur(40px) saturate(190%);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+.hardware-chassis {
+  position: relative;
+  background: #121316;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 36px;
+  padding: 12px;
   box-shadow: 
-    0 40px 100px -20px rgba(0, 0, 0, 0.85),
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.35);
-  overflow: hidden;
+    0 50px 120px -25px rgba(0, 0, 0, 0.9),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
 }
 
-.window-chrome {
+/* Top Camera Sensor Pill */
+.hardware-sensor-pill {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 88px;
+  height: 14px;
+  background: #000000;
+  border-radius: 0 0 10px 10px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sensor-lens {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0d1a2d;
+  box-shadow: inset 0 0 2px #2997ff;
+}
+
+.sensor-indicator {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #30d158;
+  box-shadow: 0 0 6px #30d158;
+}
+
+/* Screen Display */
+.hardware-screen {
+  position: relative;
+  border-radius: 26px;
+  overflow: hidden;
+  background: #05060a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Screen Gloss Highlight */
+.hardware-screen::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, transparent 45%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.screen-topbar {
   background: rgba(255, 255, 255, 0.04);
-  padding: 0.85rem 1.5rem;
+  backdrop-filter: blur(16px);
+  padding: 0.85rem 1.75rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.chrome-dots {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.dot {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-}
-.dot.r { background: #ff5f57; }
-.dot.y { background: #febc2e; }
-.dot.g { background: #28c840; }
-
-.chrome-title {
   font-size: 0.8rem;
   color: var(--text-secondary);
-  font-weight: 500;
+}
+
+.screen-topbar-left {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.65rem;
 }
 
-.chrome-badge {
-  font-size: 0.7rem;
-  color: #30d158;
-  background: rgba(48, 209, 88, 0.12);
-  padding: 0.15rem 0.55rem;
-  border-radius: 9999px;
+.screen-dots {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.s-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.s-dot.r { background: #ff5f57; }
+.s-dot.y { background: #febc2e; }
+.s-dot.g { background: #28c840; }
+
+.screen-shell-title {
+  color: #ffffff;
   font-weight: 600;
+  margin-left: 0.5rem;
 }
 
-.window-content {
+.screen-badge-silicon {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15rem 0.6rem;
+  border-radius: 9999px;
+  background: rgba(48, 209, 88, 0.12);
+  color: #30d158;
+  border: 1px solid rgba(48, 209, 88, 0.25);
+}
+
+.screen-viewport {
   padding: 3.5rem 2.5rem;
-  min-height: 440px;
-  background: radial-gradient(circle at 50% 15%, rgba(41, 151, 255, 0.08) 0%, transparent 70%);
+  min-height: 450px;
+  background: 
+    radial-gradient(ellipse at 50% 15%, rgba(41, 151, 255, 0.12) 0%, transparent 65%),
+    radial-gradient(ellipse at 80% 80%, rgba(191, 90, 242, 0.08) 0%, transparent 55%),
+    #05070c;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 3rem;
+  gap: 3.5rem;
+  position: relative;
+  z-index: 2;
 }
 
-/* Central Spotlight Command Hub */
-.apple-command-hub {
-  max-width: 620px;
+/* Spotlight Command Palette */
+.spotlight-command-palette {
+  max-width: 640px;
   width: 100%;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
-  padding: 1.1rem 1.6rem;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  padding: 1.25rem 1.75rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.3);
   text-align: left;
 }
 
-.hub-top-row {
+.palette-query-row {
   display: flex;
   align-items: center;
   gap: 0.85rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
 }
 
-.hub-search-icon {
+.palette-icon {
   color: var(--accent-blue);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }
 
-.hub-query-text {
+.palette-text {
   font-size: 1.05rem;
   font-weight: 500;
-  color: var(--text-headline);
+  color: #ffffff;
   flex-grow: 1;
 }
 
-.hub-key {
+.palette-key {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   background: rgba(255, 255, 255, 0.1);
@@ -499,31 +628,31 @@ a {
   color: var(--text-secondary);
 }
 
-.hub-response {
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+.palette-result-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
-  padding: 0.95rem 1.15rem;
-  font-size: 0.875rem;
+  padding: 1rem 1.25rem;
+  font-size: 0.885rem;
   line-height: 1.5;
   color: var(--text-secondary);
 }
 
-.hub-response strong {
-  color: var(--text-headline);
+.palette-result-box strong {
+  color: #ffffff;
 }
 
-.hub-meta {
+.palette-meta-line {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
-  margin-top: 0.5rem;
+  gap: 0.75rem;
+  margin-top: 0.65rem;
   font-size: 0.75rem;
   color: #30d158;
 }
 
-/* Floating Glass Cards in Mockup */
-.desktop-cards-row {
+/* Floating Glass Cards inside the Bezel */
+.screen-floating-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
@@ -533,31 +662,31 @@ a {
   text-align: left;
 }
 
-.mini-glass-card {
+.floating-glass-tile {
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 18px;
-  padding: 1.25rem;
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  padding: 1.35rem;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.18);
 }
 
-.card-num {
-  font-size: 1.75rem;
+.tile-stat {
+  font-size: 1.85rem;
   font-weight: 800;
-  color: var(--text-headline);
+  color: #ffffff;
   letter-spacing: -0.03em;
   margin-bottom: 0.2rem;
 }
 
-.card-tag {
-  font-size: 0.8rem;
+.tile-label {
+  font-size: 0.825rem;
   color: var(--text-secondary);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
 }
 
-.card-foot {
+.tile-sub {
   font-size: 0.725rem;
   color: var(--text-tertiary);
 }
@@ -580,7 +709,7 @@ a {
 }
 
 .section-headline {
-  font-size: clamp(2.4rem, 4.8vw, 3.8rem);
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1.1;
@@ -589,16 +718,144 @@ a {
 }
 
 .section-lead {
-  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
   color: var(--text-secondary);
   max-width: 720px;
-  margin: 0 auto 4.5rem;
-  line-height: 1.5;
-  letter-spacing: -0.01em;
+  margin: 0 auto 4rem;
+  line-height: 1.55;
+  letter-spacing: -0.015em;
 }
 
 /* ==========================================================================
-   Bento Highlights Grid (Apple Style)
+   Interactive Apple-Style Feature Showcase Switcher
+   ========================================================================== */
+.showcase-slider-wrapper {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.showcase-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.4rem;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  max-width: 760px;
+  margin: 0 auto 3.5rem;
+  flex-wrap: wrap;
+}
+
+.showcase-tab {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.65rem 1.35rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all var(--trans-fast);
+}
+
+.showcase-tab:hover {
+  color: #ffffff;
+}
+
+.showcase-tab.active {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+}
+
+.showcase-content-box {
+  min-height: 480px;
+  position: relative;
+}
+
+.showcase-panel {
+  display: none;
+  animation: panelFade 0.4s var(--ease-apple);
+}
+
+.showcase-panel.active {
+  display: block;
+}
+
+@keyframes panelFade {
+  from { opacity: 0; transform: translateY(12px) scale(0.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.panel-split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  padding: 3.5rem 3rem;
+  text-align: left;
+}
+
+.panel-kicker {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-blue);
+  margin-bottom: 0.65rem;
+}
+
+.panel-heading {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-headline);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+.panel-body-text {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+}
+
+.panel-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.panel-checklist li {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  line-height: 1.5;
+}
+
+.panel-checklist li::before {
+  content: "—";
+  color: var(--accent-blue);
+  font-weight: 700;
+}
+
+.panel-graphic-card {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.12);
+}
+
+/* ==========================================================================
+   Bento Highlights Grid
    ========================================================================== */
 .bento-grid {
   display: grid;
@@ -607,14 +864,13 @@ a {
 }
 
 .bento-card {
-  padding: 2.75rem 2.25rem;
+  padding: 3rem 2.5rem;
   text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 340px;
+  min-height: 350px;
   position: relative;
-  overflow: hidden;
 }
 
 .bento-card.span-2 {
@@ -635,8 +891,8 @@ a {
 }
 
 .bento-title {
-  font-size: 1.85rem;
-  font-weight: 700;
+  font-size: 1.95rem;
+  font-weight: 800;
   color: var(--text-headline);
   letter-spacing: -0.025em;
   line-height: 1.2;
@@ -645,11 +901,11 @@ a {
 .bento-desc {
   font-size: 1.05rem;
   color: var(--text-secondary);
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 .bento-stat-big {
-  font-size: 3.8rem;
+  font-size: 4rem;
   font-weight: 800;
   color: var(--text-headline);
   letter-spacing: -0.04em;
@@ -660,89 +916,14 @@ a {
 .bento-stat-label {
   font-size: 0.85rem;
   color: var(--text-secondary);
-  margin-top: 0.35rem;
+  margin-top: 0.4rem;
 }
 
 /* ==========================================================================
-   Deep Dive Feature Showcases
-   ========================================================================== */
-.feature-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4.5rem;
-  align-items: center;
-  margin-bottom: 6rem;
-  text-align: left;
-}
-
-.feature-split.reverse {
-  direction: rtl;
-}
-.feature-split.reverse > * {
-  direction: ltr;
-}
-
-.feature-copy {
-  display: flex;
-  flex-direction: column;
-}
-
-.feature-tag {
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--accent-blue);
-  margin-bottom: 0.75rem;
-}
-
-.feature-title {
-  font-size: clamp(2rem, 3.2vw, 2.75rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  color: var(--text-headline);
-  line-height: 1.15;
-  margin-bottom: 1.25rem;
-}
-
-.feature-desc {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 1.75rem;
-}
-
-.feature-points {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-}
-
-.feature-points li {
-  font-size: 0.95rem;
-  color: var(--text-primary);
-  display: flex;
-  align-items: flex-start;
-  gap: 0.65rem;
-  line-height: 1.5;
-}
-
-.feature-points li::before {
-  content: "—";
-  color: var(--accent-blue);
-  font-weight: 700;
-}
-
-.feature-visual-box {
-  padding: 2.5rem;
-}
-
-/* ==========================================================================
-   Apple-Style Specifications Matrix
+   Apple-Style Technical Specifications
    ========================================================================== */
 .specs-container {
-  max-width: 880px;
+  max-width: 900px;
   margin: 0 auto;
   border-radius: 24px;
   overflow: hidden;
@@ -752,7 +933,7 @@ a {
 .specs-row {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 2.25rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   font-size: 0.95rem;
   align-items: center;
@@ -777,7 +958,7 @@ a {
 }
 
 /* ==========================================================================
-   Grand Finale Call To Action (Release Banner)
+   Grand Release CTA Banner
    ========================================================================== */
 .cta-banner-wrapper {
   max-width: 980px;
@@ -786,15 +967,15 @@ a {
 }
 
 .cta-banner-card {
-  padding: 5rem 3rem;
+  padding: 5.5rem 3rem;
   border-radius: 36px;
-  background: radial-gradient(circle at 50% 20%, rgba(41, 151, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 70%);
+  background: radial-gradient(circle at 50% 20%, rgba(41, 151, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 75%);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.9), inset 0 1px 1px rgba(255, 255, 255, 0.28);
+  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.9), inset 0 1px 1px rgba(255, 255, 255, 0.3);
 }
 
 .cta-banner-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.6rem, 5.2vw, 4.2rem);
   font-weight: 800;
   color: var(--text-headline);
   letter-spacing: -0.035em;
@@ -805,8 +986,8 @@ a {
 .cta-banner-desc {
   font-size: 1.2rem;
   color: var(--text-secondary);
-  max-width: 620px;
-  margin: 0 auto 2.75rem;
+  max-width: 640px;
+  margin: 0 auto 2.8rem;
   line-height: 1.55;
 }
 
@@ -838,13 +1019,13 @@ a {
 }
 
 /* ==========================================================================
-   Apple-Style Footer
+   Apple-Style Minimalist Footer
    ========================================================================== */
 .apple-footer {
   margin-top: 6rem;
   background: #000000;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 4rem 0 3rem;
+  padding: 4.5rem 0 3rem;
   font-size: 0.775rem;
   color: var(--text-tertiary);
   text-align: left;
@@ -906,11 +1087,12 @@ a {
   .bento-card.span-2 {
     grid-column: span 1;
   }
-  .feature-split, .feature-split.reverse {
+  .panel-split-layout {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+    padding: 2.5rem 1.75rem;
   }
-  .desktop-cards-row {
+  .screen-floating-cards {
     grid-template-columns: 1fr;
   }
   .specs-row {
@@ -932,7 +1114,7 @@ a {
   .footer-nav-grid {
     grid-template-columns: 1fr;
   }
-  .window-content {
+  .screen-viewport {
     padding: 2rem 1.25rem;
   }
 }
