@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurora OS — Intelligence at the Core</title>
+
+  <!-- Primary Metadata -->
+  <meta name="title" content="Aurora OS — Intelligence at the Core">
+  <meta name="description" content="An open-source, AI-native desktop operating system built on the Linux kernel. Where intelligence is an integrated, privacy-first system service.">
+  <meta name="keywords" content="Aurora OS, Apple style, Linux OS, AI operating system, privacy OS, open source, local AI">
+  <meta name="author" content="Aurora OS Project">
+  <meta name="robots" content="index, follow">
+
+  <!-- OpenGraph / Social Cards -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://auroraos.pages.dev/">
+  <meta property="og:title" content="Aurora OS — Intelligence at the Core">
+  <meta property="og:description" content="An open-source desktop operating system built on the Linux kernel. Intelligence built in, not bolted on.">
+  <meta property="og:image" content="assets/og-image.svg">
+
+  <!-- Twitter Card -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://auroraos.pages.dev/">
+  <meta property="twitter:title" content="Aurora OS — Intelligence at the Core">
+  <meta property="twitter:description" content="An open-source desktop operating system built on the Linux kernel. Intelligence built in, not bolted on.">
+  <meta property="twitter:image" content="assets/og-image.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/favicon.svg">
+
+  <!-- Inter & JetBrains Mono Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Apple-Grade Minimalist Liquid Glass Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Dynamic Ethereal Aurora Background Canvas -->
+  <canvas id="aurora-canvas"></canvas>
+
+  <div class="site-content">
+    <!-- Apple-Style Global Header -->
+    <header class="global-nav" id="global-nav">
+      <div class="container nav-inner">
+        <a href="#" class="nav-brand" aria-label="Aurora OS Home">
+          <div class="brand-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 42 C 22 18, 30 42, 42 18 C 48 8, 54 16, 54 22" stroke="url(#navAuroraGrad)" stroke-width="4.5" stroke-linecap="round"/>
+              <circle cx="32" cy="32" r="5" fill="#ffffff"/>
+              <defs>
+                <linearGradient id="navAuroraGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#2997ff" />
+                  <stop offset="50%" stop-color="#30d158" />
+                  <stop offset="100%" stop-color="#bf5af2" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <span>Aurora OS</span>
+        </a>
+
+        <!-- Desktop Navigation Items -->
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#intelligence">Intelligence</a></li>
+          <li><a href="#privacy">Privacy</a></li>
+          <li><a href="#linux">Linux Bedrock</a></li>
+          <li><a href="#specs">Tech Specs</a></li>
+        </ul>
+
+        <!-- Action / Source Repository Link -->
+        <div class="nav-right">
+          <a href="https://github.com/auroraossoftware/auroraos" target="_blank" rel="noopener noreferrer" class="nav-cta-btn" aria-label="Go to Aurora OS GitHub Repository">
+            <span>Source Code</span>
+            <span>↗</span>
+          </a>
+          <button class="mobile-toggle" id="mobile-toggle" aria-label="Open Navigation Menu">
+            ☰
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Apple Sticky Product Sub-Header -->
+    <div class="product-subnav">
+      <div class="container subnav-inner">
+        <div class="subnav-title">Aurora OS</div>
+        <div class="subnav-links">
+          <a href="#overview" class="active">Overview</a>
+          <a href="#intelligence">Intelligence</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#specs">Specs</a>
+          <a href="https://github.com/auroraossoftware/auroraos" target="_blank" rel="noopener noreferrer" class="subnav-github-link">
+            <span>GitHub</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-section" id="overview">
+        <div class="container">
+          <span class="hero-eyebrow">Aurora OS</span>
+          
+          <h1 class="hero-title">
+            <span class="text-gradient-apple">Intelligence at the core.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            An open-source desktop operating system built on the Linux kernel. Where artificial intelligence is an integrated, privacy-respecting system service — not another cloud subscription.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="https://github.com/auroraossoftware/auroraos" target="_blank" rel="noopener noreferrer" class="btn-apple-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+              <span>View Source on GitHub</span>
+            </a>
+
+            <a href="#intelligence" class="btn-apple-link">
+              <span>Explore Aurora Intelligence</span>
+              <span>↓</span>
+            </a>
+          </div>
+
+          <!-- Hero Frosted Liquid Glass Window Mockup -->
+          <div class="hero-device-wrapper">
+            <div class="liquid-desktop-window">
+              <!-- Window Chrome -->
+              <div class="window-chrome">
+                <div class="chrome-dots">
+                  <span class="dot r"></span>
+                  <span class="dot y"></span>
+                  <span class="dot g"></span>
+                </div>
+                <div class="chrome-title">
+                  <span>Aurora Shell</span>
+                  <span class="chrome-badge">Private Silicon</span>
+                </div>
+                <div style="font-size: 0.775rem; color: var(--text-tertiary);">
+                  Linux 6.x
+                </div>
+              </div>
+
+              <!-- Window Content -->
+              <div class="window-content">
+                <!-- Apple-Style Spotlight Command Hub -->
+                <div class="apple-command-hub">
+                  <div class="hub-top-row">
+                    <span class="hub-search-icon">✦</span>
+                    <span class="hub-query-text">"Prepare my coding environment and silence notifications."</span>
+                    <span class="hub-key">⌘K</span>
+                  </div>
+                  <div class="hub-response">
+                    <strong>Workspace optimized:</strong> VS Code &amp; Terminal configured on Workspace 1. Notification daemon muted for deep focus. Performance CPU governor active.
+                    <div class="hub-meta">
+                      <span>✓ Dispatched in 0.18 ms</span>
+                      <span>•</span>
+                      <span>Zero cloud egress</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Floating Frosted Glass Metric Cards -->
+                <div class="desktop-cards-row">
+                  <div class="mini-glass-card">
+                    <div class="card-num">2.8 MB</div>
+                    <div class="card-tag">Core Resident Memory</div>
+                    <div class="card-foot">Minimal daemon overhead</div>
+                  </div>
+
+                  <div class="mini-glass-card">
+                    <div class="card-num">0.061 ms</div>
+                    <div class="card-tag">Median Turn Latency</div>
+                    <div class="card-foot">Sub-millisecond IPC in Rust</div>
+                  </div>
+
+                  <div class="mini-glass-card">
+                    <div class="card-num">100%</div>
+                    <div class="card-tag">Local Privacy</div>
+                    <div class="card-foot">Zero telemetry by architecture</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Highlights Bento Grid (Apple Style) -->
+      <section class="section">
+        <div class="container">
+          <div class="text-center" style="margin-bottom: 4rem;">
+            <span class="section-eyebrow">At a Glance</span>
+            <h2 class="section-headline">Radical simplicity.<br>Immense power.</h2>
+            <p class="section-lead">
+              Everything an operating system should be in the artificial intelligence era. Fast, respectful, and open.
+            </p>
+          </div>
+
+          <div class="bento-grid">
+            <!-- Bento 1 (Span 2) -->
+            <div class="bento-card liquid-glass span-2">
+              <div class="bento-header">
+                <span class="bento-kicker">Aurora Intelligence</span>
+                <h3 class="bento-title">Intelligence on your terms. Not a corporate cloud subscription.</h3>
+              </div>
+              <p class="bento-desc">
+                Instead of fifty separate applications running heavy background LLMs and burning gigabytes of RAM, Aurora provides a unified, secure system service that applications use with your explicit permission.
+              </p>
+            </div>
+
+            <!-- Bento 2 -->
+            <div class="bento-card liquid-glass">
+              <div class="bento-header">
+                <span class="bento-kicker">Efficiency</span>
+                <h3 class="bento-title">Sub-millisecond IPC.</h3>
+              </div>
+              <div>
+                <div class="bento-stat-big">0.061<span style="font-size: 1.5rem; font-weight: 500; color: var(--accent-blue);"> ms</span></div>
+                <div class="bento-stat-label">Turn framing overhead</div>
+              </div>
+            </div>
+
+            <!-- Bento 3 -->
+            <div class="bento-card liquid-glass">
+              <div class="bento-header">
+                <span class="bento-kicker">Footprint</span>
+                <h3 class="bento-title">Light on silicon.</h3>
+              </div>
+              <div>
+                <div class="bento-stat-big">2.8<span style="font-size: 1.5rem; font-weight: 500; color: #30d158;"> MB</span></div>
+                <div class="bento-stat-label">Core daemon resident memory (VmRSS)</div>
+              </div>
+            </div>
+
+            <!-- Bento 4 (Span 2) -->
+            <div class="bento-card liquid-glass span-2">
+              <div class="bento-header">
+                <span class="bento-kicker">Security Invariants</span>
+                <h3 class="bento-title">Zero ambient authority. Built from the ground up.</h3>
+              </div>
+              <p class="bento-desc">
+                Applications never receive automatic system-wide surveillance powers. Every capability requires an explicit, cryptographically checked token. If an action isn't permitted, the request fails closed in microseconds.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Deep Dive 1: Aurora Intelligence -->
+      <section class="section" id="intelligence" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+        <div class="container">
+          <div class="feature-split">
+            <div class="feature-copy">
+              <span class="feature-tag">Aurora Intelligence</span>
+              <h2 class="feature-title">AI that assists.<br>Never insists.</h2>
+              <p class="feature-desc">
+                Aurora OS re-engineers how applications communicate with intelligence. By centralizing reasoning into an OS-level service, your computer stays quiet, fast, and unified.
+              </p>
+              <ul class="feature-points">
+                <li><strong>Unified system service:</strong> Applications share a single, optimized intelligence provider.</li>
+                <li><strong>Pluggable model backends:</strong> Use local neural weights or tiny fast SLMs without rewriting your applications.</li>
+                <li><strong>Predictable resilience:</strong> If an AI model stalls, the Linux desktop never crashes. AI enhances the OS — it is never a point of failure.</li>
+              </ul>
+            </div>
+
+            <div class="feature-visual-box liquid-glass">
+              <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary); line-height: 1.8;">
+                <p style="color: #ffffff; font-weight: 600; margin-bottom: 0.75rem;">// Aurora IPC Architecture (ADR-001)</p>
+                <p><span style="color: var(--accent-blue);">Applications</span> ──(D-Bus)──▶ <span style="color: #30d158;">aurora-ai daemon</span></p>
+                <p style="padding-left: 2rem;">↳ <span style="color: var(--text-tertiary);">WorkerSupervisor (Rust)</span></p>
+                <p style="padding-left: 2rem;">↳ <span style="color: var(--text-tertiary);">CapabilityDispatcher &amp; PolicyEngine</span></p>
+                <p style="padding-left: 2rem;">↳ <span style="color: var(--accent-purple);">Local Inference Engine</span></p>
+                <p style="padding-left: 2rem;">↳ <span style="color: #ffffff;">Linux Kernel Substratum</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Deep Dive 2: Privacy -->
+      <section class="section" id="privacy" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+        <div class="container">
+          <div class="feature-split reverse">
+            <div class="feature-copy">
+              <span class="feature-tag">Privacy</span>
+              <h2 class="feature-title">Your thoughts are yours alone.</h2>
+              <p class="feature-desc">
+                In an era where desktop operating systems take silent screenshots of your activity and push background telemetry, Aurora OS stands as an unyielding fortress for your personal privacy.
+              </p>
+              <ul class="feature-points">
+                <li><strong>Zero background telemetry:</strong> What happens on your silicon stays on your silicon.</li>
+                <li><strong>Linux <code style="color: #38bdf8;">openat2</code> sandboxing:</strong> Resolves files strictly beneath user directories with zero symlink traversal.</li>
+                <li><strong>Auditable and open:</strong> Every line of code is open source under the MIT License for independent verification.</li>
+              </ul>
+            </div>
+
+            <div class="feature-visual-box liquid-glass">
+              <div style="text-align: left;">
+                <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: #30d158; font-weight: 700; margin-bottom: 0.5rem;">
+                  Privacy Guarantee
+                </div>
+                <div style="font-size: 1.45rem; font-weight: 700; color: #ffffff; margin-bottom: 1rem;">
+                  Local Processing by Default.
+                </div>
+                <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">
+                  "External AI services may eventually be supported, but they will be explicitly controlled. A user should always know what information is being sent, where it is being sent, and why."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Deep Dive 3: Linux Bedrock -->
+      <section class="section" id="linux" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+        <div class="container">
+          <div class="feature-split">
+            <div class="feature-copy">
+              <span class="feature-tag">Foundation</span>
+              <h2 class="feature-title">Linux underneath.<br>Pure stability.</h2>
+              <p class="feature-desc">
+                We did not attempt to build a custom kernel from scratch. Linux already provides three decades of engineering in process management, filesystems, hardware drivers, and memory security.
+              </p>
+              <ul class="feature-points">
+                <li><strong>Total hardware compatibility:</strong> Runs on laptops, desktops, and workstations effortlessly.</li>
+                <li><strong>Standard desktop software:</strong> Run Steam, Flatpak, Docker, VS Code, and standard Linux apps natively.</li>
+                <li><strong>Modern POSIX userspace:</strong> Built around systemd, standard POSIX APIs, and open standards.</li>
+              </ul>
+            </div>
+
+            <div class="feature-visual-box liquid-glass">
+              <div style="text-align: left;">
+                <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-blue); font-weight: 700; margin-bottom: 0.5rem;">
+                  Core Principle
+                </div>
+                <div style="font-size: 1.45rem; font-weight: 700; color: #ffffff; margin-bottom: 1rem;">
+                  Build on Linux. Avoid novelty.
+                </div>
+                <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">
+                  Aurora OS focuses its engineering on what truly differentiates it: making artificial intelligence a shared, secure, first-class system service.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Apple-Style Technical Specifications -->
+      <section class="section" id="specs" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+        <div class="container">
+          <div class="text-center" style="margin-bottom: 4rem;">
+            <span class="section-eyebrow">Architecture</span>
+            <h2 class="section-headline">Technical Specifications</h2>
+            <p class="section-lead">
+              Rigorous systems engineering verified by 211 automated test suites and empirical baselines.
+            </p>
+          </div>
+
+          <div class="specs-container liquid-glass">
+            <div class="specs-row">
+              <div class="spec-category">Kernel Foundation</div>
+              <div class="spec-detail">Standard <strong>Linux Kernel 6.x</strong> (POSIX, systemd, VFS, procfs)</div>
+            </div>
+
+            <div class="specs-row">
+              <div class="spec-category">System Daemon</div>
+              <div class="spec-detail"><strong><code>aurora-ai</code></strong> written in safe Rust 2021 (Tokio runtime)</div>
+            </div>
+
+            <div class="specs-row">
+              <div class="spec-category">IPC Transport</div>
+              <div class="spec-detail">Anonymous <strong><code>socketpair(AF_UNIX)</code></strong> + public D-Bus interfaces</div>
+            </div>
+
+            <div class="specs-row">
+              <div class="spec-category">Sandboxing</div>
+              <div class="spec-detail">Linux <strong><code>openat2</code></strong> with <code>RESOLVE_BENEATH | NO_SYMLINKS</code></div>
+            </div>
+
+            <div class="specs-row">
+              <div class="spec-category">Memory Footprint</div>
+              <div class="spec-detail"><strong>2.7 – 2.9 MB RSS</strong> flatline resident memory</div>
+            </div>
+
+            <div class="specs-row">
+              <div class="spec-category">Turn Latency</div>
+              <div class="spec-detail"><strong>0.061 ms</strong> median turn framing overhead (~61 µs)</div>
+            </div>
+
+            <div class="specs-row">
+              <div class="spec-category">Licensing</div>
+              <div class="spec-detail"><strong>MIT License</strong> (Free &amp; Open Source)</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Grand Release CTA Banner -->
+      <section class="section" style="padding-top: 3rem;">
+        <div class="container">
+          <div class="cta-banner-wrapper">
+            <div class="cta-banner-card">
+              <h2 class="cta-banner-title">Aurora OS</h2>
+              <p class="cta-banner-desc">
+                Intelligence built in, not bolted on. Experience the next era of personal computing on Linux. Free and open source.
+              </p>
+
+              <div class="cta-banner-actions">
+                <!-- Source Repository Link -->
+                <a href="https://github.com/auroraossoftware/auroraos" target="_blank" rel="noopener noreferrer" class="btn-apple-primary" style="padding: 0.95rem 2.2rem; font-size: 1.05rem;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                  </svg>
+                  <span>Go to Source Repository (GitHub)</span>
+                </a>
+
+                <a href="https://github.com/auroraossoftware/auroraos/blob/main/docs/roadmap.md" target="_blank" rel="noopener noreferrer" class="btn-apple-link" style="font-size: 1.05rem;">
+                  <span>Read Development Roadmap ↗</span>
+                </a>
+              </div>
+
+              <!-- DartNode VPS Sponsor Line -->
+              <div class="sponsor-line">
+                <a href="https://dartnode.com" target="_blank" rel="noopener noreferrer" class="sponsor-link">
+                  <span>Powered by <strong>DartNode</strong> — Free VPS for Open Source</span>
+                  <span>↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Apple-Style Minimalist Footer -->
+    <footer class="apple-footer">
+      <div class="container">
+        <!-- Footnotes -->
+        <div class="footer-footnotes">
+          1. Measurements based on Milestone 8 empirical baseline harness evaluated on AMD EPYC 7763, Linux 6.8, and safe Rust 2021 release profile.<br>
+          2. Aurora OS is an experimental open-source project. Source code and documentation are available under the MIT License on GitHub.
+        </div>
+
+        <!-- Navigation Columns -->
+        <div class="footer-nav-grid">
+          <div>
+            <div class="footer-col-title">Aurora OS</div>
+            <p style="color: var(--text-tertiary); max-width: 320px; line-height: 1.5;">
+              An experimental, AI-native desktop operating system built on top of the Linux kernel.
+            </p>
+          </div>
+
+          <div>
+            <div class="footer-col-title">Architecture</div>
+            <ul class="footer-links-list">
+              <li><a href="https://github.com/auroraossoftware/auroraos/blob/main/docs/architecture.md" target="_blank" rel="noopener noreferrer">System Design ↗</a></li>
+              <li><a href="https://github.com/auroraossoftware/auroraos/tree/main/docs/decisions" target="_blank" rel="noopener noreferrer">ADRs ↗</a></li>
+              <li><a href="https://github.com/auroraossoftware/auroraos/blob/main/docs/roadmap.md" target="_blank" rel="noopener noreferrer">Roadmap ↗</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="footer-col-title">Verification</div>
+            <ul class="footer-links-list">
+              <li><a href="https://github.com/auroraossoftware/auroraos/blob/main/docs/performance-baselines-m8.md" target="_blank" rel="noopener noreferrer">Baselines (M8) ↗</a></li>
+              <li><a href="https://github.com/auroraossoftware/auroraos/blob/main/docs/audit-m8.md" target="_blank" rel="noopener noreferrer">Audit Report ↗</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="footer-col-title">Source Code</div>
+            <ul class="footer-links-list">
+              <li><a href="https://github.com/auroraossoftware/auroraos" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a></li>
+              <li><a href="https://github.com/auroraossoftware/auroraos/issues" target="_blank" rel="noopener noreferrer">Issue Tracker ↗</a></li>
+              <li><a href="https://dartnode.com" target="_blank" rel="noopener noreferrer">DartNode Sponsor ↗</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Legal Bar -->
+        <div class="footer-legal-bar">
+          <div>
+            Copyright &copy; 2026 Aurora OS Project. Released under the <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer" style="color: var(--text-secondary); text-decoration: underline;">MIT License</a>.
+          </div>
+          <div>
+            Hosted on Cloudflare Pages (Free Tier) • Built on Linux
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Ambient Animation & Navigation Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>

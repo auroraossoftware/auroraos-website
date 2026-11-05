@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npx serve -l 3000 .",
     "start": "npx serve -l 3000 .",
-    "build": "echo 'Static website ready for Cloudflare Pages (no build step required).'"
+    "build": "mkdir -p dist && cp -r index.html styles.css app.js assets _headers robots.txt sitemap.xml dist/ 2>/dev/null || true"
   },
   "keywords": [
     "aurora-os",
