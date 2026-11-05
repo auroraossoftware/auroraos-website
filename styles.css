@@ -958,6 +958,363 @@ a {
 }
 
 /* ==========================================================================
+   Apple-Style Current Status & Engineering Milestones Section
+   ========================================================================== */
+.status-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+}
+
+.status-summary-card {
+  padding: 1.85rem;
+  border-radius: 24px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform var(--trans-smooth), border-color var(--trans-fast);
+}
+
+.status-summary-card:hover {
+  transform: translateY(-3px);
+}
+
+.status-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-indicator-completed {
+  background: #30d158;
+  box-shadow: 0 0 10px rgba(48, 209, 88, 0.7);
+}
+
+.status-indicator-active {
+  background: #2997ff;
+  box-shadow: 0 0 10px rgba(41, 151, 255, 0.7);
+  animation: statusPulse 2s infinite ease-in-out;
+}
+
+.status-indicator-metric {
+  background: #bf5af2;
+  box-shadow: 0 0 10px rgba(191, 90, 242, 0.7);
+}
+
+@keyframes statusPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.25);
+  }
+}
+
+.status-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 100px;
+  line-height: 1;
+}
+
+.status-badge-completed {
+  background: rgba(48, 209, 88, 0.12);
+  color: #30d158;
+  border: 1px solid rgba(48, 209, 88, 0.28);
+}
+
+.status-badge-active {
+  background: rgba(41, 151, 255, 0.12);
+  color: #2997ff;
+  border: 1px solid rgba(41, 151, 255, 0.28);
+}
+
+.status-badge-metric {
+  background: rgba(191, 90, 242, 0.12);
+  color: #bf5af2;
+  border: 1px solid rgba(191, 90, 242, 0.28);
+}
+
+.status-summary-val {
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: var(--text-headline);
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
+}
+
+.status-summary-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.status-milestones-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.milestone-card {
+  padding: 2.25rem 2.5rem;
+  border-radius: 28px;
+  text-align: left;
+  transition: transform var(--trans-smooth), border-color var(--trans-fast);
+}
+
+.milestone-card:hover {
+  transform: translateY(-2px);
+}
+
+.milestone-card.active {
+  border-color: rgba(41, 151, 255, 0.28);
+  background: linear-gradient(135deg, rgba(41, 151, 255, 0.05) 0%, rgba(255, 255, 255, 0.03) 100%);
+}
+
+.milestone-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 0.95rem;
+  flex-wrap: wrap;
+}
+
+.milestone-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.milestone-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.milestone-tag.completed {
+  color: #30d158;
+}
+
+.milestone-tag.active {
+  color: #2997ff;
+}
+
+.milestone-tag.upcoming {
+  color: var(--text-tertiary);
+}
+
+.milestone-name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-headline);
+  letter-spacing: -0.02em;
+}
+
+.milestone-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.9rem;
+  border-radius: 100px;
+  flex-shrink: 0;
+}
+
+.milestone-status-pill.completed {
+  background: rgba(48, 209, 88, 0.12);
+  color: #30d158;
+  border: 1px solid rgba(48, 209, 88, 0.28);
+}
+
+.milestone-status-pill.active {
+  background: rgba(41, 151, 255, 0.12);
+  color: #2997ff;
+  border: 1px solid rgba(41, 151, 255, 0.28);
+}
+
+.milestone-status-pill.upcoming {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.milestone-description {
+  font-size: 0.975rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.35rem;
+}
+
+.milestone-description code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: rgba(255, 255, 255, 0.07);
+  padding: 0.15rem 0.45rem;
+  border-radius: 5px;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.milestone-deliverables {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.deliverable-tag {
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  padding: 0.35rem 0.8rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+  letter-spacing: -0.01em;
+}
+
+.deliverable-tag.in-progress {
+  color: var(--text-primary);
+  border-color: rgba(41, 151, 255, 0.28);
+  background: rgba(41, 151, 255, 0.06);
+}
+
+/* ==========================================================================
+   Apple-Style Frequently Asked Questions (FAQ) Section
+   ========================================================================== */
+.faq-accordion-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+
+.faq-item {
+  border-radius: 22px;
+  overflow: hidden;
+  transition: background-color var(--trans-smooth), border-color var(--trans-fast);
+}
+
+.faq-item[open] {
+  background: rgba(255, 255, 255, 0.055);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.faq-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6rem 2.25rem;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  transition: color var(--trans-fast);
+}
+
+.faq-summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-headline);
+  letter-spacing: -0.015em;
+  padding-right: 1.5rem;
+}
+
+.faq-summary:hover .faq-question {
+  color: var(--accent-blue);
+}
+
+.faq-toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary);
+  transition: transform 300ms var(--ease-apple), background-color var(--trans-fast), color var(--trans-fast);
+  flex-shrink: 0;
+}
+
+.faq-item[open] .faq-toggle-icon {
+  transform: rotate(180deg);
+  background: rgba(41, 151, 255, 0.16);
+  color: var(--accent-blue);
+}
+
+.faq-content {
+  padding: 0 2.25rem 2rem;
+  font-size: 0.975rem;
+  color: var(--text-secondary);
+  line-height: 1.68;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 1.35rem;
+}
+
+.faq-content strong {
+  color: var(--text-headline);
+  font-weight: 600;
+}
+
+.faq-content code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: rgba(255, 255, 255, 0.07);
+  padding: 0.15rem 0.45rem;
+  border-radius: 5px;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.faq-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding-left: 0.25rem;
+}
+
+.faq-list li {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.faq-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent-blue);
+  font-weight: bold;
+}
+
+/* ==========================================================================
    Grand Release CTA Banner
    ========================================================================== */
 .cta-banner-wrapper {
@@ -1099,6 +1456,9 @@ a {
     grid-template-columns: 1fr;
     gap: 0.5rem;
   }
+  .status-summary-grid {
+    grid-template-columns: 1fr;
+  }
   .footer-nav-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1116,5 +1476,22 @@ a {
   }
   .screen-viewport {
     padding: 2rem 1.25rem;
+  }
+  .milestone-card {
+    padding: 1.65rem 1.35rem;
+  }
+  .milestone-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .faq-summary {
+    padding: 1.35rem 1.4rem;
+  }
+  .faq-question {
+    font-size: 1.05rem;
+  }
+  .faq-content {
+    padding: 0 1.4rem 1.5rem;
   }
 }
