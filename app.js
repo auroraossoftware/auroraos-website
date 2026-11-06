@@ -7,6 +7,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initAmbientAurora();
   initSpecularGlassGlare();
+  initHeroTitaniumSpecular();
   initHubTabs();
   initHashLinking();
   initShowcaseSwitcher();
@@ -165,6 +166,37 @@ function initSpecularGlassGlare() {
       card.style.setProperty('--mouse-x', `${x}px`);
       card.style.setProperty('--mouse-y', `${y}px`);
     });
+  });
+}
+
+/* ==========================================================================
+   2a. Hero Titanium 2.5D Dynamic Anisotropic Cursor Parallax
+   ========================================================================== */
+function initHeroTitaniumSpecular() {
+  const heroSection = document.querySelector('.hero-section');
+  const heroTitle = document.querySelector('.hero-title');
+  if (!heroSection || !heroTitle) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  let ticking = false;
+  heroSection.addEventListener('mousemove', (e) => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const rect = heroTitle.getBoundingClientRect();
+        const xPercent = ((e.clientX - rect.left) / rect.width) * 100;
+
+        // Modulate anisotropic reflection angle subtly as mouse glides across hero
+        const dynamicAngle = 104 + (xPercent - 50) * 0.12;
+        heroTitle.style.setProperty('--hero-sheen-angle', `${dynamicAngle.toFixed(1)}deg`);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  heroSection.addEventListener('mouseleave', () => {
+    heroTitle.style.removeProperty('--hero-sheen-angle');
   });
 }
 

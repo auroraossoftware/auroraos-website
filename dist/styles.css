@@ -419,20 +419,238 @@ pre code,
   animation: statusPulse 1.8s infinite ease-in-out;
 }
 
+/* ==========================================================================
+   2.5D–3D Brushed Sparkly Titanium Hero Typography
+   Continuous vertical transition: Luminous Apple retina white at sentence 1,
+   shifting smoothly down into brushed, sparkly Grade-5 titanium with chiseled
+   volumetric bevels, anisotropic striations, and crystalline specular glints.
+   ========================================================================== */
 .hero-title {
+  --hero-sheen-angle: 108deg;
   font-size: clamp(2.8rem, 6.5vw, 5.2rem);
   font-weight: 800;
   line-height: 1.14;
   letter-spacing: -0.028em;
-  color: var(--text-headline);
   max-width: 980px;
   margin: 0 auto 1.35rem;
+  position: relative;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Master Background Composite Stack:
+     1. Ambient Specular Sheen Sweep (sweeping glint across letters)
+     2. Micro-Crystalline Titanium Sparkles (concentrated in lower 65%-95% region)
+     3. Anisotropic Brushed Micro-Striations (hairline horizontal grain)
+     4. Diagonal Anisotropic Metallic Luster (light scattering angle)
+     5. Master Vertical Transition Gradient (White -> Silver -> Grade-5 Titanium) */
+  background-image:
+    linear-gradient(
+      112deg,
+      transparent 0%,
+      transparent 38%,
+      rgba(255, 255, 255, 0.0) 42%,
+      rgba(255, 255, 255, 0.42) 48%,
+      rgba(255, 255, 255, 0.72) 50%,
+      rgba(255, 255, 255, 0.42) 52%,
+      rgba(255, 255, 255, 0.0) 58%,
+      transparent 100%
+    ),
+    radial-gradient(1.5px 1.5px at 14% 82%, rgba(255, 255, 255, 0.95), transparent 100%),
+    radial-gradient(2.0px 2.0px at 27% 90%, rgba(255, 255, 255, 0.92), transparent 100%),
+    radial-gradient(1.6px 1.6px at 39% 79%, rgba(255, 255, 255, 0.96), transparent 100%),
+    radial-gradient(2.2px 2.2px at 52% 87%, rgba(255, 255, 255, 0.90), transparent 100%),
+    radial-gradient(1.4px 1.4px at 66% 76%, rgba(255, 255, 255, 0.94), transparent 100%),
+    radial-gradient(2.5px 2.5px at 78% 84%, rgba(255, 255, 255, 0.98), transparent 100%),
+    radial-gradient(1.8px 1.8px at 88% 92%, rgba(255, 255, 255, 0.92), transparent 100%),
+    radial-gradient(2.1px 2.1px at 94% 80%, rgba(255, 255, 255, 0.95), transparent 100%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.045) 0px,
+      rgba(255, 255, 255, 0.045) 1px,
+      rgba(0, 0, 0, 0.04) 1px,
+      rgba(0, 0, 0, 0.04) 2px,
+      transparent 2px,
+      transparent 3.5px
+    ),
+    linear-gradient(
+      var(--hero-sheen-angle, 108deg),
+      transparent 0%,
+      rgba(255, 255, 255, 0.06) 18%,
+      transparent 32%,
+      rgba(255, 255, 255, 0.1) 48%,
+      transparent 62%,
+      rgba(255, 255, 255, 0.07) 82%,
+      transparent 100%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #ffffff 22%,
+      #f6f8fb 32%,
+      #e3e8f0 44%,
+      #c2cad6 56%,
+      #9da6b6 68%,
+      #788293 80%,
+      #596272 90%,
+      #424a57 96%,
+      #343b46 100%
+    );
+
+  background-size:
+    220% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 3.5px,
+    100% 100%,
+    100% 100%;
+
+  background-position:
+    -120% 0,
+    0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0,
+    0 0,
+    0 0,
+    0 0;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  /* 2.5D Volumetric Bevel & Ambient Grounding Shadows */
+  filter:
+    drop-shadow(0 -1px 0 rgba(255, 255, 255, 0.32))
+    drop-shadow(0 1px 1px rgba(0, 0, 0, 0.45))
+    drop-shadow(0 3px 2px rgba(10, 14, 20, 0.65))
+    drop-shadow(0 6px 6px rgba(0, 0, 0, 0.7))
+    drop-shadow(0 16px 30px rgba(0, 0, 0, 0.9));
+
+  animation: titaniumSheenSweep 9.5s ease-in-out infinite;
 }
 
+/* Fallback for engines without background-clip: text */
+@supports not (-webkit-background-clip: text) {
+  .hero-title {
+    color: #ffffff;
+    background: none;
+    -webkit-text-fill-color: initial;
+  }
+}
+
+/* Micro-Crystalline Diamond Sparkle Starbursts on Line 3 */
+.hero-title-titanium {
+  position: relative;
+  display: inline;
+}
+
+.titanium-glint {
+  position: absolute;
+  pointer-events: none;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 0%, rgba(255, 255, 255, 0.95) 25%, rgba(200, 220, 255, 0.5) 55%, transparent 75%);
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 9px rgba(185, 215, 255, 0.65));
+  opacity: 0;
+  transform: scale(0.3) rotate(0deg);
+  z-index: 2;
+  will-change: transform, opacity;
+}
+
+.titanium-glint::before,
+.titanium-glint::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.95), transparent);
+  border-radius: 999px;
+}
+
+.titanium-glint::before {
+  width: 18px;
+  height: 1.5px;
+}
+
+.titanium-glint::after {
+  width: 1.5px;
+  height: 18px;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.95), transparent);
+}
+
+.titanium-glint.glint-1 {
+  top: 10%;
+  left: 1.5%;
+  animation: titaniumGlintPulse 4.2s infinite ease-in-out;
+  animation-delay: 0.6s;
+}
+
+.titanium-glint.glint-2 {
+  top: 20%;
+  left: 56%;
+  animation: titaniumGlintPulse 4.2s infinite ease-in-out;
+  animation-delay: 2.1s;
+}
+
+.titanium-glint.glint-3 {
+  top: 30%;
+  left: 96%;
+  animation: titaniumGlintPulse 4.2s infinite ease-in-out;
+  animation-delay: 3.5s;
+}
+
+@keyframes titaniumSheenSweep {
+  0%, 15% {
+    background-position:
+      -120% 0,
+      0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0,
+      0 0,
+      0 0,
+      0 0;
+  }
+  48%, 62% {
+    background-position:
+      180% 0,
+      0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0,
+      0 0,
+      0 0,
+      0 0;
+  }
+  100% {
+    background-position:
+      180% 0,
+      0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0,
+      0 0,
+      0 0,
+      0 0;
+  }
+}
+
+@keyframes titaniumGlintPulse {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.25) rotate(0deg);
+  }
+  14%, 26% {
+    opacity: 0.95;
+    transform: scale(1) rotate(45deg);
+  }
+  40% {
+    opacity: 0;
+    transform: scale(0.25) rotate(90deg);
+  }
+}
+
+/* Backward compatibility alias */
 .text-gradient-apple {
-  background: linear-gradient(180deg, #ffffff 40%, rgba(255, 255, 255, 0.62) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  display: inline;
 }
 
 .hero-subtitle {
@@ -3284,6 +3502,18 @@ pre code,
   .hero-title {
     font-size: clamp(2.1rem, 8.5vw, 2.85rem);
   }
+  .titanium-glint {
+    width: 7px;
+    height: 7px;
+  }
+  .titanium-glint::before {
+    width: 14px;
+    height: 1px;
+  }
+  .titanium-glint::after {
+    width: 1px;
+    height: 14px;
+  }
   .hero-subtitle {
     font-size: 1.05rem;
   }
@@ -3468,5 +3698,25 @@ pre code,
     flex: 1 1 calc(50% - 0.45rem);
     justify-content: center;
     text-align: center;
+  }
+}
+
+/* ==========================================================================
+   Accessibility & Reduced Motion Preferences
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .hero-title {
+    animation: none !important;
+    background-position:
+      35% 0,
+      0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0,
+      0 0,
+      0 0,
+      0 0 !important;
+  }
+  .titanium-glint {
+    animation: none !important;
+    opacity: 0.85 !important;
+    transform: scale(0.85) rotate(45deg) !important;
   }
 }
