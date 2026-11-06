@@ -36,7 +36,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Apple-Grade Minimalist Liquid Glass Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="styles.css?v=11">
 </head>
 <body>
 
@@ -1008,16 +1008,131 @@ assert!(response.is_ok());</code></pre>
                   </label>
                   <div class="hw-select-wrapper">
                     <select id="hw-cpu-select" class="hw-select" aria-label="Select Processor Architecture">
-                      <option value="amd-zen5-ai" selected>AMD Ryzen AI 300 / 9000 (Zen 5 + XDNA 2)</option>
-                      <option value="amd-zen4">AMD Ryzen 7000 / 8000 (Zen 4 + AVX-512)</option>
-                      <option value="amd-zen3">AMD Ryzen 5000 / Mobile (Zen 3 + AVX2)</option>
-                      <option value="intel-ultra2">Intel Core Ultra 200 (Lunar / Arrow Lake + NPU 48 TOPS)</option>
-                      <option value="intel-ultra1">Intel Core Ultra 100 (Meteor Lake + NPU)</option>
-                      <option value="intel-13-14">Intel 13th / 14th Gen Core (Raptor Lake)</option>
-                      <option value="apple-m4-m3">Apple Silicon M3 / M4 (ARM64 Asahi Linux)</option>
-                      <option value="apple-m1-m2">Apple Silicon M1 / M2 (ARM64 Asahi Linux)</option>
-                      <option value="qualcomm-x">Qualcomm Snapdragon X Elite (Oryon + Hexagon)</option>
-                      <option value="server-epyc-xeon">AMD EPYC 9004 / Intel Xeon Scalable (Server)</option>
+                      <optgroup label="Intel Core Ultra 200 Series (Arrow Lake &amp; Lunar Lake)">
+                        <option value="intel-ultra-9-285k" selected>Intel Core Ultra 9 285K (24C/24T, 5.7 GHz, AMX)</option>
+                        <option value="intel-ultra-9-285">Intel Core Ultra 9 285 (24C/24T, 65W, AMX)</option>
+                        <option value="intel-ultra-9-285t">Intel Core Ultra 9 285T (24C/24T, 35W Eco)</option>
+                        <option value="intel-ultra-7-265k">Intel Core Ultra 7 265K (20C/20T, 5.5 GHz, AMX)</option>
+                        <option value="intel-ultra-7-265kf">Intel Core Ultra 7 265KF (20C/20T, Discrete GPU)</option>
+                        <option value="intel-ultra-7-265">Intel Core Ultra 7 265 (20C/20T, 65W, AMX)</option>
+                        <option value="intel-ultra-7-265f">Intel Core Ultra 7 265F (20C/20T, 65W, No iGPU)</option>
+                        <option value="intel-ultra-7-265t">Intel Core Ultra 7 265T (20C/20T, 35W Eco)</option>
+                        <option value="intel-ultra-5-245k">Intel Core Ultra 5 245K (14C/14T, 5.2 GHz, AMX)</option>
+                        <option value="intel-ultra-5-245kf">Intel Core Ultra 5 245KF (14C/14T, Discrete GPU)</option>
+                        <option value="intel-ultra-5-245">Intel Core Ultra 5 245 (14C/14T, 65W, AMX)</option>
+                        <option value="intel-ultra-5-235">Intel Core Ultra 5 235 (14C/14T, 65W)</option>
+                        <option value="intel-ultra-5-225">Intel Core Ultra 5 225 (10C/10T, 65W)</option>
+                        <option value="intel-ultra-5-225f">Intel Core Ultra 5 225F (10C/10T, No iGPU)</option>
+                        <option value="intel-ultra-9-288v">Intel Core Ultra 9 288V (32GB MoP, NPU 48 TOPS)</option>
+                        <option value="intel-ultra-7-268v">Intel Core Ultra 7 268V (32GB MoP, NPU 48 TOPS)</option>
+                        <option value="intel-ultra-7-266v">Intel Core Ultra 7 266V (16GB MoP, NPU 48 TOPS)</option>
+                        <option value="intel-ultra-7-258v">Intel Core Ultra 7 258V (32GB MoP, NPU 47 TOPS)</option>
+                        <option value="intel-ultra-5-238v">Intel Core Ultra 5 238V (32GB MoP, NPU 40 TOPS)</option>
+                        <option value="intel-ultra-5-228v">Intel Core Ultra 5 228V (32GB MoP, NPU 40 TOPS)</option>
+                      </optgroup>
+                      <optgroup label="Intel Core Ultra 100 Series (Meteor Lake Mobile)">
+                        <option value="intel-ultra-9-185h">Intel Core Ultra 9 185H (16C/22T, NPU 11 TOPS)</option>
+                        <option value="intel-ultra-7-165h">Intel Core Ultra 7 165H (16C/22T, Arc Xe-LPG)</option>
+                        <option value="intel-ultra-7-155h">Intel Core Ultra 7 155H (16C/22T, Arc Xe-LPG)</option>
+                        <option value="intel-ultra-7-165u">Intel Core Ultra 7 165U (12C/14T, 15W)</option>
+                        <option value="intel-ultra-7-155u">Intel Core Ultra 7 155U (12C/14T, 15W)</option>
+                        <option value="intel-ultra-5-135h">Intel Core Ultra 5 135H (14C/18T, Arc Xe-LPG)</option>
+                        <option value="intel-ultra-5-125h">Intel Core Ultra 5 125H (14C/18T, Arc Xe-LPG)</option>
+                        <option value="intel-ultra-5-125u">Intel Core Ultra 5 125U (12C/14T, 15W)</option>
+                      </optgroup>
+                      <optgroup label="Intel 14th Gen Core (Raptor Lake Refresh)">
+                        <option value="intel-i9-14900ks">Intel Core i9-14900KS (6.2 GHz Special Edition, 24C/32T)</option>
+                        <option value="intel-i9-14900k">Intel Core i9-14900K (6.0 GHz, 24C/32T)</option>
+                        <option value="intel-i9-14900kf">Intel Core i9-14900KF (24C/32T, Discrete GPU)</option>
+                        <option value="intel-i9-14900">Intel Core i9-14900 (65W, 24C/32T)</option>
+                        <option value="intel-i9-14900f">Intel Core i9-14900F (65W, 24C/32T, No iGPU)</option>
+                        <option value="intel-i9-14900t">Intel Core i9-14900T (35W Eco, 24C/32T)</option>
+                        <option value="intel-i7-14700k">Intel Core i7-14700K (20C/28T, 5.6 GHz)</option>
+                        <option value="intel-i7-14700kf">Intel Core i7-14700KF (20C/28T, Discrete GPU)</option>
+                        <option value="intel-i7-14700">Intel Core i7-14700 (20C/28T, 65W)</option>
+                        <option value="intel-i7-14700f">Intel Core i7-14700F (20C/28T, 65W, No iGPU)</option>
+                        <option value="intel-i7-14700t">Intel Core i7-14700T (20C/28T, 35W Eco)</option>
+                        <option value="intel-i5-14600k">Intel Core i5-14600K (14C/20T, 5.3 GHz)</option>
+                        <option value="intel-i5-14600kf">Intel Core i5-14600KF (14C/20T, Discrete GPU)</option>
+                        <option value="intel-i5-14600">Intel Core i5-14600 (14C/20T, 65W)</option>
+                        <option value="intel-i5-14500">Intel Core i5-14500 (14C/20T, 65W)</option>
+                        <option value="intel-i5-14400">Intel Core i5-14400 (10C/16T, 65W)</option>
+                        <option value="intel-i5-14400f">Intel Core i5-14400F (10C/16T, No iGPU)</option>
+                        <option value="intel-i3-14100">Intel Core i3-14100 (4C/8T, 60W)</option>
+                        <option value="intel-i3-14100f">Intel Core i3-14100F (4C/8T, Entry)</option>
+                        <option value="intel-i9-14900hx">Intel Core i9-14900HX (Mobile 24C/32T, 5.8 GHz)</option>
+                      </optgroup>
+                      <optgroup label="Intel 13th Gen Core (Raptor Lake)">
+                        <option value="intel-i9-13900ks">Intel Core i9-13900KS (6.0 GHz, 24C/32T)</option>
+                        <option value="intel-i9-13900k">Intel Core i9-13900K (24C/32T, 5.8 GHz)</option>
+                        <option value="intel-i9-13900kf">Intel Core i9-13900KF (24C/32T, Discrete GPU)</option>
+                        <option value="intel-i9-13900">Intel Core i9-13900 (65W, 24C/32T)</option>
+                        <option value="intel-i9-13900f">Intel Core i9-13900F (65W, No iGPU)</option>
+                        <option value="intel-i7-13700k">Intel Core i7-13700K (16C/24T, 5.4 GHz)</option>
+                        <option value="intel-i7-13700kf">Intel Core i7-13700KF (16C/24T, Discrete GPU)</option>
+                        <option value="intel-i7-13700">Intel Core i7-13700 (65W, 16C/24T)</option>
+                        <option value="intel-i7-13700f">Intel Core i7-13700F (65W, No iGPU)</option>
+                        <option value="intel-i5-13600k">Intel Core i5-13600K (14C/20T, 5.1 GHz)</option>
+                        <option value="intel-i5-13600kf">Intel Core i5-13600KF (14C/20T, Discrete GPU)</option>
+                        <option value="intel-i5-13500">Intel Core i5-13500 (14C/20T, 65W)</option>
+                        <option value="intel-i5-13400">Intel Core i5-13400 (10C/16T, 65W)</option>
+                        <option value="intel-i5-13400f">Intel Core i5-13400F (10C/16T, No iGPU)</option>
+                        <option value="intel-i3-13100">Intel Core i3-13100 (4C/8T, 60W)</option>
+                        <option value="intel-i9-13980hx">Intel Core i9-13980HX (Laptop Flagship, 24C/32T)</option>
+                        <option value="intel-i9-13900hx">Intel Core i9-13900HX (Mobile 24C/32T)</option>
+                        <option value="intel-i7-13700h">Intel Core i7-13700H (Mobile 14C/20T)</option>
+                      </optgroup>
+                      <optgroup label="Intel 12th Gen Core (Alder Lake)">
+                        <option value="intel-i9-12900ks">Intel Core i9-12900KS (5.5 GHz, 16C/24T)</option>
+                        <option value="intel-i9-12900k">Intel Core i9-12900K (16C/24T, 5.2 GHz)</option>
+                        <option value="intel-i9-12900kf">Intel Core i9-12900KF (16C/24T, Discrete GPU)</option>
+                        <option value="intel-i9-12900">Intel Core i9-12900 (65W, 16C/24T)</option>
+                        <option value="intel-i7-12700k">Intel Core i7-12700K (12C/20T, 5.0 GHz)</option>
+                        <option value="intel-i7-12700kf">Intel Core i7-12700KF (12C/20T, Discrete GPU)</option>
+                        <option value="intel-i7-12700">Intel Core i7-12700 (65W, 12C/20T)</option>
+                        <option value="intel-i5-12600k">Intel Core i5-12600K (10C/16T, 4.9 GHz)</option>
+                        <option value="intel-i5-12600kf">Intel Core i5-12600KF (10C/16T, Discrete GPU)</option>
+                        <option value="intel-i5-12400">Intel Core i5-12400 (6C/12T, 65W Budget King)</option>
+                        <option value="intel-i5-12400f">Intel Core i5-12400F (6C/12T, No iGPU)</option>
+                        <option value="intel-i3-12100">Intel Core i3-12100 (4C/8T, 60W)</option>
+                        <option value="intel-i9-12900hx">Intel Core i9-12900HX (Mobile 16C/24T)</option>
+                        <option value="intel-i7-12700h">Intel Core i7-12700H (Mobile 14C/20T)</option>
+                      </optgroup>
+                      <optgroup label="Intel 11th &amp; 10th Gen Core">
+                        <option value="intel-i9-11900k">Intel Core i9-11900K (8C/16T, AVX-512 Native)</option>
+                        <option value="intel-i7-11700k">Intel Core i7-11700K (8C/16T, AVX-512)</option>
+                        <option value="intel-i5-11600k">Intel Core i5-11600K (6C/12T, AVX-512)</option>
+                        <option value="intel-i5-11400">Intel Core i5-11400 (6C/12T, AVX-512)</option>
+                        <option value="intel-i7-11800h">Intel Core i7-11800H (Mobile 8C/16T, AVX-512)</option>
+                        <option value="intel-i9-10900k">Intel Core i9-10900K (10C/20T, 5.3 GHz)</option>
+                        <option value="intel-i7-10700k">Intel Core i7-10700K (8C/16T, 5.1 GHz)</option>
+                        <option value="intel-i5-10400">Intel Core i5-10400 (6C/12T, Budget Baseline)</option>
+                      </optgroup>
+                      <optgroup label="Intel Xeon Workstation &amp; Server (Emerald/Sapphire)">
+                        <option value="intel-xeon-w9-3495x">Intel Xeon w9-3495X (56C/112T, AMX + 8-Ch DDR5)</option>
+                        <option value="intel-xeon-w9-3475x">Intel Xeon w9-3475X (36C/72T, AMX + 8-Ch DDR5)</option>
+                        <option value="intel-xeon-w7-3465x">Intel Xeon w7-3465X (28C/56T, AMX + 8-Ch DDR5)</option>
+                        <option value="intel-xeon-w7-2495x">Intel Xeon w7-2495X (24C/48T, 4-Ch DDR5)</option>
+                        <option value="intel-xeon-w5-3435x">Intel Xeon w5-3435X (16C/32T, 8-Ch DDR5)</option>
+                        <option value="intel-xeon-w5-2465x">Intel Xeon w5-2465X (16C/32T, 4-Ch DDR5)</option>
+                        <option value="intel-xeon-plat-8592plus">Intel Xeon Platinum 8592+ (64C/128T Emerald Rapids)</option>
+                        <option value="intel-xeon-plat-8490h">Intel Xeon Platinum 8490H (60C/120T Sapphire Rapids)</option>
+                        <option value="intel-xeon-plat-8480plus">Intel Xeon Platinum 8480+ (56C/112T, AMX)</option>
+                        <option value="intel-xeon-gold-6548yplus">Intel Xeon Gold 6548Y+ (32C/64T Emerald Rapids)</option>
+                        <option value="intel-xeon-gold-6448y">Intel Xeon Gold 6448Y (32C/64T Sapphire Rapids)</option>
+                        <option value="intel-xeon-silver-4514y">Intel Xeon Silver 4514Y (16C/32T Emerald Rapids)</option>
+                      </optgroup>
+                      <optgroup label="AMD Ryzen &amp; Server (Zen 3 / 4 / 5)">
+                        <option value="amd-zen5-ai">AMD Ryzen AI 300 / 9000 (Zen 5 + XDNA 2)</option>
+                        <option value="amd-zen4">AMD Ryzen 7000 / 8000 (Zen 4 + AVX-512)</option>
+                        <option value="amd-zen3">AMD Ryzen 5000 / Mobile (Zen 3 + AVX2)</option>
+                        <option value="server-epyc-xeon">AMD EPYC 9004 Server (AVX-512)</option>
+                      </optgroup>
+                      <optgroup label="Apple Silicon &amp; Qualcomm ARM64">
+                        <option value="apple-m4-m3">Apple Silicon M3 / M4 (ARM64 Asahi Linux)</option>
+                        <option value="apple-m1-m2">Apple Silicon M1 / M2 (ARM64 Asahi Linux)</option>
+                        <option value="qualcomm-x">Qualcomm Snapdragon X Elite (Oryon + Hexagon)</option>
+                      </optgroup>
                     </select>
                     <span class="hw-select-chevron">▼</span>
                   </div>
@@ -1984,6 +2099,6 @@ assert!(response.is_ok());</code></pre>
   </div>
 
   <!-- Ambient Animation & Navigation Scripts -->
-  <script src="app.js?v=10"></script>
+  <script src="app.js?v=11"></script>
 </body>
 </html>

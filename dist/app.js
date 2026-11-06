@@ -753,12 +753,12 @@ const HW_DATABASE = {
       npuSupported: false
     },
     'intel-ultra2': {
-      name: 'Intel Core Ultra 200 Series (Lunar / Arrow Lake)',
+      name: 'Intel Core Ultra 200 Series (Arrow Lake / Lunar Lake)',
       family: 'Lion Cove + Skymont x86_64',
       npu: 'Intel NPU 4 (48 TOPS)',
-      vector: 'AVX2 + VNNI + Intel AMX (Desktop S-series)',
-      driver: 'Linux 6.11+ (intel_vpu driver + Level Zero)',
-      factor: 1.14,
+      vector: 'AVX2 + VNNI + Intel AMX',
+      driver: 'Linux 6.11+ (intel_vpu / Level Zero)',
+      factor: 1.16,
       npuSupported: true
     },
     'intel-ultra1': {
@@ -766,17 +766,931 @@ const HW_DATABASE = {
       family: 'Redwood Cove + Crestmont x86_64',
       npu: 'Intel NPU 3 (11 TOPS)',
       vector: 'AVX2 + VNNI',
-      driver: 'Linux 6.8+ (intel_vpu driver)',
+      driver: 'Linux 6.8+ (intel_vpu)',
       factor: 0.98,
-      npuSupported: false
+      npuSupported: true
     },
     'intel-13-14': {
       name: 'Intel 13th / 14th Gen Core (Raptor Lake)',
       family: 'Raptor Cove + Gracemont x86_64',
       npu: 'None',
       vector: 'AVX2 + FMA3 + VNNI',
-      driver: 'Linux 6.1+ LTS',
+      driver: 'Linux 6.6+ LTS',
+      factor: 0.98,
+      npuSupported: false
+    },
+    /* --- 100 Specific Intel CPU Variants --- */
+    /* 1. Core Ultra 200 Series (Arrow Lake & Lunar Lake) [20 models] */
+    'intel-ultra-9-285k': {
+      name: 'Intel Core Ultra 9 285K (24C/24T, 5.7 GHz, AMX)',
+      family: 'Arrow Lake-S',
+      npu: 'Intel NPU 3 (13 TOPS)',
+      vector: 'AVX2 + VNNI + Intel AMX',
+      driver: 'Linux 6.11+ (intel_vpu / xe)',
+      factor: 1.22,
+      npuSupported: true
+    },
+    'intel-ultra-9-285': {
+      name: 'Intel Core Ultra 9 285 (24C/24T, 65W, AMX)',
+      family: 'Arrow Lake-S',
+      npu: 'Intel NPU 3 (13 TOPS)',
+      vector: 'AVX2 + VNNI + Intel AMX',
+      driver: 'Linux 6.11+ (intel_vpu)',
+      factor: 1.18,
+      npuSupported: true
+    },
+    'intel-ultra-9-285t': {
+      name: 'Intel Core Ultra 9 285T (24C/24T, 35W Eco)',
+      family: 'Arrow Lake-S',
+      npu: 'Intel NPU 3 (13 TOPS)',
+      vector: 'AVX2 + VNNI + Intel AMX',
+      driver: 'Linux 6.11+ (intel_vpu)',
+      factor: 1.14,
+      npuSupported: true
+    },
+    'intel-ultra-7-265k': {
+      name: 'Intel Core Ultra 7 265K (20C/20T, 5.5 GHz, AMX)',
+      family: 'Arrow Lake-S',
+      npu: 'Intel NPU 3 (13 TOPS)',
+      vector: 'AVX2 + VNNI + Intel AMX',
+      driver: 'Linux 6.11+ (intel_vpu / xe)',
+      factor: 1.17,
+      npuSupported: true
+    },
+    'intel-ultra-7-265kf': {
+      name: 'Intel Core Ultra 7 265KF (20C/20T, Discrete GPU)',
+      family: 'Arrow Lake-S',
+      npu: 'Intel NPU 3 (13 TOPS)',
+      vector: 'AVX2 + VNNI + Intel AMX',
+      driver: 'Linux 6.11+ (intel_vpu)',
+      factor: 1.17,
+      npuSupported: true
+    },
+    'intel-ultra-7-265': {
+      name: 'Intel Core Ultra 7 265 (20C/20T, 65W, AMX)',
+      family: 'Arrow Lake-S',
+      npu: 'Intel NPU 3 (13 TOPS)',
+      vector: 'AVX2 + VNNI + Intel AMX',
+      driver: 'Linux 6.11+ (intel_vpu)',
+      factor: 1.14,
+      npuSupported: true
+    },
+    'intel-ultra-7-265f': {
+      name: 'Intel Core Ultra 7 265F (20C/20T, 65W, No iGPU)',
+      family: 'Arrow Lake-S',
+      npu: 'Intel NPU 3 (13 TOPS)',
+      vector: 'AVX2 + VNNI + Intel AMX',
+      driver: 'Linux 6.11+ (intel_vpu)',
+      factor: 1.14,
+      npuSupported: true
+    },
+    'intel-ultra-7-265t': {
+      name: 'Intel Core Ultra 7 265T (20C/20T, 35W Eco)',
+      family: 'Arrow Lake-S',
+      npu: 'Intel NPU 3 (13 TOPS)',
+      vector: 'AVX2 + VNNI + Intel AMX',
+      driver: 'Linux 6.11+ (intel_vpu)',
+      factor: 1.10,
+      npuSupported: true
+    },
+    'intel-ultra-5-245k': {
+      name: 'Intel Core Ultra 5 245K (14C/14T, 5.2 GHz, AMX)',
+      family: 'Arrow Lake-S',
+      npu: 'Intel NPU 3 (13 TOPS)',
+      vector: 'AVX2 + VNNI + Intel AMX',
+      driver: 'Linux 6.11+ (intel_vpu / xe)',
+      factor: 1.12,
+      npuSupported: true
+    },
+    'intel-ultra-5-245kf': {
+      name: 'Intel Core Ultra 5 245KF (14C/14T, Discrete GPU)',
+      family: 'Arrow Lake-S',
+      npu: 'Intel NPU 3 (13 TOPS)',
+      vector: 'AVX2 + VNNI + Intel AMX',
+      driver: 'Linux 6.11+ (intel_vpu)',
+      factor: 1.12,
+      npuSupported: true
+    },
+    'intel-ultra-5-245': {
+      name: 'Intel Core Ultra 5 245 (14C/14T, 65W, AMX)',
+      family: 'Arrow Lake-S',
+      npu: 'Intel NPU 3 (13 TOPS)',
+      vector: 'AVX2 + VNNI + Intel AMX',
+      driver: 'Linux 6.11+ (intel_vpu)',
+      factor: 1.08,
+      npuSupported: true
+    },
+    'intel-ultra-5-235': {
+      name: 'Intel Core Ultra 5 235 (14C/14T, 65W)',
+      family: 'Arrow Lake-S',
+      npu: 'Intel NPU 3 (13 TOPS)',
+      vector: 'AVX2 + VNNI + Intel AMX',
+      driver: 'Linux 6.11+ (intel_vpu)',
+      factor: 1.06,
+      npuSupported: true
+    },
+    'intel-ultra-5-225': {
+      name: 'Intel Core Ultra 5 225 (10C/10T, 65W)',
+      family: 'Arrow Lake-S',
+      npu: 'Intel NPU 3 (13 TOPS)',
+      vector: 'AVX2 + VNNI + Intel AMX',
+      driver: 'Linux 6.11+ (intel_vpu)',
+      factor: 1.02,
+      npuSupported: true
+    },
+    'intel-ultra-5-225f': {
+      name: 'Intel Core Ultra 5 225F (10C/10T, No iGPU)',
+      family: 'Arrow Lake-S',
+      npu: 'Intel NPU 3 (13 TOPS)',
+      vector: 'AVX2 + VNNI + Intel AMX',
+      driver: 'Linux 6.11+ (intel_vpu)',
+      factor: 1.02,
+      npuSupported: true
+    },
+    'intel-ultra-9-288v': {
+      name: 'Intel Core Ultra 9 288V (32GB MoP, NPU 48 TOPS)',
+      family: 'Lunar Lake',
+      npu: 'Intel NPU 4 (48 TOPS)',
+      vector: 'AVX2 + VNNI + Arc 140V',
+      driver: 'Linux 6.12+ (intel_vpu / xe)',
+      factor: 1.16,
+      npuSupported: true
+    },
+    'intel-ultra-7-268v': {
+      name: 'Intel Core Ultra 7 268V (32GB MoP, NPU 48 TOPS)',
+      family: 'Lunar Lake',
+      npu: 'Intel NPU 4 (48 TOPS)',
+      vector: 'AVX2 + VNNI + Arc 140V',
+      driver: 'Linux 6.12+ (intel_vpu / xe)',
+      factor: 1.14,
+      npuSupported: true
+    },
+    'intel-ultra-7-266v': {
+      name: 'Intel Core Ultra 7 266V (16GB MoP, NPU 48 TOPS)',
+      family: 'Lunar Lake',
+      npu: 'Intel NPU 4 (48 TOPS)',
+      vector: 'AVX2 + VNNI + Arc 140V',
+      driver: 'Linux 6.12+ (intel_vpu / xe)',
+      factor: 1.13,
+      npuSupported: true
+    },
+    'intel-ultra-7-258v': {
+      name: 'Intel Core Ultra 7 258V (32GB MoP, NPU 47 TOPS)',
+      family: 'Lunar Lake',
+      npu: 'Intel NPU 4 (47 TOPS)',
+      vector: 'AVX2 + VNNI + Arc 140V',
+      driver: 'Linux 6.12+ (intel_vpu / xe)',
+      factor: 1.12,
+      npuSupported: true
+    },
+    'intel-ultra-5-238v': {
+      name: 'Intel Core Ultra 5 238V (32GB MoP, NPU 40 TOPS)',
+      family: 'Lunar Lake',
+      npu: 'Intel NPU 4 (40 TOPS)',
+      vector: 'AVX2 + VNNI + Arc 130V',
+      driver: 'Linux 6.12+ (intel_vpu / xe)',
+      factor: 1.05,
+      npuSupported: true
+    },
+    'intel-ultra-5-228v': {
+      name: 'Intel Core Ultra 5 228V (32GB MoP, NPU 40 TOPS)',
+      family: 'Lunar Lake',
+      npu: 'Intel NPU 4 (40 TOPS)',
+      vector: 'AVX2 + VNNI + Arc 130V',
+      driver: 'Linux 6.12+ (intel_vpu / xe)',
+      factor: 1.02,
+      npuSupported: true
+    },
+
+    /* 2. Core Ultra 100 Series (Meteor Lake Mobile) [8 models] */
+    'intel-ultra-9-185h': {
+      name: 'Intel Core Ultra 9 185H (16C/22T, NPU 11 TOPS)',
+      family: 'Meteor Lake',
+      npu: 'Intel NPU 3 (11 TOPS)',
+      vector: 'AVX2 + VNNI + Arc Xe-LPG',
+      driver: 'Linux 6.8+ (intel_vpu)',
+      factor: 1.08,
+      npuSupported: true
+    },
+    'intel-ultra-7-165h': {
+      name: 'Intel Core Ultra 7 165H (16C/22T, Arc Xe-LPG)',
+      family: 'Meteor Lake',
+      npu: 'Intel NPU 3 (11 TOPS)',
+      vector: 'AVX2 + VNNI + Arc Xe-LPG',
+      driver: 'Linux 6.8+ (intel_vpu)',
+      factor: 1.05,
+      npuSupported: true
+    },
+    'intel-ultra-7-155h': {
+      name: 'Intel Core Ultra 7 155H (16C/22T, Arc Xe-LPG)',
+      family: 'Meteor Lake',
+      npu: 'Intel NPU 3 (11 TOPS)',
+      vector: 'AVX2 + VNNI + Arc Xe-LPG',
+      driver: 'Linux 6.8+ (intel_vpu)',
+      factor: 1.03,
+      npuSupported: true
+    },
+    'intel-ultra-7-165u': {
+      name: 'Intel Core Ultra 7 165U (12C/14T, 15W)',
+      family: 'Meteor Lake',
+      npu: 'Intel NPU 3 (11 TOPS)',
+      vector: 'AVX2 + VNNI',
+      driver: 'Linux 6.8+ (intel_vpu)',
+      factor: 0.98,
+      npuSupported: true
+    },
+    'intel-ultra-7-155u': {
+      name: 'Intel Core Ultra 7 155U (12C/14T, 15W)',
+      family: 'Meteor Lake',
+      npu: 'Intel NPU 3 (11 TOPS)',
+      vector: 'AVX2 + VNNI',
+      driver: 'Linux 6.8+ (intel_vpu)',
       factor: 0.96,
+      npuSupported: true
+    },
+    'intel-ultra-5-135h': {
+      name: 'Intel Core Ultra 5 135H (14C/18T, Arc Xe-LPG)',
+      family: 'Meteor Lake',
+      npu: 'Intel NPU 3 (11 TOPS)',
+      vector: 'AVX2 + VNNI + Arc Xe-LPG',
+      driver: 'Linux 6.8+ (intel_vpu)',
+      factor: 0.99,
+      npuSupported: true
+    },
+    'intel-ultra-5-125h': {
+      name: 'Intel Core Ultra 5 125H (14C/18T, Arc Xe-LPG)',
+      family: 'Meteor Lake',
+      npu: 'Intel NPU 3 (11 TOPS)',
+      vector: 'AVX2 + VNNI + Arc Xe-LPG',
+      driver: 'Linux 6.8+ (intel_vpu)',
+      factor: 0.97,
+      npuSupported: true
+    },
+    'intel-ultra-5-125u': {
+      name: 'Intel Core Ultra 5 125U (12C/14T, 15W)',
+      family: 'Meteor Lake',
+      npu: 'Intel NPU 3 (11 TOPS)',
+      vector: 'AVX2 + VNNI',
+      driver: 'Linux 6.8+ (intel_vpu)',
+      factor: 0.92,
+      npuSupported: true
+    },
+
+    /* 3. Intel 14th Gen Core (Raptor Lake Refresh) [20 models] */
+    'intel-i9-14900ks': {
+      name: 'Intel Core i9-14900KS (6.2 GHz Special Edition, 24C/32T)',
+      family: 'Raptor Lake-R',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS',
+      factor: 1.15,
+      npuSupported: false
+    },
+    'intel-i9-14900k': {
+      name: 'Intel Core i9-14900K (6.0 GHz, 24C/32T)',
+      family: 'Raptor Lake-R',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS',
+      factor: 1.13,
+      npuSupported: false
+    },
+    'intel-i9-14900kf': {
+      name: 'Intel Core i9-14900KF (24C/32T, Discrete GPU)',
+      family: 'Raptor Lake-R',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS',
+      factor: 1.13,
+      npuSupported: false
+    },
+    'intel-i9-14900': {
+      name: 'Intel Core i9-14900 (65W, 24C/32T)',
+      family: 'Raptor Lake-R',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS',
+      factor: 1.09,
+      npuSupported: false
+    },
+    'intel-i9-14900f': {
+      name: 'Intel Core i9-14900F (65W, 24C/32T, No iGPU)',
+      family: 'Raptor Lake-R',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS',
+      factor: 1.09,
+      npuSupported: false
+    },
+    'intel-i9-14900t': {
+      name: 'Intel Core i9-14900T (35W Eco, 24C/32T)',
+      family: 'Raptor Lake-R',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS',
+      factor: 1.03,
+      npuSupported: false
+    },
+    'intel-i7-14700k': {
+      name: 'Intel Core i7-14700K (20C/28T, 5.6 GHz)',
+      family: 'Raptor Lake-R',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS',
+      factor: 1.09,
+      npuSupported: false
+    },
+    'intel-i7-14700kf': {
+      name: 'Intel Core i7-14700KF (20C/28T, Discrete GPU)',
+      family: 'Raptor Lake-R',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS',
+      factor: 1.09,
+      npuSupported: false
+    },
+    'intel-i7-14700': {
+      name: 'Intel Core i7-14700 (20C/28T, 65W)',
+      family: 'Raptor Lake-R',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS',
+      factor: 1.05,
+      npuSupported: false
+    },
+    'intel-i7-14700f': {
+      name: 'Intel Core i7-14700F (20C/28T, 65W, No iGPU)',
+      family: 'Raptor Lake-R',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS',
+      factor: 1.05,
+      npuSupported: false
+    },
+    'intel-i7-14700t': {
+      name: 'Intel Core i7-14700T (20C/28T, 35W Eco)',
+      family: 'Raptor Lake-R',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS',
+      factor: 0.99,
+      npuSupported: false
+    },
+    'intel-i5-14600k': {
+      name: 'Intel Core i5-14600K (14C/20T, 5.3 GHz)',
+      family: 'Raptor Lake-R',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS',
+      factor: 1.04,
+      npuSupported: false
+    },
+    'intel-i5-14600kf': {
+      name: 'Intel Core i5-14600KF (14C/20T, Discrete GPU)',
+      family: 'Raptor Lake-R',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS',
+      factor: 1.04,
+      npuSupported: false
+    },
+    'intel-i5-14600': {
+      name: 'Intel Core i5-14600 (14C/20T, 65W)',
+      family: 'Raptor Lake-R',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS',
+      factor: 1.00,
+      npuSupported: false
+    },
+    'intel-i5-14500': {
+      name: 'Intel Core i5-14500 (14C/20T, 65W)',
+      family: 'Raptor Lake-R',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS',
+      factor: 0.98,
+      npuSupported: false
+    },
+    'intel-i5-14400': {
+      name: 'Intel Core i5-14400 (10C/16T, 65W)',
+      family: 'Raptor Lake-R',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS',
+      factor: 0.94,
+      npuSupported: false
+    },
+    'intel-i5-14400f': {
+      name: 'Intel Core i5-14400F (10C/16T, No iGPU)',
+      family: 'Raptor Lake-R',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS',
+      factor: 0.94,
+      npuSupported: false
+    },
+    'intel-i3-14100': {
+      name: 'Intel Core i3-14100 (4C/8T, 60W)',
+      family: 'Raptor Lake-R',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS',
+      factor: 0.88,
+      npuSupported: false
+    },
+    'intel-i3-14100f': {
+      name: 'Intel Core i3-14100F (4C/8T, Entry)',
+      family: 'Raptor Lake-R',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS',
+      factor: 0.88,
+      npuSupported: false
+    },
+    'intel-i9-14900hx': {
+      name: 'Intel Core i9-14900HX (Mobile 24C/32T, 5.8 GHz)',
+      family: 'Raptor Lake-HX',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS',
+      factor: 1.10,
+      npuSupported: false
+    },
+
+    /* 4. Intel 13th Gen Core (Raptor Lake) [18 models] */
+    'intel-i9-13900ks': {
+      name: 'Intel Core i9-13900KS (6.0 GHz, 24C/32T)',
+      family: 'Raptor Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.1+ LTS',
+      factor: 1.12,
+      npuSupported: false
+    },
+    'intel-i9-13900k': {
+      name: 'Intel Core i9-13900K (24C/32T, 5.8 GHz)',
+      family: 'Raptor Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.1+ LTS',
+      factor: 1.11,
+      npuSupported: false
+    },
+    'intel-i9-13900kf': {
+      name: 'Intel Core i9-13900KF (24C/32T, Discrete GPU)',
+      family: 'Raptor Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.1+ LTS',
+      factor: 1.11,
+      npuSupported: false
+    },
+    'intel-i9-13900': {
+      name: 'Intel Core i9-13900 (65W, 24C/32T)',
+      family: 'Raptor Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.1+ LTS',
+      factor: 1.07,
+      npuSupported: false
+    },
+    'intel-i9-13900f': {
+      name: 'Intel Core i9-13900F (65W, No iGPU)',
+      family: 'Raptor Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.1+ LTS',
+      factor: 1.07,
+      npuSupported: false
+    },
+    'intel-i7-13700k': {
+      name: 'Intel Core i7-13700K (16C/24T, 5.4 GHz)',
+      family: 'Raptor Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.1+ LTS',
+      factor: 1.07,
+      npuSupported: false
+    },
+    'intel-i7-13700kf': {
+      name: 'Intel Core i7-13700KF (16C/24T, Discrete GPU)',
+      family: 'Raptor Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.1+ LTS',
+      factor: 1.07,
+      npuSupported: false
+    },
+    'intel-i7-13700': {
+      name: 'Intel Core i7-13700 (65W, 16C/24T)',
+      family: 'Raptor Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.1+ LTS',
+      factor: 1.03,
+      npuSupported: false
+    },
+    'intel-i7-13700f': {
+      name: 'Intel Core i7-13700F (65W, No iGPU)',
+      family: 'Raptor Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.1+ LTS',
+      factor: 1.03,
+      npuSupported: false
+    },
+    'intel-i5-13600k': {
+      name: 'Intel Core i5-13600K (14C/20T, 5.1 GHz)',
+      family: 'Raptor Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.1+ LTS',
+      factor: 1.02,
+      npuSupported: false
+    },
+    'intel-i5-13600kf': {
+      name: 'Intel Core i5-13600KF (14C/20T, Discrete GPU)',
+      family: 'Raptor Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.1+ LTS',
+      factor: 1.02,
+      npuSupported: false
+    },
+    'intel-i5-13500': {
+      name: 'Intel Core i5-13500 (14C/20T, 65W)',
+      family: 'Raptor Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.1+ LTS',
+      factor: 0.97,
+      npuSupported: false
+    },
+    'intel-i5-13400': {
+      name: 'Intel Core i5-13400 (10C/16T, 65W)',
+      family: 'Raptor Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.1+ LTS',
+      factor: 0.93,
+      npuSupported: false
+    },
+    'intel-i5-13400f': {
+      name: 'Intel Core i5-13400F (10C/16T, No iGPU)',
+      family: 'Raptor Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.1+ LTS',
+      factor: 0.93,
+      npuSupported: false
+    },
+    'intel-i3-13100': {
+      name: 'Intel Core i3-13100 (4C/8T, 60W)',
+      family: 'Raptor Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.1+ LTS',
+      factor: 0.86,
+      npuSupported: false
+    },
+    'intel-i9-13980hx': {
+      name: 'Intel Core i9-13980HX (Laptop Flagship, 24C/32T)',
+      family: 'Raptor Lake-HX',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.1+ LTS',
+      factor: 1.09,
+      npuSupported: false
+    },
+    'intel-i9-13900hx': {
+      name: 'Intel Core i9-13900HX (Mobile 24C/32T)',
+      family: 'Raptor Lake-HX',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.1+ LTS',
+      factor: 1.07,
+      npuSupported: false
+    },
+    'intel-i7-13700h': {
+      name: 'Intel Core i7-13700H (Mobile 14C/20T)',
+      family: 'Raptor Lake-H',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.1+ LTS',
+      factor: 1.00,
+      npuSupported: false
+    },
+
+    /* 5. Intel 12th Gen Core (Alder Lake) [14 models] */
+    'intel-i9-12900ks': {
+      name: 'Intel Core i9-12900KS (5.5 GHz, 16C/24T)',
+      family: 'Alder Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 5.15+ LTS',
+      factor: 1.06,
+      npuSupported: false
+    },
+    'intel-i9-12900k': {
+      name: 'Intel Core i9-12900K (16C/24T, 5.2 GHz)',
+      family: 'Alder Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 5.15+ LTS',
+      factor: 1.05,
+      npuSupported: false
+    },
+    'intel-i9-12900kf': {
+      name: 'Intel Core i9-12900KF (16C/24T, Discrete GPU)',
+      family: 'Alder Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 5.15+ LTS',
+      factor: 1.05,
+      npuSupported: false
+    },
+    'intel-i9-12900': {
+      name: 'Intel Core i9-12900 (65W, 16C/24T)',
+      family: 'Alder Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 5.15+ LTS',
+      factor: 1.01,
+      npuSupported: false
+    },
+    'intel-i7-12700k': {
+      name: 'Intel Core i7-12700K (12C/20T, 5.0 GHz)',
+      family: 'Alder Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 5.15+ LTS',
+      factor: 1.02,
+      npuSupported: false
+    },
+    'intel-i7-12700kf': {
+      name: 'Intel Core i7-12700KF (12C/20T, Discrete GPU)',
+      family: 'Alder Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 5.15+ LTS',
+      factor: 1.02,
+      npuSupported: false
+    },
+    'intel-i7-12700': {
+      name: 'Intel Core i7-12700 (65W, 12C/20T)',
+      family: 'Alder Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 5.15+ LTS',
+      factor: 0.98,
+      npuSupported: false
+    },
+    'intel-i5-12600k': {
+      name: 'Intel Core i5-12600K (10C/16T, 4.9 GHz)',
+      family: 'Alder Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 5.15+ LTS',
+      factor: 0.98,
+      npuSupported: false
+    },
+    'intel-i5-12600kf': {
+      name: 'Intel Core i5-12600KF (10C/16T, Discrete GPU)',
+      family: 'Alder Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 5.15+ LTS',
+      factor: 0.98,
+      npuSupported: false
+    },
+    'intel-i5-12400': {
+      name: 'Intel Core i5-12400 (6C/12T, 65W Budget King)',
+      family: 'Alder Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 5.15+ LTS',
+      factor: 0.91,
+      npuSupported: false
+    },
+    'intel-i5-12400f': {
+      name: 'Intel Core i5-12400F (6C/12T, No iGPU)',
+      family: 'Alder Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 5.15+ LTS',
+      factor: 0.91,
+      npuSupported: false
+    },
+    'intel-i3-12100': {
+      name: 'Intel Core i3-12100 (4C/8T, 60W)',
+      family: 'Alder Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 5.15+ LTS',
+      factor: 0.84,
+      npuSupported: false
+    },
+    'intel-i9-12900hx': {
+      name: 'Intel Core i9-12900HX (Mobile 16C/24T)',
+      family: 'Alder Lake-HX',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 5.15+ LTS',
+      factor: 1.03,
+      npuSupported: false
+    },
+    'intel-i7-12700h': {
+      name: 'Intel Core i7-12700H (Mobile 14C/20T)',
+      family: 'Alder Lake-H',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 5.15+ LTS',
+      factor: 0.97,
+      npuSupported: false
+    },
+
+    /* 6. Intel 11th & 10th Gen Core [8 models] */
+    'intel-i9-11900k': {
+      name: 'Intel Core i9-11900K (8C/16T, AVX-512 Native)',
+      family: 'Rocket Lake',
+      npu: 'None',
+      vector: 'AVX-512 + VNNI + FMA3',
+      driver: 'Linux 5.11+ LTS',
+      factor: 1.01,
+      npuSupported: false
+    },
+    'intel-i7-11700k': {
+      name: 'Intel Core i7-11700K (8C/16T, AVX-512)',
+      family: 'Rocket Lake',
+      npu: 'None',
+      vector: 'AVX-512 + VNNI + FMA3',
+      driver: 'Linux 5.11+ LTS',
+      factor: 0.98,
+      npuSupported: false
+    },
+    'intel-i5-11600k': {
+      name: 'Intel Core i5-11600K (6C/12T, AVX-512)',
+      family: 'Rocket Lake',
+      npu: 'None',
+      vector: 'AVX-512 + VNNI + FMA3',
+      driver: 'Linux 5.11+ LTS',
+      factor: 0.93,
+      npuSupported: false
+    },
+    'intel-i5-11400': {
+      name: 'Intel Core i5-11400 (6C/12T, AVX-512)',
+      family: 'Rocket Lake',
+      npu: 'None',
+      vector: 'AVX-512 + VNNI + FMA3',
+      driver: 'Linux 5.11+ LTS',
+      factor: 0.89,
+      npuSupported: false
+    },
+    'intel-i7-11800h': {
+      name: 'Intel Core i7-11800H (Mobile 8C/16T, AVX-512)',
+      family: 'Tiger Lake-H',
+      npu: 'None',
+      vector: 'AVX-512 + VNNI',
+      driver: 'Linux 5.11+ LTS',
+      factor: 0.94,
+      npuSupported: false
+    },
+    'intel-i9-10900k': {
+      name: 'Intel Core i9-10900K (10C/20T, 5.3 GHz)',
+      family: 'Comet Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.4+ LTS',
+      factor: 0.96,
+      npuSupported: false
+    },
+    'intel-i7-10700k': {
+      name: 'Intel Core i7-10700K (8C/16T, 5.1 GHz)',
+      family: 'Comet Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.4+ LTS',
+      factor: 0.92,
+      npuSupported: false
+    },
+    'intel-i5-10400': {
+      name: 'Intel Core i5-10400 (6C/12T, Budget Baseline)',
+      family: 'Comet Lake',
+      npu: 'None',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.4+ LTS',
+      factor: 0.84,
+      npuSupported: false
+    },
+
+    /* 7. Intel Xeon Workstation & Server [12 models] */
+    'intel-xeon-w9-3495x': {
+      name: 'Intel Xeon w9-3495X (56C/112T, AMX + 8-Ch DDR5)',
+      family: 'Sapphire Rapids-WS',
+      npu: 'Dedicated PCIe NPU',
+      vector: 'Dual AVX-512 + AMX (BF16/INT8)',
+      driver: 'Linux 6.2+ Enterprise',
+      factor: 1.35,
+      npuSupported: false
+    },
+    'intel-xeon-w9-3475x': {
+      name: 'Intel Xeon w9-3475X (36C/72T, AMX + 8-Ch DDR5)',
+      family: 'Sapphire Rapids-WS',
+      npu: 'Dedicated PCIe NPU',
+      vector: 'Dual AVX-512 + AMX',
+      driver: 'Linux 6.2+ Enterprise',
+      factor: 1.32,
+      npuSupported: false
+    },
+    'intel-xeon-w7-3465x': {
+      name: 'Intel Xeon w7-3465X (28C/56T, AMX + 8-Ch DDR5)',
+      family: 'Sapphire Rapids-WS',
+      npu: 'Dedicated PCIe NPU',
+      vector: 'Dual AVX-512 + AMX',
+      driver: 'Linux 6.2+ Enterprise',
+      factor: 1.29,
+      npuSupported: false
+    },
+    'intel-xeon-w7-2495x': {
+      name: 'Intel Xeon w7-2495X (24C/48T, 4-Ch DDR5)',
+      family: 'Sapphire Rapids-WS',
+      npu: 'Dedicated PCIe NPU',
+      vector: 'Dual AVX-512 + AMX',
+      driver: 'Linux 6.2+ Enterprise',
+      factor: 1.26,
+      npuSupported: false
+    },
+    'intel-xeon-w5-3435x': {
+      name: 'Intel Xeon w5-3435X (16C/32T, 8-Ch DDR5)',
+      family: 'Sapphire Rapids-WS',
+      npu: 'Dedicated PCIe NPU',
+      vector: 'Dual AVX-512 + AMX',
+      driver: 'Linux 6.2+ Enterprise',
+      factor: 1.23,
+      npuSupported: false
+    },
+    'intel-xeon-w5-2465x': {
+      name: 'Intel Xeon w5-2465X (16C/32T, 4-Ch DDR5)',
+      family: 'Sapphire Rapids-WS',
+      npu: 'Dedicated PCIe NPU',
+      vector: 'Dual AVX-512 + AMX',
+      driver: 'Linux 6.2+ Enterprise',
+      factor: 1.20,
+      npuSupported: false
+    },
+    'intel-xeon-plat-8592plus': {
+      name: 'Intel Xeon Platinum 8592+ (64C/128T Emerald Rapids)',
+      family: 'Emerald Rapids-SP',
+      npu: 'Enterprise QAT/DLB',
+      vector: 'Dual AVX-512 + AMX (BF16/INT8)',
+      driver: 'Linux 6.6+ LTS Enterprise',
+      factor: 1.40,
+      npuSupported: false
+    },
+    'intel-xeon-plat-8490h': {
+      name: 'Intel Xeon Platinum 8490H (60C/120T Sapphire Rapids)',
+      family: 'Sapphire Rapids-SP',
+      npu: 'Enterprise QAT/DLB',
+      vector: 'Dual AVX-512 + AMX',
+      driver: 'Linux 6.2+ Enterprise',
+      factor: 1.38,
+      npuSupported: false
+    },
+    'intel-xeon-plat-8480plus': {
+      name: 'Intel Xeon Platinum 8480+ (56C/112T, AMX)',
+      family: 'Sapphire Rapids-SP',
+      npu: 'Enterprise QAT',
+      vector: 'Dual AVX-512 + AMX',
+      driver: 'Linux 6.2+ Enterprise',
+      factor: 1.36,
+      npuSupported: false
+    },
+    'intel-xeon-gold-6548yplus': {
+      name: 'Intel Xeon Gold 6548Y+ (32C/64T Emerald Rapids)',
+      family: 'Emerald Rapids-SP',
+      npu: 'Enterprise QAT',
+      vector: 'Dual AVX-512 + AMX',
+      driver: 'Linux 6.6+ Enterprise',
+      factor: 1.30,
+      npuSupported: false
+    },
+    'intel-xeon-gold-6448y': {
+      name: 'Intel Xeon Gold 6448Y (32C/64T Sapphire Rapids)',
+      family: 'Sapphire Rapids-SP',
+      npu: 'Enterprise QAT',
+      vector: 'Dual AVX-512 + AMX',
+      driver: 'Linux 6.2+ Enterprise',
+      factor: 1.28,
+      npuSupported: false
+    },
+    'intel-xeon-silver-4514y': {
+      name: 'Intel Xeon Silver 4514Y (16C/32T Emerald Rapids)',
+      family: 'Emerald Rapids-SP',
+      npu: 'Enterprise QAT',
+      vector: 'Dual AVX-512 + AMX',
+      driver: 'Linux 6.6+ Enterprise',
+      factor: 1.22,
       npuSupported: false
     },
     'apple-m4-m3': {

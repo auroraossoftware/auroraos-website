@@ -2156,6 +2156,14 @@ pre code,
   background: rgba(18, 20, 26, 0.95);
 }
 
+.hw-select optgroup {
+  background: #06070a;
+  color: var(--accent-cyan);
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 0.5rem 0.25rem;
+}
+
 .hw-select option {
   background: #0d0f14;
   color: #ffffff;
