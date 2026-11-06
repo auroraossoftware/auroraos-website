@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTopologyStack();
   initSecurityLab();
   initTerminalVerification();
+  initHardwareHotspots();
 });
 
 /* ==========================================================================
@@ -676,4 +677,43 @@ function initTerminalVerification() {
       });
     });
   }
+}
+
+/* ==========================================================================
+   11. Interactive Chassis Hardware Hotspots (Apple Silicon Callouts)
+   ========================================================================== */
+function initHardwareHotspots() {
+  const hotspots = document.querySelectorAll('.chassis-hotspot');
+  if (!hotspots.length) return;
+
+  hotspots.forEach(hotspot => {
+    hotspot.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const wasActive = hotspot.classList.contains('active');
+      hotspots.forEach(h => h.classList.remove('active'));
+      if (!wasActive) {
+        hotspot.classList.add('active');
+      }
+    });
+
+    hotspot.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        hotspot.click();
+      } else if (e.key === 'Escape') {
+        hotspot.classList.remove('active');
+        hotspot.blur();
+      }
+    });
+  });
+
+  document.addEventListener('click', () => {
+    hotspots.forEach(h => h.classList.remove('active'));
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      hotspots.forEach(h => h.classList.remove('active'));
+    }
+  });
 }

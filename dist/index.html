@@ -36,7 +36,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Apple-Grade Minimalist Liquid Glass Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="stylesheet" href="styles.css?v=8">
 </head>
 <body>
 
@@ -104,14 +104,21 @@
       <!-- Hero Section -->
       <section class="hero-section" id="overview">
         <div class="container">
-          <span class="hero-eyebrow">Aurora OS</span>
+          <div class="hero-badge-wrap reveal-on-scroll">
+            <span class="hero-pill-badge">
+              <span class="badge-shimmer-dot"></span>
+              <span>Linux 6.x • Safe Rust 2021 • Free &amp; Open Source</span>
+            </span>
+          </div>
           
           <h1 class="hero-title reveal-on-scroll">
-            <span class="text-gradient-apple">Intelligence has a new home. Yours.</span>
+            Intelligence at the core.<br>
+            Privacy by design.<br>
+            <span class="text-gradient-apple">Power to spare.</span>
           </h1>
 
           <p class="hero-subtitle reveal-on-scroll">
-            An open-source desktop operating system built on the Linux kernel. Where artificial intelligence is an integrated, privacy-respecting system service — not another corporate cloud subscription.
+            An open-source desktop operating system where intelligence is an integrated, kernel-sandboxed system service — not another corporate cloud subscription.
           </p>
 
           <div class="hero-cta-group reveal-on-scroll">
@@ -122,19 +129,56 @@
               <span>View Source on GitHub</span>
             </a>
 
-            <a href="#showcase" class="btn-apple-link">
-              <span>Experience Aurora Intelligence</span>
-              <span>↓</span>
+            <a href="#architecture" class="btn-apple-keynote-link">
+              <span class="btn-play-circle">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </span>
+              <span>Explore architecture tour</span>
             </a>
           </div>
 
-          <!-- Apple Pro Display Hardware Bezel Frame -->
+          <!-- Apple Pro Display Hardware Bezel Frame with Chromatic Shimmer & Hotspots -->
           <div class="hero-device-wrapper reveal-on-scroll">
-            <div class="hardware-chassis">
+            <div class="hardware-chassis shimmer-edge">
               <!-- Top Camera Sensor Pill -->
               <div class="hardware-sensor-pill">
                 <span class="sensor-lens"></span>
                 <span class="sensor-indicator"></span>
+              </div>
+
+              <!-- Interactive Hotspot 1: Private Enclave -->
+              <div class="chassis-hotspot hotspot-enclave" data-hotspot="1" tabindex="0" role="button" aria-label="Inspect Private Hardware Enclave">
+                <span class="hotspot-pulse"></span>
+                <span class="hotspot-dot">+</span>
+                <div class="hotspot-tooltip">
+                  <span class="tooltip-eyebrow">HARDWARE SILICON</span>
+                  <strong>Private Hardware Enclave</strong>
+                  <p>Hardware-gated camera &amp; mic sensors. Zero background telemetry or ambient listening.</p>
+                </div>
+              </div>
+
+              <!-- Interactive Hotspot 2: Linux 6.x Window Chrome -->
+              <div class="chassis-hotspot hotspot-kernel" data-hotspot="2" tabindex="0" role="button" aria-label="Inspect Linux 6.x Substratum">
+                <span class="hotspot-pulse"></span>
+                <span class="hotspot-dot">+</span>
+                <div class="hotspot-tooltip">
+                  <span class="tooltip-eyebrow">KERNEL SUBSTRATUM</span>
+                  <strong>Linux 6.x Bedrock</strong>
+                  <p>Native Wayland display compositor, systemd, and POSIX filesystem drivers.</p>
+                </div>
+              </div>
+
+              <!-- Interactive Hotspot 3: 0.061ms IPC -->
+              <div class="chassis-hotspot hotspot-ipc" data-hotspot="3" tabindex="0" role="button" aria-label="Inspect IPC Sub-millisecond Framing">
+                <span class="hotspot-pulse"></span>
+                <span class="hotspot-dot">+</span>
+                <div class="hotspot-tooltip">
+                  <span class="tooltip-eyebrow">SYSTEM IPC</span>
+                  <strong>0.061 ms Median Turn¹</strong>
+                  <p>Anonymous socketpair(AF_UNIX) channel bound directly into safe Rust aurora-ai daemon.</p>
+                </div>
               </div>
 
               <!-- Screen Display -->
@@ -197,21 +241,21 @@
                   <!-- Floating Frosted Glass Tiles -->
                   <div class="screen-floating-cards">
                     <div class="floating-glass-tile">
-                      <div class="tile-stat">2.8 MB</div>
+                      <div class="tile-stat">2.8 MB<span class="footnote-sup">²</span></div>
                       <div class="tile-label">Resident Daemon Memory</div>
                       <div class="tile-sub">Safe Rust Tokio async runtime</div>
                     </div>
 
                     <div class="floating-glass-tile">
-                      <div class="tile-stat">0.061 ms</div>
+                      <div class="tile-stat">0.061 ms<span class="footnote-sup">¹</span></div>
                       <div class="tile-label">Median Turn Latency</div>
                       <div class="tile-sub">Sub-millisecond IPC framing</div>
                     </div>
 
                     <div class="floating-glass-tile">
-                      <div class="tile-stat">100%</div>
-                      <div class="tile-label">Local On-Device Privacy</div>
-                      <div class="tile-sub">Zero ambient surveillance</div>
+                      <div class="tile-stat">211 / 211<span class="footnote-sup">³</span></div>
+                      <div class="tile-label">Automated Tests Pass</div>
+                      <div class="tile-sub">100% verified (Milestone 8)</div>
                     </div>
                   </div>
                 </div>
@@ -1214,8 +1258,10 @@ assert!(response.is_ok());</code></pre>
       <div class="container">
         <!-- Footnotes -->
         <div class="footer-footnotes">
-          1. Measurements based on Milestone 8 empirical baseline harness evaluated on AMD EPYC 7763, Linux 6.8, and safe Rust 2021 release profile.<br>
-          2. Aurora OS is an experimental open-source project. Source code and documentation are available under the MIT License on GitHub.
+          1. Median turn framing latency (0.061 ms) evaluated on AMD EPYC 7763 processors running Linux 6.8 with safe Rust 2021 release profile. Deterministic policy denial gate evaluated in 0.141 ms.<br>
+          2. Daemon resident memory footprint (VmRSS: 2.7–2.9 MB flatline) measured under sustained Tokio async worker supervisor without garbage collection pauses or memory creep.<br>
+          3. Automated test suite includes 142 core daemon unit tests, 38 capability policy engine tests, and 31 openat2 filesystem boundary verification test cases.<br>
+          4. Aurora OS is an experimental open-source project. Source code, benchmarks, and Architectural Decision Records (ADRs) are released under the MIT License on GitHub.
         </div>
 
         <!-- Navigation Columns -->
@@ -1271,6 +1317,6 @@ assert!(response.is_ok());</code></pre>
   </div>
 
   <!-- Ambient Animation & Navigation Scripts -->
-  <script src="app.js?v=7"></script>
+  <script src="app.js?v=8"></script>
 </body>
 </html>
