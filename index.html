@@ -36,7 +36,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Apple-Grade Minimalist Liquid Glass Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=8">
+  <link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body>
 
@@ -81,14 +81,12 @@
           <li><a href="#faq" class="nav-link">FAQ</a></li>
         </ul>
 
-        <!-- Right: GitHub Icon + Source Code CTA & Mobile Toggle -->
+        <!-- Right: Merged (GitHub Icon) Source Code CTA & Mobile Toggle -->
         <div class="nav-actions">
-          <a href="https://github.com/auroraossoftware/auroraos" target="_blank" rel="noopener noreferrer" class="nav-github-icon-btn" aria-label="View Aurora OS on GitHub" title="View Aurora OS on GitHub">
-            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
+          <a href="https://github.com/auroraossoftware/auroraos" target="_blank" rel="noopener noreferrer" class="btn-source-pill" aria-label="View Aurora OS Source Code on GitHub">
+            <svg class="nav-github-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
             </svg>
-          </a>
-          <a href="https://github.com/auroraossoftware/auroraos" target="_blank" rel="noopener noreferrer" class="btn-source-pill" aria-label="Go to Aurora OS GitHub Repository">
             <span>Source Code</span>
             <span class="pill-arrow">↗</span>
           </a>
@@ -112,8 +110,8 @@
           </div>
           
           <h1 class="hero-title reveal-on-scroll">
-            Intelligence at the core.<br>
-            Privacy by design.<br>
+            Intelligence at the core.<br class="hero-br">
+            Privacy by design.<br class="hero-br">
             <span class="text-gradient-apple">Power to spare.</span>
           </h1>
 
@@ -194,7 +192,7 @@
                     <span class="screen-shell-title">Aurora Shell</span>
                     <span class="screen-badge-silicon">Private Silicon</span>
                   </div>
-                  <div style="font-size: 0.775rem; color: var(--text-tertiary);">
+                  <div class="screen-shell-version">
                     Linux 6.x
                   </div>
                 </div>
@@ -266,12 +264,12 @@
       </section>
 
       <!-- Interactive Apple Feature Switcher -->
-      <section class="section" id="showcase" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+      <section class="section" id="showcase">
         <div class="container">
-          <div class="text-center" style="margin-bottom: 3.5rem;">
+          <div class="section-header reveal-on-scroll">
             <span class="section-eyebrow">Interactive Tour</span>
-            <h2 class="section-headline reveal-on-scroll">Explore the Core Architecture.</h2>
-            <p class="section-lead reveal-on-scroll">
+            <h2 class="section-headline">Explore the Core Architecture.</h2>
+            <p class="section-lead">
               Click below to inspect how Aurora OS handles intelligence, privacy, speed, and Linux compatibility.
             </p>
           </div>
@@ -395,11 +393,27 @@
                     </ul>
                   </div>
                   <div class="panel-graphic-card">
-                    <div style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">
-                      <p style="color: #ffffff; font-weight: 700; margin-bottom: 0.5rem;">The Aurora Engineering Philosophy</p>
-                      <p style="font-style: italic;">
-                        "Build on Linux. Keep AI modular. Protect the user. Prefer simplicity. Document the reasoning."
-                      </p>
+                    <div style="font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.8;">
+                      <p style="color: #ffffff; font-weight: 600; margin-bottom: 0.75rem;">// Standard Linux Bedrock (POSIX &amp; VFS)</p>
+                      <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span style="color: var(--text-secondary);">Kernel Release</span>
+                        <span style="color: #ffffff; font-weight: 700;">Linux 6.8+ LTS</span>
+                      </div>
+                      <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span style="color: var(--text-secondary);">Display Protocol</span>
+                        <span style="color: #30d158; font-weight: 700;">Wayland Native (wlroots)</span>
+                      </div>
+                      <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span style="color: var(--text-secondary);">Packaging Format</span>
+                        <span style="color: #ffffff; font-weight: 700;">Flatpak / OCI / Native</span>
+                      </div>
+                      <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span style="color: var(--text-secondary);">App Ecosystem</span>
+                        <span style="color: var(--accent-blue); font-weight: 700;">Steam, VS Code, Docker</span>
+                      </div>
+                      <div style="color: var(--text-tertiary); font-size: 0.775rem; margin-top: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 0.65rem;">
+                        Philosophy: "Build on Linux. Keep AI modular. Protect the user."
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -410,12 +424,12 @@
       </section>
 
       <!-- Interactive System Architecture Topology Stack -->
-      <section class="section" id="architecture" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+      <section class="section" id="architecture">
         <div class="container">
-          <div class="text-center" style="margin-bottom: 3.5rem;">
+          <div class="section-header reveal-on-scroll">
             <span class="section-eyebrow">System Topology</span>
-            <h2 class="section-headline reveal-on-scroll">Engineered from Silicon to Shell.</h2>
-            <p class="section-lead reveal-on-scroll">
+            <h2 class="section-headline">Engineered from Silicon to Shell.</h2>
+            <p class="section-lead">
               Four decoupled, hardware-isolated layers. Click any layer to inspect its verified invariants and Architectural Decision Records.
             </p>
           </div>
@@ -525,12 +539,12 @@ assert!(response.is_ok());</code></pre>
       </section>
 
       <!-- Interactive Zero-Trust Security Simulator -->
-      <section class="section" id="security-lab" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+      <section class="section" id="security-lab">
         <div class="container">
-          <div class="text-center" style="margin-bottom: 3.5rem;">
+          <div class="section-header reveal-on-scroll">
             <span class="section-eyebrow">Security Lab</span>
-            <h2 class="section-headline reveal-on-scroll">Test the Zero-Trust Sandbox.</h2>
-            <p class="section-lead reveal-on-scroll">
+            <h2 class="section-headline">Test the Zero-Trust Sandbox.</h2>
+            <p class="section-lead">
               Don't take our word for it. Select a simulated attack vector to observe how the kernel-level sandbox and policy engine react in real time.
             </p>
           </div>
@@ -611,12 +625,12 @@ assert!(response.is_ok());</code></pre>
       </section>
 
       <!-- Highlights Bento Grid (Apple VisionOS Depth) -->
-      <section class="section" id="highlights" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+      <section class="section" id="highlights">
         <div class="container">
-          <div class="text-center" style="margin-bottom: 4rem;">
+          <div class="section-header reveal-on-scroll">
             <span class="section-eyebrow">At a Glance</span>
-            <h2 class="section-headline reveal-on-scroll">Radical simplicity.<br>Immense power.</h2>
-            <p class="section-lead reveal-on-scroll">
+            <h2 class="section-headline">Radical simplicity.<br>Immense power.</h2>
+            <p class="section-lead">
               Everything an operating system should be in the intelligence era. Featherlight, respectful, and open.
             </p>
           </div>
@@ -627,10 +641,10 @@ assert!(response.is_ok());</code></pre>
               <div class="bento-header">
                 <span class="bento-kicker">Aurora Intelligence</span>
                 <h3 class="bento-title">Intelligence on your terms. Not a corporate subscription.</h3>
+                <p class="bento-desc">
+                  Instead of fifty separate desktop applications running heavy background LLMs and burning gigabytes of RAM, Aurora provides a unified, secure system service that applications use with your explicit permission.
+                </p>
               </div>
-              <p class="bento-desc">
-                Instead of fifty separate desktop applications running heavy background LLMs and burning gigabytes of RAM, Aurora provides a unified, secure system service that applications use with your explicit permission.
-              </p>
             </div>
 
             <!-- Bento 2 -->
@@ -662,22 +676,22 @@ assert!(response.is_ok());</code></pre>
               <div class="bento-header">
                 <span class="bento-kicker">Security Invariants</span>
                 <h3 class="bento-title">Zero ambient authority. Built from the ground up.</h3>
+                <p class="bento-desc">
+                  Applications never receive automatic system-wide surveillance powers. Every capability requires an explicit, cryptographically checked token. If an action isn't permitted, the request fails closed in microseconds.
+                </p>
               </div>
-              <p class="bento-desc">
-                Applications never receive automatic system-wide surveillance powers. Every capability requires an explicit, cryptographically checked token. If an action isn't permitted, the request fails closed in microseconds.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
       <!-- The "Honest Comparison" Matrix -->
-      <section class="section" id="compare" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+      <section class="section" id="compare">
         <div class="container">
-          <div class="text-center" style="margin-bottom: 3.5rem;">
+          <div class="section-header reveal-on-scroll">
             <span class="section-eyebrow">Platform Comparison</span>
-            <h2 class="section-headline reveal-on-scroll">How Aurora OS compares.</h2>
-            <p class="section-lead reveal-on-scroll">
+            <h2 class="section-headline">How Aurora OS compares.</h2>
+            <p class="section-lead">
               See why Aurora OS is fundamentally different from corporate surveillance platforms and traditional fragmented distributions.
             </p>
           </div>
@@ -855,12 +869,12 @@ assert!(response.is_ok());</code></pre>
       </section>
 
       <!-- "Verify in 30 Seconds" Developer Terminal Snippet -->
-      <section class="section" id="verify" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+      <section class="section" id="verify">
         <div class="container">
-          <div class="text-center" style="margin-bottom: 3.5rem;">
+          <div class="section-header reveal-on-scroll">
             <span class="section-eyebrow">Independent Audit</span>
-            <h2 class="section-headline reveal-on-scroll">Don't trust. Verify in 30 seconds.</h2>
-            <p class="section-lead reveal-on-scroll">
+            <h2 class="section-headline">Don't trust. Verify in 30 seconds.</h2>
+            <p class="section-lead">
               Every claim on this page is backed by open-source code and 211 automated test suites. Clone the repository and verify on your own machine, or run the live simulation below.
             </p>
           </div>
@@ -920,12 +934,12 @@ assert!(response.is_ok());</code></pre>
       </section>
 
       <!-- Apple-Style Technical Specifications -->
-      <section class="section" id="specs" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+      <section class="section" id="specs">
         <div class="container">
-          <div class="text-center" style="margin-bottom: 4rem;">
+          <div class="section-header reveal-on-scroll">
             <span class="section-eyebrow">Architecture</span>
-            <h2 class="section-headline reveal-on-scroll">Technical Specifications</h2>
-            <p class="section-lead reveal-on-scroll">
+            <h2 class="section-headline">Technical Specifications</h2>
+            <p class="section-lead">
               Rigorous systems engineering verified by 211 automated test suites and empirical baselines.
             </p>
           </div>
@@ -970,12 +984,12 @@ assert!(response.is_ok());</code></pre>
       </section>
 
       <!-- Apple-Style Current Status & Engineering Milestones Section -->
-      <section class="section" id="status" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+      <section class="section" id="status">
         <div class="container">
-          <div class="text-center" style="margin-bottom: 3.5rem;">
+          <div class="section-header reveal-on-scroll">
             <span class="section-eyebrow">Engineering Progress</span>
-            <h2 class="section-headline reveal-on-scroll">Current Status</h2>
-            <p class="section-lead reveal-on-scroll">
+            <h2 class="section-headline">Current Status</h2>
+            <p class="section-lead">
               Every layer of Aurora OS is engineered in the open with verifiable metrics, comprehensive test suites, and Architectural Decision Records.
             </p>
           </div>
@@ -1105,12 +1119,12 @@ assert!(response.is_ok());</code></pre>
       </section>
 
       <!-- Apple-Style Frequently Asked Questions (FAQ) Section -->
-      <section class="section" id="faq" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+      <section class="section" id="faq">
         <div class="container">
-          <div class="text-center" style="margin-bottom: 3.5rem;">
+          <div class="section-header reveal-on-scroll">
             <span class="section-eyebrow">Questions &amp; Answers</span>
-            <h2 class="section-headline reveal-on-scroll">Frequently Asked Questions</h2>
-            <p class="section-lead reveal-on-scroll">
+            <h2 class="section-headline">Frequently Asked Questions</h2>
+            <p class="section-lead">
               Clear answers regarding Aurora OS architecture, privacy principles, compatibility, and licensing.
             </p>
           </div>
@@ -1127,7 +1141,7 @@ assert!(response.is_ok());</code></pre>
                 <p>
                   Aurora OS is built directly on top of the standard <strong>Linux 6.x kernel</strong>. We intentionally chose Linux rather than engineering a kernel from scratch to preserve three decades of battle-tested driver compatibility, robust POSIX file systems, and hardware support across laptops, desktops, and workstations.
                 </p>
-                <p style="margin-top: 0.75rem;">
+                <p>
                   Aurora’s innovation lives in its userspace: the lightweight <code>aurora-ai</code> system daemon, hardware-isolated sandboxing, and unified desktop intelligence.
                 </p>
               </div>
@@ -1144,7 +1158,7 @@ assert!(response.is_ok());</code></pre>
                 <p>
                   Privacy in Aurora OS is an architectural guarantee, not merely a policy statement. All conversational contexts, tool invocation parameters, and vector search embeddings reside strictly on your local hardware.
                 </p>
-                <p style="margin-top: 0.75rem;">
+                <p>
                   The system daemon operates inside a constrained Linux sandbox using Landlock and seccomp filters. No background telemetry or unsolicited phone-home connections are ever made without explicit, interactive authorization.
                 </p>
               </div>
@@ -1161,7 +1175,7 @@ assert!(response.is_ok());</code></pre>
                 <p>
                   Yes, 100%. Because Aurora OS is built on the Linux kernel with standard POSIX libraries and Wayland/X11 display protocols, everything you expect on a Linux workstation runs seamlessly out of the box:
                 </p>
-                <ul class="faq-list" style="margin-top: 0.75rem;">
+                <ul class="faq-list">
                   <li><strong>Productivity &amp; Browsers:</strong> Chrome, Firefox, LibreOffice, Slack, Discord.</li>
                   <li><strong>Developer Toolchains:</strong> VS Code, Neovim, Docker, Podman, Rust, Python, Go, Node.js.</li>
                   <li><strong>Gaming &amp; Media:</strong> Steam, Proton, Lutris, OBS Studio, Blender.</li>
@@ -1180,7 +1194,7 @@ assert!(response.is_ok());</code></pre>
                 <p>
                   Aurora’s core daemon is written in safe Rust with an idle resident memory footprint under <strong>3 MB</strong>, meaning it introduces virtually zero overhead to the OS.
                 </p>
-                <ul class="faq-list" style="margin-top: 0.75rem;">
+                <ul class="faq-list">
                   <li><strong>Base OS:</strong> Any modern 64-bit x86_64 or aarch64 processor, 4 GB RAM, 20 GB storage.</li>
                   <li><strong>Local AI Acceleration (Optional):</strong> For on-device LLM inference (e.g. 7B/8B models), an integrated NPU or discrete GPU with 8 GB+ VRAM (NVIDIA CUDA, AMD ROCm, or Intel Vulkan) is recommended.</li>
                 </ul>
@@ -1198,7 +1212,7 @@ assert!(response.is_ok());</code></pre>
                 <p>
                   We leverage kernel-grade isolation rather than relying on software prompts. All filesystem interactions run through Linux <code>openat2</code> with <code>RESOLVE_BENEATH</code> and <code>RESOLVE_NO_SYMLINKS</code> flags, making directory escape attacks impossible.
                 </p>
-                <p style="margin-top: 0.75rem;">
+                <p>
                   Additionally, tool invocations require deterministic policy evaluation (evaluated in just 0.141 ms), preventing unintended mutations to root or system directories.
                 </p>
               </div>
@@ -1215,8 +1229,8 @@ assert!(response.is_ok());</code></pre>
                 <p>
                   Aurora OS is entirely free and open-source software licensed under the <strong>MIT License</strong>. All codebase development, architectural decision records (ADRs), and performance benchmarks are hosted on GitHub.
                 </p>
-                <p style="margin-top: 0.75rem;">
-                  You can clone the repository, run the test suites with <code>cargo test</code>, submit pull requests, or participate in discussions on the <a href="https://github.com/auroraossoftware/auroraos" target="_blank" rel="noopener noreferrer" style="color: var(--accent-blue); text-decoration: underline;">Aurora OS GitHub Repository</a>.
+                <p>
+                  You can clone the repository, run the test suites with <code>cargo test</code>, submit pull requests, or participate in discussions on the <a href="https://github.com/auroraossoftware/auroraos" target="_blank" rel="noopener noreferrer">Aurora OS GitHub Repository</a>.
                 </p>
               </div>
             </details>
@@ -1225,7 +1239,7 @@ assert!(response.is_ok());</code></pre>
       </section>
 
       <!-- Grand Release CTA Banner -->
-      <section class="section" style="padding-top: 3rem;">
+      <section class="section cta-section">
         <div class="container">
           <div class="cta-banner-wrapper reveal-on-scroll">
             <div class="cta-banner-card">
@@ -1236,14 +1250,14 @@ assert!(response.is_ok());</code></pre>
 
               <div class="cta-banner-actions">
                 <!-- Source Repository Link -->
-                <a href="https://github.com/auroraossoftware/auroraos" target="_blank" rel="noopener noreferrer" class="btn-apple-primary" style="padding: 0.95rem 2.2rem; font-size: 1.05rem;">
+                <a href="https://github.com/auroraossoftware/auroraos" target="_blank" rel="noopener noreferrer" class="btn-apple-primary">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
                   </svg>
                   <span>Go to Source Repository (GitHub)</span>
                 </a>
 
-                <a href="https://github.com/auroraossoftware/auroraos/blob/main/docs/roadmap.md" target="_blank" rel="noopener noreferrer" class="btn-apple-link" style="font-size: 1.05rem;">
+                <a href="https://github.com/auroraossoftware/auroraos/blob/main/docs/roadmap.md" target="_blank" rel="noopener noreferrer" class="btn-apple-link">
                   <span>Read Development Roadmap ↗</span>
                 </a>
               </div>
@@ -1257,18 +1271,18 @@ assert!(response.is_ok());</code></pre>
     <footer class="apple-footer">
       <div class="container">
         <!-- Footnotes -->
-        <div class="footer-footnotes">
-          1. Median turn framing latency (0.061 ms) evaluated on AMD EPYC 7763 processors running Linux 6.8 with safe Rust 2021 release profile. Deterministic policy denial gate evaluated in 0.141 ms.<br>
-          2. Daemon resident memory footprint (VmRSS: 2.7–2.9 MB flatline) measured under sustained Tokio async worker supervisor without garbage collection pauses or memory creep.<br>
-          3. Automated test suite includes 142 core daemon unit tests, 38 capability policy engine tests, and 31 openat2 filesystem boundary verification test cases.<br>
-          4. Aurora OS is an experimental open-source project. Source code, benchmarks, and Architectural Decision Records (ADRs) are released under the MIT License on GitHub.
-        </div>
+        <ol class="footer-footnotes-list">
+          <li>Median turn framing latency (0.061 ms) evaluated on AMD EPYC 7763 processors running Linux 6.8 with safe Rust 2021 release profile. Deterministic policy denial gate evaluated in 0.141 ms.</li>
+          <li>Daemon resident memory footprint (VmRSS: 2.7–2.9 MB flatline) measured under sustained Tokio async worker supervisor without garbage collection pauses or memory creep.</li>
+          <li>Automated test suite includes 142 core daemon unit tests, 38 capability policy engine tests, and 31 openat2 filesystem boundary verification test cases.</li>
+          <li>Aurora OS is an experimental open-source project. Source code, benchmarks, and Architectural Decision Records (ADRs) are released under the MIT License on GitHub.</li>
+        </ol>
 
         <!-- Navigation Columns -->
         <div class="footer-nav-grid">
           <div>
             <div class="footer-col-title">Aurora OS</div>
-            <p style="color: var(--text-tertiary); max-width: 320px; line-height: 1.5; margin-bottom: 0.85rem;">
+            <p class="footer-desc">
               An experimental, AI-native desktop operating system built on top of the Linux kernel.
             </p>
             <ul class="footer-links-list">
@@ -1306,7 +1320,7 @@ assert!(response.is_ok());</code></pre>
         <!-- Legal Bar -->
         <div class="footer-legal-bar">
           <div>
-            Copyright &copy; 2026 Aurora OS Project. Released under the <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer" style="color: var(--text-secondary); text-decoration: underline;">MIT License</a>.
+            Copyright &copy; 2026 Aurora OS Project. Released under the <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer" class="footer-legal-link">MIT License</a>.
           </div>
           <div>
             Hosted on Cloudflare Pages (Free Tier) • Built on Linux
@@ -1317,6 +1331,6 @@ assert!(response.is_ok());</code></pre>
   </div>
 
   <!-- Ambient Animation & Navigation Scripts -->
-  <script src="app.js?v=8"></script>
+  <script src="app.js?v=9"></script>
 </body>
 </html>
