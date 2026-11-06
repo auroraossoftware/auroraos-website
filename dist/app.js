@@ -7,6 +7,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   initAmbientAurora();
   initSpecularGlassGlare();
+  initHubTabs();
+  initHashLinking();
   initShowcaseSwitcher();
   initScrollReveals();
   initNavScrollSpy();
@@ -164,6 +166,60 @@ function initSpecularGlassGlare() {
       card.style.setProperty('--mouse-y', `${y}px`);
     });
   });
+}
+
+/* ==========================================================================
+   2b. Master Hub Segmented Tab Switcher & Hash Deep Linking
+   ========================================================================== */
+function initHubTabs() {
+  const tabNavs = document.querySelectorAll("[data-hub-nav]");
+  tabNavs.forEach(nav => {
+    const tabs = nav.querySelectorAll(".hub-tab-btn");
+    const container = nav.closest(".hub-container") || nav.parentElement;
+    const panes = container.querySelectorAll(".hub-tab-pane");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        const targetId = tab.getAttribute("data-hub-target");
+        if (!targetId) return;
+
+        tabs.forEach(t => t.classList.remove("active"));
+        panes.forEach(p => p.classList.remove("active"));
+
+        tab.classList.add("active");
+        const targetPane = document.getElementById(targetId);
+        if (targetPane) {
+          targetPane.classList.add("active");
+          targetPane.querySelectorAll(".reveal-on-scroll").forEach(el => {
+            el.classList.add("revealed");
+          });
+        }
+      });
+    });
+  });
+}
+
+function initHashLinking() {
+  function handleHash() {
+    const hash = window.location.hash.replace("#", "");
+    if (!hash) return;
+
+    const el = document.getElementById(hash);
+    if (!el) return;
+
+    const pane = el.classList.contains("hub-tab-pane") ? el : el.closest(".hub-tab-pane");
+    if (pane && pane.id) {
+      const tabBtn = document.querySelector(`.hub-tab-btn[data-hub-target="${pane.id}"]`);
+      if (tabBtn && !tabBtn.classList.contains("active")) {
+        tabBtn.click();
+      }
+    }
+  }
+
+  window.addEventListener("hashchange", handleHash);
+  if (window.location.hash) {
+    setTimeout(handleHash, 100);
+  }
 }
 
 /* ==========================================================================

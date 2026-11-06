@@ -71,12 +71,9 @@
         <!-- Centered Navigation Items -->
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#overview" class="nav-link active">Overview</a></li>
-          <li><a href="#showcase" class="nav-link">Intelligence</a></li>
           <li><a href="#architecture" class="nav-link">Architecture</a></li>
-          <li><a href="#security-lab" class="nav-link">Security Lab</a></li>
+          <li><a href="#verify" class="nav-link">Verification</a></li>
           <li><a href="#compare" class="nav-link">Compare</a></li>
-          <li><a href="#verify" class="nav-link">Verify</a></li>
-          <li><a href="#specs" class="nav-link">Specs</a></li>
           <li><a href="#hardware" class="nav-link">Hardware</a></li>
           <li><a href="#status" class="nav-link">Status</a></li>
           <li><a href="#faq" class="nav-link">FAQ</a></li>
@@ -264,9 +261,36 @@
         </div>
       </section>
 
-      <!-- Interactive Apple Feature Switcher -->
-      <section class="section" id="showcase">
-        <div class="container">
+
+      <!-- Architecture & Intelligence Master Hub -->
+      <section class="section" id="architecture">
+        <div class="container hub-container">
+          <div class="hub-header-wrap reveal-on-scroll">
+            <span class="section-eyebrow">System Architecture &amp; Core Intelligence</span>
+            <h2 class="section-headline">Engineered from Silicon to Shell.</h2>
+            <p class="section-lead">
+              Explore Aurora OS through an interactive tour, inspect the 4-tier decoupled hardware stack, or review core architectural pillars.
+            </p>
+          </div>
+
+          <!-- Master Hub Segmented Controller -->
+          <div class="hub-segmented-nav reveal-on-scroll" data-hub-nav>
+            <button type="button" class="hub-tab-btn active" data-hub-target="showcase">
+              <span class="hub-btn-icon">✦</span>
+              <span>Interactive Tour</span>
+            </button>
+            <button type="button" class="hub-tab-btn" data-hub-target="architecture-stack">
+              <span class="hub-btn-icon">⚙</span>
+              <span>4-Tier Topology Stack</span>
+            </button>
+            <button type="button" class="hub-tab-btn" data-hub-target="highlights">
+              <span class="hub-btn-icon">★</span>
+              <span>Platform Pillars</span>
+            </button>
+          </div>
+
+          <!-- Hub Panes -->
+          <div class="hub-tab-pane active" id="showcase">
           <div class="section-header reveal-on-scroll">
             <span class="section-eyebrow">Interactive Tour</span>
             <h2 class="section-headline">Explore the Core Architecture.</h2>
@@ -422,11 +446,10 @@
             </div>
           </div>
         </div>
-      </section>
 
-      <!-- Interactive System Architecture Topology Stack -->
-      <section class="section" id="architecture">
-        <div class="container">
+          </div>
+
+          <div class="hub-tab-pane" id="architecture-stack">
           <div class="section-header reveal-on-scroll">
             <span class="section-eyebrow">System Topology</span>
             <h2 class="section-headline">Engineered from Silicon to Shell.</h2>
@@ -537,11 +560,100 @@ assert!(response.is_ok());</code></pre>
             </div>
           </div>
         </div>
+
+          </div>
+
+          <div class="hub-tab-pane" id="highlights">
+          <div class="section-header reveal-on-scroll">
+            <span class="section-eyebrow">At a Glance</span>
+            <h2 class="section-headline">Radical simplicity.<br>Immense power.</h2>
+            <p class="section-lead">
+              Everything an operating system should be in the intelligence era. Featherlight, respectful, and open.
+            </p>
+          </div>
+
+          <div class="bento-grid">
+            <!-- Bento 1 (Span 2) -->
+            <div class="bento-card liquid-glass span-2 reveal-on-scroll">
+              <div class="bento-header">
+                <span class="bento-kicker">Aurora Intelligence</span>
+                <h3 class="bento-title">Intelligence on your terms. Not a corporate subscription.</h3>
+                <p class="bento-desc">
+                  Instead of fifty separate desktop applications running heavy background LLMs and burning gigabytes of RAM, Aurora provides a unified, secure system service that applications use with your explicit permission.
+                </p>
+              </div>
+            </div>
+
+            <!-- Bento 2 -->
+            <div class="bento-card liquid-glass reveal-on-scroll">
+              <div class="bento-header">
+                <span class="bento-kicker">Sub-Millisecond Speed</span>
+                <h3 class="bento-title">Instantaneous IPC.</h3>
+              </div>
+              <div>
+                <div class="bento-stat-big">0.061<span style="font-size: 1.5rem; font-weight: 500; color: var(--accent-blue);"> ms</span></div>
+                <div class="bento-stat-label">Turn framing overhead</div>
+              </div>
+            </div>
+
+            <!-- Bento 3 -->
+            <div class="bento-card liquid-glass reveal-on-scroll">
+              <div class="bento-header">
+                <span class="bento-kicker">Memory Footprint</span>
+                <h3 class="bento-title">Light on silicon.</h3>
+              </div>
+              <div>
+                <div class="bento-stat-big">2.8<span style="font-size: 1.5rem; font-weight: 500; color: #30d158;"> MB</span></div>
+                <div class="bento-stat-label">Core daemon resident set (VmRSS)</div>
+              </div>
+            </div>
+
+            <!-- Bento 4 (Span 2) -->
+            <div class="bento-card liquid-glass span-2 reveal-on-scroll">
+              <div class="bento-header">
+                <span class="bento-kicker">Security Invariants</span>
+                <h3 class="bento-title">Zero ambient authority. Built from the ground up.</h3>
+                <p class="bento-desc">
+                  Applications never receive automatic system-wide surveillance powers. Every capability requires an explicit, cryptographically checked token. If an action isn't permitted, the request fails closed in microseconds.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          </div>
+        </div>
       </section>
 
-      <!-- Interactive Zero-Trust Security Simulator -->
-      <section class="section" id="security-lab">
-        <div class="container">
+      <!-- Zero-Trust Security & Independent Verification Hub -->
+      <section class="section" id="verify">
+        <div class="container hub-container">
+          <div class="hub-header-wrap reveal-on-scroll">
+            <span class="section-eyebrow">Zero-Trust Security &amp; Verification</span>
+            <h2 class="section-headline">Don't trust. Verify in 30 seconds.</h2>
+            <p class="section-lead">
+              Simulate live kernel-level attacks against the sandbox, run automated cargo test suites in your browser, or review empirical technical specifications.
+            </p>
+          </div>
+
+          <!-- Master Hub Segmented Controller -->
+          <div class="hub-segmented-nav reveal-on-scroll" data-hub-nav>
+            <button type="button" class="hub-tab-btn active" data-hub-target="security-lab">
+              <span class="hub-btn-icon">🛡</span>
+              <span>Zero-Trust Security Lab</span>
+            </button>
+            <button type="button" class="hub-tab-btn" data-hub-target="terminal-audit">
+              <span class="hub-btn-icon">⚡</span>
+              <span>Terminal Test Runner</span>
+            </button>
+            <button type="button" class="hub-tab-btn" data-hub-target="specs">
+              <span class="hub-btn-icon">📋</span>
+              <span>Technical Specifications (Specs)</span>
+            </button>
+          </div>
+
+          <!-- Hub Panes -->
+          <div class="hub-tab-pane active" id="security-lab">
           <div class="section-header reveal-on-scroll">
             <span class="section-eyebrow">Security Lab</span>
             <h2 class="section-headline">Test the Zero-Trust Sandbox.</h2>
@@ -623,70 +735,124 @@ assert!(response.is_ok());</code></pre>
             </div>
           </div>
         </div>
-      </section>
 
-      <!-- Highlights Bento Grid (Apple VisionOS Depth) -->
-      <section class="section" id="highlights">
-        <div class="container">
+          </div>
+
+          <div class="hub-tab-pane" id="terminal-audit">
           <div class="section-header reveal-on-scroll">
-            <span class="section-eyebrow">At a Glance</span>
-            <h2 class="section-headline">Radical simplicity.<br>Immense power.</h2>
+            <span class="section-eyebrow">Independent Audit</span>
+            <h2 class="section-headline">Don't trust. Verify in 30 seconds.</h2>
             <p class="section-lead">
-              Everything an operating system should be in the intelligence era. Featherlight, respectful, and open.
+              Every claim on this page is backed by open-source code and 211 automated test suites. Clone the repository and verify on your own machine, or run the live simulation below.
             </p>
           </div>
 
-          <div class="bento-grid">
-            <!-- Bento 1 (Span 2) -->
-            <div class="bento-card liquid-glass span-2 reveal-on-scroll">
-              <div class="bento-header">
-                <span class="bento-kicker">Aurora Intelligence</span>
-                <h3 class="bento-title">Intelligence on your terms. Not a corporate subscription.</h3>
-                <p class="bento-desc">
-                  Instead of fifty separate desktop applications running heavy background LLMs and burning gigabytes of RAM, Aurora provides a unified, secure system service that applications use with your explicit permission.
-                </p>
+          <div class="terminal-verify-card liquid-glass reveal-on-scroll">
+            <!-- Terminal Header -->
+            <div class="terminal-header">
+              <div class="screen-dots">
+                <span class="s-dot r"></span>
+                <span class="s-dot y"></span>
+                <span class="s-dot g"></span>
+              </div>
+              <span class="terminal-title">bash — cargo test --release — 80×24</span>
+              <div class="terminal-actions">
+                <button type="button" class="btn-copy-command" id="btn-copy-cmd" title="Copy git clone command">
+                  <span id="copy-btn-icon">📋</span>
+                  <span id="copy-btn-text">Copy Command</span>
+                </button>
               </div>
             </div>
 
-            <!-- Bento 2 -->
-            <div class="bento-card liquid-glass reveal-on-scroll">
-              <div class="bento-header">
-                <span class="bento-kicker">Sub-Millisecond Speed</span>
-                <h3 class="bento-title">Instantaneous IPC.</h3>
-              </div>
-              <div>
-                <div class="bento-stat-big">0.061<span style="font-size: 1.5rem; font-weight: 500; color: var(--accent-blue);"> ms</span></div>
-                <div class="bento-stat-label">Turn framing overhead</div>
-              </div>
+            <!-- Terminal Command Prompt -->
+            <div class="terminal-command-bar">
+              <span class="term-prompt">$</span>
+              <code class="term-cmd-text">git clone https://github.com/auroraossoftware/auroraos.git &amp;&amp; cd auroraos &amp;&amp; cargo test --release</code>
+              <button type="button" class="btn-simulate-test" id="btn-simulate-test">
+                <span>Simulate Test Run ▶</span>
+              </button>
             </div>
 
-            <!-- Bento 3 -->
-            <div class="bento-card liquid-glass reveal-on-scroll">
-              <div class="bento-header">
-                <span class="bento-kicker">Memory Footprint</span>
-                <h3 class="bento-title">Light on silicon.</h3>
-              </div>
-              <div>
-                <div class="bento-stat-big">2.8<span style="font-size: 1.5rem; font-weight: 500; color: #30d158;"> MB</span></div>
-                <div class="bento-stat-label">Core daemon resident set (VmRSS)</div>
-              </div>
+            <!-- Terminal Output Window -->
+            <div class="terminal-body" id="terminal-output-body">
+              <div class="term-line-dim">// Click "Simulate Test Run ▶" or run the command above on your Linux machine</div>
+              <div class="term-line"><span class="term-green">ready</span> Waiting for test execution trigger...</div>
             </div>
 
-            <!-- Bento 4 (Span 2) -->
-            <div class="bento-card liquid-glass span-2 reveal-on-scroll">
-              <div class="bento-header">
-                <span class="bento-kicker">Security Invariants</span>
-                <h3 class="bento-title">Zero ambient authority. Built from the ground up.</h3>
-                <p class="bento-desc">
-                  Applications never receive automatic system-wide surveillance powers. Every capability requires an explicit, cryptographically checked token. If an action isn't permitted, the request fails closed in microseconds.
-                </p>
+            <!-- Terminal Bottom Summary -->
+            <div class="terminal-footer-stats">
+              <div class="term-stat-item">
+                <span class="term-stat-dot green"></span>
+                <span>Automated Tests: <strong>211 / 211 Passed</strong></span>
               </div>
+              <div class="term-stat-item">
+                <span class="term-stat-dot blue"></span>
+                <span>Median Latency: <strong>0.061 ms</strong></span>
+              </div>
+              <div class="term-stat-item">
+                <span class="term-stat-dot purple"></span>
+                <span>Resident Set: <strong>2.8 MB RSS</strong></span>
+              </div>
+              <a href="https://github.com/auroraossoftware/auroraos" target="_blank" rel="noopener noreferrer" class="term-repo-link">
+                View Source on GitHub ↗
+              </a>
             </div>
+          </div>
+        </div>
+
+          </div>
+
+          <div class="hub-tab-pane" id="specs">
+          <div class="section-header reveal-on-scroll">
+            <span class="section-eyebrow">Architecture</span>
+            <h2 class="section-headline">Technical Specifications</h2>
+            <p class="section-lead">
+              Rigorous systems engineering verified by 211 automated test suites and empirical baselines.
+            </p>
+          </div>
+
+          <div class="specs-container liquid-glass reveal-on-scroll">
+            <div class="specs-row">
+              <div class="spec-category">Kernel Foundation</div>
+              <div class="spec-detail">Standard <strong>Linux Kernel 6.x</strong> (POSIX, systemd, VFS, procfs)</div>
+            </div>
+
+            <div class="specs-row">
+              <div class="spec-category">System Daemon</div>
+              <div class="spec-detail"><strong><code>aurora-ai</code></strong> written in safe Rust 2021 (Tokio runtime)</div>
+            </div>
+
+            <div class="specs-row">
+              <div class="spec-category">IPC Transport</div>
+              <div class="spec-detail">Anonymous <strong><code>socketpair(AF_UNIX)</code></strong> + public D-Bus interfaces</div>
+            </div>
+
+            <div class="specs-row">
+              <div class="spec-category">Sandboxing</div>
+              <div class="spec-detail">Linux <strong><code>openat2</code></strong> with <code>RESOLVE_BENEATH | NO_SYMLINKS</code></div>
+            </div>
+
+            <div class="specs-row">
+              <div class="spec-category">Memory Footprint</div>
+              <div class="spec-detail"><strong>2.7 – 2.9 MB RSS</strong> flatline resident memory</div>
+            </div>
+
+            <div class="specs-row">
+              <div class="spec-category">Turn Latency</div>
+              <div class="spec-detail"><strong>0.061 ms</strong> median turn framing overhead (~61 µs)</div>
+            </div>
+
+            <div class="specs-row">
+              <div class="spec-category">Licensing</div>
+              <div class="spec-detail"><strong>MIT License</strong> (Free &amp; Open Source)</div>
+            </div>
+          </div>
+        </div>
+
           </div>
         </div>
       </section>
 
-      <!-- The "Honest Comparison" Matrix -->
       <section class="section" id="compare">
         <div class="container">
           <div class="section-header reveal-on-scroll">
@@ -869,124 +1035,10 @@ assert!(response.is_ok());</code></pre>
         </div>
       </section>
 
-      <!-- "Verify in 30 Seconds" Developer Terminal Snippet -->
-      <section class="section" id="verify">
-        <div class="container">
-          <div class="section-header reveal-on-scroll">
-            <span class="section-eyebrow">Independent Audit</span>
-            <h2 class="section-headline">Don't trust. Verify in 30 seconds.</h2>
-            <p class="section-lead">
-              Every claim on this page is backed by open-source code and 211 automated test suites. Clone the repository and verify on your own machine, or run the live simulation below.
-            </p>
-          </div>
-
-          <div class="terminal-verify-card liquid-glass reveal-on-scroll">
-            <!-- Terminal Header -->
-            <div class="terminal-header">
-              <div class="screen-dots">
-                <span class="s-dot r"></span>
-                <span class="s-dot y"></span>
-                <span class="s-dot g"></span>
-              </div>
-              <span class="terminal-title">bash — cargo test --release — 80×24</span>
-              <div class="terminal-actions">
-                <button type="button" class="btn-copy-command" id="btn-copy-cmd" title="Copy git clone command">
-                  <span id="copy-btn-icon">📋</span>
-                  <span id="copy-btn-text">Copy Command</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- Terminal Command Prompt -->
-            <div class="terminal-command-bar">
-              <span class="term-prompt">$</span>
-              <code class="term-cmd-text">git clone https://github.com/auroraossoftware/auroraos.git &amp;&amp; cd auroraos &amp;&amp; cargo test --release</code>
-              <button type="button" class="btn-simulate-test" id="btn-simulate-test">
-                <span>Simulate Test Run ▶</span>
-              </button>
-            </div>
-
-            <!-- Terminal Output Window -->
-            <div class="terminal-body" id="terminal-output-body">
-              <div class="term-line-dim">// Click "Simulate Test Run ▶" or run the command above on your Linux machine</div>
-              <div class="term-line"><span class="term-green">ready</span> Waiting for test execution trigger...</div>
-            </div>
-
-            <!-- Terminal Bottom Summary -->
-            <div class="terminal-footer-stats">
-              <div class="term-stat-item">
-                <span class="term-stat-dot green"></span>
-                <span>Automated Tests: <strong>211 / 211 Passed</strong></span>
-              </div>
-              <div class="term-stat-item">
-                <span class="term-stat-dot blue"></span>
-                <span>Median Latency: <strong>0.061 ms</strong></span>
-              </div>
-              <div class="term-stat-item">
-                <span class="term-stat-dot purple"></span>
-                <span>Resident Set: <strong>2.8 MB RSS</strong></span>
-              </div>
-              <a href="https://github.com/auroraossoftware/auroraos" target="_blank" rel="noopener noreferrer" class="term-repo-link">
-                View Source on GitHub ↗
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Apple-Style Technical Specifications -->
-      <section class="section" id="specs">
-        <div class="container">
-          <div class="section-header reveal-on-scroll">
-            <span class="section-eyebrow">Architecture</span>
-            <h2 class="section-headline">Technical Specifications</h2>
-            <p class="section-lead">
-              Rigorous systems engineering verified by 211 automated test suites and empirical baselines.
-            </p>
-          </div>
-
-          <div class="specs-container liquid-glass reveal-on-scroll">
-            <div class="specs-row">
-              <div class="spec-category">Kernel Foundation</div>
-              <div class="spec-detail">Standard <strong>Linux Kernel 6.x</strong> (POSIX, systemd, VFS, procfs)</div>
-            </div>
-
-            <div class="specs-row">
-              <div class="spec-category">System Daemon</div>
-              <div class="spec-detail"><strong><code>aurora-ai</code></strong> written in safe Rust 2021 (Tokio runtime)</div>
-            </div>
-
-            <div class="specs-row">
-              <div class="spec-category">IPC Transport</div>
-              <div class="spec-detail">Anonymous <strong><code>socketpair(AF_UNIX)</code></strong> + public D-Bus interfaces</div>
-            </div>
-
-            <div class="specs-row">
-              <div class="spec-category">Sandboxing</div>
-              <div class="spec-detail">Linux <strong><code>openat2</code></strong> with <code>RESOLVE_BENEATH | NO_SYMLINKS</code></div>
-            </div>
-
-            <div class="specs-row">
-              <div class="spec-category">Memory Footprint</div>
-              <div class="spec-detail"><strong>2.7 – 2.9 MB RSS</strong> flatline resident memory</div>
-            </div>
-
-            <div class="specs-row">
-              <div class="spec-category">Turn Latency</div>
-              <div class="spec-detail"><strong>0.061 ms</strong> median turn framing overhead (~61 µs)</div>
-            </div>
-
-            <div class="specs-row">
-              <div class="spec-category">Licensing</div>
-              <div class="spec-detail"><strong>MIT License</strong> (Free &amp; Open Source)</div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <!-- Hardware Compatibility & Compute Lab -->
       <section class="section" id="hardware">
-        <div class="container">
+        <div class="container hub-container">
           <div class="section-header reveal-on-scroll">
             <span class="section-eyebrow">Silicon &amp; Acceleration Suite</span>
             <h2 class="section-headline">Will Your Machine Fly? Calculate Your Silicon.</h2>
@@ -995,8 +1047,22 @@ assert!(response.is_ok());</code></pre>
             </p>
           </div>
 
+
+
+          <!-- Hub Segmented Controller -->
+          <div class="hub-segmented-nav reveal-on-scroll" data-hub-nav>
+            <button type="button" class="hub-tab-btn active" data-hub-target="hw-calculator-pane">
+              <span class="hub-btn-icon">🧮</span>
+              <span>Interactive Silicon Calculator</span>
+            </button>
+            <button type="button" class="hub-tab-btn" data-hub-target="hw-sizing-guide-pane">
+              <span class="hub-btn-icon">📊</span>
+              <span>Deep-Dive Sizing Guide &amp; Benchmark Tables</span>
+            </button>
+          </div>
+
           <div class="hw-suite-container">
-            <!-- Interactive Hardware Calculator Card -->
+            <div class="hub-tab-pane active" id="hw-calculator-pane">
             <div class="hw-calculator-card liquid-glass reveal-on-scroll">
               <!-- Selectors Grid -->
               <div class="hw-controls-grid">
@@ -1388,7 +1454,10 @@ assert!(response.is_ok());</code></pre>
               </div>
             </div>
 
-            <!-- Deep-Dive Hardware Architecture & Sizing Guide -->
+
+            </div>
+
+            <div class="hub-tab-pane" id="hw-sizing-guide-pane">
             <div class="hw-docs-section reveal-on-scroll">
               <div class="hw-docs-header">
                 <span class="section-eyebrow">Technical Reference</span>
@@ -1848,11 +1917,15 @@ assert!(response.is_ok());</code></pre>
             </div>
           </div>
         </div>
+
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Apple-Style Current Status & Engineering Milestones Section -->
       <section class="section" id="status">
-        <div class="container">
+        <div class="container hub-container">
           <div class="section-header reveal-on-scroll">
             <span class="section-eyebrow">Engineering Progress</span>
             <h2 class="section-headline">Current Status</h2>
@@ -1861,6 +1934,9 @@ assert!(response.is_ok());</code></pre>
             </p>
           </div>
 
+
+
+          <!-- Top Status Highlights Bar -->
           <!-- Top Status Highlights Bar -->
           <div class="status-summary-grid reveal-on-scroll">
             <div class="status-summary-card liquid-glass">
@@ -1892,10 +1968,27 @@ assert!(response.is_ok());</code></pre>
           </div>
 
           <!-- Detailed Milestone Progression Cards -->
-          <div class="status-milestones-list reveal-on-scroll">
-            <!-- Milestone 8 (Completed) -->
-            <div class="milestone-card liquid-glass completed">
-              <div class="milestone-top">
+
+
+          <!-- Milestone Segmented Switcher -->
+          <div class="hub-segmented-nav milestone-nav reveal-on-scroll" data-hub-nav style="margin-top: 2.25rem;">
+            <button type="button" class="hub-tab-btn" data-hub-target="ms-8">
+              <span class="status-indicator status-indicator-completed"></span>
+              <span>Milestones 1–8 (Passed)</span>
+            </button>
+            <button type="button" class="hub-tab-btn active" data-hub-target="ms-9">
+              <span class="status-indicator status-indicator-active"></span>
+              <span>Milestone 9 (Active)</span>
+            </button>
+            <button type="button" class="hub-tab-btn" data-hub-target="ms-10">
+              <span class="status-indicator" style="background:#8e8e93;box-shadow:0 0 8px #8e8e93;"></span>
+              <span>Milestone 10 (Planned)</span>
+            </button>
+          </div>
+
+          <!-- Milestone Panes -->
+          <div class="status-milestones-list">
+            <div class="hub-tab-pane" id="ms-8">
                 <div class="milestone-title-wrap">
                   <span class="milestone-tag completed">Milestones 1–8</span>
                   <h3 class="milestone-name">Core Daemon, Security &amp; Empirical Baselines</h3>
@@ -1924,7 +2017,10 @@ assert!(response.is_ok());</code></pre>
                   <span class="milestone-tag active">Milestone 9</span>
                   <h3 class="milestone-name">Desktop IPC &amp; OS-Level Confinement</h3>
                 </div>
-                <div class="milestone-status-pill active">
+
+            </div>
+
+            <div class="hub-tab-pane active" id="ms-9">
                   <span class="pulsing-dot"></span>
                   <span>Currently In Development</span>
                 </div>
@@ -1953,7 +2049,10 @@ assert!(response.is_ok());</code></pre>
               </div>
               <p class="milestone-description">
                 Connecting Aurora OS to desktop environments through standard system D-Bus interfaces (<code>org.auroraos.Intelligence</code>). Delivering Wayland compositor bindings and the native Spotlight HUD (<code>⌘K</code>) interface.
-              </p>
+
+            </div>
+
+            <div class="hub-tab-pane" id="ms-10">
               <div class="milestone-deliverables">
                 <span class="deliverable-tag">○ org.auroraos.Intelligence D-Bus</span>
                 <span class="deliverable-tag">○ Wayland desktop HUD overlay</span>
@@ -1982,10 +2081,12 @@ assert!(response.is_ok());</code></pre>
               </div>
             </div>
           </div>
+
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- Apple-Style Frequently Asked Questions (FAQ) Section -->
       <section class="section" id="faq">
         <div class="container">
           <div class="section-header reveal-on-scroll">
@@ -2105,7 +2206,7 @@ assert!(response.is_ok());</code></pre>
         </div>
       </section>
 
-      <!-- Grand Release CTA Banner -->
+
       <section class="section cta-section">
         <div class="container">
           <div class="cta-banner-wrapper reveal-on-scroll">
