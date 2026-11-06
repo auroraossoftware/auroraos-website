@@ -2658,6 +2658,3637 @@ const HW_DATABASE = {
       factor: 1.22,
       npuSupported: false
     },
+    /* --- 100 Specific AMD Chip Variants --- */
+    /* Group 1: AMD Ryzen 9000 Series (Zen 5 Granite Ridge) [10 models] */
+    'amd-ryzen-9-9950x': {
+      name: 'AMD Ryzen 9 9950X (16C/32T, 5.7 GHz, Zen 5)',
+      family: 'Zen 5 Granite Ridge',
+      npu: 'None (Compute Offload via Discrete GPU)',
+      vector: 'AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.10+ (amdgpu / kfd)',
+      factor: 1.35,
+      npuSupported: false
+    },
+    'amd-ryzen-9-9950x3d': {
+      name: 'AMD Ryzen 9 9950X3D (16C/32T, 3D V-Cache, Zen 5)',
+      family: 'Zen 5 Granite Ridge',
+      npu: 'None (Compute Offload via Discrete GPU)',
+      vector: 'AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.10+ (amdgpu / kfd)',
+      factor: 1.37,
+      npuSupported: false
+    },
+    'amd-ryzen-9-9900x': {
+      name: 'AMD Ryzen 9 9900X (12C/24T, 5.6 GHz, Zen 5)',
+      family: 'Zen 5 Granite Ridge',
+      npu: 'None (Compute Offload via Discrete GPU)',
+      vector: 'AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.10+ (amdgpu / kfd)',
+      factor: 1.28,
+      npuSupported: false
+    },
+    'amd-ryzen-9-9900x3d': {
+      name: 'AMD Ryzen 9 9900X3D (12C/24T, 3D V-Cache, Zen 5)',
+      family: 'Zen 5 Granite Ridge',
+      npu: 'None (Compute Offload via Discrete GPU)',
+      vector: 'AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.10+ (amdgpu / kfd)',
+      factor: 1.3,
+      npuSupported: false
+    },
+    'amd-ryzen-9-9900': {
+      name: 'AMD Ryzen 9 9900 (12C/24T, 65W Eco, Zen 5)',
+      family: 'Zen 5 Granite Ridge',
+      npu: 'None (Compute Offload via Discrete GPU)',
+      vector: 'AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.10+ (amdgpu / kfd)',
+      factor: 1.22,
+      npuSupported: false
+    },
+    'amd-ryzen-7-9800x3d': {
+      name: 'AMD Ryzen 7 9800X3D (8C/16T, 2nd Gen 3D V-Cache, Zen 5)',
+      family: 'Zen 5 Granite Ridge',
+      npu: 'None (Compute Offload via Discrete GPU)',
+      vector: 'AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.10+ (amdgpu / kfd)',
+      factor: 1.26,
+      npuSupported: false
+    },
+    'amd-ryzen-7-9700x': {
+      name: 'AMD Ryzen 7 9700X (8C/16T, 5.5 GHz, 65W/105W, Zen 5)',
+      family: 'Zen 5 Granite Ridge',
+      npu: 'None (Compute Offload via Discrete GPU)',
+      vector: 'AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.10+ (amdgpu / kfd)',
+      factor: 1.22,
+      npuSupported: false
+    },
+    'amd-ryzen-7-9700': {
+      name: 'AMD Ryzen 7 9700 (8C/16T, 65W Eco, Zen 5)',
+      family: 'Zen 5 Granite Ridge',
+      npu: 'None (Compute Offload via Discrete GPU)',
+      vector: 'AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.10+ (amdgpu / kfd)',
+      factor: 1.18,
+      npuSupported: false
+    },
+    'amd-ryzen-5-9600x': {
+      name: 'AMD Ryzen 5 9600X (6C/12T, 5.4 GHz, Zen 5)',
+      family: 'Zen 5 Granite Ridge',
+      npu: 'None (Compute Offload via Discrete GPU)',
+      vector: 'AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.10+ (amdgpu / kfd)',
+      factor: 1.15,
+      npuSupported: false
+    },
+    'amd-ryzen-5-9600': {
+      name: 'AMD Ryzen 5 9600 (6C/12T, 65W Eco, Zen 5)',
+      family: 'Zen 5 Granite Ridge',
+      npu: 'None (Compute Offload via Discrete GPU)',
+      vector: 'AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.10+ (amdgpu / kfd)',
+      factor: 1.11,
+      npuSupported: false
+    },
+    /* Group 2: AMD Ryzen AI 300 & PRO Series (Zen 5 Mobile + XDNA 2) [12 models] */
+    'amd-ryzen-ai-9-hx-375': {
+      name: 'AMD Ryzen AI 9 HX 375 (12C/24T, XDNA 2 55 TOPS NPU)',
+      family: 'Zen 5 / Zen 5c Strix Point',
+      npu: 'AMD XDNA 2 (55 NPU TOPS, Block-FP16)',
+      vector: 'AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.10+ (amdgpu_xdna / XRT runtime)',
+      factor: 1.26,
+      npuSupported: true
+    },
+    'amd-ryzen-ai-9-hx-370': {
+      name: 'AMD Ryzen AI 9 HX 370 (12C/24T, XDNA 2 50 TOPS NPU)',
+      family: 'Zen 5 / Zen 5c Strix Point',
+      npu: 'AMD XDNA 2 (50 NPU TOPS, Block-FP16)',
+      vector: 'AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.10+ (amdgpu_xdna / XRT runtime)',
+      factor: 1.24,
+      npuSupported: true
+    },
+    'amd-ryzen-ai-9-365': {
+      name: 'AMD Ryzen AI 9 365 (10C/20T, XDNA 2 50 TOPS NPU)',
+      family: 'Zen 5 / Zen 5c Strix Point',
+      npu: 'AMD XDNA 2 (50 NPU TOPS, Block-FP16)',
+      vector: 'AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.10+ (amdgpu_xdna / XRT runtime)',
+      factor: 1.18,
+      npuSupported: true
+    },
+    'amd-ryzen-ai-7-pro-360': {
+      name: 'AMD Ryzen AI 7 PRO 360 (8C/16T, XDNA 2 50 TOPS NPU)',
+      family: 'Zen 5 / Zen 5c Strix Point',
+      npu: 'AMD XDNA 2 (50 NPU TOPS, Block-FP16)',
+      vector: 'AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.10+ (amdgpu_xdna / XRT runtime)',
+      factor: 1.14,
+      npuSupported: true
+    },
+    'amd-ryzen-ai-9-pro-hx-375': {
+      name: 'AMD Ryzen AI 9 PRO HX 375 (12C/24T, Enterprise, 55 TOPS)',
+      family: 'Zen 5 / Zen 5c Strix Point',
+      npu: 'AMD XDNA 2 (55 NPU TOPS, Enterprise Security)',
+      vector: 'AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.10+ (amdgpu_xdna / XRT runtime)',
+      factor: 1.26,
+      npuSupported: true
+    },
+    'amd-ryzen-ai-9-pro-hx-370': {
+      name: 'AMD Ryzen AI 9 PRO HX 370 (12C/24T, Enterprise, 50 TOPS)',
+      family: 'Zen 5 / Zen 5c Strix Point',
+      npu: 'AMD XDNA 2 (50 NPU TOPS, Enterprise Security)',
+      vector: 'AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.10+ (amdgpu_xdna / XRT runtime)',
+      factor: 1.24,
+      npuSupported: true
+    },
+    'amd-ryzen-ai-9-pro-365': {
+      name: 'AMD Ryzen AI 9 PRO 365 (10C/20T, Enterprise, 50 TOPS)',
+      family: 'Zen 5 / Zen 5c Strix Point',
+      npu: 'AMD XDNA 2 (50 NPU TOPS, Enterprise Security)',
+      vector: 'AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.10+ (amdgpu_xdna / XRT runtime)',
+      factor: 1.18,
+      npuSupported: true
+    },
+    'amd-ryzen-ai-max-plus-395': {
+      name: 'AMD Ryzen AI Max+ 395 (16C/32T, Strix Halo, 50 TOPS, 120W)',
+      family: 'Zen 5 Strix Halo',
+      npu: 'AMD XDNA 2 (50 NPU TOPS, 256-bit LPDDR5X)',
+      vector: 'AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.12+ (amdgpu_xdna / XRT)',
+      factor: 1.34,
+      npuSupported: true
+    },
+    'amd-ryzen-ai-max-390': {
+      name: 'AMD Ryzen AI Max 390 (12C/24T, Strix Halo, 50 TOPS, 120W)',
+      family: 'Zen 5 Strix Halo',
+      npu: 'AMD XDNA 2 (50 NPU TOPS, 256-bit LPDDR5X)',
+      vector: 'AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.12+ (amdgpu_xdna / XRT)',
+      factor: 1.28,
+      npuSupported: true
+    },
+    'amd-ryzen-ai-max-385': {
+      name: 'AMD Ryzen AI Max 385 (8C/16T, Strix Halo, 50 TOPS)',
+      family: 'Zen 5 Strix Halo',
+      npu: 'AMD XDNA 2 (50 NPU TOPS, 256-bit LPDDR5X)',
+      vector: 'AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.12+ (amdgpu_xdna / XRT)',
+      factor: 1.22,
+      npuSupported: true
+    },
+    'amd-ryzen-ai-5-pro-340': {
+      name: 'AMD Ryzen AI 5 PRO 340 (6C/12T, Krackan Point, 50 TOPS)',
+      family: 'Zen 5 / Zen 5c Krackan',
+      npu: 'AMD XDNA 2 (50 NPU TOPS, Block-FP16)',
+      vector: 'AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.11+ (amdgpu_xdna / XRT)',
+      factor: 1.12,
+      npuSupported: true
+    },
+    'amd-ryzen-ai-5-330': {
+      name: 'AMD Ryzen AI 5 330 (4C/8T, Krackan Point, 50 TOPS)',
+      family: 'Zen 5 / Zen 5c Krackan',
+      npu: 'AMD XDNA 2 (50 NPU TOPS, Block-FP16)',
+      vector: 'AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.11+ (amdgpu_xdna / XRT)',
+      factor: 1.05,
+      npuSupported: true
+    },
+    /* Group 3: AMD Ryzen 8000 Series (Hawk Point Mobile & 8000G Desktop) [16 models] */
+    'amd-ryzen-7-8700g': {
+      name: 'AMD Ryzen 7 8700G (8C/16T, Radeon 780M, XDNA 16 TOPS)',
+      family: 'Zen 4 Phoenix / Hawk Point',
+      npu: 'AMD XDNA 1 (16 NPU TOPS)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.7+ (amdgpu_xdna)',
+      factor: 1.12,
+      npuSupported: true
+    },
+    'amd-ryzen-7-8700f': {
+      name: 'AMD Ryzen 7 8700F (8C/16T, 5.0 GHz, Discrete GPU Required)',
+      family: 'Zen 4 Phoenix',
+      npu: 'None (NPU Disabled)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.1,
+      npuSupported: false
+    },
+    'amd-ryzen-5-8600g': {
+      name: 'AMD Ryzen 5 8600G (6C/12T, Radeon 760M, XDNA 16 TOPS)',
+      family: 'Zen 4 Phoenix / Hawk Point',
+      npu: 'AMD XDNA 1 (16 NPU TOPS)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.7+ (amdgpu_xdna)',
+      factor: 1.06,
+      npuSupported: true
+    },
+    'amd-ryzen-5-8500g': {
+      name: 'AMD Ryzen 5 8500G (6C/12T, 2x Zen 4 + 4x Zen 4c, 65W)',
+      family: 'Zen 4 / Zen 4c Phoenix 2',
+      npu: 'None (No On-Die NPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.02,
+      npuSupported: false
+    },
+    'amd-ryzen-5-8400f': {
+      name: 'AMD Ryzen 5 8400F (6C/12T, 4.7 GHz, No iGPU)',
+      family: 'Zen 4 Phoenix 2',
+      npu: 'None (No On-Die NPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.0,
+      npuSupported: false
+    },
+    'amd-ryzen-3-8300g': {
+      name: 'AMD Ryzen 3 8300G (4C/8T, 1x Zen 4 + 3x Zen 4c)',
+      family: 'Zen 4 / Zen 4c Phoenix 2',
+      npu: 'None (No On-Die NPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 0.92,
+      npuSupported: false
+    },
+    'amd-ryzen-9-8945hs': {
+      name: 'AMD Ryzen 9 8945HS (8C/16T, 5.2 GHz, XDNA 16 TOPS)',
+      family: 'Zen 4 Hawk Point Mobile',
+      npu: 'AMD XDNA 1 (16 NPU TOPS)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.7+ (amdgpu_xdna)',
+      factor: 1.15,
+      npuSupported: true
+    },
+    'amd-ryzen-9-8945h': {
+      name: 'AMD Ryzen 9 8945H (8C/16T, 45W, XDNA 16 TOPS)',
+      family: 'Zen 4 Hawk Point Mobile',
+      npu: 'AMD XDNA 1 (16 NPU TOPS)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.7+ (amdgpu_xdna)',
+      factor: 1.14,
+      npuSupported: true
+    },
+    'amd-ryzen-7-8845hs': {
+      name: 'AMD Ryzen 7 8845HS (8C/16T, 5.1 GHz, XDNA 16 TOPS)',
+      family: 'Zen 4 Hawk Point Mobile',
+      npu: 'AMD XDNA 1 (16 NPU TOPS)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.7+ (amdgpu_xdna)',
+      factor: 1.12,
+      npuSupported: true
+    },
+    'amd-ryzen-7-8840hs': {
+      name: 'AMD Ryzen 7 8840HS (8C/16T, 28W, XDNA 16 TOPS)',
+      family: 'Zen 4 Hawk Point Mobile',
+      npu: 'AMD XDNA 1 (16 NPU TOPS)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.7+ (amdgpu_xdna)',
+      factor: 1.1,
+      npuSupported: true
+    },
+    'amd-ryzen-7-8840u': {
+      name: 'AMD Ryzen 7 8840U (8C/16T, 15-30W, XDNA 16 TOPS)',
+      family: 'Zen 4 Hawk Point Mobile',
+      npu: 'AMD XDNA 1 (16 NPU TOPS)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.7+ (amdgpu_xdna)',
+      factor: 1.08,
+      npuSupported: true
+    },
+    'amd-ryzen-5-8645hs': {
+      name: 'AMD Ryzen 5 8645HS (6C/12T, 5.0 GHz, XDNA 16 TOPS)',
+      family: 'Zen 4 Hawk Point Mobile',
+      npu: 'AMD XDNA 1 (16 NPU TOPS)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.7+ (amdgpu_xdna)',
+      factor: 1.06,
+      npuSupported: true
+    },
+    'amd-ryzen-5-8640hs': {
+      name: 'AMD Ryzen 5 8640HS (6C/12T, 28W, XDNA 16 TOPS)',
+      family: 'Zen 4 Hawk Point Mobile',
+      npu: 'AMD XDNA 1 (16 NPU TOPS)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.7+ (amdgpu_xdna)',
+      factor: 1.04,
+      npuSupported: true
+    },
+    'amd-ryzen-5-8640u': {
+      name: 'AMD Ryzen 5 8640U (6C/12T, 15-30W, XDNA 16 TOPS)',
+      family: 'Zen 4 Hawk Point Mobile',
+      npu: 'AMD XDNA 1 (16 NPU TOPS)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.7+ (amdgpu_xdna)',
+      factor: 1.02,
+      npuSupported: true
+    },
+    'amd-ryzen-5-8540u': {
+      name: 'AMD Ryzen 5 8540U (6C/12T, 15W, Zen 4/4c)',
+      family: 'Zen 4 / Zen 4c Hawk Point',
+      npu: 'None (No On-Die NPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 0.98,
+      npuSupported: false
+    },
+    'amd-ryzen-3-8440u': {
+      name: 'AMD Ryzen 3 8440U (4C/8T, 15W, Zen 4/4c)',
+      family: 'Zen 4 / Zen 4c Hawk Point',
+      npu: 'None (No On-Die NPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 0.9,
+      npuSupported: false
+    },
+    /* Group 4: AMD Ryzen 7000 Series (Zen 4 Desktop & Mobile) [22 models] */
+    'amd-ryzen-9-7950x3d': {
+      name: 'AMD Ryzen 9 7950X3D (16C/32T, 144MB V-Cache, 120W)',
+      family: 'Zen 4 Raphael',
+      npu: 'None (Compute Offload via PCIe / GPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.32,
+      npuSupported: false
+    },
+    'amd-ryzen-9-7950x': {
+      name: 'AMD Ryzen 9 7950X (16C/32T, 5.7 GHz, 170W, AVX-512)',
+      family: 'Zen 4 Raphael',
+      npu: 'None (Compute Offload via PCIe / GPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.3,
+      npuSupported: false
+    },
+    'amd-ryzen-9-7900x3d': {
+      name: 'AMD Ryzen 9 7900X3D (12C/24T, 140MB V-Cache, 120W)',
+      family: 'Zen 4 Raphael',
+      npu: 'None (Compute Offload via PCIe / GPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.25,
+      npuSupported: false
+    },
+    'amd-ryzen-9-7900x': {
+      name: 'AMD Ryzen 9 7900X (12C/24T, 5.6 GHz, 170W)',
+      family: 'Zen 4 Raphael',
+      npu: 'None (Compute Offload via PCIe / GPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.24,
+      npuSupported: false
+    },
+    'amd-ryzen-9-7900': {
+      name: 'AMD Ryzen 9 7900 (12C/24T, 5.4 GHz, 65W Eco)',
+      family: 'Zen 4 Raphael',
+      npu: 'None (Compute Offload via PCIe / GPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.2,
+      npuSupported: false
+    },
+    'amd-ryzen-7-7800x3d': {
+      name: 'AMD Ryzen 7 7800X3D (8C/16T, 104MB V-Cache, 120W)',
+      family: 'Zen 4 Raphael',
+      npu: 'None (Compute Offload via PCIe / GPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.22,
+      npuSupported: false
+    },
+    'amd-ryzen-7-7700x': {
+      name: 'AMD Ryzen 7 7700X (8C/16T, 5.4 GHz, 105W)',
+      family: 'Zen 4 Raphael',
+      npu: 'None (Compute Offload via PCIe / GPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.16,
+      npuSupported: false
+    },
+    'amd-ryzen-7-7700': {
+      name: 'AMD Ryzen 7 7700 (8C/16T, 5.3 GHz, 65W Eco)',
+      family: 'Zen 4 Raphael',
+      npu: 'None (Compute Offload via PCIe / GPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.13,
+      npuSupported: false
+    },
+    'amd-ryzen-5-7600x3d': {
+      name: 'AMD Ryzen 5 7600X3D (6C/12T, 102MB V-Cache, 65W)',
+      family: 'Zen 4 Raphael',
+      npu: 'None (Compute Offload via PCIe / GPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.14,
+      npuSupported: false
+    },
+    'amd-ryzen-5-7600x': {
+      name: 'AMD Ryzen 5 7600X (6C/12T, 5.3 GHz, 105W)',
+      family: 'Zen 4 Raphael',
+      npu: 'None (Compute Offload via PCIe / GPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.1,
+      npuSupported: false
+    },
+    'amd-ryzen-5-7600': {
+      name: 'AMD Ryzen 5 7600 (6C/12T, 5.1 GHz, 65W Eco)',
+      family: 'Zen 4 Raphael',
+      npu: 'None (Compute Offload via PCIe / GPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.07,
+      npuSupported: false
+    },
+    'amd-ryzen-5-7500f': {
+      name: 'AMD Ryzen 5 7500F (6C/12T, 5.0 GHz, 65W, No iGPU)',
+      family: 'Zen 4 Raphael',
+      npu: 'None (Compute Offload via PCIe / GPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.05,
+      npuSupported: false
+    },
+    'amd-ryzen-9-7945hx3d': {
+      name: 'AMD Ryzen 9 7945HX3D (16C/32T, Mobile 3D V-Cache, 55W-75W)',
+      family: 'Zen 4 Dragon Range Mobile',
+      npu: 'None (Compute Offload via PCIe / GPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.3,
+      npuSupported: false
+    },
+    'amd-ryzen-9-7945hx': {
+      name: 'AMD Ryzen 9 7945HX (16C/32T, 5.4 GHz, Dragon Range)',
+      family: 'Zen 4 Dragon Range Mobile',
+      npu: 'None (Compute Offload via PCIe / GPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.28,
+      npuSupported: false
+    },
+    'amd-ryzen-9-7845hx': {
+      name: 'AMD Ryzen 9 7845HX (12C/24T, 5.2 GHz, Dragon Range)',
+      family: 'Zen 4 Dragon Range Mobile',
+      npu: 'None (Compute Offload via PCIe / GPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.22,
+      npuSupported: false
+    },
+    'amd-ryzen-7-7745hx': {
+      name: 'AMD Ryzen 7 7745HX (8C/16T, 5.1 GHz, Dragon Range)',
+      family: 'Zen 4 Dragon Range Mobile',
+      npu: 'None (Compute Offload via PCIe / GPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.15,
+      npuSupported: false
+    },
+    'amd-ryzen-5-7645hx': {
+      name: 'AMD Ryzen 5 7645HX (6C/12T, 5.0 GHz, Dragon Range)',
+      family: 'Zen 4 Dragon Range Mobile',
+      npu: 'None (Compute Offload via PCIe / GPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.08,
+      npuSupported: false
+    },
+    'amd-ryzen-9-7940hs': {
+      name: 'AMD Ryzen 9 7940HS (8C/16T, 5.2 GHz, Phoenix NPU 10 TOPS)',
+      family: 'Zen 4 Phoenix Mobile',
+      npu: 'AMD XDNA 1 (10 NPU TOPS)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.7+ (amdgpu_xdna)',
+      factor: 1.14,
+      npuSupported: true
+    },
+    'amd-ryzen-7-7840hs': {
+      name: 'AMD Ryzen 7 7840HS (8C/16T, 5.1 GHz, Phoenix NPU 10 TOPS)',
+      family: 'Zen 4 Phoenix Mobile',
+      npu: 'AMD XDNA 1 (10 NPU TOPS)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.7+ (amdgpu_xdna)',
+      factor: 1.11,
+      npuSupported: true
+    },
+    'amd-ryzen-7-7840u': {
+      name: 'AMD Ryzen 7 7840U (8C/16T, 15-30W, Phoenix NPU 10 TOPS)',
+      family: 'Zen 4 Phoenix Mobile',
+      npu: 'AMD XDNA 1 (10 NPU TOPS)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.7+ (amdgpu_xdna)',
+      factor: 1.07,
+      npuSupported: true
+    },
+    'amd-ryzen-5-7640hs': {
+      name: 'AMD Ryzen 5 7640HS (6C/12T, 5.0 GHz, Phoenix NPU 10 TOPS)',
+      family: 'Zen 4 Phoenix Mobile',
+      npu: 'AMD XDNA 1 (10 NPU TOPS)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.7+ (amdgpu_xdna)',
+      factor: 1.05,
+      npuSupported: true
+    },
+    'amd-ryzen-5-7640u': {
+      name: 'AMD Ryzen 5 7640U (6C/12T, 15-30W, Phoenix NPU 10 TOPS)',
+      family: 'Zen 4 Phoenix Mobile',
+      npu: 'AMD XDNA 1 (10 NPU TOPS)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.7+ (amdgpu_xdna)',
+      factor: 1.02,
+      npuSupported: true
+    },
+    /* Group 5: AMD Ryzen 5000 Series (Zen 3 Vermeer & Cezanne) [20 models] */
+    'amd-ryzen-9-5950x': {
+      name: 'AMD Ryzen 9 5950X (16C/32T, 4.9 GHz, 105W, Zen 3)',
+      family: 'Zen 3 Vermeer',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 1.15,
+      npuSupported: false
+    },
+    'amd-ryzen-9-5900xt': {
+      name: 'AMD Ryzen 9 5900XT (16C/32T, 4.8 GHz, 105W, Zen 3)',
+      family: 'Zen 3 Vermeer',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 1.14,
+      npuSupported: false
+    },
+    'amd-ryzen-9-5900x': {
+      name: 'AMD Ryzen 9 5900X (12C/24T, 4.8 GHz, 105W, Zen 3)',
+      family: 'Zen 3 Vermeer',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 1.1,
+      npuSupported: false
+    },
+    'amd-ryzen-7-5800x3d': {
+      name: 'AMD Ryzen 7 5800X3D (8C/16T, 96MB 3D V-Cache, Zen 3)',
+      family: 'Zen 3 Vermeer',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 1.05,
+      npuSupported: false
+    },
+    'amd-ryzen-7-5800xt': {
+      name: 'AMD Ryzen 7 5800XT (8C/16T, 4.8 GHz, 105W, Zen 3)',
+      family: 'Zen 3 Vermeer',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 1.03,
+      npuSupported: false
+    },
+    'amd-ryzen-7-5800x': {
+      name: 'AMD Ryzen 7 5800X (8C/16T, 4.7 GHz, 105W, Zen 3)',
+      family: 'Zen 3 Vermeer',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 1.02,
+      npuSupported: false
+    },
+    'amd-ryzen-7-5700x3d': {
+      name: 'AMD Ryzen 7 5700X3D (8C/16T, 96MB 3D V-Cache, Zen 3)',
+      family: 'Zen 3 Vermeer',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 1.01,
+      npuSupported: false
+    },
+    'amd-ryzen-7-5700x': {
+      name: 'AMD Ryzen 7 5700X (8C/16T, 4.6 GHz, 65W, Zen 3)',
+      family: 'Zen 3 Vermeer',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.98,
+      npuSupported: false
+    },
+    'amd-ryzen-7-5700': {
+      name: 'AMD Ryzen 7 5700 (8C/16T, 4.6 GHz, 65W, Zen 3)',
+      family: 'Zen 3 Cezanne',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.96,
+      npuSupported: false
+    },
+    'amd-ryzen-7-5700g': {
+      name: 'AMD Ryzen 7 5700G (8C/16T, Radeon Vega 8, 65W APU)',
+      family: 'Zen 3 Cezanne',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.96,
+      npuSupported: false
+    },
+    'amd-ryzen-5-5600x3d': {
+      name: 'AMD Ryzen 5 5600X3D (6C/12T, 96MB 3D V-Cache, Zen 3)',
+      family: 'Zen 3 Vermeer',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.97,
+      npuSupported: false
+    },
+    'amd-ryzen-5-5600x': {
+      name: 'AMD Ryzen 5 5600X (6C/12T, 4.6 GHz, 65W, Zen 3)',
+      family: 'Zen 3 Vermeer',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.94,
+      npuSupported: false
+    },
+    'amd-ryzen-5-5600': {
+      name: 'AMD Ryzen 5 5600 (6C/12T, 4.4 GHz, 65W, Zen 3)',
+      family: 'Zen 3 Vermeer',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.92,
+      npuSupported: false
+    },
+    'amd-ryzen-5-5600gt': {
+      name: 'AMD Ryzen 5 5600GT (6C/12T, Radeon Vega 7, 65W APU)',
+      family: 'Zen 3 Cezanne',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.91,
+      npuSupported: false
+    },
+    'amd-ryzen-5-5600g': {
+      name: 'AMD Ryzen 5 5600G (6C/12T, Radeon Vega 7, 65W APU)',
+      family: 'Zen 3 Cezanne',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.9,
+      npuSupported: false
+    },
+    'amd-ryzen-5-5500': {
+      name: 'AMD Ryzen 5 5500 (6C/12T, 4.2 GHz, 65W, Zen 3)',
+      family: 'Zen 3 Cezanne',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.88,
+      npuSupported: false
+    },
+    'amd-ryzen-5-5500gt': {
+      name: 'AMD Ryzen 5 5500GT (6C/12T, Radeon Vega 7, 65W APU)',
+      family: 'Zen 3 Cezanne',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.88,
+      npuSupported: false
+    },
+    'amd-ryzen-3-5300g': {
+      name: 'AMD Ryzen 3 5300G (4C/8T, Radeon Vega 6, 65W APU)',
+      family: 'Zen 3 Cezanne',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.82,
+      npuSupported: false
+    },
+    'amd-ryzen-9-5980hx': {
+      name: 'AMD Ryzen 9 5980HX (8C/16T, 4.8 GHz, Mobile Cezanne)',
+      family: 'Zen 3 Cezanne Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.97,
+      npuSupported: false
+    },
+    'amd-ryzen-7-5800h': {
+      name: 'AMD Ryzen 7 5800H (8C/16T, 4.4 GHz, Mobile Cezanne)',
+      family: 'Zen 3 Cezanne Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.94,
+      npuSupported: false
+    },
+    /* Group 6: AMD Ryzen Threadripper & PRO (Storm Peak & Chagall) [10 models] */
+    'amd-threadripper-pro-7995wx': {
+      name: 'AMD Ryzen Threadripper PRO 7995WX (96C/192T, 350W, 8-Ch DDR5)',
+      family: 'Zen 4 Storm Peak-WS',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS Enterprise (amdgpu / ROCm)',
+      factor: 1.55,
+      npuSupported: false
+    },
+    'amd-threadripper-pro-7985wx': {
+      name: 'AMD Ryzen Threadripper PRO 7985WX (64C/128T, 350W, 8-Ch DDR5)',
+      family: 'Zen 4 Storm Peak-WS',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS Enterprise (amdgpu / ROCm)',
+      factor: 1.5,
+      npuSupported: false
+    },
+    'amd-threadripper-pro-7975wx': {
+      name: 'AMD Ryzen Threadripper PRO 7975WX (32C/64T, 350W, 8-Ch DDR5)',
+      family: 'Zen 4 Storm Peak-WS',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS Enterprise (amdgpu / ROCm)',
+      factor: 1.45,
+      npuSupported: false
+    },
+    'amd-threadripper-pro-7965wx': {
+      name: 'AMD Ryzen Threadripper PRO 7965WX (24C/48T, 350W, 8-Ch DDR5)',
+      family: 'Zen 4 Storm Peak-WS',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS Enterprise (amdgpu / ROCm)',
+      factor: 1.4,
+      npuSupported: false
+    },
+    'amd-threadripper-7980x': {
+      name: 'AMD Ryzen Threadripper 7980X (64C/128T, 350W, 4-Ch DDR5)',
+      family: 'Zen 4 Storm Peak-HEDT',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS Enterprise (amdgpu / ROCm)',
+      factor: 1.48,
+      npuSupported: false
+    },
+    'amd-threadripper-7970x': {
+      name: 'AMD Ryzen Threadripper 7970X (32C/64T, 350W, 4-Ch DDR5)',
+      family: 'Zen 4 Storm Peak-HEDT',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS Enterprise (amdgpu / ROCm)',
+      factor: 1.42,
+      npuSupported: false
+    },
+    'amd-threadripper-7960x': {
+      name: 'AMD Ryzen Threadripper 7960X (24C/48T, 350W, 4-Ch DDR5)',
+      family: 'Zen 4 Storm Peak-HEDT',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS Enterprise (amdgpu / ROCm)',
+      factor: 1.38,
+      npuSupported: false
+    },
+    'amd-threadripper-pro-5995wx': {
+      name: 'AMD Ryzen Threadripper PRO 5995WX (64C/128T, 280W, 8-Ch DDR4)',
+      family: 'Zen 3 Chagall-WS',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.4,
+      npuSupported: false
+    },
+    'amd-threadripper-pro-5975wx': {
+      name: 'AMD Ryzen Threadripper PRO 5975WX (32C/64T, 280W, 8-Ch DDR4)',
+      family: 'Zen 3 Chagall-WS',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.34,
+      npuSupported: false
+    },
+    'amd-threadripper-pro-5965wx': {
+      name: 'AMD Ryzen Threadripper PRO 5965WX (24C/48T, 280W, 8-Ch DDR4)',
+      family: 'Zen 3 Chagall-WS',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.28,
+      npuSupported: false
+    },
+    /* Group 7: AMD EPYC Server Processors (Turin, Genoa, Bergamo & Milan) [10 models] */
+    'amd-epyc-9755': {
+      name: 'AMD EPYC 9755 "Turin" (128C/256T, 500W, Zen 5, AVX-512)',
+      family: 'Zen 5 Turin SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300X',
+      vector: 'Dual AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.11+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.6,
+      npuSupported: false
+    },
+    'amd-epyc-9655': {
+      name: 'AMD EPYC 9655 "Turin" (96C/192T, 400W, Zen 5, AVX-512)',
+      family: 'Zen 5 Turin SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300X',
+      vector: 'Dual AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.11+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.58,
+      npuSupported: false
+    },
+    'amd-epyc-9575f': {
+      name: 'AMD EPYC 9575F "Turin" (64C/128T, 5.0 GHz, 400W AI Tuned)',
+      family: 'Zen 5 Turin SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300X',
+      vector: 'Dual AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.11+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.55,
+      npuSupported: false
+    },
+    'amd-epyc-9654': {
+      name: 'AMD EPYC 9654 "Genoa" (96C/192T, 360W, Zen 4, 12-Ch DDR5)',
+      family: 'Zen 4 Genoa SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300',
+      vector: 'Dual AVX-512 + VNNI + BF16',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.5,
+      npuSupported: false
+    },
+    'amd-epyc-9554': {
+      name: 'AMD EPYC 9554 "Genoa" (64C/128T, 360W, Zen 4, 12-Ch DDR5)',
+      family: 'Zen 4 Genoa SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300',
+      vector: 'Dual AVX-512 + VNNI + BF16',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.46,
+      npuSupported: false
+    },
+    'amd-epyc-9354': {
+      name: 'AMD EPYC 9354 "Genoa" (32C/64T, 280W, Zen 4, 12-Ch DDR5)',
+      family: 'Zen 4 Genoa SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300',
+      vector: 'Dual AVX-512 + VNNI + BF16',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.4,
+      npuSupported: false
+    },
+    'amd-epyc-9754': {
+      name: 'AMD EPYC 9754 "Bergamo" (128C/256T, 360W, Zen 4c Dense)',
+      family: 'Zen 4c Bergamo SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300',
+      vector: 'Dual AVX-512 + VNNI + BF16',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.48,
+      npuSupported: false
+    },
+    'amd-epyc-9684x': {
+      name: 'AMD EPYC 9684X "Genoa-X" (96C/192T, 1152MB 3D V-Cache)',
+      family: 'Zen 4 Genoa-X SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300',
+      vector: 'Dual AVX-512 + VNNI + BF16',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.52,
+      npuSupported: false
+    },
+    'amd-epyc-8534p': {
+      name: 'AMD EPYC 8534P "Siena" (64C/128T, 200W, Edge/Telco Zen 4c)',
+      family: 'Zen 4c Siena SP6',
+      npu: 'Dedicated PCIe ROCm Edge Solution',
+      vector: 'AVX-512 + VNNI + BF16',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.42,
+      npuSupported: false
+    },
+    'amd-epyc-7763': {
+      name: 'AMD EPYC 7763 "Milan" (64C/128T, 280W, Zen 3 Enterprise)',
+      family: 'Zen 3 Milan SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.38,
+      npuSupported: false
+    },
+    /* --- Additional 100 AMD Chip Variants (200 Total) --- */
+    /* Group 8: AMD Ryzen Z1 & Mobile APUs (Phoenix, Rembrandt-R & Mendocino) [18 models] */
+    'amd-ryzen-z1-extreme': {
+      name: 'AMD Ryzen Z1 Extreme (8C/16T, RDNA 3, 9-30W Handheld)',
+      family: 'Zen 4 Phoenix Handheld',
+      npu: 'AMD XDNA 1 (Disabled for Gaming)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.08,
+      npuSupported: false
+    },
+    'amd-ryzen-z1': {
+      name: 'AMD Ryzen Z1 (6C/12T, 2x Zen 4 + 4x Zen 4c, Handheld)',
+      family: 'Zen 4 / Zen 4c Phoenix 2',
+      npu: 'None (No On-Die NPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 0.98,
+      npuSupported: false
+    },
+    'amd-ryzen-7-pro-7840u': {
+      name: 'AMD Ryzen 7 PRO 7840U (8C/16T, Enterprise, NPU 10 TOPS)',
+      family: 'Zen 4 Phoenix Mobile',
+      npu: 'AMD XDNA 1 (10 NPU TOPS, Enterprise Security)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.7+ (amdgpu_xdna)',
+      factor: 1.08,
+      npuSupported: true
+    },
+    'amd-ryzen-7-pro-7840hs': {
+      name: 'AMD Ryzen 7 PRO 7840HS (8C/16T, Enterprise, NPU 10 TOPS)',
+      family: 'Zen 4 Phoenix Mobile',
+      npu: 'AMD XDNA 1 (10 NPU TOPS, Enterprise Security)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.7+ (amdgpu_xdna)',
+      factor: 1.12,
+      npuSupported: true
+    },
+    'amd-ryzen-5-pro-7640u': {
+      name: 'AMD Ryzen 5 PRO 7640U (6C/12T, Enterprise, NPU 10 TOPS)',
+      family: 'Zen 4 Phoenix Mobile',
+      npu: 'AMD XDNA 1 (10 NPU TOPS, Enterprise Security)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.7+ (amdgpu_xdna)',
+      factor: 1.02,
+      npuSupported: true
+    },
+    'amd-ryzen-5-pro-7640hs': {
+      name: 'AMD Ryzen 5 PRO 7640HS (6C/12T, Enterprise, NPU 10 TOPS)',
+      family: 'Zen 4 Phoenix Mobile',
+      npu: 'AMD XDNA 1 (10 NPU TOPS, Enterprise Security)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.7+ (amdgpu_xdna)',
+      factor: 1.05,
+      npuSupported: true
+    },
+    'amd-ryzen-9-pro-7945': {
+      name: 'AMD Ryzen 9 PRO 7945 (12C/24T, 65W Enterprise AM5)',
+      family: 'Zen 4 Raphael',
+      npu: 'None (Compute Offload via Discrete GPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.22,
+      npuSupported: false
+    },
+    'amd-ryzen-7-pro-7745': {
+      name: 'AMD Ryzen 7 PRO 7745 (8C/16T, 65W Enterprise AM5)',
+      family: 'Zen 4 Raphael',
+      npu: 'None (Compute Offload via Discrete GPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.14,
+      npuSupported: false
+    },
+    'amd-ryzen-5-pro-7645': {
+      name: 'AMD Ryzen 5 PRO 7645 (6C/12T, 65W Enterprise AM5)',
+      family: 'Zen 4 Raphael',
+      npu: 'None (Compute Offload via Discrete GPU)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.08,
+      npuSupported: false
+    },
+    'amd-ryzen-7-7735hs': {
+      name: 'AMD Ryzen 7 7735HS (8C/16T, 4.75 GHz, Rembrandt-R)',
+      family: 'Zen 3+ Rembrandt-R',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.98,
+      npuSupported: false
+    },
+    'amd-ryzen-7-7735u': {
+      name: 'AMD Ryzen 7 7735U (8C/16T, 4.75 GHz, Rembrandt-R 28W)',
+      family: 'Zen 3+ Rembrandt-R',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.96,
+      npuSupported: false
+    },
+    'amd-ryzen-5-7535hs': {
+      name: 'AMD Ryzen 5 7535HS (6C/12T, 4.55 GHz, Rembrandt-R)',
+      family: 'Zen 3+ Rembrandt-R',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.92,
+      npuSupported: false
+    },
+    'amd-ryzen-5-7535u': {
+      name: 'AMD Ryzen 5 7535U (6C/12T, 4.55 GHz, Rembrandt-R 28W)',
+      family: 'Zen 3+ Rembrandt-R',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.9,
+      npuSupported: false
+    },
+    'amd-ryzen-7-7730u': {
+      name: 'AMD Ryzen 7 7730U (8C/16T, 4.5 GHz, Barcelo-R 15W)',
+      family: 'Zen 3 Barcelo-R',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.94,
+      npuSupported: false
+    },
+    'amd-ryzen-5-7530u': {
+      name: 'AMD Ryzen 5 7530U (6C/12T, 4.5 GHz, Barcelo-R 15W)',
+      family: 'Zen 3 Barcelo-R',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.9,
+      npuSupported: false
+    },
+    'amd-ryzen-3-7330u': {
+      name: 'AMD Ryzen 3 7330U (4C/8T, 4.3 GHz, Barcelo-R 15W)',
+      family: 'Zen 3 Barcelo-R',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.82,
+      npuSupported: false
+    },
+    'amd-ryzen-5-7520u': {
+      name: 'AMD Ryzen 5 7520U (4C/8T, 4.3 GHz, Mendocino 15W)',
+      family: 'Zen 2 Mendocino',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.8,
+      npuSupported: false
+    },
+    'amd-ryzen-3-7320u': {
+      name: 'AMD Ryzen 3 7320U (4C/8T, 4.1 GHz, Mendocino 15W)',
+      family: 'Zen 2 Mendocino',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.78,
+      npuSupported: false
+    },
+    /* Group 9: AMD Ryzen 5000 Mobile, PRO APUs & Eco Variants [18 models] */
+    'amd-ryzen-9-5900hx': {
+      name: 'AMD Ryzen 9 5900HX (8C/16T, 4.6 GHz, 45W+ Cezanne)',
+      family: 'Zen 3 Cezanne Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.98,
+      npuSupported: false
+    },
+    'amd-ryzen-9-5900hs': {
+      name: 'AMD Ryzen 9 5900HS (8C/16T, 4.6 GHz, 35W Cezanne)',
+      family: 'Zen 3 Cezanne Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.96,
+      npuSupported: false
+    },
+    'amd-ryzen-7-5800hs': {
+      name: 'AMD Ryzen 7 5800HS (8C/16T, 4.4 GHz, 35W Cezanne)',
+      family: 'Zen 3 Cezanne Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.94,
+      npuSupported: false
+    },
+    'amd-ryzen-7-5800u': {
+      name: 'AMD Ryzen 7 5800U (8C/16T, 4.4 GHz, 15W Cezanne)',
+      family: 'Zen 3 Cezanne Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.93,
+      npuSupported: false
+    },
+    'amd-ryzen-5-5600h': {
+      name: 'AMD Ryzen 5 5600H (6C/12T, 4.2 GHz, 45W Cezanne)',
+      family: 'Zen 3 Cezanne Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.9,
+      npuSupported: false
+    },
+    'amd-ryzen-5-5600hs': {
+      name: 'AMD Ryzen 5 5600HS (6C/12T, 4.2 GHz, 35W Cezanne)',
+      family: 'Zen 3 Cezanne Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.89,
+      npuSupported: false
+    },
+    'amd-ryzen-5-5600u': {
+      name: 'AMD Ryzen 5 5600U (6C/12T, 4.2 GHz, 15W Cezanne)',
+      family: 'Zen 3 Cezanne Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.88,
+      npuSupported: false
+    },
+    'amd-ryzen-5-5500u': {
+      name: 'AMD Ryzen 5 5500U (6C/12T, 4.0 GHz, 15W Lucienne)',
+      family: 'Zen 2 Lucienne Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.84,
+      npuSupported: false
+    },
+    'amd-ryzen-3-5400u': {
+      name: 'AMD Ryzen 3 5400U (4C/8T, 4.0 GHz, 15W Cezanne)',
+      family: 'Zen 3 Cezanne Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.82,
+      npuSupported: false
+    },
+    'amd-ryzen-3-5300u': {
+      name: 'AMD Ryzen 3 5300U (4C/8T, 3.8 GHz, 15W Lucienne)',
+      family: 'Zen 2 Lucienne Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.79,
+      npuSupported: false
+    },
+    'amd-ryzen-7-pro-5750g': {
+      name: 'AMD Ryzen 7 PRO 5750G (8C/16T, Vega 8, 65W Cezanne)',
+      family: 'Zen 3 Cezanne Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.97,
+      npuSupported: false
+    },
+    'amd-ryzen-7-pro-5750ge': {
+      name: 'AMD Ryzen 7 PRO 5750GE (8C/16T, Vega 8, 35W Eco)',
+      family: 'Zen 3 Cezanne Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.94,
+      npuSupported: false
+    },
+    'amd-ryzen-5-pro-5650g': {
+      name: 'AMD Ryzen 5 PRO 5650G (6C/12T, Vega 7, 65W Cezanne)',
+      family: 'Zen 3 Cezanne Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.91,
+      npuSupported: false
+    },
+    'amd-ryzen-5-pro-5650ge': {
+      name: 'AMD Ryzen 5 PRO 5650GE (6C/12T, Vega 7, 35W Eco)',
+      family: 'Zen 3 Cezanne Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.88,
+      npuSupported: false
+    },
+    'amd-ryzen-3-pro-5350g': {
+      name: 'AMD Ryzen 3 PRO 5350G (4C/8T, Vega 6, 65W Cezanne)',
+      family: 'Zen 3 Cezanne Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.83,
+      npuSupported: false
+    },
+    'amd-ryzen-3-pro-5350ge': {
+      name: 'AMD Ryzen 3 PRO 5350GE (4C/8T, Vega 6, 35W Eco)',
+      family: 'Zen 3 Cezanne Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.81,
+      npuSupported: false
+    },
+    'amd-ryzen-7-5700ge': {
+      name: 'AMD Ryzen 7 5700GE (8C/16T, 35W Eco Cezanne APU)',
+      family: 'Zen 3 Cezanne',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.94,
+      npuSupported: false
+    },
+    'amd-ryzen-5-5600ge': {
+      name: 'AMD Ryzen 5 5600GE (6C/12T, 35W Eco Cezanne APU)',
+      family: 'Zen 3 Cezanne',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.89,
+      npuSupported: false
+    },
+    /* Group 10: AMD Ryzen 4000 Series (Renoir APUs & Mobile - Zen 2) [12 models] */
+    'amd-ryzen-7-4700g': {
+      name: 'AMD Ryzen 7 4700G (8C/16T, Radeon Vega 8, 65W Renoir)',
+      family: 'Zen 2 Renoir',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.91,
+      npuSupported: false
+    },
+    'amd-ryzen-7-4700ge': {
+      name: 'AMD Ryzen 7 4700GE (8C/16T, Radeon Vega 8, 35W Eco)',
+      family: 'Zen 2 Renoir',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.88,
+      npuSupported: false
+    },
+    'amd-ryzen-5-4600g': {
+      name: 'AMD Ryzen 5 4600G (6C/12T, Radeon Vega 7, 65W Renoir)',
+      family: 'Zen 2 Renoir',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.86,
+      npuSupported: false
+    },
+    'amd-ryzen-5-4600ge': {
+      name: 'AMD Ryzen 5 4600GE (6C/12T, Radeon Vega 7, 35W Eco)',
+      family: 'Zen 2 Renoir',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.84,
+      npuSupported: false
+    },
+    'amd-ryzen-3-4300g': {
+      name: 'AMD Ryzen 3 4300G (4C/8T, Radeon Vega 6, 65W Renoir)',
+      family: 'Zen 2 Renoir',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.8,
+      npuSupported: false
+    },
+    'amd-ryzen-3-4300ge': {
+      name: 'AMD Ryzen 3 4300GE (4C/8T, Radeon Vega 6, 35W Eco)',
+      family: 'Zen 2 Renoir',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.78,
+      npuSupported: false
+    },
+    'amd-ryzen-7-4800h': {
+      name: 'AMD Ryzen 7 4800H (8C/16T, 4.2 GHz, 45W Mobile)',
+      family: 'Zen 2 Renoir Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.89,
+      npuSupported: false
+    },
+    'amd-ryzen-7-4800u': {
+      name: 'AMD Ryzen 7 4800U (8C/16T, 4.2 GHz, 15W Mobile)',
+      family: 'Zen 2 Renoir Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.87,
+      npuSupported: false
+    },
+    'amd-ryzen-5-4600h': {
+      name: 'AMD Ryzen 5 4600H (6C/12T, 4.0 GHz, 45W Mobile)',
+      family: 'Zen 2 Renoir Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.84,
+      npuSupported: false
+    },
+    'amd-ryzen-5-4500u': {
+      name: 'AMD Ryzen 5 4500U (6C/6T, 4.0 GHz, 15W Mobile)',
+      family: 'Zen 2 Renoir Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.8,
+      npuSupported: false
+    },
+    'amd-ryzen-5-4500': {
+      name: 'AMD Ryzen 5 4500 (6C/12T, 4.1 GHz, 65W Desktop)',
+      family: 'Zen 2 Renoir',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.84,
+      npuSupported: false
+    },
+    'amd-ryzen-3-4100': {
+      name: 'AMD Ryzen 3 4100 (4C/8T, 4.0 GHz, 65W Desktop)',
+      family: 'Zen 2 Renoir',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.78,
+      npuSupported: false
+    },
+    /* Group 11: AMD Ryzen 3000 Series (Matisse Desktop & Picasso APUs - Zen 2) [14 models] */
+    'amd-ryzen-9-3950x': {
+      name: 'AMD Ryzen 9 3950X (16C/32T, 4.7 GHz, 105W Matisse)',
+      family: 'Zen 2 Matisse',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 1.05,
+      npuSupported: false
+    },
+    'amd-ryzen-9-3900xt': {
+      name: 'AMD Ryzen 9 3900XT (12C/24T, 4.7 GHz, 105W Matisse)',
+      family: 'Zen 2 Matisse',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 1.02,
+      npuSupported: false
+    },
+    'amd-ryzen-9-3900x': {
+      name: 'AMD Ryzen 9 3900X (12C/24T, 4.6 GHz, 105W Matisse)',
+      family: 'Zen 2 Matisse',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 1.0,
+      npuSupported: false
+    },
+    'amd-ryzen-7-3800xt': {
+      name: 'AMD Ryzen 7 3800XT (8C/16T, 4.7 GHz, 105W Matisse)',
+      family: 'Zen 2 Matisse',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.95,
+      npuSupported: false
+    },
+    'amd-ryzen-7-3800x': {
+      name: 'AMD Ryzen 7 3800X (8C/16T, 4.5 GHz, 105W Matisse)',
+      family: 'Zen 2 Matisse',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.94,
+      npuSupported: false
+    },
+    'amd-ryzen-7-3700x': {
+      name: 'AMD Ryzen 7 3700X (8C/16T, 4.4 GHz, 65W Matisse)',
+      family: 'Zen 2 Matisse',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.92,
+      npuSupported: false
+    },
+    'amd-ryzen-5-3600xt': {
+      name: 'AMD Ryzen 5 3600XT (6C/12T, 4.5 GHz, 95W Matisse)',
+      family: 'Zen 2 Matisse',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.88,
+      npuSupported: false
+    },
+    'amd-ryzen-5-3600x': {
+      name: 'AMD Ryzen 5 3600X (6C/12T, 4.4 GHz, 95W Matisse)',
+      family: 'Zen 2 Matisse',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.87,
+      npuSupported: false
+    },
+    'amd-ryzen-5-3600': {
+      name: 'AMD Ryzen 5 3600 (6C/12T, 4.2 GHz, 65W Matisse)',
+      family: 'Zen 2 Matisse',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.85,
+      npuSupported: false
+    },
+    'amd-ryzen-5-3500x': {
+      name: 'AMD Ryzen 5 3500X (6C/6T, 4.1 GHz, 65W Matisse)',
+      family: 'Zen 2 Matisse',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.81,
+      npuSupported: false
+    },
+    'amd-ryzen-3-3300x': {
+      name: 'AMD Ryzen 3 3300X (4C/8T, 4.3 GHz, 65W Matisse)',
+      family: 'Zen 2 Matisse',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.81,
+      npuSupported: false
+    },
+    'amd-ryzen-3-3100': {
+      name: 'AMD Ryzen 3 3100 (4C/8T, 3.9 GHz, 65W Matisse)',
+      family: 'Zen 2 Matisse',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.77,
+      npuSupported: false
+    },
+    'amd-ryzen-5-3400g': {
+      name: 'AMD Ryzen 5 3400G (4C/8T, RX Vega 11, 65W Picasso)',
+      family: 'Zen+ Picasso APU',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.75,
+      npuSupported: false
+    },
+    'amd-ryzen-3-3200g': {
+      name: 'AMD Ryzen 3 3200G (4C/4T, RX Vega 8, 65W Picasso)',
+      family: 'Zen+ Picasso APU',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.71,
+      npuSupported: false
+    },
+    /* Group 12: AMD Threadripper & PRO (Storm Peak, Chagall & Castle Peak) [10 models] */
+    'amd-threadripper-pro-7955wx': {
+      name: 'AMD Ryzen Threadripper PRO 7955WX (16C/32T, 350W, 8-Ch DDR5)',
+      family: 'Zen 4 Storm Peak-WS',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS Enterprise (amdgpu / ROCm)',
+      factor: 1.35,
+      npuSupported: false
+    },
+    'amd-threadripper-pro-7945wx': {
+      name: 'AMD Ryzen Threadripper PRO 7945WX (12C/24T, 350W, 8-Ch DDR5)',
+      family: 'Zen 4 Storm Peak-WS',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS Enterprise (amdgpu / ROCm)',
+      factor: 1.3,
+      npuSupported: false
+    },
+    'amd-threadripper-pro-5955wx': {
+      name: 'AMD Ryzen Threadripper PRO 5955WX (16C/32T, 280W, 8-Ch DDR4)',
+      family: 'Zen 3 Chagall-WS',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.25,
+      npuSupported: false
+    },
+    'amd-threadripper-pro-5945wx': {
+      name: 'AMD Ryzen Threadripper PRO 5945WX (12C/24T, 280W, 8-Ch DDR4)',
+      family: 'Zen 3 Chagall-WS',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.2,
+      npuSupported: false
+    },
+    'amd-threadripper-3990x': {
+      name: 'AMD Ryzen Threadripper 3990X (64C/128T, 280W, 4-Ch DDR4)',
+      family: 'Zen 2 Castle Peak',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.36,
+      npuSupported: false
+    },
+    'amd-threadripper-3970x': {
+      name: 'AMD Ryzen Threadripper 3970X (32C/64T, 280W, 4-Ch DDR4)',
+      family: 'Zen 2 Castle Peak',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.3,
+      npuSupported: false
+    },
+    'amd-threadripper-3960x': {
+      name: 'AMD Ryzen Threadripper 3960X (24C/48T, 280W, 4-Ch DDR4)',
+      family: 'Zen 2 Castle Peak',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.24,
+      npuSupported: false
+    },
+    'amd-threadripper-pro-3995wx': {
+      name: 'AMD Ryzen Threadripper PRO 3995WX (64C/128T, 280W, 8-Ch DDR4)',
+      family: 'Zen 2 Castle Peak-WS',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.38,
+      npuSupported: false
+    },
+    'amd-threadripper-pro-3975wx': {
+      name: 'AMD Ryzen Threadripper PRO 3975WX (32C/64T, 280W, 8-Ch DDR4)',
+      family: 'Zen 2 Castle Peak-WS',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.32,
+      npuSupported: false
+    },
+    'amd-threadripper-pro-3955wx': {
+      name: 'AMD Ryzen Threadripper PRO 3955WX (16C/32T, 280W, 8-Ch DDR4)',
+      family: 'Zen 2 Castle Peak-WS',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.22,
+      npuSupported: false
+    },
+    /* Group 13: AMD EPYC Server 9005 & 9004 Series (Turin Zen 5 & Genoa Zen 4) [16 models] */
+    'amd-epyc-9965': {
+      name: 'AMD EPYC 9965 "Turin Dense" (192C/384T, 500W, Zen 5c)',
+      family: 'Zen 5c Turin SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300X',
+      vector: 'Dual AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.11+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.62,
+      npuSupported: false
+    },
+    'amd-epyc-9845': {
+      name: 'AMD EPYC 9845 "Turin Dense" (144C/288T, 390W, Zen 5c)',
+      family: 'Zen 5c Turin SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300X',
+      vector: 'Dual AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.11+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.59,
+      npuSupported: false
+    },
+    'amd-epyc-9825': {
+      name: 'AMD EPYC 9825 "Turin Dense" (144C/288T, 390W, Zen 5c)',
+      family: 'Zen 5c Turin SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300X',
+      vector: 'Dual AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.11+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.58,
+      npuSupported: false
+    },
+    'amd-epyc-9555': {
+      name: 'AMD EPYC 9555 "Turin" (64C/128T, 360W, Zen 5)',
+      family: 'Zen 5 Turin SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300X',
+      vector: 'Dual AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.11+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.54,
+      npuSupported: false
+    },
+    'amd-epyc-9455': {
+      name: 'AMD EPYC 9455 "Turin" (48C/96T, 300W, Zen 5)',
+      family: 'Zen 5 Turin SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300X',
+      vector: 'Dual AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.11+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.5,
+      npuSupported: false
+    },
+    'amd-epyc-9355': {
+      name: 'AMD EPYC 9355 "Turin" (32C/64T, 280W, Zen 5)',
+      family: 'Zen 5 Turin SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300X',
+      vector: 'Dual AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.11+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.45,
+      npuSupported: false
+    },
+    'amd-epyc-9255': {
+      name: 'AMD EPYC 9255 "Turin" (24C/48T, 200W, Zen 5)',
+      family: 'Zen 5 Turin SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300X',
+      vector: 'Dual AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.11+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.4,
+      npuSupported: false
+    },
+    'amd-epyc-9475f': {
+      name: 'AMD EPYC 9475F "Turin" (48C/96T, 4.8 GHz, 400W AI Tuned)',
+      family: 'Zen 5 Turin SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300X',
+      vector: 'Dual AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.11+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.52,
+      npuSupported: false
+    },
+    'amd-epyc-9375f': {
+      name: 'AMD EPYC 9375F "Turin" (32C/64T, 4.8 GHz, 320W AI Tuned)',
+      family: 'Zen 5 Turin SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300X',
+      vector: 'Dual AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.11+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.48,
+      npuSupported: false
+    },
+    'amd-epyc-9275f': {
+      name: 'AMD EPYC 9275F "Turin" (24C/48T, 4.8 GHz, 320W AI Tuned)',
+      family: 'Zen 5 Turin SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300X',
+      vector: 'Dual AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.11+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.44,
+      npuSupported: false
+    },
+    'amd-epyc-9175f': {
+      name: 'AMD EPYC 9175F "Turin" (16C/32T, 5.0 GHz, 320W AI Tuned)',
+      family: 'Zen 5 Turin SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300X',
+      vector: 'Dual AVX-512 (Native 512-bit) + VNNI + BF16',
+      driver: 'Linux 6.11+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.4,
+      npuSupported: false
+    },
+    'amd-epyc-9454': {
+      name: 'AMD EPYC 9454 "Genoa" (48C/96T, 290W, Zen 4)',
+      family: 'Zen 4 Genoa SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300',
+      vector: 'Dual AVX-512 + VNNI + BF16',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.44,
+      npuSupported: false
+    },
+    'amd-epyc-9254': {
+      name: 'AMD EPYC 9254 "Genoa" (24C/48T, 200W, Zen 4)',
+      family: 'Zen 4 Genoa SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300',
+      vector: 'Dual AVX-512 + VNNI + BF16',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.36,
+      npuSupported: false
+    },
+    'amd-epyc-9124': {
+      name: 'AMD EPYC 9124 "Genoa" (16C/32T, 200W, Zen 4)',
+      family: 'Zen 4 Genoa SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300',
+      vector: 'Dual AVX-512 + VNNI + BF16',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.3,
+      npuSupported: false
+    },
+    'amd-epyc-9474f': {
+      name: 'AMD EPYC 9474F "Genoa" (48C/96T, 360W, Zen 4 High-Freq)',
+      family: 'Zen 4 Genoa SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300',
+      vector: 'Dual AVX-512 + VNNI + BF16',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.46,
+      npuSupported: false
+    },
+    'amd-epyc-9374f': {
+      name: 'AMD EPYC 9374F "Genoa" (32C/64T, 320W, Zen 4 High-Freq)',
+      family: 'Zen 4 Genoa SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300',
+      vector: 'Dual AVX-512 + VNNI + BF16',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.42,
+      npuSupported: false
+    },
+    /* Group 14: AMD EPYC Server 8004, 7003 & 7002 Series (Siena, Milan-X & Rome) [12 models] */
+    'amd-epyc-9384x': {
+      name: 'AMD EPYC 9384X "Genoa-X" (32C/64T, 768MB 3D V-Cache, Zen 4)',
+      family: 'Zen 4 Genoa-X SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300',
+      vector: 'Dual AVX-512 + VNNI + BF16',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.46,
+      npuSupported: false
+    },
+    'amd-epyc-9184x': {
+      name: 'AMD EPYC 9184X "Genoa-X" (16C/32T, 768MB 3D V-Cache, Zen 4)',
+      family: 'Zen 4 Genoa-X SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300',
+      vector: 'Dual AVX-512 + VNNI + BF16',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.38,
+      npuSupported: false
+    },
+    'amd-epyc-8434p': {
+      name: 'AMD EPYC 8434P "Siena" (48C/96T, 155W, Zen 4c Edge/Telco)',
+      family: 'Zen 4c Siena SP6',
+      npu: 'Dedicated PCIe ROCm Edge Solution',
+      vector: 'AVX-512 + VNNI + BF16',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.38,
+      npuSupported: false
+    },
+    'amd-epyc-8324p': {
+      name: 'AMD EPYC 8324P "Siena" (32C/64T, 130W, Zen 4c Edge/Telco)',
+      family: 'Zen 4c Siena SP6',
+      npu: 'Dedicated PCIe ROCm Edge Solution',
+      vector: 'AVX-512 + VNNI + BF16',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.32,
+      npuSupported: false
+    },
+    'amd-epyc-8224p': {
+      name: 'AMD EPYC 8224P "Siena" (24C/48T, 120W, Zen 4c Edge/Telco)',
+      family: 'Zen 4c Siena SP6',
+      npu: 'Dedicated PCIe ROCm Edge Solution',
+      vector: 'AVX-512 + VNNI + BF16',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.28,
+      npuSupported: false
+    },
+    'amd-epyc-8124p': {
+      name: 'AMD EPYC 8124P "Siena" (16C/32T, 100W, Zen 4c Edge/Telco)',
+      family: 'Zen 4c Siena SP6',
+      npu: 'Dedicated PCIe ROCm Edge Solution',
+      vector: 'AVX-512 + VNNI + BF16',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.22,
+      npuSupported: false
+    },
+    'amd-epyc-8024p': {
+      name: 'AMD EPYC 8024P "Siena" (8C/16T, 90W, Zen 4c Edge/Telco)',
+      family: 'Zen 4c Siena SP6',
+      npu: 'Dedicated PCIe ROCm Edge Solution',
+      vector: 'AVX-512 + VNNI + BF16',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu / kfd)',
+      factor: 1.15,
+      npuSupported: false
+    },
+    'amd-epyc-7773x': {
+      name: 'AMD EPYC 7773X "Milan-X" (64C/128T, 768MB 3D V-Cache, Zen 3)',
+      family: 'Zen 3 Milan-X SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.42,
+      npuSupported: false
+    },
+    'amd-epyc-7573x': {
+      name: 'AMD EPYC 7573X "Milan-X" (32C/128T, 512MB 3D V-Cache, Zen 3)',
+      family: 'Zen 3 Milan-X SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.36,
+      npuSupported: false
+    },
+    'amd-epyc-7713': {
+      name: 'AMD EPYC 7713 "Milan" (64C/128T, 225W, Zen 3)',
+      family: 'Zen 3 Milan SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.35,
+      npuSupported: false
+    },
+    'amd-epyc-7543': {
+      name: 'AMD EPYC 7543 "Milan" (32C/64T, 225W, Zen 3)',
+      family: 'Zen 3 Milan SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.28,
+      npuSupported: false
+    },
+    'amd-epyc-7742': {
+      name: 'AMD EPYC 7742 "Rome" (64C/128T, 225W, Zen 2 Enterprise)',
+      family: 'Zen 2 Rome SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.26,
+      npuSupported: false
+    },
+    /* --- Additional 100 AMD Chip Variants (300 Total) --- */
+    /* Group 15: AMD Ryzen 2000 Series (Pinnacle Ridge Desktop & Raven Ridge APUs - Zen+) [20 models] */
+    'amd-ryzen-7-2700x': {
+      name: 'AMD Ryzen 7 2700X (8C/16T, 4.3 GHz, 105W Pinnacle Ridge)',
+      family: 'Zen+ Pinnacle Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.9,
+      npuSupported: false
+    },
+    'amd-ryzen-7-2700': {
+      name: 'AMD Ryzen 7 2700 (8C/16T, 4.1 GHz, 65W Pinnacle Ridge)',
+      family: 'Zen+ Pinnacle Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.88,
+      npuSupported: false
+    },
+    'amd-ryzen-7-2700e': {
+      name: 'AMD Ryzen 7 2700E (8C/16T, 4.0 GHz, 45W Eco)',
+      family: 'Zen+ Pinnacle Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.85,
+      npuSupported: false
+    },
+    'amd-ryzen-7-pro-2700x': {
+      name: 'AMD Ryzen 7 PRO 2700X (8C/16T, 4.1 GHz, 105W Enterprise)',
+      family: 'Zen+ Pinnacle Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.9,
+      npuSupported: false
+    },
+    'amd-ryzen-7-pro-2700': {
+      name: 'AMD Ryzen 7 PRO 2700 (8C/16T, 4.1 GHz, 65W Enterprise)',
+      family: 'Zen+ Pinnacle Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.88,
+      npuSupported: false
+    },
+    'amd-ryzen-5-2600x': {
+      name: 'AMD Ryzen 5 2600X (6C/12T, 4.2 GHz, 95W Pinnacle Ridge)',
+      family: 'Zen+ Pinnacle Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.84,
+      npuSupported: false
+    },
+    'amd-ryzen-5-2600': {
+      name: 'AMD Ryzen 5 2600 (6C/12T, 3.9 GHz, 65W Pinnacle Ridge)',
+      family: 'Zen+ Pinnacle Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.82,
+      npuSupported: false
+    },
+    'amd-ryzen-5-2600e': {
+      name: 'AMD Ryzen 5 2600E (6C/12T, 4.0 GHz, 45W Eco)',
+      family: 'Zen+ Pinnacle Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.8,
+      npuSupported: false
+    },
+    'amd-ryzen-5-1600-af': {
+      name: 'AMD Ryzen 5 1600 AF (6C/12T, 3.6 GHz, 12nm Zen+)',
+      family: 'Zen+ Pinnacle Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.81,
+      npuSupported: false
+    },
+    'amd-ryzen-5-pro-2600': {
+      name: 'AMD Ryzen 5 PRO 2600 (6C/12T, 3.9 GHz, 65W Enterprise)',
+      family: 'Zen+ Pinnacle Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.82,
+      npuSupported: false
+    },
+    'amd-ryzen-3-2300x': {
+      name: 'AMD Ryzen 3 2300X (4C/4T, 4.0 GHz, 65W Pinnacle Ridge)',
+      family: 'Zen+ Pinnacle Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.76,
+      npuSupported: false
+    },
+    'amd-ryzen-3-1200-af': {
+      name: 'AMD Ryzen 3 1200 AF (4C/4T, 3.4 GHz, 12nm Zen+)',
+      family: 'Zen+ Pinnacle Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.74,
+      npuSupported: false
+    },
+    'amd-ryzen-5-2400g': {
+      name: 'AMD Ryzen 5 2400G (4C/8T, RX Vega 11, 65W Raven Ridge)',
+      family: 'Zen Raven Ridge APU',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.77,
+      npuSupported: false
+    },
+    'amd-ryzen-5-2400ge': {
+      name: 'AMD Ryzen 5 2400GE (4C/8T, RX Vega 11, 35W Eco APU)',
+      family: 'Zen Raven Ridge APU',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.75,
+      npuSupported: false
+    },
+    'amd-ryzen-5-pro-2400g': {
+      name: 'AMD Ryzen 5 PRO 2400G (4C/8T, RX Vega 11, 65W Enterprise)',
+      family: 'Zen Raven Ridge APU',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.77,
+      npuSupported: false
+    },
+    'amd-ryzen-5-pro-2400ge': {
+      name: 'AMD Ryzen 5 PRO 2400GE (4C/8T, RX Vega 11, 35W Eco Enterprise)',
+      family: 'Zen Raven Ridge APU',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.75,
+      npuSupported: false
+    },
+    'amd-ryzen-3-2200g': {
+      name: 'AMD Ryzen 3 2200G (4C/4T, RX Vega 8, 65W Raven Ridge)',
+      family: 'Zen Raven Ridge APU',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.73,
+      npuSupported: false
+    },
+    'amd-ryzen-3-2200ge': {
+      name: 'AMD Ryzen 3 2200GE (4C/4T, RX Vega 8, 35W Eco APU)',
+      family: 'Zen Raven Ridge APU',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.71,
+      npuSupported: false
+    },
+    'amd-ryzen-3-pro-2200g': {
+      name: 'AMD Ryzen 3 PRO 2200G (4C/4T, RX Vega 8, 65W Enterprise)',
+      family: 'Zen Raven Ridge APU',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.73,
+      npuSupported: false
+    },
+    'amd-ryzen-3-pro-2200ge': {
+      name: 'AMD Ryzen 3 PRO 2200GE (4C/4T, RX Vega 8, 35W Eco Enterprise)',
+      family: 'Zen Raven Ridge APU',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.71,
+      npuSupported: false
+    },
+    /* Group 16: AMD Ryzen 1000 Series (Summit Ridge - 1st Gen Zen Architecture) [15 models] */
+    'amd-ryzen-7-1800x': {
+      name: 'AMD Ryzen 7 1800X (8C/16T, 4.0 GHz, 95W Summit Ridge)',
+      family: 'Zen Summit Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.86,
+      npuSupported: false
+    },
+    'amd-ryzen-7-1700x': {
+      name: 'AMD Ryzen 7 1700X (8C/16T, 3.8 GHz, 95W Summit Ridge)',
+      family: 'Zen Summit Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.84,
+      npuSupported: false
+    },
+    'amd-ryzen-7-1700': {
+      name: 'AMD Ryzen 7 1700 (8C/16T, 3.7 GHz, 65W Summit Ridge)',
+      family: 'Zen Summit Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.82,
+      npuSupported: false
+    },
+    'amd-ryzen-7-pro-1700x': {
+      name: 'AMD Ryzen 7 PRO 1700X (8C/16T, 3.8 GHz, 95W Enterprise)',
+      family: 'Zen Summit Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.84,
+      npuSupported: false
+    },
+    'amd-ryzen-7-pro-1700': {
+      name: 'AMD Ryzen 7 PRO 1700 (8C/16T, 3.7 GHz, 65W Enterprise)',
+      family: 'Zen Summit Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.82,
+      npuSupported: false
+    },
+    'amd-ryzen-5-1600x': {
+      name: 'AMD Ryzen 5 1600X (6C/12T, 4.0 GHz, 95W Summit Ridge)',
+      family: 'Zen Summit Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.8,
+      npuSupported: false
+    },
+    'amd-ryzen-5-1600': {
+      name: 'AMD Ryzen 5 1600 (6C/12T, 3.6 GHz, 65W Summit Ridge)',
+      family: 'Zen Summit Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.78,
+      npuSupported: false
+    },
+    'amd-ryzen-5-1500x': {
+      name: 'AMD Ryzen 5 1500X (4C/8T, 3.7 GHz, 65W Summit Ridge)',
+      family: 'Zen Summit Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.76,
+      npuSupported: false
+    },
+    'amd-ryzen-5-1400': {
+      name: 'AMD Ryzen 5 1400 (4C/8T, 3.4 GHz, 65W Summit Ridge)',
+      family: 'Zen Summit Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.73,
+      npuSupported: false
+    },
+    'amd-ryzen-5-pro-1600': {
+      name: 'AMD Ryzen 5 PRO 1600 (6C/12T, 3.6 GHz, 65W Enterprise)',
+      family: 'Zen Summit Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.78,
+      npuSupported: false
+    },
+    'amd-ryzen-5-pro-1500': {
+      name: 'AMD Ryzen 5 PRO 1500 (4C/8T, 3.7 GHz, 65W Enterprise)',
+      family: 'Zen Summit Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.76,
+      npuSupported: false
+    },
+    'amd-ryzen-3-1300x': {
+      name: 'AMD Ryzen 3 1300X (4C/4T, 3.7 GHz, 65W Summit Ridge)',
+      family: 'Zen Summit Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.72,
+      npuSupported: false
+    },
+    'amd-ryzen-3-1200': {
+      name: 'AMD Ryzen 3 1200 (4C/4T, 3.4 GHz, 65W Summit Ridge)',
+      family: 'Zen Summit Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.7,
+      npuSupported: false
+    },
+    'amd-ryzen-3-pro-1300': {
+      name: 'AMD Ryzen 3 PRO 1300 (4C/4T, 3.7 GHz, 65W Enterprise)',
+      family: 'Zen Summit Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.72,
+      npuSupported: false
+    },
+    'amd-ryzen-3-pro-1200': {
+      name: 'AMD Ryzen 3 PRO 1200 (4C/4T, 3.4 GHz, 65W Enterprise)',
+      family: 'Zen Summit Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.7,
+      npuSupported: false
+    },
+    /* Group 17: AMD Ryzen 3000 & 2000 Mobile Series (Picasso & Raven Ridge) [12 models] */
+    'amd-ryzen-7-3750h': {
+      name: 'AMD Ryzen 7 3750H (4C/8T, 4.0 GHz, 35W Picasso Mobile)',
+      family: 'Zen+ Picasso Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.77,
+      npuSupported: false
+    },
+    'amd-ryzen-7-3700u': {
+      name: 'AMD Ryzen 7 3700U (4C/8T, 4.0 GHz, 15W Picasso Mobile)',
+      family: 'Zen+ Picasso Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.75,
+      npuSupported: false
+    },
+    'amd-ryzen-7-2800h': {
+      name: 'AMD Ryzen 7 2800H (4C/8T, 3.8 GHz, 45W Raven Ridge)',
+      family: 'Zen Raven Ridge Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.76,
+      npuSupported: false
+    },
+    'amd-ryzen-7-2700u': {
+      name: 'AMD Ryzen 7 2700U (4C/8T, 3.8 GHz, 15W Raven Ridge)',
+      family: 'Zen Raven Ridge Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.74,
+      npuSupported: false
+    },
+    'amd-ryzen-5-3550h': {
+      name: 'AMD Ryzen 5 3550H (4C/8T, 3.7 GHz, 35W Picasso Mobile)',
+      family: 'Zen+ Picasso Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.74,
+      npuSupported: false
+    },
+    'amd-ryzen-5-3500u': {
+      name: 'AMD Ryzen 5 3500U (4C/8T, 3.7 GHz, 15W Picasso Mobile)',
+      family: 'Zen+ Picasso Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.72,
+      npuSupported: false
+    },
+    'amd-ryzen-5-2600h': {
+      name: 'AMD Ryzen 5 2600H (4C/8T, 3.6 GHz, 45W Raven Ridge)',
+      family: 'Zen Raven Ridge Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.73,
+      npuSupported: false
+    },
+    'amd-ryzen-5-2500u': {
+      name: 'AMD Ryzen 5 2500U (4C/8T, 3.6 GHz, 15W Raven Ridge)',
+      family: 'Zen Raven Ridge Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.71,
+      npuSupported: false
+    },
+    'amd-ryzen-3-3300u': {
+      name: 'AMD Ryzen 3 3300U (4C/4T, 3.5 GHz, 15W Picasso Mobile)',
+      family: 'Zen+ Picasso Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.69,
+      npuSupported: false
+    },
+    'amd-ryzen-3-2300u': {
+      name: 'AMD Ryzen 3 2300U (4C/4T, 3.4 GHz, 15W Raven Ridge)',
+      family: 'Zen Raven Ridge Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.67,
+      npuSupported: false
+    },
+    'amd-ryzen-3-3200u': {
+      name: 'AMD Ryzen 3 3200U (2C/4T, 3.5 GHz, 15W Picasso Mobile)',
+      family: 'Zen+ Picasso Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.64,
+      npuSupported: false
+    },
+    'amd-ryzen-3-2200u': {
+      name: 'AMD Ryzen 3 2200U (2C/4T, 3.4 GHz, 15W Raven Ridge)',
+      family: 'Zen Raven Ridge Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.62,
+      npuSupported: false
+    },
+    /* Group 18: AMD Threadripper 2000 & 1000 Series (Colfax & Whitehaven HEDT) [7 models] */
+    'amd-threadripper-2990wx': {
+      name: 'AMD Ryzen Threadripper 2990WX (32C/64T, 250W, Zen+ Colfax)',
+      family: 'Zen+ Colfax HEDT',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.25,
+      npuSupported: false
+    },
+    'amd-threadripper-2970wx': {
+      name: 'AMD Ryzen Threadripper 2970WX (24C/48T, 250W, Zen+ Colfax)',
+      family: 'Zen+ Colfax HEDT',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.2,
+      npuSupported: false
+    },
+    'amd-threadripper-2950x': {
+      name: 'AMD Ryzen Threadripper 2950X (16C/32T, 180W, Zen+ Colfax)',
+      family: 'Zen+ Colfax HEDT',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.15,
+      npuSupported: false
+    },
+    'amd-threadripper-2920x': {
+      name: 'AMD Ryzen Threadripper 2920X (12C/24T, 180W, Zen+ Colfax)',
+      family: 'Zen+ Colfax HEDT',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.1,
+      npuSupported: false
+    },
+    'amd-threadripper-1950x': {
+      name: 'AMD Ryzen Threadripper 1950X (16C/32T, 180W, Zen Whitehaven)',
+      family: 'Zen Whitehaven HEDT',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.12,
+      npuSupported: false
+    },
+    'amd-threadripper-1920x': {
+      name: 'AMD Ryzen Threadripper 1920X (12C/24T, 180W, Zen Whitehaven)',
+      family: 'Zen Whitehaven HEDT',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.06,
+      npuSupported: false
+    },
+    'amd-threadripper-1900x': {
+      name: 'AMD Ryzen Threadripper 1900X (8C/16T, 180W, Zen Whitehaven)',
+      family: 'Zen Whitehaven HEDT',
+      npu: 'Dedicated PCIe ROCm Accelerator / Host NPU',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 0.98,
+      npuSupported: false
+    },
+    /* Group 19: AMD EPYC 7003 & 7002 High-Frequency & 1P Servers (Milan & Rome) [16 models] */
+    'amd-epyc-7713p': {
+      name: 'AMD EPYC 7713P "Milan" (64C/128T, 225W, 1P Dedicated)',
+      family: 'Zen 3 Milan SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.35,
+      npuSupported: false
+    },
+    'amd-epyc-7543p': {
+      name: 'AMD EPYC 7543P "Milan" (32C/64T, 225W, 1P Dedicated)',
+      family: 'Zen 3 Milan SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.28,
+      npuSupported: false
+    },
+    'amd-epyc-7443p': {
+      name: 'AMD EPYC 7443P "Milan" (24C/48T, 200W, 1P Dedicated)',
+      family: 'Zen 3 Milan SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.24,
+      npuSupported: false
+    },
+    'amd-epyc-7343': {
+      name: 'AMD EPYC 7343 "Milan" (16C/32T, 190W, Zen 3)',
+      family: 'Zen 3 Milan SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.2,
+      npuSupported: false
+    },
+    'amd-epyc-75f3': {
+      name: 'AMD EPYC 75F3 "Milan" (32C/64T, 4.0 GHz, 280W High-Freq)',
+      family: 'Zen 3 Milan SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.32,
+      npuSupported: false
+    },
+    'amd-epyc-74f3': {
+      name: 'AMD EPYC 74F3 "Milan" (24C/48T, 4.0 GHz, 240W High-Freq)',
+      family: 'Zen 3 Milan SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.28,
+      npuSupported: false
+    },
+    'amd-epyc-73f3': {
+      name: 'AMD EPYC 73F3 "Milan" (16C/32T, 4.0 GHz, 240W High-Freq)',
+      family: 'Zen 3 Milan SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.24,
+      npuSupported: false
+    },
+    'amd-epyc-72f3': {
+      name: 'AMD EPYC 72F3 "Milan" (8C/16T, 4.1 GHz, 180W High-Freq)',
+      family: 'Zen 3 Milan SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.18,
+      npuSupported: false
+    },
+    'amd-epyc-7702p': {
+      name: 'AMD EPYC 7702P "Rome" (64C/128T, 200W, 1P Dedicated)',
+      family: 'Zen 2 Rome SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.26,
+      npuSupported: false
+    },
+    'amd-epyc-7502p': {
+      name: 'AMD EPYC 7502P "Rome" (32C/64T, 180W, 1P Dedicated)',
+      family: 'Zen 2 Rome SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.22,
+      npuSupported: false
+    },
+    'amd-epyc-7402p': {
+      name: 'AMD EPYC 7402P "Rome" (24C/48T, 180W, 1P Dedicated)',
+      family: 'Zen 2 Rome SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.18,
+      npuSupported: false
+    },
+    'amd-epyc-7302p': {
+      name: 'AMD EPYC 7302P "Rome" (16C/32T, 155W, 1P Dedicated)',
+      family: 'Zen 2 Rome SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.14,
+      npuSupported: false
+    },
+    'amd-epyc-7642': {
+      name: 'AMD EPYC 7642 "Rome" (48C/96T, 225W, Zen 2)',
+      family: 'Zen 2 Rome SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.24,
+      npuSupported: false
+    },
+    'amd-epyc-7552': {
+      name: 'AMD EPYC 7552 "Rome" (48C/96T, 200W, Zen 2)',
+      family: 'Zen 2 Rome SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.22,
+      npuSupported: false
+    },
+    'amd-epyc-7532': {
+      name: 'AMD EPYC 7532 "Rome" (32C/64T, 256MB L3, Zen 2)',
+      family: 'Zen 2 Rome SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.21,
+      npuSupported: false
+    },
+    'amd-epyc-7f72': {
+      name: 'AMD EPYC 7F72 "Rome" (24C/48T, 3.7 GHz, 240W High-Freq)',
+      family: 'Zen 2 Rome SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.22,
+      npuSupported: false
+    },
+    /* Group 20: AMD EPYC 7001 Series (Naples - 1st Gen Zen Enterprise) [14 models] */
+    'amd-epyc-7601': {
+      name: 'AMD EPYC 7601 "Naples" (32C/64T, 180W, Naples Flagship)',
+      family: 'Zen Naples SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.18,
+      npuSupported: false
+    },
+    'amd-epyc-7551': {
+      name: 'AMD EPYC 7551 "Naples" (32C/64T, 180W, Zen Enterprise)',
+      family: 'Zen Naples SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.16,
+      npuSupported: false
+    },
+    'amd-epyc-7551p': {
+      name: 'AMD EPYC 7551P "Naples" (32C/64T, 180W, 1P Dedicated)',
+      family: 'Zen Naples SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.16,
+      npuSupported: false
+    },
+    'amd-epyc-7501': {
+      name: 'AMD EPYC 7501 "Naples" (32C/64T, 170W, Zen Enterprise)',
+      family: 'Zen Naples SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.15,
+      npuSupported: false
+    },
+    'amd-epyc-7451': {
+      name: 'AMD EPYC 7451 "Naples" (24C/48T, 180W, Zen Enterprise)',
+      family: 'Zen Naples SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.12,
+      npuSupported: false
+    },
+    'amd-epyc-7401': {
+      name: 'AMD EPYC 7401 "Naples" (24C/48T, 170W, Zen Enterprise)',
+      family: 'Zen Naples SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.1,
+      npuSupported: false
+    },
+    'amd-epyc-7401p': {
+      name: 'AMD EPYC 7401P "Naples" (24C/48T, 170W, 1P Dedicated)',
+      family: 'Zen Naples SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.1,
+      npuSupported: false
+    },
+    'amd-epyc-7351': {
+      name: 'AMD EPYC 7351 "Naples" (16C/32T, 170W, Zen Enterprise)',
+      family: 'Zen Naples SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.06,
+      npuSupported: false
+    },
+    'amd-epyc-7351p': {
+      name: 'AMD EPYC 7351P "Naples" (16C/32T, 170W, 1P Dedicated)',
+      family: 'Zen Naples SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.06,
+      npuSupported: false
+    },
+    'amd-epyc-7301': {
+      name: 'AMD EPYC 7301 "Naples" (16C/32T, 170W, Zen Enterprise)',
+      family: 'Zen Naples SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.04,
+      npuSupported: false
+    },
+    'amd-epyc-7281': {
+      name: 'AMD EPYC 7281 "Naples" (16C/32T, 170W, Zen Enterprise)',
+      family: 'Zen Naples SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.02,
+      npuSupported: false
+    },
+    'amd-epyc-7261': {
+      name: 'AMD EPYC 7261 "Naples" (8C/16T, 64MB L3, 170W)',
+      family: 'Zen Naples SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 0.96,
+      npuSupported: false
+    },
+    'amd-epyc-7251': {
+      name: 'AMD EPYC 7251 "Naples" (8C/16T, 120W, Entry Server)',
+      family: 'Zen Naples SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 0.94,
+      npuSupported: false
+    },
+    'amd-epyc-7302': {
+      name: 'AMD EPYC 7302 "Rome" (16C/32T, 155W, Zen 2 Enterprise)',
+      family: 'Zen 2 Rome SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.14,
+      npuSupported: false
+    },
+    /* Group 21: AMD Ryzen Embedded (V-Series, R-Series & Embedded SoC) [16 models] */
+    'amd-ryzen-emb-v3c88': {
+      name: 'AMD Ryzen Embedded V3C88 (8C/16T, 45W, Zen 4)',
+      family: 'Zen 4 Embedded',
+      npu: 'Dedicated PCIe ROCm Edge Solution',
+      vector: 'AVX-512 + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.14,
+      npuSupported: false
+    },
+    'amd-ryzen-emb-v3c84': {
+      name: 'AMD Ryzen Embedded V3C84 (8C/16T, 25W, Zen 4)',
+      family: 'Zen 4 Embedded',
+      npu: 'Dedicated PCIe ROCm Edge Solution',
+      vector: 'AVX-512 + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.1,
+      npuSupported: false
+    },
+    'amd-ryzen-emb-v3c64': {
+      name: 'AMD Ryzen Embedded V3C64 (6C/12T, 25W, Zen 4)',
+      family: 'Zen 4 Embedded',
+      npu: 'Dedicated PCIe ROCm Edge Solution',
+      vector: 'AVX-512 + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.05,
+      npuSupported: false
+    },
+    'amd-ryzen-emb-v3c44': {
+      name: 'AMD Ryzen Embedded V3C44 (4C/8T, 25W, Zen 4)',
+      family: 'Zen 4 Embedded',
+      npu: 'Dedicated PCIe ROCm Edge Solution',
+      vector: 'AVX-512 + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 0.98,
+      npuSupported: false
+    },
+    'amd-ryzen-emb-v2748': {
+      name: 'AMD Ryzen Embedded V2748 (8C/16T, 4.25 GHz, 45W Zen 2)',
+      family: 'Zen 2 Embedded',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.92,
+      npuSupported: false
+    },
+    'amd-ryzen-emb-v2718': {
+      name: 'AMD Ryzen Embedded V2718 (8C/16T, 4.15 GHz, 15W Zen 2)',
+      family: 'Zen 2 Embedded',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.89,
+      npuSupported: false
+    },
+    'amd-ryzen-emb-v2546': {
+      name: 'AMD Ryzen Embedded V2546 (6C/12T, 3.95 GHz, 45W Zen 2)',
+      family: 'Zen 2 Embedded',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.86,
+      npuSupported: false
+    },
+    'amd-ryzen-emb-v2516': {
+      name: 'AMD Ryzen Embedded V2516 (6C/12T, 3.95 GHz, 15W Zen 2)',
+      family: 'Zen 2 Embedded',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.84,
+      npuSupported: false
+    },
+    'amd-ryzen-emb-v1807b': {
+      name: 'AMD Ryzen Embedded V1807B (4C/8T, 3.8 GHz, 45W Zen)',
+      family: 'Zen Embedded',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.76,
+      npuSupported: false
+    },
+    'amd-ryzen-emb-v1756b': {
+      name: 'AMD Ryzen Embedded V1756B (4C/8T, 3.6 GHz, 45W Zen)',
+      family: 'Zen Embedded',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.74,
+      npuSupported: false
+    },
+    'amd-ryzen-emb-v1605b': {
+      name: 'AMD Ryzen Embedded V1605B (4C/8T, 3.6 GHz, 15W Zen)',
+      family: 'Zen Embedded',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.72,
+      npuSupported: false
+    },
+    'amd-ryzen-emb-v1202b': {
+      name: 'AMD Ryzen Embedded V1202B (2C/4T, 3.2 GHz, 15W Zen)',
+      family: 'Zen Embedded',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.65,
+      npuSupported: false
+    },
+    'amd-ryzen-emb-r2514': {
+      name: 'AMD Ryzen Embedded R2514 (4C/8T, 2.1 GHz, 15W Zen+)',
+      family: 'Zen+ Embedded',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.7,
+      npuSupported: false
+    },
+    'amd-ryzen-emb-r2314': {
+      name: 'AMD Ryzen Embedded R2314 (4C/4T, 2.1 GHz, 15W Zen+)',
+      family: 'Zen+ Embedded',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.67,
+      npuSupported: false
+    },
+    'amd-ryzen-emb-r1606g': {
+      name: 'AMD Ryzen Embedded R1606G (2C/4T, 3.5 GHz, 15W Zen)',
+      family: 'Zen Embedded',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.64,
+      npuSupported: false
+    },
+    'amd-ryzen-emb-r1505g': {
+      name: 'AMD Ryzen Embedded R1505G (2C/4T, 3.3 GHz, 15W Zen)',
+      family: 'Zen Embedded',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.62,
+      npuSupported: false
+    },
+    /* --- Additional 100 AMD Chip Variants (400 Total) --- */
+    /* Group 22: AMD Ryzen 6000 & PRO 6000 Series (Rembrandt Zen 3+ & RDNA 2) [20 models] */
+    'amd-ryzen-9-6980hx': {
+      name: 'AMD Ryzen 9 6980HX (8C/16T, 5.0 GHz, 45W+ Rembrandt)',
+      family: 'Zen 3+ Rembrandt Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 1.02,
+      npuSupported: false
+    },
+    'amd-ryzen-9-6980hs': {
+      name: 'AMD Ryzen 9 6980HS (8C/16T, 5.0 GHz, 35W Rembrandt)',
+      family: 'Zen 3+ Rembrandt Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 1.0,
+      npuSupported: false
+    },
+    'amd-ryzen-9-6900hx': {
+      name: 'AMD Ryzen 9 6900HX (8C/16T, 4.9 GHz, 45W+ Rembrandt)',
+      family: 'Zen 3+ Rembrandt Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 1.0,
+      npuSupported: false
+    },
+    'amd-ryzen-9-6900hs': {
+      name: 'AMD Ryzen 9 6900HS (8C/16T, 4.9 GHz, 35W Rembrandt)',
+      family: 'Zen 3+ Rembrandt Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.98,
+      npuSupported: false
+    },
+    'amd-ryzen-7-6800h': {
+      name: 'AMD Ryzen 7 6800H (8C/16T, 4.7 GHz, 45W Rembrandt)',
+      family: 'Zen 3+ Rembrandt Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.96,
+      npuSupported: false
+    },
+    'amd-ryzen-7-6800hs': {
+      name: 'AMD Ryzen 7 6800HS (8C/16T, 4.7 GHz, 35W Rembrandt)',
+      family: 'Zen 3+ Rembrandt Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.95,
+      npuSupported: false
+    },
+    'amd-ryzen-7-6800u': {
+      name: 'AMD Ryzen 7 6800U (8C/16T, 4.7 GHz, 15-28W Rembrandt)',
+      family: 'Zen 3+ Rembrandt Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.94,
+      npuSupported: false
+    },
+    'amd-ryzen-5-6600h': {
+      name: 'AMD Ryzen 5 6600H (6C/12T, 4.5 GHz, 45W Rembrandt)',
+      family: 'Zen 3+ Rembrandt Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.92,
+      npuSupported: false
+    },
+    'amd-ryzen-5-6600hs': {
+      name: 'AMD Ryzen 5 6600HS (6C/12T, 4.5 GHz, 35W Rembrandt)',
+      family: 'Zen 3+ Rembrandt Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.9,
+      npuSupported: false
+    },
+    'amd-ryzen-5-6600u': {
+      name: 'AMD Ryzen 5 6600U (6C/12T, 4.5 GHz, 15-28W Rembrandt)',
+      family: 'Zen 3+ Rembrandt Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.88,
+      npuSupported: false
+    },
+    'amd-ryzen-9-pro-6950h': {
+      name: 'AMD Ryzen 9 PRO 6950H (8C/16T, 4.9 GHz, 45W Enterprise)',
+      family: 'Zen 3+ Rembrandt Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 1.01,
+      npuSupported: false
+    },
+    'amd-ryzen-9-pro-6950hs': {
+      name: 'AMD Ryzen 9 PRO 6950HS (8C/16T, 4.9 GHz, 35W Enterprise)',
+      family: 'Zen 3+ Rembrandt Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.99,
+      npuSupported: false
+    },
+    'amd-ryzen-7-pro-6850h': {
+      name: 'AMD Ryzen 7 PRO 6850H (8C/16T, 4.7 GHz, 45W Enterprise)',
+      family: 'Zen 3+ Rembrandt Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.97,
+      npuSupported: false
+    },
+    'amd-ryzen-7-pro-6850hs': {
+      name: 'AMD Ryzen 7 PRO 6850HS (8C/16T, 4.7 GHz, 35W Enterprise)',
+      family: 'Zen 3+ Rembrandt Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.95,
+      npuSupported: false
+    },
+    'amd-ryzen-7-pro-6850u': {
+      name: 'AMD Ryzen 7 PRO 6850U (8C/16T, 4.7 GHz, 15-28W Enterprise)',
+      family: 'Zen 3+ Rembrandt Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.94,
+      npuSupported: false
+    },
+    'amd-ryzen-5-pro-6650h': {
+      name: 'AMD Ryzen 5 PRO 6650H (6C/12T, 4.5 GHz, 45W Enterprise)',
+      family: 'Zen 3+ Rembrandt Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.92,
+      npuSupported: false
+    },
+    'amd-ryzen-5-pro-6650hs': {
+      name: 'AMD Ryzen 5 PRO 6650HS (6C/12T, 4.5 GHz, 35W Enterprise)',
+      family: 'Zen 3+ Rembrandt Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.9,
+      npuSupported: false
+    },
+    'amd-ryzen-5-pro-6650u': {
+      name: 'AMD Ryzen 5 PRO 6650U (6C/12T, 4.5 GHz, 15-28W Enterprise)',
+      family: 'Zen 3+ Rembrandt Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.88,
+      npuSupported: false
+    },
+    'amd-ryzen-7-pro-5850u': {
+      name: 'AMD Ryzen 7 PRO 5850U (8C/16T, 4.4 GHz, 15W Enterprise)',
+      family: 'Zen 3 Cezanne Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.94,
+      npuSupported: false
+    },
+    'amd-ryzen-5-pro-5650u': {
+      name: 'AMD Ryzen 5 PRO 5650U (6C/12T, 4.2 GHz, 15W Enterprise)',
+      family: 'Zen 3 Cezanne Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.89,
+      npuSupported: false
+    },
+    /* Group 23: AMD Ryzen PRO 4000 & 3000 Series (Commercial & Enterprise Silicon) [16 models] */
+    'amd-ryzen-7-pro-4750g': {
+      name: 'AMD Ryzen 7 PRO 4750G (8C/16T, Vega 8, 65W Renoir PRO)',
+      family: 'Zen 2 Renoir Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.92,
+      npuSupported: false
+    },
+    'amd-ryzen-7-pro-4750ge': {
+      name: 'AMD Ryzen 7 PRO 4750GE (8C/16T, Vega 8, 35W Eco PRO)',
+      family: 'Zen 2 Renoir Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.89,
+      npuSupported: false
+    },
+    'amd-ryzen-7-pro-4750u': {
+      name: 'AMD Ryzen 7 PRO 4750U (8C/16T, Vega 7, 15W Renoir PRO)',
+      family: 'Zen 2 Renoir Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.88,
+      npuSupported: false
+    },
+    'amd-ryzen-5-pro-4650g': {
+      name: 'AMD Ryzen 5 PRO 4650G (6C/12T, Vega 7, 65W Renoir PRO)',
+      family: 'Zen 2 Renoir Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.87,
+      npuSupported: false
+    },
+    'amd-ryzen-5-pro-4650ge': {
+      name: 'AMD Ryzen 5 PRO 4650GE (6C/12T, Vega 7, 35W Eco PRO)',
+      family: 'Zen 2 Renoir Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.85,
+      npuSupported: false
+    },
+    'amd-ryzen-5-pro-4650u': {
+      name: 'AMD Ryzen 5 PRO 4650U (6C/12T, Vega 6, 15W Renoir PRO)',
+      family: 'Zen 2 Renoir Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.84,
+      npuSupported: false
+    },
+    'amd-ryzen-3-pro-4350g': {
+      name: 'AMD Ryzen 3 PRO 4350G (4C/8T, Vega 6, 65W Renoir PRO)',
+      family: 'Zen 2 Renoir Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.81,
+      npuSupported: false
+    },
+    'amd-ryzen-3-pro-4350ge': {
+      name: 'AMD Ryzen 3 PRO 4350GE (4C/8T, Vega 6, 35W Eco PRO)',
+      family: 'Zen 2 Renoir Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.79,
+      npuSupported: false
+    },
+    'amd-ryzen-3-pro-4450u': {
+      name: 'AMD Ryzen 3 PRO 4450U (4C/8T, Vega 5, 15W Renoir PRO)',
+      family: 'Zen 2 Renoir Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.78,
+      npuSupported: false
+    },
+    'amd-ryzen-7-pro-3700': {
+      name: 'AMD Ryzen 7 PRO 3700 (8C/16T, 4.4 GHz, 65W Matisse PRO)',
+      family: 'Zen 2 Matisse Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.92,
+      npuSupported: false
+    },
+    'amd-ryzen-5-pro-3600': {
+      name: 'AMD Ryzen 5 PRO 3600 (6C/12T, 4.2 GHz, 65W Matisse PRO)',
+      family: 'Zen 2 Matisse Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.86,
+      npuSupported: false
+    },
+    'amd-ryzen-5-pro-3400g': {
+      name: 'AMD Ryzen 5 PRO 3400G (4C/8T, Vega 11, 65W Picasso PRO)',
+      family: 'Zen+ Picasso Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.76,
+      npuSupported: false
+    },
+    'amd-ryzen-5-pro-3400ge': {
+      name: 'AMD Ryzen 5 PRO 3400GE (4C/8T, Vega 11, 35W Eco PRO)',
+      family: 'Zen+ Picasso Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.74,
+      npuSupported: false
+    },
+    'amd-ryzen-3-pro-3200g': {
+      name: 'AMD Ryzen 3 PRO 3200G (4C/4T, Vega 8, 65W Picasso PRO)',
+      family: 'Zen+ Picasso Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.72,
+      npuSupported: false
+    },
+    'amd-ryzen-3-pro-3200ge': {
+      name: 'AMD Ryzen 3 PRO 3200GE (4C/4T, Vega 8, 35W Eco PRO)',
+      family: 'Zen+ Picasso Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.7,
+      npuSupported: false
+    },
+    'amd-ryzen-3-pro-5450u': {
+      name: 'AMD Ryzen 3 PRO 5450U (4C/8T, 4.0 GHz, 15W Cezanne PRO)',
+      family: 'Zen 3 Cezanne Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.83,
+      npuSupported: false
+    },
+    /* Group 24: AMD Athlon & Athlon PRO with Radeon Graphics (Zen / Zen+ / Zen 2) [16 models] */
+    'amd-athlon-3000g': {
+      name: 'AMD Athlon 3000G (2C/4T, Vega 3, 35W Unlocked)',
+      family: 'Zen Raven Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.65,
+      npuSupported: false
+    },
+    'amd-athlon-320ge': {
+      name: 'AMD Athlon 320GE (2C/4T, Vega 3, 35W AM4)',
+      family: 'Zen Raven Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.64,
+      npuSupported: false
+    },
+    'amd-athlon-300ge': {
+      name: 'AMD Athlon 300GE (2C/4T, Vega 3, 35W AM4)',
+      family: 'Zen Raven Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.63,
+      npuSupported: false
+    },
+    'amd-athlon-240ge': {
+      name: 'AMD Athlon 240GE (2C/4T, Vega 3, 35W AM4)',
+      family: 'Zen Raven Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.63,
+      npuSupported: false
+    },
+    'amd-athlon-220ge': {
+      name: 'AMD Athlon 220GE (2C/4T, Vega 3, 35W AM4)',
+      family: 'Zen Raven Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.62,
+      npuSupported: false
+    },
+    'amd-athlon-200ge': {
+      name: 'AMD Athlon 200GE (2C/4T, Vega 3, 35W AM4)',
+      family: 'Zen Raven Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.6,
+      npuSupported: false
+    },
+    'amd-athlon-pro-300ge': {
+      name: 'AMD Athlon PRO 300GE (2C/4T, Vega 3, 35W Enterprise)',
+      family: 'Zen Raven Ridge Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.63,
+      npuSupported: false
+    },
+    'amd-athlon-pro-200ge': {
+      name: 'AMD Athlon PRO 200GE (2C/4T, Vega 3, 35W Enterprise)',
+      family: 'Zen Raven Ridge Enterprise',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.6,
+      npuSupported: false
+    },
+    'amd-athlon-gold-3150g': {
+      name: 'AMD Athlon Gold 3150G (4C/4T, Vega 3, 65W)',
+      family: 'Zen Raven Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.7,
+      npuSupported: false
+    },
+    'amd-athlon-gold-3150ge': {
+      name: 'AMD Athlon Gold 3150GE (4C/4T, Vega 3, 35W Eco)',
+      family: 'Zen Raven Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.68,
+      npuSupported: false
+    },
+    'amd-athlon-silver-3050ge': {
+      name: 'AMD Athlon Silver 3050GE (2C/4T, Vega 2, 35W Eco)',
+      family: 'Zen Raven Ridge',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.61,
+      npuSupported: false
+    },
+    'amd-athlon-gold-4150ge': {
+      name: 'AMD Athlon Gold 4150GE (4C/4T, Vega 5, 35W Renoir)',
+      family: 'Zen 2 Renoir',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.74,
+      npuSupported: false
+    },
+    'amd-athlon-gold-7220u': {
+      name: 'AMD Athlon Gold 7220U (2C/4T, Radeon 610M, Mendocino)',
+      family: 'Zen 2 Mendocino Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.68,
+      npuSupported: false
+    },
+    'amd-athlon-silver-7120u': {
+      name: 'AMD Athlon Silver 7120U (2C/2T, Radeon 610M, Mendocino)',
+      family: 'Zen 2 Mendocino Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.62,
+      npuSupported: false
+    },
+    'amd-athlon-silver-3050u': {
+      name: 'AMD Athlon Silver 3050U (2C/2T, Vega 2, 15W Mobile)',
+      family: 'Zen Raven Ridge Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.58,
+      npuSupported: false
+    },
+    'amd-athlon-gold-3150u': {
+      name: 'AMD Athlon Gold 3150U (2C/4T, Vega 3, 15W Mobile)',
+      family: 'Zen Raven Ridge Mobile',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.64,
+      npuSupported: false
+    },
+    /* Group 25: AMD EPYC 4004 Series (Zen 4 Entry Server Socket AM5) [8 models] */
+    'amd-epyc-4584px': {
+      name: 'AMD EPYC 4584PX (16C/32T, 144MB V-Cache, 120W AM5)',
+      family: 'Zen 4 Raphael-AM5',
+      npu: 'None (Enterprise PCIe AI Offload)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu)',
+      factor: 1.34,
+      npuSupported: false
+    },
+    'amd-epyc-4564p': {
+      name: 'AMD EPYC 4564P (16C/32T, 5.7 GHz, 170W AM5)',
+      family: 'Zen 4 Raphael-AM5',
+      npu: 'None (Enterprise PCIe AI Offload)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu)',
+      factor: 1.32,
+      npuSupported: false
+    },
+    'amd-epyc-4484px': {
+      name: 'AMD EPYC 4484PX (12C/24T, 140MB V-Cache, 120W AM5)',
+      family: 'Zen 4 Raphael-AM5',
+      npu: 'None (Enterprise PCIe AI Offload)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu)',
+      factor: 1.27,
+      npuSupported: false
+    },
+    'amd-epyc-4464p': {
+      name: 'AMD EPYC 4464P (12C/24T, 5.4 GHz, 65W AM5)',
+      family: 'Zen 4 Raphael-AM5',
+      npu: 'None (Enterprise PCIe AI Offload)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu)',
+      factor: 1.22,
+      npuSupported: false
+    },
+    'amd-epyc-4364p': {
+      name: 'AMD EPYC 4364P (8C/16T, 5.4 GHz, 105W AM5)',
+      family: 'Zen 4 Raphael-AM5',
+      npu: 'None (Enterprise PCIe AI Offload)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu)',
+      factor: 1.18,
+      npuSupported: false
+    },
+    'amd-epyc-4344p': {
+      name: 'AMD EPYC 4344P (8C/16T, 5.3 GHz, 65W AM5)',
+      family: 'Zen 4 Raphael-AM5',
+      npu: 'None (Enterprise PCIe AI Offload)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu)',
+      factor: 1.14,
+      npuSupported: false
+    },
+    'amd-epyc-4244p': {
+      name: 'AMD EPYC 4244P (6C/12T, 5.1 GHz, 65W AM5)',
+      family: 'Zen 4 Raphael-AM5',
+      npu: 'None (Enterprise PCIe AI Offload)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu)',
+      factor: 1.08,
+      npuSupported: false
+    },
+    'amd-epyc-4124p': {
+      name: 'AMD EPYC 4124P (4C/8T, 5.1 GHz, 65W AM5)',
+      family: 'Zen 4 Raphael-AM5',
+      npu: 'None (Enterprise PCIe AI Offload)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu)',
+      factor: 1.0,
+      npuSupported: false
+    },
+    /* Group 26: AMD EPYC 7003 & 7002 Server Additions (Milan & Rome High-Density) [20 models] */
+    'amd-epyc-7663': {
+      name: 'AMD EPYC 7663 "Milan" (56C/112T, 256MB L3, 240W)',
+      family: 'Zen 3 Milan SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.34,
+      npuSupported: false
+    },
+    'amd-epyc-7413': {
+      name: 'AMD EPYC 7413 "Milan" (24C/48T, 128MB L3, 180W)',
+      family: 'Zen 3 Milan SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.24,
+      npuSupported: false
+    },
+    'amd-epyc-7313p': {
+      name: 'AMD EPYC 7313P "Milan" (16C/32T, 128MB L3, 155W 1P)',
+      family: 'Zen 3 Milan SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.2,
+      npuSupported: false
+    },
+    'amd-epyc-7313': {
+      name: 'AMD EPYC 7313 "Milan" (16C/32T, 128MB L3, 155W)',
+      family: 'Zen 3 Milan SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.2,
+      npuSupported: false
+    },
+    'amd-epyc-7662': {
+      name: 'AMD EPYC 7662 "Rome" (64C/128T, 256MB L3, 225W)',
+      family: 'Zen 2 Rome SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.25,
+      npuSupported: false
+    },
+    'amd-epyc-7542': {
+      name: 'AMD EPYC 7542 "Rome" (32C/64T, 128MB L3, 225W)',
+      family: 'Zen 2 Rome SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.22,
+      npuSupported: false
+    },
+    'amd-epyc-7452': {
+      name: 'AMD EPYC 7452 "Rome" (32C/64T, 128MB L3, 155W)',
+      family: 'Zen 2 Rome SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.2,
+      npuSupported: false
+    },
+    'amd-epyc-7352': {
+      name: 'AMD EPYC 7352 "Rome" (24C/48T, 128MB L3, 155W)',
+      family: 'Zen 2 Rome SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.17,
+      npuSupported: false
+    },
+    'amd-epyc-7282': {
+      name: 'AMD EPYC 7282 "Rome" (16C/32T, 64MB L3, 120W)',
+      family: 'Zen 2 Rome SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.12,
+      npuSupported: false
+    },
+    'amd-epyc-7272': {
+      name: 'AMD EPYC 7272 "Rome" (12C/24T, 64MB L3, 120W)',
+      family: 'Zen 2 Rome SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.08,
+      npuSupported: false
+    },
+    'amd-epyc-7262': {
+      name: 'AMD EPYC 7262 "Rome" (8C/16T, 128MB L3, 155W)',
+      family: 'Zen 2 Rome SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.06,
+      npuSupported: false
+    },
+    'amd-epyc-7252': {
+      name: 'AMD EPYC 7252 "Rome" (8C/16T, 64MB L3, 120W)',
+      family: 'Zen 2 Rome SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.02,
+      npuSupported: false
+    },
+    'amd-epyc-7f52': {
+      name: 'AMD EPYC 7F52 "Rome" (16C/32T, 3.9 GHz, 240W High-Freq)',
+      family: 'Zen 2 Rome SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.18,
+      npuSupported: false
+    },
+    'amd-epyc-7f32': {
+      name: 'AMD EPYC 7F32 "Rome" (8C/16T, 3.9 GHz, 180W High-Freq)',
+      family: 'Zen 2 Rome SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.1,
+      npuSupported: false
+    },
+    'amd-epyc-7473x': {
+      name: 'AMD EPYC 7473X "Milan-X" (24C/48T, 768MB 3D V-Cache)',
+      family: 'Zen 3 Milan-X SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.34,
+      npuSupported: false
+    },
+    'amd-epyc-7373x': {
+      name: 'AMD EPYC 7373X "Milan-X" (16C/32T, 768MB 3D V-Cache)',
+      family: 'Zen 3 Milan-X SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.3,
+      npuSupported: false
+    },
+    'amd-epyc-7303p': {
+      name: 'AMD EPYC 7303P "Milan" (16C/32T, 130W 1P Entry)',
+      family: 'Zen 3 Milan SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.15,
+      npuSupported: false
+    },
+    'amd-epyc-7303': {
+      name: 'AMD EPYC 7303 "Milan" (16C/32T, 130W Entry)',
+      family: 'Zen 3 Milan SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.15,
+      npuSupported: false
+    },
+    'amd-epyc-7232p': {
+      name: 'AMD EPYC 7232P "Rome" (8C/16T, 120W 1P Entry)',
+      family: 'Zen 2 Rome SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.0,
+      npuSupported: false
+    },
+    'amd-epyc-7702': {
+      name: 'AMD EPYC 7702 "Rome" (64C/128T, 256MB L3, 200W)',
+      family: 'Zen 2 Rome SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.25,
+      npuSupported: false
+    },
+    /* Group 27: AMD Ryzen & EPYC Embedded Solutions (AM5, AM4 & SP5/SP6 Industrial) [20 models] */
+    'amd-ryzen-emb-7945': {
+      name: 'AMD Ryzen Embedded 7945 (12C/24T, 5.4 GHz, 65W AM5)',
+      family: 'Zen 4 Embedded AM5',
+      npu: 'None (ROCm Edge Automation)',
+      vector: 'AVX-512 + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.24,
+      npuSupported: false
+    },
+    'amd-ryzen-emb-7745': {
+      name: 'AMD Ryzen Embedded 7745 (8C/16T, 5.3 GHz, 65W AM5)',
+      family: 'Zen 4 Embedded AM5',
+      npu: 'None (ROCm Edge Automation)',
+      vector: 'AVX-512 + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.16,
+      npuSupported: false
+    },
+    'amd-ryzen-emb-7645': {
+      name: 'AMD Ryzen Embedded 7645 (6C/12T, 5.1 GHz, 65W AM5)',
+      family: 'Zen 4 Embedded AM5',
+      npu: 'None (ROCm Edge Automation)',
+      vector: 'AVX-512 + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.1,
+      npuSupported: false
+    },
+    'amd-ryzen-emb-5950e': {
+      name: 'AMD Ryzen Embedded 5950E (16C/32T, 3.4 GHz, 65W AM4)',
+      family: 'Zen 3 Embedded AM4',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 1.12,
+      npuSupported: false
+    },
+    'amd-ryzen-emb-5900e': {
+      name: 'AMD Ryzen Embedded 5900E (12C/24T, 3.7 GHz, 65W AM4)',
+      family: 'Zen 3 Embedded AM4',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 1.08,
+      npuSupported: false
+    },
+    'amd-ryzen-emb-5800e': {
+      name: 'AMD Ryzen Embedded 5800E (8C/16T, 3.7 GHz, 65W AM4)',
+      family: 'Zen 3 Embedded AM4',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 1.02,
+      npuSupported: false
+    },
+    'amd-ryzen-emb-5600e': {
+      name: 'AMD Ryzen Embedded 5600E (6C/12T, 3.6 GHz, 65W AM4)',
+      family: 'Zen 3 Embedded AM4',
+      npu: 'None (Legacy x86 Architecture)',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.94,
+      npuSupported: false
+    },
+    'amd-epyc-emb-9654': {
+      name: 'AMD EPYC Embedded 9654 (96C/192T, 360W Zen 4)',
+      family: 'Zen 4 Embedded SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300',
+      vector: 'Dual AVX-512 + VNNI',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu)',
+      factor: 1.5,
+      npuSupported: false
+    },
+    'amd-epyc-emb-9554': {
+      name: 'AMD EPYC Embedded 9554 (64C/128T, 360W Zen 4)',
+      family: 'Zen 4 Embedded SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300',
+      vector: 'Dual AVX-512 + VNNI',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu)',
+      factor: 1.46,
+      npuSupported: false
+    },
+    'amd-epyc-emb-9354': {
+      name: 'AMD EPYC Embedded 9354 (32C/64T, 280W Zen 4)',
+      family: 'Zen 4 Embedded SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300',
+      vector: 'Dual AVX-512 + VNNI',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu)',
+      factor: 1.4,
+      npuSupported: false
+    },
+    'amd-epyc-emb-9254': {
+      name: 'AMD EPYC Embedded 9254 (24C/48T, 200W Zen 4)',
+      family: 'Zen 4 Embedded SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300',
+      vector: 'Dual AVX-512 + VNNI',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu)',
+      factor: 1.36,
+      npuSupported: false
+    },
+    'amd-epyc-emb-9124': {
+      name: 'AMD EPYC Embedded 9124 (16C/32T, 200W Zen 4)',
+      family: 'Zen 4 Embedded SP5',
+      npu: 'Dedicated Enterprise AI Cluster / MI300',
+      vector: 'Dual AVX-512 + VNNI',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu)',
+      factor: 1.3,
+      npuSupported: false
+    },
+    'amd-epyc-emb-8434p': {
+      name: 'AMD EPYC Embedded 8434P (48C/96T, 155W Zen 4c)',
+      family: 'Zen 4c Embedded SP6',
+      npu: 'Dedicated PCIe ROCm Edge Solution',
+      vector: 'AVX-512 + VNNI',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu)',
+      factor: 1.38,
+      npuSupported: false
+    },
+    'amd-epyc-emb-8324p': {
+      name: 'AMD EPYC Embedded 8324P (32C/64T, 130W Zen 4c)',
+      family: 'Zen 4c Embedded SP6',
+      npu: 'Dedicated PCIe ROCm Edge Solution',
+      vector: 'AVX-512 + VNNI',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu)',
+      factor: 1.32,
+      npuSupported: false
+    },
+    'amd-epyc-emb-8224p': {
+      name: 'AMD EPYC Embedded 8224P (24C/48T, 120W Zen 4c)',
+      family: 'Zen 4c Embedded SP6',
+      npu: 'Dedicated PCIe ROCm Edge Solution',
+      vector: 'AVX-512 + VNNI',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu)',
+      factor: 1.28,
+      npuSupported: false
+    },
+    'amd-epyc-emb-8124p': {
+      name: 'AMD EPYC Embedded 8124P (16C/32T, 100W Zen 4c)',
+      family: 'Zen 4c Embedded SP6',
+      npu: 'Dedicated PCIe ROCm Edge Solution',
+      vector: 'AVX-512 + VNNI',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu)',
+      factor: 1.22,
+      npuSupported: false
+    },
+    'amd-epyc-emb-7713': {
+      name: 'AMD EPYC Embedded 7713 (64C/128T, 225W Zen 3)',
+      family: 'Zen 3 Embedded SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.35,
+      npuSupported: false
+    },
+    'amd-epyc-emb-7543': {
+      name: 'AMD EPYC Embedded 7543 (32C/64T, 225W Zen 3)',
+      family: 'Zen 3 Embedded SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.28,
+      npuSupported: false
+    },
+    'amd-epyc-emb-7443': {
+      name: 'AMD EPYC Embedded 7443 (24C/48T, 200W Zen 3)',
+      family: 'Zen 3 Embedded SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.24,
+      npuSupported: false
+    },
+    'amd-epyc-emb-7343': {
+      name: 'AMD EPYC Embedded 7343 (16C/32T, 190W Zen 3)',
+      family: 'Zen 3 Embedded SP3',
+      npu: 'Dedicated Enterprise AI Cluster / Instinct',
+      vector: 'AVX2 + FMA3 + BMI2',
+      driver: 'Linux 5.15+ LTS Enterprise (amdgpu)',
+      factor: 1.2,
+      npuSupported: false
+    },
     'apple-m4-m3': {
       name: 'Apple Silicon M3 / M4 (Pro / Max)',
       family: 'ARM64 ARMv9.2-A',
