@@ -36,7 +36,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Apple-Grade Minimalist Liquid Glass Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
 </head>
 <body>
 
@@ -72,8 +72,11 @@
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#overview" class="nav-link active">Overview</a></li>
           <li><a href="#showcase" class="nav-link">Intelligence</a></li>
-          <li><a href="#highlights" class="nav-link">Highlights</a></li>
-          <li><a href="#specs" class="nav-link">Tech Specs</a></li>
+          <li><a href="#architecture" class="nav-link">Architecture</a></li>
+          <li><a href="#security-lab" class="nav-link">Security Lab</a></li>
+          <li><a href="#compare" class="nav-link">Compare</a></li>
+          <li><a href="#verify" class="nav-link">Verify</a></li>
+          <li><a href="#specs" class="nav-link">Specs</a></li>
           <li><a href="#status" class="nav-link">Status</a></li>
           <li><a href="#faq" class="nav-link">FAQ</a></li>
         </ul>
@@ -154,19 +157,39 @@
 
                 <!-- Screen Viewport with Translucent HUD & Tiles -->
                 <div class="screen-viewport">
-                  <!-- Spotlight Command Palette -->
-                  <div class="spotlight-command-palette">
+                  <!-- Interactive Spotlight Command Palette Playground -->
+                  <div class="spotlight-command-palette liquid-glass">
                     <div class="palette-query-row">
                       <span class="palette-icon">✦</span>
-                      <span class="palette-text">"Prepare coding environment and optimize thread priority."</span>
-                      <span class="palette-key">⌘K</span>
+                      <span class="palette-text" id="spotlight-query">"Prepare coding environment and optimize thread priority."</span>
+                      <span class="palette-key" title="Keyboard Shortcut: ⌘K or Ctrl+K">⌘K</span>
                     </div>
-                    <div class="palette-result-box">
-                      <strong>System adjusted:</strong> 4 performance cores reserved for compiler. Notification daemon muted. Background indexing throttled.
-                      <div class="palette-meta-line">
-                        <span>✓ Executed in 0.18 ms</span>
+
+                    <!-- Interactive Quick Prompts -->
+                    <div class="spotlight-presets-bar">
+                      <span class="spotlight-presets-label">Interactive Preset:</span>
+                      <div class="spotlight-presets-list" id="spotlight-presets">
+                        <button type="button" class="spotlight-preset-chip active" data-preset="dev">✦ Dev Sandbox</button>
+                        <button type="button" class="spotlight-preset-chip" data-preset="security">✦ Security Audit</button>
+                        <button type="button" class="spotlight-preset-chip" data-preset="audio">✦ Audio Summary</button>
+                        <button type="button" class="spotlight-preset-chip" data-preset="kernel">✦ Kernel Isolation</button>
+                      </div>
+                    </div>
+
+                    <div class="palette-result-box" id="spotlight-result-box">
+                      <div class="palette-status-pill">
+                        <span class="pulse-indicator-emerald"></span>
+                        <span id="spotlight-status-label">AURORA INTELLIGENCE RESPONDED</span>
+                      </div>
+                      <div class="palette-result-content">
+                        <strong>System adjusted:</strong> <span id="spotlight-result-text">4 performance cores reserved for compiler. Notification daemon muted. Background indexing throttled.</span>
+                      </div>
+                      <div class="palette-meta-line" id="spotlight-meta-line">
+                        <span id="spotlight-meta-latency">✓ Executed in 0.18 ms</span>
                         <span>•</span>
-                        <span>Zero cloud telemetry</span>
+                        <span id="spotlight-meta-security">Zero cloud telemetry</span>
+                        <span>•</span>
+                        <span id="spotlight-meta-extra">Landlock LSM Active</span>
                       </div>
                     </div>
                   </div>
@@ -342,6 +365,207 @@
         </div>
       </section>
 
+      <!-- Interactive System Architecture Topology Stack -->
+      <section class="section" id="architecture" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+        <div class="container">
+          <div class="text-center" style="margin-bottom: 3.5rem;">
+            <span class="section-eyebrow">System Topology</span>
+            <h2 class="section-headline reveal-on-scroll">Engineered from Silicon to Shell.</h2>
+            <p class="section-lead reveal-on-scroll">
+              Four decoupled, hardware-isolated layers. Click any layer to inspect its verified invariants and Architectural Decision Records.
+            </p>
+          </div>
+
+          <div class="topology-grid reveal-on-scroll">
+            <!-- Left: Interactive Layers Stack -->
+            <div class="topology-stack">
+              <!-- Layer 4: Desktop Shell -->
+              <div class="topology-layer-card liquid-glass active" data-layer="shell">
+                <div class="layer-indicator">Layer 4</div>
+                <div class="layer-info">
+                  <div class="layer-title-row">
+                    <h3 class="layer-title">Desktop Shell &amp; Wayland HUD</h3>
+                    <span class="layer-badge">Userspace</span>
+                  </div>
+                  <p class="layer-sub">Spotlight <code>⌘K</code>, Wayland compositor extensions &amp; <code>org.auroraos.Intelligence</code></p>
+                </div>
+                <div class="layer-arrow">→</div>
+              </div>
+
+              <!-- Layer 3: Daemon -->
+              <div class="topology-layer-card liquid-glass" data-layer="daemon">
+                <div class="layer-indicator">Layer 3</div>
+                <div class="layer-info">
+                  <div class="layer-title-row">
+                    <h3 class="layer-title"><code>aurora-ai</code> System Daemon</h3>
+                    <span class="layer-badge">Safe Rust 2021</span>
+                  </div>
+                  <p class="layer-sub">Tokio async runtime, CapabilityDispatcher, PolicyEngine (2.8 MB RSS)</p>
+                </div>
+                <div class="layer-arrow">→</div>
+              </div>
+
+              <!-- Layer 2: Linux Kernel & Sandboxing -->
+              <div class="topology-layer-card liquid-glass" data-layer="kernel">
+                <div class="layer-indicator">Layer 2</div>
+                <div class="layer-info">
+                  <div class="layer-title-row">
+                    <h3 class="layer-title">Linux 6.x Kernel &amp; Sandboxing</h3>
+                    <span class="layer-badge">Substratum</span>
+                  </div>
+                  <p class="layer-sub"><code>openat2 RESOLVE_BENEATH</code>, Landlock LSM, seccomp-bpf, anonymous <code>socketpair</code></p>
+                </div>
+                <div class="layer-arrow">→</div>
+              </div>
+
+              <!-- Layer 1: Hardware Silicon -->
+              <div class="topology-layer-card liquid-glass" data-layer="silicon">
+                <div class="layer-indicator">Layer 1</div>
+                <div class="layer-info">
+                  <div class="layer-title-row">
+                    <h3 class="layer-title">Hardware Silicon &amp; Neural NPUs</h3>
+                    <span class="layer-badge">Local Inference</span>
+                  </div>
+                  <p class="layer-sub">x86_64, aarch64, Vulkan, Apple Silicon (Asahi), CUDA, ROCm accelerators</p>
+                </div>
+                <div class="layer-arrow">→</div>
+              </div>
+            </div>
+
+            <!-- Right: Dynamic Layer Inspector Card -->
+            <div class="topology-inspector-wrapper">
+              <div class="topology-inspector liquid-glass" id="topology-inspector">
+                <div class="inspector-header">
+                  <div>
+                    <span class="inspector-layer-tag" id="inspector-tag">LAYER 4 • USERSPACE INTERFACE</span>
+                    <h3 class="inspector-title" id="inspector-title">Desktop Shell &amp; Wayland HUD</h3>
+                  </div>
+                  <a href="https://github.com/auroraossoftware/auroraos/tree/main/docs/decisions" target="_blank" rel="noopener noreferrer" class="inspector-adr-link" id="inspector-adr">ADR-003 ↗</a>
+                </div>
+
+                <p class="inspector-description" id="inspector-desc">
+                  Provides a native desktop overlay activated with ⌘K. Communicates with the core daemon via high-speed anonymous <code>socketpair(AF_UNIX)</code> and standard system D-Bus interfaces. No slow HTTP gateways or cloud hops.
+                </p>
+
+                <div class="inspector-metrics-grid">
+                  <div class="inspector-metric-box">
+                    <span class="inspector-metric-num" id="inspector-m1">0.061 ms</span>
+                    <span class="inspector-metric-lbl" id="inspector-m1-lbl">IPC Frame Overhead</span>
+                  </div>
+                  <div class="inspector-metric-box">
+                    <span class="inspector-metric-num" id="inspector-m2">Wayland</span>
+                    <span class="inspector-metric-lbl" id="inspector-m2-lbl">Compositor Native</span>
+                  </div>
+                  <div class="inspector-metric-box">
+                    <span class="inspector-metric-num" id="inspector-m3">0 bytes</span>
+                    <span class="inspector-metric-lbl" id="inspector-m3-lbl">Telemetry Sent</span>
+                  </div>
+                </div>
+
+                <!-- Code / Interface Specimen -->
+                <div class="inspector-code-card">
+                  <div class="inspector-code-bar">
+                    <span id="inspector-code-file">desktop-ipc-client.rs</span>
+                    <span>Safe Rust 2021</span>
+                  </div>
+                  <pre class="inspector-code-body"><code id="inspector-code-content">// Connect to daemon via anonymous socketpair
+let (client_sock, daemon_sock) = socketpair(AF_UNIX, SOCK_STREAM, 0)?;
+let channel = AuroraIpcClient::bind(client_sock).await?;
+let response = channel.request_action("workspace.optimize").await?;
+assert!(response.is_ok());</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Zero-Trust Security Simulator -->
+      <section class="section" id="security-lab" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+        <div class="container">
+          <div class="text-center" style="margin-bottom: 3.5rem;">
+            <span class="section-eyebrow">Security Lab</span>
+            <h2 class="section-headline reveal-on-scroll">Test the Zero-Trust Sandbox.</h2>
+            <p class="section-lead reveal-on-scroll">
+              Don't take our word for it. Select a simulated attack vector to observe how the kernel-level sandbox and policy engine react in real time.
+            </p>
+          </div>
+
+          <div class="security-lab-wrapper liquid-glass reveal-on-scroll">
+            <!-- Vector Selection Pills -->
+            <div class="security-vector-nav">
+              <button type="button" class="security-vector-btn active" data-vector="telemetry">
+                <span class="vec-num">01</span>
+                <span>Unauthorized Cloud Probe</span>
+              </button>
+              <button type="button" class="security-vector-btn" data-vector="traversal">
+                <span class="vec-num">02</span>
+                <span>Symlink Directory Escape</span>
+              </button>
+              <button type="button" class="security-vector-btn" data-vector="memory">
+                <span class="vec-num">03</span>
+                <span>Runaway Memory Leak</span>
+              </button>
+            </div>
+
+            <!-- Simulation Display Box -->
+            <div class="security-display-grid">
+              <!-- Attack Vector Summary -->
+              <div class="security-attack-card">
+                <div class="sec-card-header">
+                  <span class="sec-badge alert" id="sec-badge">SIMULATED ATTACK VECTOR</span>
+                  <span class="sec-status-dot"></span>
+                </div>
+                <h3 class="sec-attack-title" id="sec-attack-title">Unauthorized Raw Socket Call</h3>
+                <p class="sec-attack-summary" id="sec-attack-summary">
+                  A rogue background script or compromised tool attempts to open a raw network socket to an external cloud IP (<code>198.51.100.42:443</code>) without a cryptographically signed capability token.
+                </p>
+
+                <div class="sec-payload-box">
+                  <div class="sec-payload-label">Intercepted Syscall Payload:</div>
+                  <code class="sec-payload-code" id="sec-payload-code">connect(fd=3, addr=198.51.100.42:443, proto=TCP)</code>
+                </div>
+
+                <div class="sec-stats-row">
+                  <div>
+                    <span class="sec-stat-label">Denial Latency</span>
+                    <div class="sec-stat-value" id="sec-latency">0.141 ms</div>
+                  </div>
+                  <div>
+                    <span class="sec-stat-label">Sandbox Response</span>
+                    <div class="sec-stat-value success" id="sec-response">Blocked Closed</div>
+                  </div>
+                  <div>
+                    <span class="sec-stat-label">Kernel Disposition</span>
+                    <div class="sec-stat-value" id="sec-disposition">EPERM (Denied)</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Terminal Event Stream Playback -->
+              <div class="security-log-terminal">
+                <div class="log-terminal-header">
+                  <div class="screen-dots">
+                    <span class="s-dot r"></span>
+                    <span class="s-dot y"></span>
+                    <span class="s-dot g"></span>
+                  </div>
+                  <span class="log-terminal-title">Kernel Invariant Event Stream</span>
+                  <span class="log-terminal-pulse">LIVE VERIFICATION</span>
+                </div>
+                <div class="log-terminal-body" id="sec-terminal-log">
+<span class="log-time">[00:00.001]</span> <span class="log-cyan">INCOMING:</span> sys.network.connect(198.51.100.42:443)
+<span class="log-time">[00:00.042]</span> <span class="log-yellow">CHECK:</span> CapabilityDispatcher evaluating token signature...
+<span class="log-time">[00:00.089]</span> <span class="log-red">FAILED:</span> Capability token absent. PolicyEngine: Default-Deny.
+<span class="log-time">[00:00.141]</span> <span class="log-green">DISPOSITION:</span> Blocked closed in 0.141ms. Error: EPERM.
+<span class="log-time">[00:00.142]</span> <span class="log-white">AUDIT:</span> Threat neutralized. Zero outbound packets transmitted.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Highlights Bento Grid (Apple VisionOS Depth) -->
       <section class="section" id="highlights" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
         <div class="container">
@@ -398,6 +622,254 @@
               <p class="bento-desc">
                 Applications never receive automatic system-wide surveillance powers. Every capability requires an explicit, cryptographically checked token. If an action isn't permitted, the request fails closed in microseconds.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- The "Honest Comparison" Matrix -->
+      <section class="section" id="compare" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+        <div class="container">
+          <div class="text-center" style="margin-bottom: 3.5rem;">
+            <span class="section-eyebrow">Platform Comparison</span>
+            <h2 class="section-headline reveal-on-scroll">How Aurora OS compares.</h2>
+            <p class="section-lead reveal-on-scroll">
+              See why Aurora OS is fundamentally different from corporate surveillance platforms and traditional fragmented distributions.
+            </p>
+          </div>
+
+          <div class="comparison-table-wrapper liquid-glass reveal-on-scroll">
+            <div class="comparison-table">
+              <!-- Header Row -->
+              <div class="comp-row comp-header-row">
+                <div class="comp-col comp-feature-col">Feature / Invariant</div>
+                <div class="comp-col comp-aurora-col">
+                  <div class="aurora-col-pill">AI-Native &amp; Private</div>
+                  <div class="comp-os-name">Aurora OS</div>
+                  <span class="comp-os-sub">Linux 6.x + aurora-ai</span>
+                </div>
+                <div class="comp-col">
+                  <div class="comp-os-name">Windows 11 Recall</div>
+                  <span class="comp-os-sub">Copilot Integration</span>
+                </div>
+                <div class="comp-col">
+                  <div class="comp-os-name">Apple Intelligence</div>
+                  <span class="comp-os-sub">macOS Sequoia</span>
+                </div>
+                <div class="comp-col">
+                  <div class="comp-os-name">Stock Linux</div>
+                  <span class="comp-os-sub">Ubuntu / Arch</span>
+                </div>
+              </div>
+
+              <!-- Row 1: Privacy -->
+              <div class="comp-row">
+                <div class="comp-col comp-feature-col">
+                  <strong>Privacy Invariant</strong>
+                  <span class="feature-caption">Data harvesting &amp; telemetry</span>
+                </div>
+                <div class="comp-col comp-aurora-col">
+                  <span class="comp-highlight-badge">Kernel-Enforced</span>
+                  <p class="comp-detail">Zero outbound telemetry. Strict Landlock LSM sandboxing.</p>
+                </div>
+                <div class="comp-col">
+                  <span class="comp-negative">Cloud Harvesting</span>
+                  <p class="comp-detail">Automated screenshots, diagnostics &amp; cloud telemetry.</p>
+                </div>
+                <div class="comp-col">
+                  <span class="comp-neutral">Hybrid Cloud</span>
+                  <p class="comp-detail">Private Cloud Compute offload for heavy models.</p>
+                </div>
+                <div class="comp-col">
+                  <span class="comp-neutral">No Native AI</span>
+                  <p class="comp-detail">Private by default, but zero unified intelligence layer.</p>
+                </div>
+              </div>
+
+              <!-- Row 2: Memory -->
+              <div class="comp-row">
+                <div class="comp-col comp-feature-col">
+                  <strong>Daemon Memory Footprint</strong>
+                  <span class="feature-caption">Idle background resident set</span>
+                </div>
+                <div class="comp-col comp-aurora-col">
+                  <span class="comp-highlight-badge">2.8 MB RSS</span>
+                  <p class="comp-detail">Safe Rust Tokio async runtime. Flatline resident set.</p>
+                </div>
+                <div class="comp-col">
+                  <span class="comp-negative">~1,200 MB</span>
+                  <p class="comp-detail">Bloated multi-process webview &amp; cloud services.</p>
+                </div>
+                <div class="comp-col">
+                  <span class="comp-neutral">~800 MB</span>
+                  <p class="comp-detail">Multiple background system intelligence daemons.</p>
+                </div>
+                <div class="comp-col">
+                  <span class="comp-neutral">Fragmented</span>
+                  <p class="comp-detail">Each user AI script consumes individual memory pools.</p>
+                </div>
+              </div>
+
+              <!-- Row 3: Architecture -->
+              <div class="comp-row">
+                <div class="comp-col comp-feature-col">
+                  <strong>Architecture</strong>
+                  <span class="feature-caption">System IPC &amp; integration</span>
+                </div>
+                <div class="comp-col comp-aurora-col">
+                  <span class="comp-highlight-badge">Unified Daemon</span>
+                  <p class="comp-detail">Anonymous <code>socketpair(AF_UNIX)</code> &amp; system D-Bus.</p>
+                </div>
+                <div class="comp-col">
+                  <span class="comp-negative">Proprietary</span>
+                  <p class="comp-detail">Tightly locked corporate cloud APIs.</p>
+                </div>
+                <div class="comp-col">
+                  <span class="comp-neutral">Proprietary</span>
+                  <p class="comp-detail">Closed-source Apple Foundation models.</p>
+                </div>
+                <div class="comp-col">
+                  <span class="comp-neutral">Manual Scripts</span>
+                  <p class="comp-detail">Ad-hoc terminal scripts, Ollama CLI or Docker containers.</p>
+                </div>
+              </div>
+
+              <!-- Row 4: Sandboxing -->
+              <div class="comp-row">
+                <div class="comp-col comp-feature-col">
+                  <strong>Filesystem Sandboxing</strong>
+                  <span class="feature-caption">Path traversal defenses</span>
+                </div>
+                <div class="comp-col comp-aurora-col">
+                  <span class="comp-highlight-badge">Linux openat2</span>
+                  <p class="comp-detail"><code>RESOLVE_BENEATH | NO_SYMLINKS</code> kernel enforcement.</p>
+                </div>
+                <div class="comp-col">
+                  <span class="comp-negative">Broad Ambient</span>
+                  <p class="comp-detail">Apps inherit broad user privileges.</p>
+                </div>
+                <div class="comp-col">
+                  <span class="comp-neutral">App Sandbox</span>
+                  <p class="comp-detail">Closed proprietary entitlement system.</p>
+                </div>
+                <div class="comp-col">
+                  <span class="comp-neutral">POSIX / Flatpak</span>
+                  <p class="comp-detail">Requires manual per-app container configuration.</p>
+                </div>
+              </div>
+
+              <!-- Row 5: App Compatibility -->
+              <div class="comp-row">
+                <div class="comp-col comp-feature-col">
+                  <strong>App &amp; Game Compatibility</strong>
+                  <span class="feature-caption">Everyday workstation software</span>
+                </div>
+                <div class="comp-col comp-aurora-col">
+                  <span class="comp-highlight-badge">100% Linux POSIX</span>
+                  <p class="comp-detail">Steam, Proton, Flatpak, Docker, VS Code, Wayland/X11.</p>
+                </div>
+                <div class="comp-col">
+                  <span class="comp-positive">Native Win32</span>
+                  <p class="comp-detail">Full Windows desktop software ecosystem.</p>
+                </div>
+                <div class="comp-col">
+                  <span class="comp-neutral">macOS Metal</span>
+                  <p class="comp-detail">macOS software only; limited PC gaming.</p>
+                </div>
+                <div class="comp-col">
+                  <span class="comp-positive">Full Linux</span>
+                  <p class="comp-detail">Full standard Linux desktop software.</p>
+                </div>
+              </div>
+
+              <!-- Row 6: License -->
+              <div class="comp-row">
+                <div class="comp-col comp-feature-col">
+                  <strong>Ownership &amp; Licensing</strong>
+                  <span class="feature-caption">Code rights and transparency</span>
+                </div>
+                <div class="comp-col comp-aurora-col">
+                  <span class="comp-highlight-badge">100% MIT License</span>
+                  <p class="comp-detail">Free &amp; open source. Inspect every single line on GitHub.</p>
+                </div>
+                <div class="comp-col">
+                  <span class="comp-negative">Corporate Lock-In</span>
+                  <p class="comp-detail">Commercial proprietary; subscriptions &amp; ads.</p>
+                </div>
+                <div class="comp-col">
+                  <span class="comp-negative">Hardware Lock-In</span>
+                  <p class="comp-detail">Closed source; runs only on Apple hardware.</p>
+                </div>
+                <div class="comp-col">
+                  <span class="comp-positive">GPL / Open Source</span>
+                  <p class="comp-detail">Free software, community governed.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- "Verify in 30 Seconds" Developer Terminal Snippet -->
+      <section class="section" id="verify" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+        <div class="container">
+          <div class="text-center" style="margin-bottom: 3.5rem;">
+            <span class="section-eyebrow">Independent Audit</span>
+            <h2 class="section-headline reveal-on-scroll">Don't trust. Verify in 30 seconds.</h2>
+            <p class="section-lead reveal-on-scroll">
+              Every claim on this page is backed by open-source code and 211 automated test suites. Clone the repository and verify on your own machine, or run the live simulation below.
+            </p>
+          </div>
+
+          <div class="terminal-verify-card liquid-glass reveal-on-scroll">
+            <!-- Terminal Header -->
+            <div class="terminal-header">
+              <div class="screen-dots">
+                <span class="s-dot r"></span>
+                <span class="s-dot y"></span>
+                <span class="s-dot g"></span>
+              </div>
+              <span class="terminal-title">bash — cargo test --release — 80×24</span>
+              <div class="terminal-actions">
+                <button type="button" class="btn-copy-command" id="btn-copy-cmd" title="Copy git clone command">
+                  <span id="copy-btn-icon">📋</span>
+                  <span id="copy-btn-text">Copy Command</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Terminal Command Prompt -->
+            <div class="terminal-command-bar">
+              <span class="term-prompt">$</span>
+              <code class="term-cmd-text">git clone https://github.com/auroraossoftware/auroraos.git &amp;&amp; cd auroraos &amp;&amp; cargo test --release</code>
+              <button type="button" class="btn-simulate-test" id="btn-simulate-test">
+                <span>Simulate Test Run ▶</span>
+              </button>
+            </div>
+
+            <!-- Terminal Output Window -->
+            <div class="terminal-body" id="terminal-output-body">
+              <div class="term-line-dim">// Click "Simulate Test Run ▶" or run the command above on your Linux machine</div>
+              <div class="term-line"><span class="term-green">ready</span> Waiting for test execution trigger...</div>
+            </div>
+
+            <!-- Terminal Bottom Summary -->
+            <div class="terminal-footer-stats">
+              <div class="term-stat-item">
+                <span class="term-stat-dot green"></span>
+                <span>Automated Tests: <strong>211 / 211 Passed</strong></span>
+              </div>
+              <div class="term-stat-item">
+                <span class="term-stat-dot blue"></span>
+                <span>Median Latency: <strong>0.061 ms</strong></span>
+              </div>
+              <div class="term-stat-item">
+                <span class="term-stat-dot purple"></span>
+                <span>Resident Set: <strong>2.8 MB RSS</strong></span>
+              </div>
+              <a href="https://github.com/auroraossoftware/auroraos" target="_blank" rel="noopener noreferrer" class="term-repo-link">
+                View Source on GitHub ↗
+              </a>
             </div>
           </div>
         </div>
@@ -799,6 +1271,6 @@
   </div>
 
   <!-- Ambient Animation & Navigation Scripts -->
-  <script src="app.js?v=6"></script>
+  <script src="app.js?v=7"></script>
 </body>
 </html>
