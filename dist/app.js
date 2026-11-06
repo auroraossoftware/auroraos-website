@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initSecurityLab();
   initTerminalVerification();
   initHardwareHotspots();
+  initHardwareCalculator();
+  initHardwareDocsTabs();
 });
 
 /* ==========================================================================
@@ -715,5 +717,513 @@ function initHardwareHotspots() {
     if (e.key === 'Escape') {
       hotspots.forEach(h => h.classList.remove('active'));
     }
+  });
+}
+
+/* ==========================================================================
+   12. Interactive Hardware Compatibility & Compute Lab (#hardware)
+   ========================================================================== */
+const HW_DATABASE = {
+  cpus: {
+    'amd-zen5-ai': {
+      name: 'AMD Ryzen AI 300 / 9000 Series (Zen 5 + XDNA 2)',
+      family: 'Zen 5 x86_64',
+      npu: 'AMD XDNA 2 (Up to 50 NPU TOPS, Block-FP16)',
+      vector: 'AVX-512 (Native 512-bit datapath) + VNNI',
+      driver: 'Linux 6.10+ (amdgpu_xdna / XRT runtime)',
+      factor: 1.18,
+      npuSupported: true
+    },
+    'amd-zen4': {
+      name: 'AMD Ryzen 7000 / 8000 Series (Zen 4)',
+      family: 'Zen 4 x86_64',
+      npu: 'AMD XDNA 1 (16 TOPS on 8040 series)',
+      vector: 'AVX-512 (256-bit double-pumped) + VNNI',
+      driver: 'Linux 6.6+ LTS (amdgpu)',
+      factor: 1.05,
+      npuSupported: false
+    },
+    'amd-zen3': {
+      name: 'AMD Ryzen 5000 Series (Zen 3)',
+      family: 'Zen 3 x86_64',
+      npu: 'None (Legacy x86)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 5.15+ LTS (amdgpu)',
+      factor: 0.88,
+      npuSupported: false
+    },
+    'intel-ultra2': {
+      name: 'Intel Core Ultra 200 Series (Lunar / Arrow Lake)',
+      family: 'Lion Cove + Skymont x86_64',
+      npu: 'Intel NPU 4 (48 TOPS)',
+      vector: 'AVX2 + VNNI + Intel AMX (Desktop S-series)',
+      driver: 'Linux 6.11+ (intel_vpu driver + Level Zero)',
+      factor: 1.14,
+      npuSupported: true
+    },
+    'intel-ultra1': {
+      name: 'Intel Core Ultra 100 Series (Meteor Lake)',
+      family: 'Redwood Cove + Crestmont x86_64',
+      npu: 'Intel NPU 3 (11 TOPS)',
+      vector: 'AVX2 + VNNI',
+      driver: 'Linux 6.8+ (intel_vpu driver)',
+      factor: 0.98,
+      npuSupported: false
+    },
+    'intel-13-14': {
+      name: 'Intel 13th / 14th Gen Core (Raptor Lake)',
+      family: 'Raptor Cove + Gracemont x86_64',
+      npu: 'None',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.1+ LTS',
+      factor: 0.96,
+      npuSupported: false
+    },
+    'apple-m4-m3': {
+      name: 'Apple Silicon M3 / M4 (Pro / Max)',
+      family: 'ARM64 ARMv9.2-A',
+      npu: 'Apple Neural Engine (38 TOPS)',
+      vector: 'ARM NEON + SME / SVE2',
+      driver: 'Asahi Linux 6.8+ kernel + Mesa Rusticl',
+      factor: 1.25,
+      npuSupported: false
+    },
+    'apple-m1-m2': {
+      name: 'Apple Silicon M1 / M2 (Base / Pro / Max)',
+      family: 'ARM64 ARMv8.5-A',
+      npu: 'Apple Neural Engine (16 TOPS)',
+      vector: 'ARM NEON + Matrix Coprocessor',
+      driver: 'Asahi Linux 6.6+ kernel',
+      factor: 1.02,
+      npuSupported: false
+    },
+    'qualcomm-x': {
+      name: 'Qualcomm Snapdragon X Elite / Plus',
+      family: 'Oryon ARM64',
+      npu: 'Qualcomm Hexagon NPU (45 TOPS)',
+      vector: 'ARM NEON + SME',
+      driver: 'Linux 6.11+ upstream (qaic driver)',
+      factor: 1.06,
+      npuSupported: true
+    },
+    'server-epyc-xeon': {
+      name: 'Server / Workstation (AMD EPYC 9004 / Xeon Scalable)',
+      family: 'High-Throughput Enterprise x86_64',
+      npu: 'Dedicated PCIe AI Co-processors',
+      vector: 'Dual AVX-512 + Intel AMX Matrix Engines',
+      driver: 'Linux 6.8+ LTS Enterprise (amdgpu / intel-level-zero)',
+      factor: 1.35,
+      npuSupported: false
+    }
+  },
+  gpus: {
+    'nv-rtx4090': {
+      name: 'NVIDIA GeForce RTX 4090 (24GB GDDR6X)',
+      vram: 24,
+      bandwidth: 1008,
+      tokPrompt: 1950,
+      tokGen: 130,
+      tier: 'tier-1',
+      tierLabel: 'Tier 1: Extreme Lab Workstation',
+      power: '320W–450W (Extreme Compute)',
+      driver: 'nvidia-open 560+ • CUDA 12.6 • vLLM / TensorRT-LLM',
+      verifyCmd: 'nvidia-smi --query-gpu=name,memory.total,driver_version --format=csv',
+      primaryModel: 'DeepSeek-R1-Distill 32B (Q4_K_M) or Llama 3.3 70B (Split)',
+      bgModel: 'Llama 3.1 8B (FP16) + Whisper Large v3 + BGE-M3',
+      vramFootprint: 19.8
+    },
+    'nv-rtx4080': {
+      name: 'NVIDIA GeForce RTX 4080 (16GB GDDR6X)',
+      vram: 16,
+      bandwidth: 717,
+      tokPrompt: 1450,
+      tokGen: 98,
+      tier: 'tier-1',
+      tierLabel: 'Tier 1: High-Performance dGPU',
+      power: '220W–320W (High Performance)',
+      driver: 'nvidia-open 560+ • CUDA 12.6 • vLLM / llama.cpp',
+      verifyCmd: 'nvidia-smi -q -d MEMORY',
+      primaryModel: 'Qwen 2.5 14B (Q8_0) or Mistral Nemo 12B (FP16)',
+      bgModel: 'Phi-3.5 Mini 3.8B + Whisper Medium',
+      vramFootprint: 13.5
+    },
+    'nv-rtx4070': {
+      name: 'NVIDIA GeForce RTX 4070 / 4070 Ti (12GB GDDR6X)',
+      vram: 12,
+      bandwidth: 504,
+      tokPrompt: 1080,
+      tokGen: 74,
+      tier: 'tier-1',
+      tierLabel: 'Tier 1: Accelerated Desktop',
+      power: '160W–220W (Balanced Dedicated)',
+      driver: 'nvidia-open 560+ • CUDA 12.6 • llama.cpp CUDA',
+      verifyCmd: 'nvidia-smi --query-gpu=gpu_name,driver_version --format=csv',
+      primaryModel: 'Llama 3.1 8B (Q8_0) or Mistral Nemo 12B (Q4_K_M)',
+      bgModel: 'Phi-3.5 Mini (Q4) + Whisper Small',
+      vramFootprint: 9.8
+    },
+    'nv-rtx4060': {
+      name: 'NVIDIA GeForce RTX 4060 / 4060 Ti (8GB / 16GB GDDR6)',
+      vram: 8,
+      bandwidth: 288,
+      tokPrompt: 680,
+      tokGen: 48,
+      tier: 'tier-2',
+      tierLabel: 'Tier 2: Mainstream Accelerated',
+      power: '115W–160W (Efficient Dedicated)',
+      driver: 'nvidia-open 560+ • CUDA 12.6',
+      verifyCmd: 'nvidia-smi -L',
+      primaryModel: 'Llama 3.1 8B (Q4_K_M) or Gemma 2 9B (Q4_K_S)',
+      bgModel: 'Phi-3.5 Mini (Q4) + Whisper Tiny',
+      vramFootprint: 6.8
+    },
+    'nv-rtx3060-3090': {
+      name: 'NVIDIA GeForce RTX 30 Series (12GB–24GB Ampere)',
+      vram: 12,
+      bandwidth: 360,
+      tokPrompt: 750,
+      tokGen: 55,
+      tier: 'tier-2',
+      tierLabel: 'Tier 2: Proven Workhorse',
+      power: '170W–350W (Standard Dedicated)',
+      driver: 'nvidia-driver 550+ • CUDA 12.4+ • FlashAttention-2',
+      verifyCmd: 'nvidia-smi',
+      primaryModel: 'Llama 3.1 8B (Q8_0) or Qwen 2.5 7B (FP16)',
+      bgModel: 'Phi-3.5 Mini + BGE-Small Embeddings',
+      vramFootprint: 8.9
+    },
+    'amd-rx7900': {
+      name: 'AMD Radeon RX 7900 XTX / XT (24GB / 20GB GDDR6)',
+      vram: 24,
+      bandwidth: 960,
+      tokPrompt: 1420,
+      tokGen: 112,
+      tier: 'tier-1',
+      tierLabel: 'Tier 1: Open-Source Extreme Lab',
+      power: '300W–355W (High Performance Open)',
+      driver: 'ROCm 6.2 (HIP Runtime) + amdgpu kernel module',
+      verifyCmd: 'rocm-smi --showid --showmeminfo vram',
+      primaryModel: 'DeepSeek-R1-Distill 32B (Q4_K_M) or Llama 3.3 70B (Split)',
+      bgModel: 'Mistral 7B v0.3 (Q8_0) + Whisper Large v3',
+      vramFootprint: 18.9
+    },
+    'amd-rx7800-7700': {
+      name: 'AMD Radeon RX 7800 XT / 7700 XT (16GB / 12GB RDNA3)',
+      vram: 16,
+      bandwidth: 624,
+      tokPrompt: 990,
+      tokGen: 79,
+      tier: 'tier-1',
+      tierLabel: 'Tier 1: High-Performance ROCm Native',
+      power: '245W–263W (High Performance)',
+      driver: 'ROCm 6.2 + amdgpu • Vulkan (radv) fallback',
+      verifyCmd: 'rocminfo | grep "Marketing Name"',
+      primaryModel: 'Qwen 2.5 14B (Q4_K_M) or Llama 3.1 8B (Q8_0)',
+      bgModel: 'Phi-3.5 Mini + Whisper Medium',
+      vramFootprint: 12.8
+    },
+    'amd-rx7600': {
+      name: 'AMD Radeon RX 7600 / XT (8GB / 16GB RDNA3)',
+      vram: 8,
+      bandwidth: 288,
+      tokPrompt: 550,
+      tokGen: 43,
+      tier: 'tier-2',
+      tierLabel: 'Tier 2: Mainstream ROCm Compute',
+      power: '165W–190W',
+      driver: 'ROCm 6.2 / Vulkan (radv) + amdgpu',
+      verifyCmd: 'rocminfo',
+      primaryModel: 'Llama 3.1 8B (Q4_K_M) or Mistral 7B (Q4_K_M)',
+      bgModel: 'Phi-3.5 Mini (Q4) + Whisper Tiny',
+      vramFootprint: 6.6
+    },
+    'intel-b580': {
+      name: 'Intel Arc Battlemage B580 (12GB GDDR6 • Xe2)',
+      vram: 12,
+      bandwidth: 456,
+      tokPrompt: 740,
+      tokGen: 61,
+      tier: 'tier-2',
+      tierLabel: 'Tier 2: Modern Xe2 Battlemage',
+      power: '190W (Modern Efficiency)',
+      driver: 'Intel Compute Runtime (Level Zero / OpenCL) + oneAPI',
+      verifyCmd: 'xpu-smi discovery -d 0',
+      primaryModel: 'Mistral Nemo 12B (Q4_K_M) or Llama 3.1 8B (Q8_0)',
+      bgModel: 'Phi-3.5 Mini + Whisper Small',
+      vramFootprint: 9.4
+    },
+    'intel-a770': {
+      name: 'Intel Arc A770 (16GB GDDR6 • Alchemist Xe)',
+      vram: 16,
+      bandwidth: 560,
+      tokPrompt: 620,
+      tokGen: 49,
+      tier: 'tier-2',
+      tierLabel: 'Tier 2: 16GB High-Memory Value',
+      power: '225W (Discrete Alchemist)',
+      driver: 'intel-compute-runtime (Level Zero) + IPEX-LLM / SYCL',
+      verifyCmd: 'clinfo | grep "Device Name"',
+      primaryModel: 'Qwen 2.5 14B (Q4_K_M) or Llama 3.1 8B (Q8_0)',
+      bgModel: 'Phi-3.5 Mini + Whisper Small',
+      vramFootprint: 12.2
+    },
+    'apple-m-gpu': {
+      name: 'Apple Silicon Unified GPU (M-Series 10–40 Cores)',
+      vram: 0,
+      isUnified: true,
+      bandwidth: 320,
+      tokPrompt: 820,
+      tokGen: 68,
+      tier: 'tier-1',
+      tierLabel: 'Tier 1: Zero-Copy Unified Silicon',
+      power: '25W–45W (Ultra Low Power)',
+      driver: 'Asahi Linux • Mesa Rusticl (OpenCL 3.0) / Vulkan Kompute',
+      verifyCmd: 'asahi-diagnose && clinfo',
+      primaryModel: 'Dynamic: Scales to 75% of System RAM (Zero-Copy Pool)',
+      bgModel: 'Phi-3.5 Mini + Whisper Large v3 (Shared Pool)',
+      vramFootprint: 0
+    },
+    'igpu-amd-890m': {
+      name: 'AMD Radeon 890M / 780M iGPU (RDNA 3.5 APU)',
+      vram: 0,
+      isUnified: true,
+      bandwidth: 128,
+      tokPrompt: 280,
+      tokGen: 26,
+      tier: 'tier-2',
+      tierLabel: 'Tier 2: High-Performance Integrated APU',
+      power: '28W–54W (Full System SoC)',
+      driver: 'ROCm / Vulkan (radv) + amdgpu kernel module',
+      verifyCmd: 'vulkaninfo --summary',
+      primaryModel: 'Llama 3.1 8B (Q4_K_M) or Gemma 2 9B (Q4_K_S)',
+      bgModel: 'Phi-3.5 Mini (Q4) + BGE-Small Embeddings',
+      vramFootprint: 0
+    },
+    'igpu-intel-arc': {
+      name: 'Intel Arc Xe-LPG iGPU (Core Ultra Integrated)',
+      vram: 0,
+      isUnified: true,
+      bandwidth: 115,
+      tokPrompt: 210,
+      tokGen: 20,
+      tier: 'tier-2',
+      tierLabel: 'Tier 2: Ultra-Low-Power APU',
+      power: '20W–45W (Full System SoC)',
+      driver: 'intel-compute-runtime + Level Zero / i915 / xe driver',
+      verifyCmd: 'sycl-ls',
+      primaryModel: 'Phi-3.5 Mini 3.8B (Q8_0) or Llama 3.1 8B (Q4_K_S)',
+      bgModel: 'Whisper Small + Local Embeddings',
+      vramFootprint: 0
+    },
+    'none-cpu-only': {
+      name: 'No Discrete GPU (CPU AVX-512 / VNNI Vector Compute Only)',
+      vram: 0,
+      isCpuOnly: true,
+      bandwidth: 68,
+      tokPrompt: 95,
+      tokGen: 11,
+      tier: 'tier-3',
+      tierLabel: 'Tier 3: CPU Vector Fallback (AVX-512 / AMX)',
+      power: '15W–65W (CPU Only)',
+      driver: 'Open-Source ggml-cpu backend • AVX-512 / AMX Tile kernels',
+      verifyCmd: 'lscpu | grep -E "avx512|amx|vnni|neon|sve"',
+      primaryModel: 'Phi-3.5 Mini 3.8B (Q4_K_M) or Llama 3.1 8B (Q4_K_S)',
+      bgModel: 'Whisper Tiny + BGE-Small Embeddings',
+      vramFootprint: 0
+    }
+  },
+  rams: {
+    'ram-8': {
+      capacity: 8,
+      usableAI: 4.8,
+      label: '8 GB (Entry Tier)',
+      bestQuant: 'Q4_K_S (4-bit small)',
+      status: 'Lightweight & Edge'
+    },
+    'ram-16': {
+      capacity: 16,
+      usableAI: 12.4,
+      label: '16 GB (Desktop Baseline)',
+      bestQuant: 'Q4_K_M (4-bit medium) or Q5_K_M',
+      status: 'Sweet-Spot Baseline'
+    },
+    'ram-32': {
+      capacity: 32,
+      usableAI: 27.2,
+      label: '32 GB (Power User Sweet-Spot)',
+      bestQuant: 'Q8_0 or FP16 for 8B / Q4_K_M for 14B',
+      status: 'Power User Tier'
+    },
+    'ram-64': {
+      capacity: 64,
+      usableAI: 57.6,
+      label: '64 GB (Advanced Workstation)',
+      bestQuant: 'Q4_K_M for 32B / Q8_0 for 14B',
+      status: 'Workstation Tier'
+    },
+    'ram-128': {
+      capacity: 128,
+      usableAI: 118.0,
+      label: '128 GB+ (Local LLM Laboratory)',
+      bestQuant: 'Q4_K_M for 70B / Q8_0 for 32B',
+      status: 'Extreme Research Lab'
+    }
+  }
+};
+
+function initHardwareCalculator() {
+  const cpuSelect = document.getElementById('hw-cpu-select');
+  const gpuSelect = document.getElementById('hw-gpu-select');
+  const ramSelect = document.getElementById('hw-ram-select');
+  if (!cpuSelect || !gpuSelect || !ramSelect) return;
+
+  function recalculate() {
+    const cpuKey = cpuSelect.value;
+    const gpuKey = gpuSelect.value;
+    const ramKey = ramSelect.value;
+
+    const cpu = HW_DATABASE.cpus[cpuKey] || HW_DATABASE.cpus['amd-zen5-ai'];
+    const gpu = HW_DATABASE.gpus[gpuKey] || HW_DATABASE.gpus['nv-rtx4070'];
+    const ram = HW_DATABASE.rams[ramKey] || HW_DATABASE.rams['ram-32'];
+
+    const tierBadge = document.getElementById('hw-tier-badge');
+    const tokGenVal = document.getElementById('hw-tok-gen');
+    const tokPromptVal = document.getElementById('hw-tok-prompt');
+    const powerVal = document.getElementById('hw-power-env');
+    const primaryModelVal = document.getElementById('hw-primary-model');
+    const bgModelVal = document.getElementById('hw-bg-model');
+    const bestQuantVal = document.getElementById('hw-best-quant');
+    const driverStackVal = document.getElementById('hw-driver-stack');
+    const verifyCmdVal = document.getElementById('hw-verify-cmd');
+    const vramStatVal = document.getElementById('hw-vram-stat');
+    const vramBarFill = document.getElementById('hw-vram-bar-fill');
+    const ramStatVal = document.getElementById('hw-ram-stat');
+    const ramBarFill = document.getElementById('hw-ram-bar-fill');
+    const vectorIsaVal = document.getElementById('hw-vector-isa');
+    const npuStatusVal = document.getElementById('hw-npu-status');
+    const bandwidthVal = document.getElementById('hw-bandwidth-stat');
+
+    let promptSpeed, genSpeed, vramUsedGB, vramTotalGB, vramPercent, ramUsedGB, ramPercent;
+    let effectiveTier = gpu.tier;
+    let effectiveTierLabel = gpu.tierLabel;
+
+    const ramMultiplier = ram.capacity >= 64 ? 1.15 : (ram.capacity <= 8 ? 0.78 : 1.0);
+
+    if (gpu.isUnified) {
+      vramTotalGB = ram.capacity;
+      const modelFootprint = Math.min(ram.usableAI * 0.65, 14.5);
+      vramUsedGB = parseFloat(modelFootprint.toFixed(1));
+      vramPercent = Math.min(95, Math.round((vramUsedGB / vramTotalGB) * 100));
+
+      ramUsedGB = parseFloat((vramUsedGB + 2.2).toFixed(1));
+      ramPercent = Math.min(98, Math.round((ramUsedGB / ram.capacity) * 100));
+
+      promptSpeed = Math.round(gpu.tokPrompt * cpu.factor * ramMultiplier);
+      genSpeed = Math.round(gpu.tokGen * cpu.factor * ramMultiplier);
+    } else if (gpu.isCpuOnly) {
+      vramTotalGB = 0;
+      vramUsedGB = 0;
+      vramPercent = 0;
+
+      ramUsedGB = parseFloat(Math.min(ram.capacity * 0.75, 6.2).toFixed(1));
+      ramPercent = Math.min(95, Math.round((ramUsedGB / ram.capacity) * 100));
+
+      promptSpeed = Math.round(gpu.tokPrompt * cpu.factor * ramMultiplier);
+      genSpeed = Math.round(gpu.tokGen * cpu.factor * ramMultiplier);
+    } else {
+      vramTotalGB = gpu.vram;
+      vramUsedGB = Math.min(gpu.vram, gpu.vramFootprint);
+      vramPercent = Math.min(100, Math.round((vramUsedGB / gpu.vram) * 100));
+
+      ramUsedGB = parseFloat((2.4 + (ram.capacity * 0.06)).toFixed(1));
+      ramPercent = Math.min(95, Math.round((ramUsedGB / ram.capacity) * 100));
+
+      promptSpeed = Math.round(gpu.tokPrompt * cpu.factor);
+      genSpeed = Math.round(gpu.tokGen * cpu.factor);
+
+      if (ram.capacity <= 8 && gpu.vram >= 16) {
+        effectiveTier = 'tier-2';
+        effectiveTierLabel = 'Tier 2: System RAM Bottleneck (VRAM > RAM)';
+      }
+    }
+
+    if (tierBadge) {
+      tierBadge.className = 'hw-tier-badge ' + effectiveTier;
+      tierBadge.textContent = effectiveTierLabel;
+    }
+    if (tokGenVal) tokGenVal.textContent = genSpeed;
+    if (tokPromptVal) tokPromptVal.textContent = promptSpeed.toLocaleString();
+    if (powerVal) powerVal.textContent = gpu.power;
+    if (primaryModelVal) primaryModelVal.textContent = gpu.primaryModel;
+    if (bgModelVal) bgModelVal.textContent = gpu.bgModel;
+    if (bestQuantVal) bestQuantVal.textContent = ram.bestQuant;
+    if (driverStackVal) driverStackVal.textContent = gpu.driver;
+    if (verifyCmdVal) verifyCmdVal.textContent = gpu.verifyCmd;
+    if (vectorIsaVal) vectorIsaVal.textContent = cpu.vector;
+    if (npuStatusVal) npuStatusVal.textContent = cpu.npu;
+    if (bandwidthVal) bandwidthVal.textContent = (gpu.bandwidth || 64) + ' GB/s';
+
+    if (vramStatVal && vramBarFill) {
+      if (gpu.isUnified) {
+        vramStatVal.textContent = vramUsedGB + ' GB dynamic unified pool (of ' + ram.capacity + ' GB total)';
+        vramBarFill.style.width = vramPercent + '%';
+      } else if (gpu.isCpuOnly) {
+        vramStatVal.textContent = 'None (0 GB Dedicated VRAM) • Zero-Copy Host RAM Engine';
+        vramBarFill.style.width = '0%';
+      } else {
+        vramStatVal.textContent = vramUsedGB + ' GB allocated of ' + vramTotalGB + ' GB GDDR';
+        vramBarFill.style.width = vramPercent + '%';
+      }
+    }
+
+    if (ramStatVal && ramBarFill) {
+      ramStatVal.textContent = ramUsedGB + ' GB in use (' + ram.capacity + ' GB physical)';
+      ramBarFill.style.width = ramPercent + '%';
+    }
+  }
+
+  cpuSelect.addEventListener('change', recalculate);
+  gpuSelect.addEventListener('change', recalculate);
+  ramSelect.addEventListener('change', recalculate);
+
+  recalculate();
+}
+
+/* ==========================================================================
+   13. Interactive Hardware Documentation Tabs Switcher
+   ========================================================================== */
+function initHardwareDocsTabs() {
+  const tabs = document.querySelectorAll('.hw-docs-tab');
+  const panels = document.querySelectorAll('.hw-docs-panel');
+  if (!tabs.length || !panels.length) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetId = tab.getAttribute('data-tab');
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+
+      tab.classList.add('active');
+      const activePanel = document.getElementById(targetId);
+      if (activePanel) {
+        activePanel.classList.add('active');
+      }
+    });
+
+    tab.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        const tabList = Array.from(tabs);
+        const currentIndex = tabList.indexOf(tab);
+        let nextIndex;
+        if (e.key === 'ArrowRight') {
+          nextIndex = (currentIndex + 1) % tabList.length;
+        } else {
+          nextIndex = (currentIndex - 1 + tabList.length) % tabList.length;
+        }
+        tabList[nextIndex].focus();
+        tabList[nextIndex].click();
+      }
+    });
   });
 }

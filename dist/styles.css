@@ -2076,6 +2076,537 @@ pre code,
 }
 
 /* ==========================================================================
+   Hardware Compatibility & Compute Lab (#hardware)
+   ========================================================================== */
+.hw-suite-container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.hw-calculator-card {
+  padding: 2.75rem 3rem;
+  border-radius: 32px;
+  margin-bottom: 4rem;
+  text-align: left;
+}
+
+.hw-controls-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hw-control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.hw-control-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.775rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-tertiary);
+}
+
+.hw-control-label-icon {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  box-shadow: 0 0 8px var(--accent-blue);
+}
+
+.hw-select-wrapper {
+  position: relative;
+}
+
+.hw-select {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  padding: 0.95rem 2.5rem 0.95rem 1.15rem;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--trans-fast);
+  outline: none;
+}
+
+.hw-select:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.hw-select:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 20px rgba(41, 151, 255, 0.35);
+  background: rgba(18, 20, 26, 0.95);
+}
+
+.hw-select option {
+  background: #0d0f14;
+  color: #ffffff;
+  padding: 0.5rem;
+}
+
+.hw-select-chevron {
+  position: absolute;
+  right: 1.15rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--text-tertiary);
+  font-size: 0.75rem;
+}
+
+/* Metrics Ribbon */
+.hw-metrics-ribbon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.hw-tier-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.45rem 1.15rem;
+  border-radius: 100px;
+  font-size: 0.825rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: all var(--trans-fast);
+}
+
+.hw-tier-badge.tier-1 {
+  background: rgba(48, 209, 88, 0.14);
+  color: #30d158;
+  border: 1px solid rgba(48, 209, 88, 0.35);
+  box-shadow: 0 0 16px rgba(48, 209, 88, 0.2);
+}
+
+.hw-tier-badge.tier-2 {
+  background: rgba(100, 210, 255, 0.14);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(100, 210, 255, 0.35);
+  box-shadow: 0 0 16px rgba(100, 210, 255, 0.2);
+}
+
+.hw-tier-badge.tier-3 {
+  background: rgba(254, 188, 46, 0.14);
+  color: #febc2e;
+  border: 1px solid rgba(254, 188, 46, 0.35);
+  box-shadow: 0 0 16px rgba(254, 188, 46, 0.2);
+}
+
+.hw-stats-trio {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.hw-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.hw-stat-num {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.hw-stat-unit {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-blue);
+  text-transform: uppercase;
+}
+
+.hw-stat-label {
+  font-size: 0.725rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-tertiary);
+  margin-top: 0.25rem;
+}
+
+/* Memory & VRAM Budget Progress Bars */
+.hw-budgets-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.hw-budget-card {
+  background: #08090d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 1.35rem 1.65rem;
+}
+
+.hw-budget-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.hw-budget-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+}
+
+.hw-budget-stat {
+  font-family: var(--font-mono);
+  font-size: 0.825rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.hw-bar-track {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 100px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hw-bar-fill {
+  height: 100%;
+  border-radius: 100px;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hw-bar-fill.vram-gradient {
+  background: linear-gradient(90deg, #bf5af2, #64d2ff);
+  box-shadow: 0 0 12px rgba(191, 90, 242, 0.5);
+}
+
+.hw-bar-fill.ram-gradient {
+  background: linear-gradient(90deg, #2997ff, #30d158);
+  box-shadow: 0 0 12px rgba(48, 209, 88, 0.5);
+}
+
+/* Recommendation Details Grid */
+.hw-specs-deck {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.hw-deck-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 1.15rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.hw-deck-label {
+  font-size: 0.725rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-tertiary);
+  margin-bottom: 0.5rem;
+}
+
+.hw-deck-value {
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+.hw-deck-value.accent-cyan { color: var(--accent-cyan); }
+.hw-deck-value.accent-green { color: #30d158; }
+.hw-deck-value.accent-purple { color: #bf5af2; }
+.hw-deck-value.accent-blue { color: var(--accent-blue); }
+.hw-deck-value.accent-amber { color: #febc2e; }
+
+/* Driver & Terminal Verification Line */
+.hw-terminal-box {
+  background: #06070a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1rem 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hw-term-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.hw-term-tag {
+  display: inline-flex;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: rgba(41, 151, 255, 0.15);
+  color: var(--accent-blue);
+  border: 1px solid rgba(41, 151, 255, 0.3);
+  padding: 0.15rem 0.55rem;
+  border-radius: 6px;
+}
+
+.hw-term-code {
+  font-family: var(--font-mono);
+  font-size: 0.825rem;
+  color: #30d158;
+}
+
+/* Documentation Matrix & Guide */
+.hw-docs-section {
+  margin-top: 4.5rem;
+}
+
+.hw-docs-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.hw-docs-title {
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--text-headline);
+  margin-bottom: 0.75rem;
+}
+
+.hw-docs-sub {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.hw-docs-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-bottom: 2.25rem;
+  flex-wrap: wrap;
+}
+
+.hw-docs-tab {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.65rem 1.35rem;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all var(--trans-fast);
+}
+
+.hw-docs-tab:hover {
+  background: rgba(255, 255, 255, 0.09);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.hw-docs-tab.active {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.35);
+}
+
+.hw-docs-panel {
+  display: none;
+}
+
+.hw-docs-panel.active {
+  display: block;
+  animation: fadeIn 0.35s ease forwards;
+}
+
+/* Tables inside Documentation */
+.hw-table-wrapper {
+  background: #090a0e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.hw-table {
+  width: 100%;
+  min-width: 860px;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.hw-table th {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.15rem 1.35rem;
+  font-weight: 700;
+  font-size: 0.775rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-tertiary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hw-table td {
+  padding: 1.15rem 1.35rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+.hw-table tr:last-child td {
+  border-bottom: none;
+}
+
+.hw-table tr:hover td {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.hw-chip-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.hw-tag-green {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: rgba(48, 209, 88, 0.12);
+  color: #30d158;
+  border: 1px solid rgba(48, 209, 88, 0.3);
+  padding: 0.15rem 0.55rem;
+  border-radius: 100px;
+}
+
+.hw-tag-blue {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: rgba(41, 151, 255, 0.12);
+  color: var(--accent-blue);
+  border: 1px solid rgba(41, 151, 255, 0.3);
+  padding: 0.15rem 0.55rem;
+  border-radius: 100px;
+}
+
+.hw-tag-purple {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: rgba(191, 90, 242, 0.12);
+  color: #bf5af2;
+  border: 1px solid rgba(191, 90, 242, 0.3);
+  padding: 0.15rem 0.55rem;
+  border-radius: 100px;
+}
+
+.hw-tag-amber {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: rgba(254, 188, 46, 0.12);
+  color: #febc2e;
+  border: 1px solid rgba(254, 188, 46, 0.3);
+  padding: 0.15rem 0.55rem;
+  border-radius: 100px;
+}
+
+/* Architecture deep-dive cards in docs */
+.hw-arch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.hw-arch-card {
+  background: #090a0e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 1.75rem 2rem;
+}
+
+.hw-arch-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.hw-arch-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.hw-formula-box {
+  background: #050608;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.25rem 0;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: #64d2ff;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+/* ==========================================================================
    Apple-Style Current Status & Engineering Milestones Section
    ========================================================================== */
 .status-summary-grid {
@@ -2635,6 +3166,22 @@ pre code,
   .footer-nav-grid {
     grid-template-columns: 1fr 1fr;
   }
+  .hw-controls-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .hw-budgets-grid {
+    grid-template-columns: 1fr;
+  }
+  .hw-specs-deck {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hw-arch-grid {
+    grid-template-columns: 1fr;
+  }
+  .hw-calculator-card {
+    padding: 2rem 1.5rem;
+  }
 }
 
 @media (max-width: 780px) {
@@ -2752,6 +3299,15 @@ pre code,
   }
   .bento-card {
     padding: 1.75rem 1.25rem;
+  }
+  .hw-specs-deck {
+    grid-template-columns: 1fr;
+  }
+  .hw-stats-trio {
+    gap: 1.25rem;
+  }
+  .hw-metrics-ribbon {
+    padding: 1.25rem;
   }
   .specs-row {
     padding: 1.15rem 1.25rem;

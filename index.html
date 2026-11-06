@@ -36,7 +36,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Apple-Grade Minimalist Liquid Glass Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="stylesheet" href="styles.css?v=10">
 </head>
 <body>
 
@@ -77,6 +77,7 @@
           <li><a href="#compare" class="nav-link">Compare</a></li>
           <li><a href="#verify" class="nav-link">Verify</a></li>
           <li><a href="#specs" class="nav-link">Specs</a></li>
+          <li><a href="#hardware" class="nav-link">Hardware</a></li>
           <li><a href="#status" class="nav-link">Status</a></li>
           <li><a href="#faq" class="nav-link">FAQ</a></li>
         </ul>
@@ -983,6 +984,657 @@ assert!(response.is_ok());</code></pre>
         </div>
       </section>
 
+      <!-- Hardware Compatibility & Compute Lab -->
+      <section class="section" id="hardware">
+        <div class="container">
+          <div class="section-header reveal-on-scroll">
+            <span class="section-eyebrow">Silicon &amp; Acceleration Suite</span>
+            <h2 class="section-headline">Will Your Machine Fly? Calculate Your Silicon.</h2>
+            <p class="section-lead">
+              Select your CPU, GPU, and memory configuration to simulate real-time inference throughput, memory headroom, supported local models, and recommended Linux drivers across modern hardware architectures.
+            </p>
+          </div>
+
+          <div class="hw-suite-container">
+            <!-- Interactive Hardware Calculator Card -->
+            <div class="hw-calculator-card liquid-glass reveal-on-scroll">
+              <!-- Selectors Grid -->
+              <div class="hw-controls-grid">
+                <!-- CPU Architecture Selector -->
+                <div class="hw-control-group">
+                  <label class="hw-control-label" for="hw-cpu-select">
+                    <span class="hw-control-label-icon"></span>
+                    <span>CPU Architecture &amp; NPU</span>
+                  </label>
+                  <div class="hw-select-wrapper">
+                    <select id="hw-cpu-select" class="hw-select" aria-label="Select Processor Architecture">
+                      <option value="amd-zen5-ai" selected>AMD Ryzen AI 300 / 9000 (Zen 5 + XDNA 2)</option>
+                      <option value="amd-zen4">AMD Ryzen 7000 / 8000 (Zen 4 + AVX-512)</option>
+                      <option value="amd-zen3">AMD Ryzen 5000 / Mobile (Zen 3 + AVX2)</option>
+                      <option value="intel-ultra2">Intel Core Ultra 200 (Lunar / Arrow Lake + NPU 48 TOPS)</option>
+                      <option value="intel-ultra1">Intel Core Ultra 100 (Meteor Lake + NPU)</option>
+                      <option value="intel-13-14">Intel 13th / 14th Gen Core (Raptor Lake)</option>
+                      <option value="apple-m4-m3">Apple Silicon M3 / M4 (ARM64 Asahi Linux)</option>
+                      <option value="apple-m1-m2">Apple Silicon M1 / M2 (ARM64 Asahi Linux)</option>
+                      <option value="qualcomm-x">Qualcomm Snapdragon X Elite (Oryon + Hexagon)</option>
+                      <option value="server-epyc-xeon">AMD EPYC 9004 / Intel Xeon Scalable (Server)</option>
+                    </select>
+                    <span class="hw-select-chevron">▼</span>
+                  </div>
+                </div>
+
+                <!-- GPU Selector -->
+                <div class="hw-control-group">
+                  <label class="hw-control-label" for="hw-gpu-select">
+                    <span class="hw-control-label-icon" style="background: #30d158; box-shadow: 0 0 8px #30d158;"></span>
+                    <span>GPU Accelerator / Compute</span>
+                  </label>
+                  <div class="hw-select-wrapper">
+                    <select id="hw-gpu-select" class="hw-select" aria-label="Select Graphics Processor">
+                      <option value="nv-rtx4090">NVIDIA RTX 4090 (24GB GDDR6X • Ada Lovelace)</option>
+                      <option value="nv-rtx4080">NVIDIA RTX 4080 (16GB GDDR6X • Ada Lovelace)</option>
+                      <option value="nv-rtx4070" selected>NVIDIA RTX 4070 / Ti (12GB GDDR6X • Ada Lovelace)</option>
+                      <option value="nv-rtx4060">NVIDIA RTX 4060 / Ti (8GB / 16GB GDDR6)</option>
+                      <option value="nv-rtx3060-3090">NVIDIA RTX 30 Series (12GB–24GB Ampere)</option>
+                      <option value="amd-rx7900">AMD Radeon RX 7900 XTX / XT (24GB RDNA3)</option>
+                      <option value="amd-rx7800-7700">AMD Radeon RX 7800 XT / 7700 XT (16GB RDNA3)</option>
+                      <option value="amd-rx7600">AMD Radeon RX 7600 / XT (8GB RDNA3)</option>
+                      <option value="intel-b580">Intel Arc Battlemage B580 (12GB Xe2)</option>
+                      <option value="intel-a770">Intel Arc A770 (16GB Alchemist Xe)</option>
+                      <option value="apple-m-gpu">Apple Silicon Unified GPU (Metal / Rusticl)</option>
+                      <option value="igpu-amd-890m">AMD Radeon 890M / 780M iGPU (RDNA 3.5 APU)</option>
+                      <option value="igpu-intel-arc">Intel Arc Xe-LPG iGPU (Core Ultra Integrated)</option>
+                      <option value="none-cpu-only">None: CPU-Only AVX-512 / VNNI Vector Engine</option>
+                    </select>
+                    <span class="hw-select-chevron">▼</span>
+                  </div>
+                </div>
+
+                <!-- RAM Selector -->
+                <div class="hw-control-group">
+                  <label class="hw-control-label" for="hw-ram-select">
+                    <span class="hw-control-label-icon" style="background: #bf5af2; box-shadow: 0 0 8px #bf5af2;"></span>
+                    <span>System RAM Capacity</span>
+                  </label>
+                  <div class="hw-select-wrapper">
+                    <select id="hw-ram-select" class="hw-select" aria-label="Select System Memory">
+                      <option value="ram-8">8 GB (Lightweight &amp; Edge Tier)</option>
+                      <option value="ram-16">16 GB (Desktop Baseline Tier)</option>
+                      <option value="ram-32" selected>32 GB (Recommended Sweet-Spot Tier)</option>
+                      <option value="ram-64">64 GB (Workstation &amp; Laboratory Tier)</option>
+                      <option value="ram-128">128 GB+ (Extreme Enterprise Tier)</option>
+                    </select>
+                    <span class="hw-select-chevron">▼</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Dynamic Output Dashboard -->
+              <div class="hw-output-dashboard">
+                <!-- Metrics Ribbon -->
+                <div class="hw-metrics-ribbon">
+                  <div class="hw-tier-badge tier-1" id="hw-tier-badge">
+                    Tier 1: Accelerated Desktop
+                  </div>
+                  
+                  <div class="hw-stats-trio">
+                    <div class="hw-stat-item">
+                      <div class="hw-stat-num">
+                        <span id="hw-tok-gen">74</span>
+                        <span class="hw-stat-unit">tok/s</span>
+                      </div>
+                      <span class="hw-stat-label">Generation Speed</span>
+                    </div>
+
+                    <div class="hw-stat-item">
+                      <div class="hw-stat-num">
+                        <span id="hw-tok-prompt" style="color: var(--accent-cyan);">1,080</span>
+                        <span class="hw-stat-unit">tok/s</span>
+                      </div>
+                      <span class="hw-stat-label">Prompt Evaluation</span>
+                    </div>
+
+                    <div class="hw-stat-item">
+                      <div class="hw-stat-num">
+                        <span id="hw-bandwidth-stat" style="color: #30d158;">504 GB/s</span>
+                      </div>
+                      <span class="hw-stat-label">Memory Bandwidth</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Memory & VRAM Budgets -->
+                <div class="hw-budgets-grid">
+                  <div class="hw-budget-card">
+                    <div class="hw-budget-header">
+                      <span class="hw-budget-title">Dedicated VRAM Budget</span>
+                      <span class="hw-budget-stat" id="hw-vram-stat">9.8 GB allocated of 12 GB GDDR</span>
+                    </div>
+                    <div class="hw-bar-track">
+                      <div class="hw-bar-fill vram-gradient" id="hw-vram-bar-fill" style="width: 82%;"></div>
+                    </div>
+                  </div>
+
+                  <div class="hw-budget-card">
+                    <div class="hw-budget-header">
+                      <span class="hw-budget-title">System RAM Allocation</span>
+                      <span class="hw-budget-stat" id="hw-ram-stat">4.3 GB in use (32 GB physical)</span>
+                    </div>
+                    <div class="hw-bar-track">
+                      <div class="hw-bar-fill ram-gradient" id="hw-ram-bar-fill" style="width: 14%;"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Recommendation Details Grid -->
+                <div class="hw-specs-deck">
+                  <div class="hw-deck-card">
+                    <span class="hw-deck-label">Primary Agent Model</span>
+                    <span class="hw-deck-value accent-cyan" id="hw-primary-model">Llama 3.1 8B (Q8_0) or Mistral Nemo 12B</span>
+                  </div>
+
+                  <div class="hw-deck-card">
+                    <span class="hw-deck-label">Background Telemetry Model</span>
+                    <span class="hw-deck-value accent-green" id="hw-bg-model">Phi-3.5 Mini (Q4) + Whisper Small</span>
+                  </div>
+
+                  <div class="hw-deck-card">
+                    <span class="hw-deck-label">Recommended Quantization</span>
+                    <span class="hw-deck-value accent-purple" id="hw-best-quant">Q8_0 or FP16 for 8B / Q4_K_M for 14B</span>
+                  </div>
+
+                  <div class="hw-deck-card">
+                    <span class="hw-deck-label">Processor Vector SIMD</span>
+                    <span class="hw-deck-value accent-blue" id="hw-vector-isa">AVX-512 (Native 512-bit) + VNNI</span>
+                  </div>
+
+                  <div class="hw-deck-card">
+                    <span class="hw-deck-label">Neural Processing Unit (NPU)</span>
+                    <span class="hw-deck-value accent-green" id="hw-npu-status">AMD XDNA 2 (50 NPU TOPS)</span>
+                  </div>
+
+                  <div class="hw-deck-card">
+                    <span class="hw-deck-label">Thermal / Power Profile</span>
+                    <span class="hw-deck-value accent-amber" id="hw-power-env">160W–220W (Balanced Dedicated)</span>
+                  </div>
+                </div>
+
+                <!-- Driver & Hardware Verification Line -->
+                <div class="hw-terminal-box">
+                  <div class="hw-term-info">
+                    <span class="hw-term-tag">Compute Stack</span>
+                    <span id="hw-driver-stack">nvidia-open 560+ • CUDA 12.6 • llama.cpp CUDA</span>
+                  </div>
+                  <div class="hw-term-info">
+                    <span class="hw-term-tag" style="background: rgba(48, 209, 88, 0.15); color: #30d158; border-color: rgba(48, 209, 88, 0.3);">Verification Command</span>
+                    <code class="hw-term-code" id="hw-verify-cmd">nvidia-smi --query-gpu=gpu_name,driver_version --format=csv</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Deep-Dive Hardware Architecture & Sizing Guide -->
+            <div class="hw-docs-section reveal-on-scroll">
+              <div class="hw-docs-header">
+                <span class="section-eyebrow">Technical Reference</span>
+                <h3 class="hw-docs-title">Deep-Dive Hardware Architecture &amp; Sizing Guide</h3>
+                <p class="hw-docs-sub">
+                  Empirical documentation covering vector matrix extensions, Linux compute backends, memory bandwidth physics, and open-weights quantization sizing.
+                </p>
+              </div>
+
+              <!-- Documentation Navigation Tabs -->
+              <div class="hw-docs-nav" role="tablist">
+                <button type="button" class="hw-docs-tab active" data-tab="tab-cpu" role="tab" aria-selected="true">Modern CPUs &amp; NPUs</button>
+                <button type="button" class="hw-docs-tab" data-tab="tab-gpu" role="tab" aria-selected="false">GPU Accelerators &amp; ROCm/CUDA</button>
+                <button type="button" class="hw-docs-tab" data-tab="tab-mem" role="tab" aria-selected="false">Memory Bandwidth Physics</button>
+                <button type="button" class="hw-docs-tab" data-tab="tab-models" role="tab" aria-selected="false">Model VRAM Sizing Matrix</button>
+              </div>
+
+              <!-- Tab 1: Modern CPUs & NPUs -->
+              <div class="hw-docs-panel active" id="tab-cpu" role="tabpanel">
+                <div class="hw-table-wrapper">
+                  <table class="hw-table">
+                    <thead>
+                      <tr>
+                        <th>Processor Architecture</th>
+                        <th>Vector Extensions</th>
+                        <th>NPU Subsystem</th>
+                        <th>Linux Driver / Kernel</th>
+                        <th>Aurora OS Integration</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><span class="hw-chip-pill">AMD Ryzen AI 300 / 9000</span> (Zen 5)</td>
+                        <td><code>AVX-512 (Native 512-bit) + VNNI</code></td>
+                        <td><span class="hw-tag-green">AMD XDNA 2 (50 TOPS)</span></td>
+                        <td>Linux 6.10+ (<code>amdgpu_xdna</code> / XRT)</td>
+                        <td>Full hardware NPU offloading for embedding &amp; Whisper</td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">Intel Core Ultra 200</span> (Lunar / Arrow Lake)</td>
+                        <td><code>AVX2 + VNNI + Intel AMX</code></td>
+                        <td><span class="hw-tag-green">Intel NPU 4 (48 TOPS)</span></td>
+                        <td>Linux 6.11+ (<code>intel_vpu</code> / Level Zero)</td>
+                        <td>Zero-copy NPU token prefill via oneAPI Level Zero</td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">Apple Silicon M3 / M4</span> (Pro / Max)</td>
+                        <td><code>ARMv9.2-A NEON + SME2</code></td>
+                        <td><span class="hw-tag-purple">ANE (38 TOPS via Mesa)</span></td>
+                        <td>Asahi Linux 6.8+ (Mesa Rusticl)</td>
+                        <td>Unified zero-copy memory pool across CPU and GPU</td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">Qualcomm Snapdragon X Elite</span></td>
+                        <td><code>Oryon ARM64 + NEON / SME</code></td>
+                        <td><span class="hw-tag-blue">Hexagon NPU (45 TOPS)</span></td>
+                        <td>Linux 6.11+ upstream (<code>qaic</code> driver)</td>
+                        <td>Native Linux ARM64 support with background NPU daemon</td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">AMD Ryzen 7000 / 8000</span> (Zen 4)</td>
+                        <td><code>AVX-512 (256-bit double-pumped)</code></td>
+                        <td><span class="hw-tag-amber">XDNA 1 (16 TOPS on 8040)</span></td>
+                        <td>Linux 6.6+ LTS (<code>amdgpu</code>)</td>
+                        <td>High-throughput AVX-512 vector matrix execution</td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">Intel Core Ultra 100</span> (Meteor Lake)</td>
+                        <td><code>AVX2 + FMA3 + VNNI</code></td>
+                        <td><span class="hw-tag-amber">Intel NPU 3 (11 TOPS)</span></td>
+                        <td>Linux 6.8+ (<code>intel_vpu</code>)</td>
+                        <td>Ambient speech-to-text offloading to Intel VPU driver</td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">Intel 13th / 14th Gen Core</span> (Raptor Lake)</td>
+                        <td><code>AVX2 + FMA3 + VNNI</code></td>
+                        <td>None (Standard x86_64)</td>
+                        <td>Linux 6.1+ LTS</td>
+                        <td>AVX2 SIMD tile acceleration via <code>ggml-cpu</code></td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">Server / Workstation</span> (EPYC 9004 / Xeon)</td>
+                        <td><code>Dual AVX-512 + Intel AMX</code></td>
+                        <td>PCIe AI Co-processors</td>
+                        <td>Linux 6.8+ LTS Enterprise</td>
+                        <td>Massive memory channels (up to 12-channel DDR5 460 GB/s)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="hw-arch-grid">
+                  <div class="hw-arch-card">
+                    <h4 class="hw-arch-title">
+                      <span class="hw-control-label-icon"></span>
+                      <span>AVX-512 &amp; Intel AMX Matrix Engines</span>
+                    </h4>
+                    <p class="hw-arch-desc">
+                      Aurora OS incorporates specialized vector dispatch routines that dynamically detect AVX-512 (F, CD, BW, DQ, VL) and Intel Advanced Matrix Extensions (AMX). On CPUs with AMX tiles, 8-bit quantized matrix multiplication achieves up to <strong>3.2× higher throughput</strong> than standard AVX2, enabling responsive 8B models without requiring a discrete graphics card.
+                    </p>
+                  </div>
+
+                  <div class="hw-arch-card">
+                    <h4 class="hw-arch-title">
+                      <span class="hw-control-label-icon" style="background: #30d158; box-shadow: 0 0 8px #30d158;"></span>
+                      <span>Dedicated Linux NPU Subsystems (XDNA 2 &amp; VPU)</span>
+                    </h4>
+                    <p class="hw-arch-desc">
+                      Modern Neural Processing Units (NPUs) are treated as first-class asynchronous accelerators. Through the upstream Linux <code>amdgpu_xdna</code> and <code>intel_vpu</code> drivers, the <code>aurora-ai</code> daemon delegates lightweight audio transcription (Whisper) and semantic vector embeddings (BGE) to the NPU at sub-15W power consumption, preserving the discrete GPU for primary reasoning tasks.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tab 2: GPU Accelerators & Compute Stacks -->
+              <div class="hw-docs-panel" id="tab-gpu" role="tabpanel">
+                <div class="hw-table-wrapper">
+                  <table class="hw-table">
+                    <thead>
+                      <tr>
+                        <th>GPU Model &amp; Architecture</th>
+                        <th>VRAM &amp; Bus Width</th>
+                        <th>Memory Bandwidth</th>
+                        <th>Primary Compute Stack</th>
+                        <th>Recommended Desktop Role</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><span class="hw-chip-pill">NVIDIA RTX 4090</span> (Ada Lovelace)</td>
+                        <td>24 GB GDDR6X (384-bit)</td>
+                        <td><span class="hw-tag-green">1,008 GB/s</span></td>
+                        <td><code>nvidia-open 560+</code> • CUDA 12.6</td>
+                        <td>Unrestricted 32B/70B local reasoning, fast batch prompts</td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">AMD Radeon RX 7900 XTX</span> (RDNA3)</td>
+                        <td>24 GB GDDR6 (384-bit)</td>
+                        <td><span class="hw-tag-green">960 GB/s</span></td>
+                        <td><code>ROCm 6.2 (HIP)</code> + <code>amdgpu</code></td>
+                        <td>Open-source extreme laboratory, 32B FP16 / 70B Q4_K_M</td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">NVIDIA RTX 4080</span> (Ada Lovelace)</td>
+                        <td>16 GB GDDR6X (256-bit)</td>
+                        <td><span class="hw-tag-blue">717 GB/s</span></td>
+                        <td><code>nvidia-open 560+</code> • CUDA 12.6</td>
+                        <td>Qwen 2.5 14B at Q8_0, Mistral Nemo 12B at FP16</td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">AMD Radeon RX 7800 XT</span> (RDNA3)</td>
+                        <td>16 GB GDDR6 (256-bit)</td>
+                        <td><span class="hw-tag-blue">624 GB/s</span></td>
+                        <td><code>ROCm 6.2 (HIP)</code> + <code>amdgpu</code></td>
+                        <td>Full 14B model acceleration on 100% open Linux drivers</td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">Intel Arc Battlemage B580</span> (Xe2-HPG)</td>
+                        <td>12 GB GDDR6 (192-bit)</td>
+                        <td><span class="hw-tag-purple">456 GB/s</span></td>
+                        <td><code>intel-compute-runtime</code> (Level Zero)</td>
+                        <td>Modern Xe2 architecture with native XMX matrix engines</td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">Intel Arc A770</span> (Alchemist Xe)</td>
+                        <td>16 GB GDDR6 (256-bit)</td>
+                        <td><span class="hw-tag-purple">560 GB/s</span></td>
+                        <td><code>intel-compute-runtime</code> + oneAPI</td>
+                        <td>High-capacity 16GB VRAM value tier for 14B quantization</td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">Apple Silicon Unified GPU</span> (M3/M4)</td>
+                        <td>Unified (Shared Pool)</td>
+                        <td><span class="hw-tag-green">150 – 546 GB/s</span></td>
+                        <td>Asahi Linux (Mesa Rusticl / Vulkan)</td>
+                        <td>Zero-copy unified memory architecture without PCI bottleneck</td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">AMD Radeon 890M iGPU</span> (RDNA 3.5 APU)</td>
+                        <td>Shared Host RAM (128-bit)</td>
+                        <td><span class="hw-tag-amber">128 GB/s</span></td>
+                        <td><code>ROCm (gfx1150)</code> / Vulkan (radv)</td>
+                        <td>Ultra-portable thin &amp; light AI desktop workstation</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="hw-arch-grid">
+                  <div class="hw-arch-card">
+                    <h4 class="hw-arch-title">
+                      <span class="hw-control-label-icon"></span>
+                      <span>CUDA vs ROCm vs oneAPI Level Zero</span>
+                    </h4>
+                    <p class="hw-arch-desc">
+                      Aurora OS provides a vendor-neutral capability dispatcher. The internal daemon dynamically negotiates compute jobs across CUDA (for NVIDIA Tensor Cores), ROCm HIP (for AMD Matrix Cores), and Level Zero (for Intel XMX engines), utilizing native hardware intrinsics while providing unified, zero-overhead D-Bus abstractions to desktop applications.
+                    </p>
+                  </div>
+
+                  <div class="hw-arch-card">
+                    <h4 class="hw-arch-title">
+                      <span class="hw-control-label-icon" style="background: #30d158; box-shadow: 0 0 8px #30d158;"></span>
+                      <span>Open-Source Kernel Modules (`nvidia-open` &amp; `amdgpu`)</span>
+                    </h4>
+                    <p class="hw-arch-desc">
+                      We prioritize open-source kernel drivers for stability and security. Modern NVIDIA Ada cards utilize the MIT/GPL <code>nvidia-open</code> kernel module, AMD hardware runs through upstream <code>amdgpu</code> and ROCm, and Intel utilizes the open <code>xe</code> and <code>i915</code> drivers, guaranteeing no proprietary binary blobs reside in the core kernel memory space.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tab 3: Memory Bandwidth Physics -->
+              <div class="hw-docs-panel" id="tab-mem" role="tabpanel">
+                <div class="hw-formula-box">
+                  <code>Generation Throughput (Tokens/s) &approx; Memory Bandwidth (GB/s) &divide; Active Model Footprint in Memory (GB)</code>
+                </div>
+
+                <div class="hw-table-wrapper">
+                  <table class="hw-table">
+                    <thead>
+                      <tr>
+                        <th>Memory Interface / Architecture</th>
+                        <th>Bus Width</th>
+                        <th>Typical Transfer Rate</th>
+                        <th>Effective Bandwidth</th>
+                        <th>8B Q4_K_M Speed Cap</th>
+                        <th>70B Q4_K_M Feasibility</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><span class="hw-chip-pill">NVIDIA GDDR6X</span> (RTX 4090)</td>
+                        <td>384-bit</td>
+                        <td>21.0 Gbps</td>
+                        <td><span class="hw-tag-green">1,008 GB/s</span></td>
+                        <td>140 – 160 tok/s</td>
+                        <td><span class="hw-tag-green">Native (Split VRAM)</span></td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">Apple Silicon M4 Max</span> (Unified)</td>
+                        <td>512-bit</td>
+                        <td>8,533 MT/s</td>
+                        <td><span class="hw-tag-green">546 GB/s</span></td>
+                        <td>75 – 90 tok/s</td>
+                        <td><span class="hw-tag-green">Native Zero-Copy</span></td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">AMD GDDR6</span> (RX 7900 XTX)</td>
+                        <td>384-bit</td>
+                        <td>20.0 Gbps</td>
+                        <td><span class="hw-tag-green">960 GB/s</span></td>
+                        <td>120 – 140 tok/s</td>
+                        <td><span class="hw-tag-green">Native (24GB VRAM)</span></td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">NVIDIA GDDR6X</span> (RTX 4070)</td>
+                        <td>192-bit</td>
+                        <td>21.0 Gbps</td>
+                        <td><span class="hw-tag-blue">504 GB/s</span></td>
+                        <td>70 – 85 tok/s</td>
+                        <td><span class="hw-tag-amber">Requires Host Offload</span></td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">LPDDR5X-8533</span> (Quad-Channel APU)</td>
+                        <td>128-bit</td>
+                        <td>8,533 MT/s</td>
+                        <td><span class="hw-tag-purple">136 GB/s</span></td>
+                        <td>24 – 30 tok/s</td>
+                        <td><span class="hw-tag-amber">Slow (1.8 – 2.5 tok/s)</span></td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">DDR5-6000</span> (Dual-Channel Desktop)</td>
+                        <td>128-bit</td>
+                        <td>6,000 MT/s</td>
+                        <td><span class="hw-tag-amber">96 GB/s</span></td>
+                        <td>12 – 16 tok/s</td>
+                        <td><span class="hw-tag-amber">CPU Bound (1.2 tok/s)</span></td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">DDR4-3200</span> (Dual-Channel Legacy)</td>
+                        <td>128-bit</td>
+                        <td>3,200 MT/s</td>
+                        <td><span class="hw-tag-amber">51.2 GB/s</span></td>
+                        <td>7 – 9 tok/s</td>
+                        <td>Not recommended</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="hw-arch-grid">
+                  <div class="hw-arch-card">
+                    <h4 class="hw-arch-title">
+                      <span class="hw-control-label-icon"></span>
+                      <span>The Memory Bandwidth Wall Explained</span>
+                    </h4>
+                    <p class="hw-arch-desc">
+                      Autoregressive language models generate tokens sequentially. To predict each single token, the entire active model weight matrix must be transferred from memory into compute execution units. While prompt evaluation (prefill) is compute-bound, token generation is almost exclusively <strong>memory bandwidth bound</strong>. A system with 500 GB/s bandwidth can generate an 8B Q4 model (~5 GB) at roughly 75 tokens per second.
+                    </p>
+                  </div>
+
+                  <div class="hw-arch-card">
+                    <h4 class="hw-arch-title">
+                      <span class="hw-control-label-icon" style="background: #bf5af2; box-shadow: 0 0 8px #bf5af2;"></span>
+                      <span>KV Cache Footprint at Extended Context Lengths</span>
+                    </h4>
+                    <p class="hw-arch-desc">
+                      As conversation and code context grows (from 4k tokens to 32k or 128k tokens), the Key-Value (KV) cache grows linearly in memory. Aurora OS incorporates <strong>FlashAttention-2 and paged attention</strong> in the Tokio worker supervisor to prevent memory fragmentation and compress idle context windows into pinned zero-copy system memory buffers.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tab 4: Model VRAM Sizing Matrix -->
+              <div class="hw-docs-panel" id="tab-models" role="tabpanel">
+                <div class="hw-table-wrapper">
+                  <table class="hw-table">
+                    <thead>
+                      <tr>
+                        <th>Model Family &amp; Organization</th>
+                        <th>Parameters</th>
+                        <th>Context Window</th>
+                        <th>VRAM (Q4_K_M)</th>
+                        <th>VRAM (Q8_0)</th>
+                        <th>VRAM (FP16)</th>
+                        <th>Minimum RAM</th>
+                        <th>Primary Desktop Role</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><span class="hw-chip-pill">Llama 3.3 70B</span> (Meta)</td>
+                        <td>70.6 Billion</td>
+                        <td>128k tokens</td>
+                        <td><span class="hw-tag-purple">39.5 GB</span></td>
+                        <td>74.2 GB</td>
+                        <td>141 GB</td>
+                        <td>64 GB</td>
+                        <td>Extreme reasoning, deep coding, autonomous agents</td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">DeepSeek-R1-Distill-Qwen 32B</span></td>
+                        <td>32.5 Billion</td>
+                        <td>64k tokens</td>
+                        <td><span class="hw-tag-purple">19.2 GB</span></td>
+                        <td>34.5 GB</td>
+                        <td>65 GB</td>
+                        <td>32 GB</td>
+                        <td>Mathematical proofs, algorithmic architecture synthesis</td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">Qwen 2.5 14B</span> (Alibaba Cloud)</td>
+                        <td>14.7 Billion</td>
+                        <td>128k tokens</td>
+                        <td><span class="hw-tag-blue">8.9 GB</span></td>
+                        <td>15.8 GB</td>
+                        <td>29.5 GB</td>
+                        <td>16 GB</td>
+                        <td>Multi-lingual software engineering, documentation authoring</td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">Mistral Nemo 12B</span> (Mistral AI)</td>
+                        <td>12.2 Billion</td>
+                        <td>128k tokens</td>
+                        <td><span class="hw-tag-blue">7.4 GB</span></td>
+                        <td>13.1 GB</td>
+                        <td>24.5 GB</td>
+                        <td>16 GB</td>
+                        <td>Fast conversational reasoning, system diagnostics</td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">Llama 3.1 8B</span> (Meta)</td>
+                        <td>8.03 Billion</td>
+                        <td>128k tokens</td>
+                        <td><span class="hw-tag-green">4.9 GB</span></td>
+                        <td>8.6 GB</td>
+                        <td>16.1 GB</td>
+                        <td>16 GB</td>
+                        <td>General desktop intelligence, daily coding assistant</td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">DeepSeek-R1-Distill-Qwen 14B</span></td>
+                        <td>14.7 Billion</td>
+                        <td>64k tokens</td>
+                        <td><span class="hw-tag-blue">8.9 GB</span></td>
+                        <td>15.8 GB</td>
+                        <td>29.5 GB</td>
+                        <td>16 GB</td>
+                        <td>Step-by-step verifiable reasoning and logic verification</td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">Phi-3.5 Mini</span> (Microsoft)</td>
+                        <td>3.82 Billion</td>
+                        <td>128k tokens</td>
+                        <td><span class="hw-tag-green">2.3 GB</span></td>
+                        <td>4.1 GB</td>
+                        <td>7.7 GB</td>
+                        <td>8 GB</td>
+                        <td>Background daemon assistant, instant telemetry parsing</td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">Gemma 2 9B</span> (Google DeepMind)</td>
+                        <td>9.24 Billion</td>
+                        <td>8k tokens</td>
+                        <td><span class="hw-tag-green">5.8 GB</span></td>
+                        <td>9.9 GB</td>
+                        <td>18.5 GB</td>
+                        <td>16 GB</td>
+                        <td>Analytical precision, structured JSON function calling</td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">Whisper Large v3</span> (OpenAI)</td>
+                        <td>1.55 Billion</td>
+                        <td>30s audio chunks</td>
+                        <td><span class="hw-tag-green">1.8 GB (FP16)</span></td>
+                        <td>1.8 GB</td>
+                        <td>3.1 GB</td>
+                        <td>8 GB</td>
+                        <td>High-accuracy multilingual speech-to-text dictation</td>
+                      </tr>
+                      <tr>
+                        <td><span class="hw-chip-pill">BAAI BGE-M3 Embeddings</span></td>
+                        <td>567 Million</td>
+                        <td>8,192 tokens</td>
+                        <td><span class="hw-tag-green">0.6 GB (FP16)</span></td>
+                        <td>0.6 GB</td>
+                        <td>1.1 GB</td>
+                        <td>8 GB</td>
+                        <td>Semantic file indexing, local RAG document retrieval</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="hw-arch-grid">
+                  <div class="hw-arch-card">
+                    <h4 class="hw-arch-title">
+                      <span class="hw-control-label-icon"></span>
+                      <span>Quantization Science: Q4_K_M vs Q8_0 vs FP16</span>
+                    </h4>
+                    <p class="hw-arch-desc">
+                      Quantization reduces memory footprint with minimal impact on output quality. <strong>Q4_K_M (4-bit medium)</strong> achieves over 99.2% of unquantized baseline accuracy while shrinking model size by <strong>68%</strong>. For critical code generation and mathematical deduction, <strong>Q8_0 (8-bit)</strong> preserves absolute precision while fitting comfortably within 12GB to 16GB graphics buffers.
+                    </p>
+                  </div>
+
+                  <div class="hw-arch-card">
+                    <h4 class="hw-arch-title">
+                      <span class="hw-control-label-icon" style="background: #30d158; box-shadow: 0 0 8px #30d158;"></span>
+                      <span>Zero-Copy Host RAM Integration on Linux APUs</span>
+                    </h4>
+                    <p class="hw-arch-desc">
+                      Unlike discrete PCIe graphics cards that incur latency copying tensor buffers across bus lanes, modern unified platforms (Apple Silicon via Asahi Linux and AMD Strix Point APUs) share physical memory between CPU and GPU. Aurora OS leverages zero-copy buffer sharing, allowing unified APUs to allocate up to <strong>75% of total system memory</strong> directly to inference models.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Apple-Style Current Status & Engineering Milestones Section -->
       <section class="section" id="status">
         <div class="container">
@@ -1286,6 +1938,7 @@ assert!(response.is_ok());</code></pre>
               An experimental, AI-native desktop operating system built on top of the Linux kernel.
             </p>
             <ul class="footer-links-list">
+              <li><a href="#hardware">Hardware Compatibility</a></li>
               <li><a href="#status">Current Status</a></li>
               <li><a href="#faq">Frequently Asked Questions</a></li>
             </ul>
@@ -1331,6 +1984,6 @@ assert!(response.is_ok());</code></pre>
   </div>
 
   <!-- Ambient Animation & Navigation Scripts -->
-  <script src="app.js?v=9"></script>
+  <script src="app.js?v=10"></script>
 </body>
 </html>
