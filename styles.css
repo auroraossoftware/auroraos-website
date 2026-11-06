@@ -3404,12 +3404,35 @@ pre code,
 }
 
 .milestone-nav {
-  max-width: 760px;
+  max-width: 900px;
+  margin: 0 auto 2.25rem;
 }
 
 .milestone-nav .hub-tab-btn {
   font-size: 0.84rem;
   padding: 0.6rem 1.25rem;
+}
+
+.status-milestones-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.status-milestones-list .hub-tab-pane {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.status-milestones-list .milestone-card {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .hub-tab-pane {
