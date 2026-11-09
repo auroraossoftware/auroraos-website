@@ -389,7 +389,7 @@
 </div><div class="hub-tab-pane" id="architecture-stack">
 <div class="section-header reveal-on-scroll">
 <span class="section-eyebrow">System Topology</span>
-<h2 class="section-headline">Engineered from Silicon to Shell.</h2>
+<h2 class="section-headline">4-Tier Decoupled Topology Stack.</h2>
 <p class="section-lead">
               Four decoupled, hardware-isolated layers. Click any layer to inspect its verified invariants and Architectural Decision Records.
             </p>
@@ -627,7 +627,7 @@ assert!(response.is_ok());</code></pre>
 </div><div class="hub-tab-pane" id="terminal-audit">
 <div class="section-header reveal-on-scroll">
 <span class="section-eyebrow">Independent Audit</span>
-<h2 class="section-headline">Don't trust. Verify in 30 seconds.</h2>
+<h2 class="section-headline">Automated Test Suites &amp; Cargo Verifier.</h2>
 <p class="section-lead">
               Every claim on this page is backed by open-source code and 211 automated test suites. Clone the repository and verify on your own machine, or run the live simulation below.
             </p>
@@ -988,48 +988,51 @@ assert!(response.is_ok());</code></pre>
     </div>
   </div>
 </div>
-<!-- GPU Selector -->
-<div class="hw-control-group">
-<label class="hw-control-label" for="hw-gpu-select">
-<span class="hw-control-label-icon" style="background: #30d158; box-shadow: 0 0 8px #30d158;"></span>
-<span>GPU Accelerator / Compute</span>
-</label>
-<div class="hw-select-wrapper">
-<select aria-label="Select Graphics Processor" class="hw-select" id="hw-gpu-select">
-<option value="nv-rtx4090">NVIDIA RTX 4090 (24GB GDDR6X • Ada Lovelace)</option>
-<option value="nv-rtx4080">NVIDIA RTX 4080 (16GB GDDR6X • Ada Lovelace)</option>
-<option selected="" value="nv-rtx4070">NVIDIA RTX 4070 / Ti (12GB GDDR6X • Ada Lovelace)</option>
-<option value="nv-rtx4060">NVIDIA RTX 4060 / Ti (8GB / 16GB GDDR6)</option>
-<option value="nv-rtx3060-3090">NVIDIA RTX 30 Series (12GB–24GB Ampere)</option>
-<option value="amd-rx7900">AMD Radeon RX 7900 XTX / XT (24GB RDNA3)</option>
-<option value="amd-rx7800-7700">AMD Radeon RX 7800 XT / 7700 XT (16GB RDNA3)</option>
-<option value="amd-rx7600">AMD Radeon RX 7600 / XT (8GB RDNA3)</option>
-<option value="intel-b580">Intel Arc Battlemage B580 (12GB Xe2)</option>
-<option value="intel-a770">Intel Arc A770 (16GB Alchemist Xe)</option>
-<option value="apple-m-gpu">Apple Silicon Unified GPU (Metal / Rusticl)</option>
-<option value="igpu-amd-890m">AMD Radeon 890M / 780M iGPU (RDNA 3.5 APU)</option>
-<option value="igpu-intel-arc">Intel Arc Xe-LPG iGPU (Core Ultra Integrated)</option>
-<option value="none-cpu-only">None: CPU-Only AVX-512 / VNNI Vector Engine</option>
-</select>
-<span class="hw-select-chevron">▼</span>
-</div>
-</div>
-<!-- RAM Selector -->
-<div class="hw-control-group">
-<label class="hw-control-label" for="hw-ram-select">
-<span class="hw-control-label-icon" style="background: #bf5af2; box-shadow: 0 0 8px #bf5af2;"></span>
-<span>System RAM Capacity</span>
-</label>
-<div class="hw-select-wrapper">
-<select aria-label="Select System Memory" class="hw-select" id="hw-ram-select">
-<option value="ram-8">8 GB (Lightweight &amp; Edge Tier)</option>
-<option value="ram-16">16 GB (Desktop Baseline Tier)</option>
-<option selected="" value="ram-32">32 GB (Recommended Sweet-Spot Tier)</option>
-<option value="ram-64">64 GB (Workstation &amp; Laboratory Tier)</option>
-<option value="ram-128">128 GB+ (Extreme Enterprise Tier)</option>
-</select>
-<span class="hw-select-chevron">▼</span>
-</div>
+<!-- Secondary Hardware Controls: Symmetrical Dual Grid -->
+<div class="hw-secondary-controls-grid">
+  <!-- GPU Selector -->
+  <div class="hw-control-group">
+    <label class="hw-control-label" for="hw-gpu-select">
+      <span class="hw-control-label-icon" style="background: #30d158; box-shadow: 0 0 8px #30d158;"></span>
+      <span>GPU Accelerator / Compute</span>
+    </label>
+    <div class="hw-select-wrapper">
+      <select aria-label="Select Graphics Processor" class="hw-select" id="hw-gpu-select">
+        <option value="nv-rtx4090">NVIDIA RTX 4090 (24GB GDDR6X • Ada Lovelace)</option>
+        <option value="nv-rtx4080">NVIDIA RTX 4080 (16GB GDDR6X • Ada Lovelace)</option>
+        <option selected="" value="nv-rtx4070">NVIDIA RTX 4070 / Ti (12GB GDDR6X • Ada Lovelace)</option>
+        <option value="nv-rtx4060">NVIDIA RTX 4060 / Ti (8GB / 16GB GDDR6)</option>
+        <option value="nv-rtx3060-3090">NVIDIA RTX 30 Series (12GB–24GB Ampere)</option>
+        <option value="amd-rx7900">AMD Radeon RX 7900 XTX / XT (24GB RDNA3)</option>
+        <option value="amd-rx7800-7700">AMD Radeon RX 7800 XT / 7700 XT (16GB RDNA3)</option>
+        <option value="amd-rx7600">AMD Radeon RX 7600 / XT (8GB RDNA3)</option>
+        <option value="intel-b580">Intel Arc Battlemage B580 (12GB Xe2)</option>
+        <option value="intel-a770">Intel Arc A770 (16GB Alchemist Xe)</option>
+        <option value="apple-m-gpu">Apple Silicon Unified GPU (Metal / Rusticl)</option>
+        <option value="igpu-amd-890m">AMD Radeon 890M / 780M iGPU (RDNA 3.5 APU)</option>
+        <option value="igpu-intel-arc">Intel Arc Xe-LPG iGPU (Core Ultra Integrated)</option>
+        <option value="none-cpu-only">None: CPU-Only AVX-512 / VNNI Vector Engine</option>
+      </select>
+      <span class="hw-select-chevron">▼</span>
+    </div>
+  </div>
+  <!-- RAM Selector -->
+  <div class="hw-control-group">
+    <label class="hw-control-label" for="hw-ram-select">
+      <span class="hw-control-label-icon" style="background: #bf5af2; box-shadow: 0 0 8px #bf5af2;"></span>
+      <span>System RAM Capacity</span>
+    </label>
+    <div class="hw-select-wrapper">
+      <select aria-label="Select System Memory" class="hw-select" id="hw-ram-select">
+        <option value="ram-8">8 GB (Lightweight &amp; Edge Tier)</option>
+        <option value="ram-16">16 GB (Desktop Baseline Tier)</option>
+        <option selected="" value="ram-32">32 GB (Recommended Sweet-Spot Tier)</option>
+        <option value="ram-64">64 GB (Workstation &amp; Laboratory Tier)</option>
+        <option value="ram-128">128 GB+ (Extreme Enterprise Tier)</option>
+      </select>
+      <span class="hw-select-chevron">▼</span>
+    </div>
+  </div>
 </div>
 </div>
 <!-- Dynamic Output Dashboard -->
