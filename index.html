@@ -960,18 +960,19 @@ assert!(response.is_ok());</code></pre>
       <span class="hw-search-icon" aria-hidden="true">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
       </span>
-      <input type="text" id="hw-cpu-search-input" class="hw-search-filter" placeholder="Search 3,417 CPUs by model, architecture, or socket (e.g. 285K, 9900K, N100, 9950X, EPYC)..." autocomplete="off" />
+      <input type="text" id="hw-cpu-search-input" class="hw-search-filter" placeholder="Search 3,430+ CPUs (e.g. Core 5 120U, Core 7 250H, Ultra 9 285K, i9-14900K, 9950X, EPYC)..." autocomplete="off" />
       <button type="button" id="hw-search-clear-btn" class="hw-search-clear-btn" aria-label="Clear Search" style="display: none;">✕</button>
     </div>
 
     <!-- Quick Architecture Filter Pills -->
     <div class="hw-quick-filters" id="hw-quick-filters">
-      <button type="button" class="hw-quick-filter active" data-filter="all">All (3,417)</button>
+      <button type="button" class="hw-quick-filter active" data-filter="all">All</button>
       <button type="button" class="hw-quick-filter" data-filter="intel-ultra">Core Ultra</button>
-      <button type="button" class="hw-quick-filter" data-filter="intel-core-modern">Core 10–14th</button>
-      <button type="button" class="hw-quick-filter" data-filter="intel-core-legacy">Core 6–9th &amp; Prior</button>
+      <button type="button" class="hw-quick-filter" data-filter="intel-core-series">Core (Series 1 &amp; 2)</button>
+      <button type="button" class="hw-quick-filter" data-filter="intel-core-modern">Core i-Series 10–14th</button>
+      <button type="button" class="hw-quick-filter" data-filter="intel-core-legacy">Core Legacy (1–9th)</button>
       <button type="button" class="hw-quick-filter" data-filter="intel-xeon">Xeon</button>
-      <button type="button" class="hw-quick-filter" data-filter="intel-entry">N-Series &amp; Atom</button>
+      <button type="button" class="hw-quick-filter" data-filter="intel-entry">N-Series &amp; Entry</button>
       <button type="button" class="hw-quick-filter" data-filter="amd-ryzen">AMD Ryzen</button>
       <button type="button" class="hw-quick-filter" data-filter="amd-epyc">EPYC &amp; Threadripper</button>
     </div>
@@ -1226,6 +1227,13 @@ assert!(response.is_ok());</code></pre>
 <td><span class="hw-tag-amber">Intel NPU 3 (11 TOPS)</span></td>
 <td>Linux 6.8+ (<code>intel_vpu</code>)</td>
 <td>Ambient speech-to-text offloading to Intel VPU driver</td>
+</tr>
+<tr>
+<td><span class="hw-chip-pill">Intel Core (Series 1 &amp; 2)</span> (Core 7 / 5 / 3, Raptor Lake-R)</td>
+<td><code>AVX2 + FMA3 + VNNI</code></td>
+<td>None (Host CPU Inference Engine)</td>
+<td>Linux 6.6+ LTS (<code>i915 / pstate</code>)</td>
+<td>Optimized AVX2 + VNNI INT8 quantized inference via <code>ggml-cpu</code> for thin &amp; light laptops</td>
 </tr>
 <tr>
 <td><span class="hw-chip-pill">Intel 13th / 14th Gen Core</span> (Raptor Lake)</td>
@@ -1630,12 +1638,13 @@ assert!(response.is_ok());</code></pre>
         <span class="hw-mega-match-counter" id="hw-mega-match-counter">Showing 3,417 CPUs</span>
       </div>
       <div class="hw-mega-filter-chips" id="hw-mega-filter-chips">
-        <button type="button" class="hw-filter-chip active" data-family="all">All (3,417)</button>
+        <button type="button" class="hw-filter-chip active" data-family="all">All</button>
         <button type="button" class="hw-filter-chip" data-family="intel-ultra">Core Ultra</button>
-        <button type="button" class="hw-filter-chip" data-family="intel-core-modern">Core 10th–14th Gen</button>
-        <button type="button" class="hw-filter-chip" data-family="intel-core-legacy">Core 6th–9th Gen &amp; Prior</button>
+        <button type="button" class="hw-filter-chip" data-family="intel-core-series">Core (Series 1 &amp; 2)</button>
+        <button type="button" class="hw-filter-chip" data-family="intel-core-modern">Core i-Series 10th–14th Gen</button>
+        <button type="button" class="hw-filter-chip" data-family="intel-core-legacy">Core Legacy 1st–9th Gen</button>
         <button type="button" class="hw-filter-chip" data-family="intel-xeon">Xeon Server &amp; WS</button>
-        <button type="button" class="hw-filter-chip" data-family="intel-entry">N-Series, Pentium &amp; Atom</button>
+        <button type="button" class="hw-filter-chip" data-family="intel-entry">N-Series, Pentium &amp; Entry</button>
         <button type="button" class="hw-filter-chip" data-family="amd-ryzen">AMD Ryzen</button>
         <button type="button" class="hw-filter-chip" data-family="amd-epyc">AMD EPYC &amp; Threadripper</button>
         <button type="button" class="hw-filter-chip" data-family="arm">Apple &amp; ARM</button>

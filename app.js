@@ -868,6 +868,432 @@ const HW_DATABASE = {
       npuSupported: false
     },
         /* --- Complete Comprehensive Intel CPU Catalog (3,014 Processors with Official ARK Metrics) --- */
+        /* Group 0: Intel Core Processors (Series 1 & Series 2 — Core 7, Core 5, Core 3) */
+    'intel-core-7-250h': {
+      name: 'Intel Core 7 250H (14C/20T, 5.40 GHz, 115W)',
+      family: 'Intel Core Series 2 (Raptor Lake-R)',
+      npu: 'None (Optimized x86_64 Host Inference)',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS (i915 / pstate)',
+      factor: 1.15,
+      npuSupported: false,
+      cores: '14',
+      threads: '20',
+      baseFreq: '2.50 GHz',
+      turboFreq: '5.40 GHz',
+      tdp: '115W',
+      lithography: 'Intel 7 (10nm SuperFin)',
+      cache: '24 MB',
+      maxMemory: '96 GB',
+      memoryTypes: 'Up to DDR5 5200 MT/s, Up to LPDDR5/x 6400 MT/s',
+      memoryChannels: '2',
+      socket: 'FCBGA1744 (Mobile)',
+      igpu: 'Intel Graphics (96 EUs)',
+      status: 'Launched',
+      releaseDate: "Q1'25",
+      segment: 'Mobile Performance',
+      maxTemp: '100°C'
+    },
+    'intel-core-7-240h': {
+      name: 'Intel Core 7 240H (10C/16T, 5.20 GHz, 115W)',
+      family: 'Intel Core Series 2 (Raptor Lake-R)',
+      npu: 'None (Optimized x86_64 Host Inference)',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS (i915 / pstate)',
+      factor: 1.14,
+      npuSupported: false,
+      cores: '10',
+      threads: '16',
+      baseFreq: '2.50 GHz',
+      turboFreq: '5.20 GHz',
+      tdp: '115W',
+      lithography: 'Intel 7 (10nm SuperFin)',
+      cache: '24 MB',
+      maxMemory: '96 GB',
+      memoryTypes: 'Up to DDR5 5200 MT/s, Up to LPDDR5/x 6400 MT/s',
+      memoryChannels: '2',
+      socket: 'FCBGA1744 (Mobile)',
+      igpu: 'Intel Graphics (96 EUs)',
+      status: 'Launched',
+      releaseDate: "Q1'25",
+      segment: 'Mobile Performance',
+      maxTemp: '100°C'
+    },
+    'intel-core-7-250u': {
+      name: 'Intel Core 7 250U (10C/12T, 5.40 GHz, 55W)',
+      family: 'Intel Core Series 2 (Raptor Lake-R)',
+      npu: 'None (Optimized x86_64 Host Inference)',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS (i915 / pstate)',
+      factor: 1.13,
+      npuSupported: false,
+      cores: '10',
+      threads: '12',
+      baseFreq: '1.80 GHz',
+      turboFreq: '5.40 GHz',
+      tdp: '55W',
+      lithography: 'Intel 7 (10nm SuperFin)',
+      cache: '12 MB',
+      maxMemory: '96 GB',
+      memoryTypes: 'Up to DDR5 5200 MT/s, Up to LPDDR5/x 6400 MT/s',
+      memoryChannels: '2',
+      socket: 'FCBGA1744 (Mobile)',
+      igpu: 'Intel Graphics (96 EUs)',
+      status: 'Launched',
+      releaseDate: "Q1'25",
+      segment: 'Thin & Light Mobile',
+      maxTemp: '100°C'
+    },
+    'intel-core-7-150u': {
+      name: 'Intel Core 7 150U (10C/12T, 5.40 GHz, 55W)',
+      family: 'Intel Core Series 1 (Raptor Lake-U Refresh)',
+      npu: 'None (Optimized x86_64 Host Inference)',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS (i915 / pstate)',
+      factor: 1.12,
+      npuSupported: false,
+      cores: '10',
+      threads: '12',
+      baseFreq: '1.80 GHz',
+      turboFreq: '5.40 GHz',
+      tdp: '55W',
+      lithography: 'Intel 7 (10nm SuperFin)',
+      cache: '12 MB',
+      maxMemory: '96 GB',
+      memoryTypes: 'Up to DDR5 5200 MT/s, Up to LPDDR5/x 6400 MT/s, Up to DDR4 3200 MT/s',
+      memoryChannels: '2',
+      socket: 'FCBGA1744 (Mobile)',
+      igpu: 'Intel Graphics (96 EUs)',
+      status: 'Launched',
+      releaseDate: "Q1'24",
+      segment: 'Thin & Light Mobile',
+      maxTemp: '100°C'
+    },
+    'intel-core-7-150hl': {
+      name: 'Intel Core 7 150HL (14C/20T, 5.00 GHz, 95W)',
+      family: 'Intel Core Series 1 (Raptor Lake-R)',
+      npu: 'None (Optimized x86_64 Host Inference)',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS (i915 / pstate)',
+      factor: 1.14,
+      npuSupported: false,
+      cores: '14',
+      threads: '20',
+      baseFreq: '2.40 GHz',
+      turboFreq: '5.00 GHz',
+      tdp: '95W',
+      lithography: 'Intel 7 (10nm SuperFin)',
+      cache: '24 MB',
+      maxMemory: '96 GB',
+      memoryTypes: 'Up to DDR5 5200 MT/s, Up to LPDDR5/x 6400 MT/s',
+      memoryChannels: '2',
+      socket: 'FCBGA1744 (Mobile)',
+      igpu: 'Intel Graphics',
+      status: 'Launched',
+      releaseDate: "Q1'24",
+      segment: 'Mobile Performance',
+      maxTemp: '100°C'
+    },
+    'intel-core-5-220h': {
+      name: 'Intel Core 5 220H (12C/16T, 4.90 GHz, 95W)',
+      family: 'Intel Core Series 2 (Raptor Lake-R)',
+      npu: 'None (Optimized x86_64 Host Inference)',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS (i915 / pstate)',
+      factor: 1.12,
+      npuSupported: false,
+      cores: '12',
+      threads: '16',
+      baseFreq: '2.00 GHz',
+      turboFreq: '4.90 GHz',
+      tdp: '95W',
+      lithography: 'Intel 7 (10nm SuperFin)',
+      cache: '18 MB',
+      maxMemory: '96 GB',
+      memoryTypes: 'Up to DDR5 5200 MT/s, Up to LPDDR5/x 6400 MT/s',
+      memoryChannels: '2',
+      socket: 'FCBGA1744 (Mobile)',
+      igpu: 'Intel Graphics (80 EUs)',
+      status: 'Launched',
+      releaseDate: "Q1'25",
+      segment: 'Mobile Performance',
+      maxTemp: '100°C'
+    },
+    'intel-core-5-210h': {
+      name: 'Intel Core 5 210H (8C/12T, 4.80 GHz, 95W)',
+      family: 'Intel Core Series 2 (Raptor Lake-R)',
+      npu: 'None (Optimized x86_64 Host Inference)',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS (i915 / pstate)',
+      factor: 1.10,
+      npuSupported: false,
+      cores: '8',
+      threads: '12',
+      baseFreq: '2.20 GHz',
+      turboFreq: '4.80 GHz',
+      tdp: '95W',
+      lithography: 'Intel 7 (10nm SuperFin)',
+      cache: '18 MB',
+      maxMemory: '96 GB',
+      memoryTypes: 'Up to DDR5 5200 MT/s, Up to LPDDR5/x 6400 MT/s',
+      memoryChannels: '2',
+      socket: 'FCBGA1744 (Mobile)',
+      igpu: 'Intel Graphics (80 EUs)',
+      status: 'Launched',
+      releaseDate: "Q1'25",
+      segment: 'Mobile Performance',
+      maxTemp: '100°C'
+    },
+    'intel-core-5-220u': {
+      name: 'Intel Core 5 220U (10C/12T, 5.00 GHz, 55W)',
+      family: 'Intel Core Series 2 (Raptor Lake-R)',
+      npu: 'None (Optimized x86_64 Host Inference)',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS (i915 / pstate)',
+      factor: 1.10,
+      npuSupported: false,
+      cores: '10',
+      threads: '12',
+      baseFreq: '1.40 GHz',
+      turboFreq: '5.00 GHz',
+      tdp: '55W',
+      lithography: 'Intel 7 (10nm SuperFin)',
+      cache: '12 MB',
+      maxMemory: '96 GB',
+      memoryTypes: 'Up to DDR5 5200 MT/s, Up to LPDDR5/x 6400 MT/s',
+      memoryChannels: '2',
+      socket: 'FCBGA1744 (Mobile)',
+      igpu: 'Intel Graphics (80 EUs)',
+      status: 'Launched',
+      releaseDate: "Q1'25",
+      segment: 'Thin & Light Mobile',
+      maxTemp: '100°C'
+    },
+    'intel-core-5-120u': {
+      name: 'Intel Core 5 120U (10C/12T, 5.00 GHz, 55W)',
+      family: 'Intel Core Series 1 (Raptor Lake-U Refresh)',
+      npu: 'None (Optimized x86_64 Host Inference)',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS (i915 / pstate)',
+      factor: 1.10,
+      npuSupported: false,
+      cores: '10',
+      threads: '12',
+      baseFreq: '1.40 GHz',
+      turboFreq: '5.00 GHz',
+      tdp: '55W',
+      lithography: 'Intel 7 (10nm SuperFin)',
+      cache: '12 MB',
+      maxMemory: '96 GB',
+      memoryTypes: 'Up to DDR5 5200 MT/s, Up to LPDDR5/x 6400 MT/s, Up to DDR4 3200 MT/s',
+      memoryChannels: '2',
+      socket: 'FCBGA1744 (Mobile)',
+      igpu: 'Intel Graphics (80 EUs)',
+      status: 'Launched',
+      releaseDate: "Q1'24",
+      segment: 'Thin & Light Mobile',
+      maxTemp: '100°C'
+    },
+    'intel-core-5-120hl': {
+      name: 'Intel Core 5 120HL (12C/16T, 4.80 GHz, 95W)',
+      family: 'Intel Core Series 1 (Raptor Lake-R)',
+      npu: 'None (Optimized x86_64 Host Inference)',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS (i915 / pstate)',
+      factor: 1.11,
+      npuSupported: false,
+      cores: '12',
+      threads: '16',
+      baseFreq: '2.00 GHz',
+      turboFreq: '4.80 GHz',
+      tdp: '95W',
+      lithography: 'Intel 7 (10nm SuperFin)',
+      cache: '18 MB',
+      maxMemory: '96 GB',
+      memoryTypes: 'Up to DDR5 5200 MT/s, Up to LPDDR5/x 6400 MT/s',
+      memoryChannels: '2',
+      socket: 'FCBGA1744 (Mobile)',
+      igpu: 'Intel Graphics (80 EUs)',
+      status: 'Launched',
+      releaseDate: "Q1'24",
+      segment: 'Mobile Performance',
+      maxTemp: '100°C'
+    },
+    'intel-core-3-200h': {
+      name: 'Intel Core 3 200H (8C/12T, 4.60 GHz, 95W)',
+      family: 'Intel Core Series 2 (Raptor Lake-R)',
+      npu: 'None (Optimized x86_64 Host Inference)',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS (i915 / pstate)',
+      factor: 1.05,
+      npuSupported: false,
+      cores: '8',
+      threads: '12',
+      baseFreq: '2.00 GHz',
+      turboFreq: '4.60 GHz',
+      tdp: '95W',
+      lithography: 'Intel 7 (10nm SuperFin)',
+      cache: '12 MB',
+      maxMemory: '96 GB',
+      memoryTypes: 'Up to DDR5 5200 MT/s, Up to LPDDR5/x 6400 MT/s',
+      memoryChannels: '2',
+      socket: 'FCBGA1744 (Mobile)',
+      igpu: 'Intel Graphics (64 EUs)',
+      status: 'Launched',
+      releaseDate: "Q1'25",
+      segment: 'Mobile Performance',
+      maxTemp: '100°C'
+    },
+    'intel-core-3-200u': {
+      name: 'Intel Core 3 200U (6C/8T, 4.70 GHz, 55W)',
+      family: 'Intel Core Series 2 (Raptor Lake-R)',
+      npu: 'None (Optimized x86_64 Host Inference)',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS (i915 / pstate)',
+      factor: 1.04,
+      npuSupported: false,
+      cores: '6',
+      threads: '8',
+      baseFreq: '1.20 GHz',
+      turboFreq: '4.70 GHz',
+      tdp: '55W',
+      lithography: 'Intel 7 (10nm SuperFin)',
+      cache: '10 MB',
+      maxMemory: '96 GB',
+      memoryTypes: 'Up to DDR5 5200 MT/s, Up to LPDDR5/x 6400 MT/s',
+      memoryChannels: '2',
+      socket: 'FCBGA1744 (Mobile)',
+      igpu: 'Intel Graphics (64 EUs)',
+      status: 'Launched',
+      releaseDate: "Q1'25",
+      segment: 'Thin & Light Mobile',
+      maxTemp: '100°C'
+    },
+    'intel-core-3-200e': {
+      name: 'Intel Core 3 200E (6C/8T, 4.70 GHz, 55W)',
+      family: 'Intel Core Series 2 Embedded (Raptor Lake-R)',
+      npu: 'None (Optimized x86_64 Host Inference)',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS (i915 / pstate)',
+      factor: 1.04,
+      npuSupported: false,
+      cores: '6',
+      threads: '8',
+      baseFreq: '1.20 GHz',
+      turboFreq: '4.70 GHz',
+      tdp: '55W',
+      lithography: 'Intel 7 (10nm SuperFin)',
+      cache: '10 MB',
+      maxMemory: '96 GB',
+      memoryTypes: 'Up to DDR5 5200 MT/s, Up to LPDDR5/x 6400 MT/s',
+      memoryChannels: '2',
+      socket: 'FCBGA1744 (Embedded IoT)',
+      igpu: 'Intel Graphics (64 EUs)',
+      status: 'Launched',
+      releaseDate: "Q1'25",
+      segment: 'Embedded IoT',
+      maxTemp: '100°C'
+    },
+    'intel-core-3-100u': {
+      name: 'Intel Core 3 100U (6C/8T, 4.70 GHz, 55W)',
+      family: 'Intel Core Series 1 (Raptor Lake-U Refresh)',
+      npu: 'None (Optimized x86_64 Host Inference)',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS (i915 / pstate)',
+      factor: 1.03,
+      npuSupported: false,
+      cores: '6',
+      threads: '8',
+      baseFreq: '1.20 GHz',
+      turboFreq: '4.70 GHz',
+      tdp: '55W',
+      lithography: 'Intel 7 (10nm SuperFin)',
+      cache: '10 MB',
+      maxMemory: '96 GB',
+      memoryTypes: 'Up to DDR5 5200 MT/s, Up to LPDDR5/x 5200 MT/s, Up to DDR4 3200 MT/s',
+      memoryChannels: '2',
+      socket: 'FCBGA1744 (Mobile)',
+      igpu: 'Intel Graphics (64 EUs)',
+      status: 'Launched',
+      releaseDate: "Q1'24",
+      segment: 'Thin & Light Mobile',
+      maxTemp: '100°C'
+    },
+    'intel-core-3-100u-with-ipu': {
+      name: 'Intel Core 3 100U (with IPU) (6C/8T, 4.70 GHz, 55W)',
+      family: 'Intel Core Series 1 (Raptor Lake-U Refresh)',
+      npu: 'None (Optimized x86_64 Host Inference)',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS (i915 / pstate)',
+      factor: 1.03,
+      npuSupported: false,
+      cores: '6',
+      threads: '8',
+      baseFreq: '1.20 GHz',
+      turboFreq: '4.70 GHz',
+      tdp: '55W',
+      lithography: 'Intel 7 (10nm SuperFin)',
+      cache: '10 MB',
+      maxMemory: '96 GB',
+      memoryTypes: 'Up to DDR5 5200 MT/s, Up to LPDDR5/x 5200 MT/s, Up to DDR4 3200 MT/s',
+      memoryChannels: '2',
+      socket: 'FCBGA1744 (Mobile)',
+      igpu: 'Intel Graphics (64 EUs)',
+      status: 'Launched',
+      releaseDate: "Q1'24",
+      segment: 'Thin & Light Mobile',
+      maxTemp: '100°C'
+    },
+    'intel-core-3-100hl': {
+      name: 'Intel Core 3 100HL (8C/12T, 4.50 GHz, 95W)',
+      family: 'Intel Core Series 1 (Raptor Lake-R)',
+      npu: 'None (Optimized x86_64 Host Inference)',
+      vector: 'AVX2 + FMA3 + VNNI',
+      driver: 'Linux 6.6+ LTS (i915 / pstate)',
+      factor: 1.05,
+      npuSupported: false,
+      cores: '8',
+      threads: '12',
+      baseFreq: '2.00 GHz',
+      turboFreq: '4.50 GHz',
+      tdp: '95W',
+      lithography: 'Intel 7 (10nm SuperFin)',
+      cache: '12 MB',
+      maxMemory: '96 GB',
+      memoryTypes: 'Up to DDR5 5200 MT/s, Up to LPDDR5/x 6400 MT/s',
+      memoryChannels: '2',
+      socket: 'FCBGA1744 (Mobile)',
+      igpu: 'Intel Graphics (64 EUs)',
+      status: 'Launched',
+      releaseDate: "Q1'24",
+      segment: 'Mobile Performance',
+      maxTemp: '100°C'
+    },
+    'intel-processor-u300': {
+      name: 'Intel Processor U300 (5C/6T, 4.40 GHz, 55W)',
+      family: 'Intel Processor Series (Raptor Lake-U)',
+      npu: 'None (Entry Architecture)',
+      vector: 'AVX2 + FMA3',
+      driver: 'Linux 6.1+ LTS (i915)',
+      factor: 0.88,
+      npuSupported: false,
+      cores: '5',
+      threads: '6',
+      baseFreq: '1.20 GHz',
+      turboFreq: '4.40 GHz',
+      tdp: '55W',
+      lithography: 'Intel 7 (10nm SuperFin)',
+      cache: '8 MB',
+      maxMemory: '96 GB',
+      memoryTypes: 'DDR5-5200 / DDR4-3200',
+      memoryChannels: '2',
+      socket: 'FCBGA1744 (Mobile)',
+      igpu: 'Intel UHD Graphics',
+      status: 'Launched',
+      releaseDate: "Q1'23",
+      segment: 'Mobile Entry',
+      maxTemp: '100°C'
+    },
     /* Group 1: Intel Core Ultra 200 Series (Arrow Lake & Lunar Lake) [50 models] */
     'intel-ultra-9-285k': {
       name: 'Intel Core Ultra 9 285K (24C, 5.70 GHz, 250W)',
@@ -31405,106 +31831,6 @@ const HW_DATABASE = {
       igpu: 'None (Discrete Required)',
       status: 'Discontinued',
       releaseDate: 'Q1\'08',
-      segment: 'Desktop',
-      maxTemp: '100°C'
-    },
-    'intel-core-3-100u': {
-      name: 'Intel Core 3 100U (6C/8T, 4.70 GHz, 55W)',
-      family: 'Raptor Lake x86_64',
-      npu: 'None',
-      vector: 'AVX2 + FMA3 + VNNI',
-      driver: 'Linux 6.6+ LTS (i915 / pstate)',
-      factor: 1.12,
-      npuSupported: false,
-      cores: '6',
-      threads: '8',
-      baseFreq: '1.20 GHz',
-      turboFreq: '4.70 GHz',
-      tdp: '55W',
-      lithography: 'Intel 7 (10nm SuperFin)',
-      cache: '10 MB',
-      maxMemory: '96 GB',
-      memoryTypes: 'Up to DDR5 5200 MT/s, Up to DDR4 3200 MT/s, Up to LPDDR5/x 5200 MT/s, Up to LPDDR4x 4267 MT/s',
-      memoryChannels: '2',
-      socket: 'LGA1700',
-      igpu: 'Intel Graphics',
-      status: 'Launched',
-      releaseDate: 'Q1\'24',
-      segment: 'Desktop',
-      maxTemp: '100°C'
-    },
-    'intel-core-3-100u-with-ipu': {
-      name: 'Intel Core 3 100U (with IPU) (6C/8T, 4.70 GHz, 55W)',
-      family: 'Raptor Lake x86_64',
-      npu: 'None',
-      vector: 'AVX2 + FMA3 + VNNI',
-      driver: 'Linux 6.6+ LTS (i915 / pstate)',
-      factor: 1.12,
-      npuSupported: false,
-      cores: '6',
-      threads: '8',
-      baseFreq: '1.20 GHz',
-      turboFreq: '4.70 GHz',
-      tdp: '55W',
-      lithography: 'Intel 7 (10nm SuperFin)',
-      cache: '10 MB',
-      maxMemory: '96 GB',
-      memoryTypes: 'Up to DDR5 5200 MT/s, Up to DDR4 3200 MT/s, Up to LPDDR5/x 5200 MT/s, Up to LPDDR4x 4267 MT/s',
-      memoryChannels: '2',
-      socket: 'LGA1700',
-      igpu: 'Intel Graphics',
-      status: 'Launched',
-      releaseDate: 'Q1\'24',
-      segment: 'Desktop',
-      maxTemp: '100°C'
-    },
-    'intel-core-5-120u': {
-      name: 'Intel Core 5 120U (10C/12T, 5.00 GHz, 55W)',
-      family: 'Raptor Lake x86_64',
-      npu: 'None',
-      vector: 'AVX2 + FMA3 + VNNI',
-      driver: 'Linux 6.6+ LTS (i915 / pstate)',
-      factor: 1.12,
-      npuSupported: false,
-      cores: '10',
-      threads: '12',
-      baseFreq: '1.40 GHz',
-      turboFreq: '5.00 GHz',
-      tdp: '55W',
-      lithography: 'Intel 7 (10nm SuperFin)',
-      cache: '12 MB',
-      maxMemory: '96 GB',
-      memoryTypes: 'Up to DDR5 5200 MT/s, Up to DDR4 3200 MT/s, Up to LPDDR5/x 6400 MT/s, Up to LPDDR4x 4267 MT/s',
-      memoryChannels: '2',
-      socket: 'LGA1700',
-      igpu: 'Intel Graphics',
-      status: 'Launched',
-      releaseDate: 'Q1\'24',
-      segment: 'Desktop',
-      maxTemp: '100°C'
-    },
-    'intel-core-7-150u': {
-      name: 'Intel Core 7 150U (10C/12T, 5.40 GHz, 55W)',
-      family: 'Raptor Lake x86_64',
-      npu: 'None',
-      vector: 'AVX2 + FMA3 + VNNI',
-      driver: 'Linux 6.6+ LTS (i915 / pstate)',
-      factor: 1.12,
-      npuSupported: false,
-      cores: '10',
-      threads: '12',
-      baseFreq: '1.80 GHz',
-      turboFreq: '5.40 GHz',
-      tdp: '55W',
-      lithography: 'Intel 7 (10nm SuperFin)',
-      cache: '12 MB',
-      maxMemory: '96 GB',
-      memoryTypes: 'Up to DDR5 5200 MT/s, Up to DDR4 3200 MT/s, Up to LPDDR5/x 6400 MT/s, Up to LPDDR4x 4267 MT/s',
-      memoryChannels: '2',
-      socket: 'LGA1700',
-      igpu: 'Intel Graphics',
-      status: 'Launched',
-      releaseDate: 'Q1\'24',
       segment: 'Desktop',
       maxTemp: '100°C'
     },
@@ -86764,13 +87090,23 @@ function initCustomCpuSelector(cpuSelect, recalculate) {
     const ln = (cpu.name || '').toLowerCase();
     const lf = (cpu.family || '').toLowerCase();
 
+    const isCoreSeries = (
+      (ln.includes('core 3') || ln.includes('core 5') || ln.includes('core 7') || ln.includes('core 9')) &&
+      !ln.includes('core ultra') &&
+      !lk.includes('ultra') &&
+      !/\bi[3579]-/i.test(ln) &&
+      !/\bcore 2\b/i.test(ln)
+    ) || lk.includes('core-3-') || lk.includes('core-5-') || lk.includes('core-7-') || lf.includes('core series');
+
     if (lk.includes('ultra') || ln.includes('core ultra') || lf.includes('arrow') || lf.includes('lunar') || lf.includes('meteor')) {
       familyGroup = 'intel-ultra';
-    } else if (lk.startsWith('intel-') && (ln.includes('14') || ln.includes('13') || ln.includes('12') || ln.includes('11') || ln.includes('10'))) {
+    } else if (isCoreSeries) {
+      familyGroup = 'intel-core-series';
+    } else if (lk.startsWith('intel-') && (/\bi[3579]-(14|13|12|11|10)/i.test(ln) || ln.includes('14th gen') || ln.includes('13th gen') || ln.includes('12th gen') || ln.includes('11th gen') || ln.includes('10th gen') || ((ln.includes('14') || ln.includes('13') || ln.includes('12') || ln.includes('11') || ln.includes('10')) && /\bi[3579]/i.test(ln)))) {
       familyGroup = 'intel-core-modern';
     } else if (lk.startsWith('intel-') && (ln.includes('xeon') || lf.includes('xeon') || lf.includes('emerald') || lf.includes('sapphire') || lf.includes('granite'))) {
       familyGroup = 'intel-xeon';
-    } else if (lk.startsWith('intel-') && (ln.includes('atom') || ln.includes('pentium') || ln.includes('celeron') || ln.includes('n100') || ln.includes('n200') || ln.includes('n97') || ln.includes('300'))) {
+    } else if (lk.startsWith('intel-') && (ln.includes('atom') || ln.includes('pentium') || ln.includes('celeron') || ln.includes('processor ') || ln.includes('n100') || ln.includes('n200') || ln.includes('n97') || ln.includes('n95') || ln.includes('300'))) {
       familyGroup = 'intel-entry';
     } else if (lk.startsWith('intel-')) {
       familyGroup = 'intel-core-legacy';
@@ -86793,7 +87129,8 @@ function initCustomCpuSelector(cpuSelect, recalculate) {
       cpu.tdp || '',
       cpu.lithography || '',
       cpu.driver || '',
-      cpu.segment || ''
+      cpu.segment || '',
+      'chip chips cpu cpus processor processors silicon'
     ].join(' ').toLowerCase();
 
     allCpus.push({
@@ -86815,6 +87152,59 @@ function initCustomCpuSelector(cpuSelect, recalculate) {
     allFilterBtn.textContent = `All (${allCpus.length.toLocaleString()})`;
   }
 
+  const genericWords = new Set(['chip', 'chips', 'cpu', 'cpus', 'processor', 'processors', 'silicon']);
+
+  function scoreItem(item, q, rawTokens) {
+    let score = 0;
+    const nameLower = (item.cpu.name || '').toLowerCase();
+    const keyLower = item.key.toLowerCase();
+    const isCoreSeries = item.familyGroup === 'intel-core-series';
+    const isUltra = item.familyGroup === 'intel-ultra';
+    const isISeries = item.familyGroup === 'intel-core-modern' || item.familyGroup === 'intel-core-legacy';
+
+    if (nameLower.includes(q)) score += 500;
+
+    let queryTier = null;
+    for (const t of ['3', '5', '7', '9']) {
+      if (new RegExp('(^|[^a-z0-9])(core|ultra|i)?\\s*' + t + '([^a-z0-9]|$)', 'i').test(q)) {
+        queryTier = t;
+        break;
+      }
+    }
+
+    const wantsCoreSeries = (q.includes('core') || q.includes('intel core')) && !q.includes('ultra') && !/\bi[3579]/i.test(q);
+
+    if (queryTier) {
+      if (new RegExp('core\\s+' + queryTier + '\\b', 'i').test(nameLower) && !isUltra && !isISeries) {
+        score += 3000;
+      } else if (new RegExp('ultra\\s+' + queryTier + '\\b', 'i').test(nameLower)) {
+        score += 1500;
+      } else if (new RegExp('i' + queryTier + '-', 'i').test(nameLower)) {
+        score += 1200;
+      } else {
+        score -= 500;
+      }
+    } else if (wantsCoreSeries) {
+      if (isCoreSeries) score += 2000;
+      else if (isUltra) score += 600;
+      else if (isISeries) score += 400;
+    }
+
+    for (const tok of rawTokens) {
+      if (tok.length >= 2 && !genericWords.has(tok)) {
+        const wholeWord = new RegExp('(^|[^a-z0-9])' + tok + '([^a-z0-9]|$)', 'i');
+        if (wholeWord.test(nameLower) || wholeWord.test(keyLower)) {
+          score += 800;
+        } else if (nameLower.includes(tok) || keyLower.includes(tok)) {
+          score += 200;
+        }
+      }
+    }
+
+    score += Math.round((item.cpu.factor || 1.0) * 10);
+    return score;
+  }
+
   let activeFilter = 'all';
   let activeQuery = '';
   let debounceTimer = null;
@@ -86822,20 +87212,47 @@ function initCustomCpuSelector(cpuSelect, recalculate) {
 
   function renderResults() {
     const q = activeQuery.trim();
-    const tokens = q ? q.split(/\s+/).filter(Boolean) : [];
+    const rawTokens = q ? q.toLowerCase().split(/\s+/).filter(Boolean) : [];
+    const meaningfulTokens = rawTokens.filter(t => !genericWords.has(t));
+    const tokensToCheck = meaningfulTokens.length > 0 ? meaningfulTokens : rawTokens;
 
-    const matches = allCpus.filter(item => {
+    const matchedItems = [];
+
+    for (const item of allCpus) {
       if (activeFilter !== 'all' && item.familyGroup !== activeFilter) {
-        return false;
+        continue;
       }
-      if (tokens.length > 0) {
-        return tokens.every(tok => item.searchTokens.includes(tok));
+
+      let matched = true;
+      for (const tok of tokensToCheck) {
+        if (/^[3579]$/.test(tok)) {
+          const digitRegex = new RegExp('(^|[^0-9a-z])(i|ultra\\s*|core\\s*|ryzen\\s*)?' + tok + '([^0-9a-z]|$)', 'i');
+          if (!digitRegex.test(item.searchTokens)) {
+            matched = false;
+            break;
+          }
+        } else {
+          if (!item.searchTokens.includes(tok)) {
+            matched = false;
+            break;
+          }
+        }
       }
-      return true;
-    });
+
+      if (matched) {
+        const score = (q.length > 0) ? scoreItem(item, q.toLowerCase(), rawTokens) : 0;
+        matchedItems.push({ item, score });
+      }
+    }
+
+    if (q.length > 0) {
+      matchedItems.sort((a, b) => b.score - a.score);
+    }
+
+    const matches = matchedItems.map(m => m.item);
 
     if (resultsCount) {
-      if (tokens.length > 0 || activeFilter !== 'all') {
+      if (rawTokens.length > 0 || activeFilter !== 'all') {
         resultsCount.textContent = `Found ${matches.length.toLocaleString()} of ${allCpus.length.toLocaleString()} Processors`;
       } else {
         resultsCount.textContent = `All Processors (${allCpus.length.toLocaleString()})`;
@@ -86843,7 +87260,7 @@ function initCustomCpuSelector(cpuSelect, recalculate) {
     }
 
     if (counterText) {
-      if (tokens.length > 0 || activeFilter !== 'all') {
+      if (rawTokens.length > 0 || activeFilter !== 'all') {
         counterText.textContent = `Showing ${matches.length.toLocaleString()} of ${allCpus.length.toLocaleString()} Processors`;
       } else {
         counterText.textContent = `${allCpus.length.toLocaleString()} Processors Cataloged`;
@@ -86940,7 +87357,7 @@ function initCustomCpuSelector(cpuSelect, recalculate) {
   searchInput.addEventListener('focus', openDropdown);
 
   searchInput.addEventListener('input', (e) => {
-    activeQuery = e.target.value.toLowerCase();
+    activeQuery = e.target.value;
     if (searchClearBtn) {
       searchClearBtn.style.display = activeQuery ? 'flex' : 'none';
     }
@@ -87063,9 +87480,7 @@ function initMegaDirectory(cpuSelect, recalculate) {
   if (!modal || !openBtn || !tableBody) return;
 
   const allEntries = [];
-  const totalCount = Object.keys(HW_DATABASE.cpus).length;
   const totalCounterEl = document.getElementById('hw-mega-total-count');
-  // Set once all real entries are populated
 
   for (const [key, cpu] of Object.entries(HW_DATABASE.cpus)) {
     if (['amd-zen5-ai', 'amd-zen4', 'amd-zen3', 'intel-ultra2', 'intel-ultra1', 'intel-13-14'].includes(key)) continue;
@@ -87075,13 +87490,23 @@ function initMegaDirectory(cpuSelect, recalculate) {
     const ln = (cpu.name || '').toLowerCase();
     const lf = (cpu.family || '').toLowerCase();
 
+    const isCoreSeries = (
+      (ln.includes('core 3') || ln.includes('core 5') || ln.includes('core 7') || ln.includes('core 9')) &&
+      !ln.includes('core ultra') &&
+      !lk.includes('ultra') &&
+      !/\bi[3579]-/i.test(ln) &&
+      !/\bcore 2\b/i.test(ln)
+    ) || lk.includes('core-3-') || lk.includes('core-5-') || lk.includes('core-7-') || lf.includes('core series');
+
     if (lk.includes('ultra') || ln.includes('core ultra') || lf.includes('arrow') || lf.includes('lunar') || lf.includes('meteor')) {
       familyGroup = 'intel-ultra';
-    } else if (lk.startsWith('intel-') && (ln.includes('14') || ln.includes('13') || ln.includes('12') || ln.includes('11') || ln.includes('10'))) {
+    } else if (isCoreSeries) {
+      familyGroup = 'intel-core-series';
+    } else if (lk.startsWith('intel-') && (/\bi[3579]-(14|13|12|11|10)/i.test(ln) || ln.includes('14th gen') || ln.includes('13th gen') || ln.includes('12th gen') || ln.includes('11th gen') || ln.includes('10th gen') || ((ln.includes('14') || ln.includes('13') || ln.includes('12') || ln.includes('11') || ln.includes('10')) && /\bi[3579]/i.test(ln)))) {
       familyGroup = 'intel-core-modern';
     } else if (lk.startsWith('intel-') && (ln.includes('xeon') || lf.includes('xeon') || lf.includes('emerald') || lf.includes('sapphire') || lf.includes('granite'))) {
       familyGroup = 'intel-xeon';
-    } else if (lk.startsWith('intel-') && (ln.includes('atom') || ln.includes('pentium') || ln.includes('celeron') || ln.includes('n100') || ln.includes('n200') || ln.includes('n97') || ln.includes('300'))) {
+    } else if (lk.startsWith('intel-') && (ln.includes('atom') || ln.includes('pentium') || ln.includes('celeron') || ln.includes('processor ') || ln.includes('n100') || ln.includes('n200') || ln.includes('n97') || ln.includes('n95') || ln.includes('300'))) {
       familyGroup = 'intel-entry';
     } else if (lk.startsWith('intel-')) {
       familyGroup = 'intel-core-legacy';
@@ -87099,12 +87524,65 @@ function initMegaDirectory(cpuSelect, recalculate) {
       key,
       cpu,
       familyGroup,
-      searchStr: `${cpu.name} ${cpu.family} ${cpu.cores} ${cpu.socket} ${cpu.driver} ${cpu.tdp} ${cpu.lithography}`.toLowerCase()
+      searchStr: `${cpu.name} ${key} ${cpu.family} ${cpu.cores} ${cpu.socket} ${cpu.driver} ${cpu.tdp} ${cpu.lithography} chip chips cpu cpus processor processors silicon`.toLowerCase()
     });
   }
 
   if (totalCounterEl) {
     totalCounterEl.textContent = allEntries.length.toLocaleString();
+  }
+
+  const genericWords = new Set(['chip', 'chips', 'cpu', 'cpus', 'processor', 'processors', 'silicon']);
+
+  function scoreMegaItem(item, q, rawTokens) {
+    let score = 0;
+    const nameLower = (item.cpu.name || '').toLowerCase();
+    const keyLower = item.key.toLowerCase();
+    const isCoreSeries = item.familyGroup === 'intel-core-series';
+    const isUltra = item.familyGroup === 'intel-ultra';
+    const isISeries = item.familyGroup === 'intel-core-modern' || item.familyGroup === 'intel-core-legacy';
+
+    if (nameLower.includes(q)) score += 500;
+
+    let queryTier = null;
+    for (const t of ['3', '5', '7', '9']) {
+      if (new RegExp('(^|[^a-z0-9])(core|ultra|i)?\\s*' + t + '([^a-z0-9]|$)', 'i').test(q)) {
+        queryTier = t;
+        break;
+      }
+    }
+
+    const wantsCoreSeries = (q.includes('core') || q.includes('intel core')) && !q.includes('ultra') && !/\bi[3579]/i.test(q);
+
+    if (queryTier) {
+      if (new RegExp('core\\s+' + queryTier + '\\b', 'i').test(nameLower) && !isUltra && !isISeries) {
+        score += 3000;
+      } else if (new RegExp('ultra\\s+' + queryTier + '\\b', 'i').test(nameLower)) {
+        score += 1500;
+      } else if (new RegExp('i' + queryTier + '-', 'i').test(nameLower)) {
+        score += 1200;
+      } else {
+        score -= 500;
+      }
+    } else if (wantsCoreSeries) {
+      if (isCoreSeries) score += 2000;
+      else if (isUltra) score += 600;
+      else if (isISeries) score += 400;
+    }
+
+    for (const tok of rawTokens) {
+      if (tok.length >= 2 && !genericWords.has(tok)) {
+        const wholeWord = new RegExp('(^|[^a-z0-9])' + tok + '([^a-z0-9]|$)', 'i');
+        if (wholeWord.test(nameLower) || wholeWord.test(keyLower)) {
+          score += 800;
+        } else if (nameLower.includes(tok) || keyLower.includes(tok)) {
+          score += 200;
+        }
+      }
+    }
+
+    score += Math.round((item.cpu.factor || 1.0) * 10);
+    return score;
   }
 
   let activeFamily = 'all';
@@ -87115,11 +87593,44 @@ function initMegaDirectory(cpuSelect, recalculate) {
 
   function applyFilter() {
     const q = activeSearch;
-    filteredItems = allEntries.filter(item => {
-      const matchFam = (activeFamily === 'all' || item.familyGroup === activeFamily);
-      const matchQ = !q || item.searchStr.includes(q);
-      return matchFam && matchQ;
-    });
+    const rawTokens = q ? q.toLowerCase().split(/\s+/).filter(Boolean) : [];
+    const meaningfulTokens = rawTokens.filter(t => !genericWords.has(t));
+    const tokensToCheck = meaningfulTokens.length > 0 ? meaningfulTokens : rawTokens;
+
+    const matchedEntries = [];
+
+    for (const item of allEntries) {
+      if (activeFamily !== 'all' && item.familyGroup !== activeFamily) {
+        continue;
+      }
+
+      let matched = true;
+      for (const tok of tokensToCheck) {
+        if (/^[3579]$/.test(tok)) {
+          const digitRegex = new RegExp('(^|[^0-9a-z])(i|ultra\\s*|core\\s*|ryzen\\s*)?' + tok + '([^0-9a-z]|$)', 'i');
+          if (!digitRegex.test(item.searchStr)) {
+            matched = false;
+            break;
+          }
+        } else {
+          if (!item.searchStr.includes(tok)) {
+            matched = false;
+            break;
+          }
+        }
+      }
+
+      if (matched) {
+        const score = (q.length > 0) ? scoreMegaItem(item, q, rawTokens) : 0;
+        matchedEntries.push({ item, score });
+      }
+    }
+
+    if (q.length > 0) {
+      matchedEntries.sort((a, b) => b.score - a.score);
+    }
+
+    filteredItems = matchedEntries.map(m => m.item);
 
     if (matchCounter) {
       matchCounter.textContent = `Showing ${filteredItems.length.toLocaleString()} of ${allEntries.length.toLocaleString()} CPUs`;

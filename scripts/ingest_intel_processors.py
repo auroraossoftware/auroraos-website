@@ -342,6 +342,10 @@ def classify_optgroup(prod, data):
             return 'Intel Core Ultra 200 Series (Arrow Lake & Lunar Lake)', 1
         return 'Intel Core Ultra 100 Series (Meteor Lake Mobile)', 2
 
+    # Intel Core Processors (Series 1 & 2 - Core 7, Core 5, Core 3)
+    if (('core 3' in p or 'core 5' in p or 'core 7' in p) and 'ultra' not in p and not re.search(r'\bi[357]-', p)) or 'series 1' in p or 'series 2' in p or any(k in p for k in ['150u', '120u', '100u', '250h', '220h', '210h', '200h', '200u']):
+        return 'Intel Core Processors (Series 1 & 2 — Core 7, Core 5, Core 3)', 2.5
+
     # Xeon
     if 'xeon' in p:
         if 'xeon 6' in p or '6980' in p or '6780' in p or '6766' in p or 'granite' in cn or 'sierra' in cn or 'emerald' in cn or 'sapphire' in cn:
