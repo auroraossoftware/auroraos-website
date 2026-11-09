@@ -960,21 +960,8 @@ assert!(response.is_ok());</code></pre>
       <span class="hw-search-icon" aria-hidden="true">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
       </span>
-      <input type="text" id="hw-cpu-search-input" class="hw-search-filter" placeholder="Search 3,430+ CPUs (e.g. Core 5 120U, Core 7 250H, Ultra 9 285K, i9-14900K, 9950X, EPYC)..." autocomplete="off" />
+      <input type="text" id="hw-cpu-search-input" class="hw-search-filter" placeholder="Search 3,600+ CPUs by SKU, series, or architecture (e.g. Core 5 120U, Core 7 250H, Ultra 9 388H, 285K, 9950X)..." autocomplete="off" />
       <button type="button" id="hw-search-clear-btn" class="hw-search-clear-btn" aria-label="Clear Search" style="display: none;">✕</button>
-    </div>
-
-    <!-- Quick Architecture Filter Pills -->
-    <div class="hw-quick-filters" id="hw-quick-filters">
-      <button type="button" class="hw-quick-filter active" data-filter="all">All</button>
-      <button type="button" class="hw-quick-filter" data-filter="intel-ultra">Core Ultra</button>
-      <button type="button" class="hw-quick-filter" data-filter="intel-core-series">Core (Series 1 &amp; 2)</button>
-      <button type="button" class="hw-quick-filter" data-filter="intel-core-modern">Core i-Series 10–14th</button>
-      <button type="button" class="hw-quick-filter" data-filter="intel-core-legacy">Core Legacy (1–9th)</button>
-      <button type="button" class="hw-quick-filter" data-filter="intel-xeon">Xeon</button>
-      <button type="button" class="hw-quick-filter" data-filter="intel-entry">N-Series &amp; Entry</button>
-      <button type="button" class="hw-quick-filter" data-filter="amd-ryzen">AMD Ryzen</button>
-      <button type="button" class="hw-quick-filter" data-filter="amd-epyc">EPYC &amp; Threadripper</button>
     </div>
 
     <!-- Live Search Results Dropdown -->
@@ -1622,32 +1609,20 @@ assert!(response.is_ok());</code></pre>
         </div>
         <h3 id="hw-mega-modal-title" class="hw-mega-title">Complete Silicon Catalog</h3>
         <p class="hw-mega-sub">
-          Browse all <span id="hw-mega-total-count">3,417</span> cataloged processors across 53 architectures with verified official ARK specifications, physical topologies, platform sockets, and Linux kernel compute drivers.
+          Browse all <span id="hw-mega-total-count">3,600+</span> cataloged processors across 53 architectures with verified official ARK specifications, physical topologies, platform sockets, and Linux kernel compute drivers.
         </p>
       </div>
       <button type="button" id="hw-mega-close-btn" class="hw-mega-close-btn" aria-label="Close Silicon Matrix Modal">✕</button>
     </div>
 
-    <!-- Controls & Filters Strip -->
+    <!-- Controls Strip -->
     <div class="hw-mega-controls-strip">
       <div class="hw-mega-search-wrapper">
         <span class="hw-search-icon" aria-hidden="true">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </span>
-        <input type="text" id="hw-mega-search-input" class="hw-mega-search-input" placeholder="Filter mega list by SKU, architecture, socket, or lithography..." autocomplete="off" />
-        <span class="hw-mega-match-counter" id="hw-mega-match-counter">Showing 3,417 CPUs</span>
-      </div>
-      <div class="hw-mega-filter-chips" id="hw-mega-filter-chips">
-        <button type="button" class="hw-filter-chip active" data-family="all">All</button>
-        <button type="button" class="hw-filter-chip" data-family="intel-ultra">Core Ultra</button>
-        <button type="button" class="hw-filter-chip" data-family="intel-core-series">Core (Series 1 &amp; 2)</button>
-        <button type="button" class="hw-filter-chip" data-family="intel-core-modern">Core i-Series 10th–14th Gen</button>
-        <button type="button" class="hw-filter-chip" data-family="intel-core-legacy">Core Legacy 1st–9th Gen</button>
-        <button type="button" class="hw-filter-chip" data-family="intel-xeon">Xeon Server &amp; WS</button>
-        <button type="button" class="hw-filter-chip" data-family="intel-entry">N-Series, Pentium &amp; Entry</button>
-        <button type="button" class="hw-filter-chip" data-family="amd-ryzen">AMD Ryzen</button>
-        <button type="button" class="hw-filter-chip" data-family="amd-epyc">AMD EPYC &amp; Threadripper</button>
-        <button type="button" class="hw-filter-chip" data-family="arm">Apple &amp; ARM</button>
+        <input type="text" id="hw-mega-search-input" class="hw-mega-search-input" placeholder="Search all 3,600+ cataloged CPUs by SKU, series, architecture, socket, or lithography..." autocomplete="off" />
+        <span class="hw-mega-match-counter" id="hw-mega-match-counter">Showing 3,600+ CPUs</span>
       </div>
     </div>
 
