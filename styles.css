@@ -4189,3 +4189,257 @@ pre code,
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   Sleek Custom CPU Selector & Live Autocomplete Results
+   ========================================================================== */
+.hw-cpu-control-group {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.hw-control-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.hw-selected-cpu-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.15rem 1.4rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hw-selected-cpu-card:hover {
+  border-color: rgba(94, 92, 230, 0.45);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.025));
+  box-shadow: 0 12px 36px rgba(94, 92, 230, 0.15);
+}
+.hw-selected-cpu-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.hw-selected-cpu-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.hw-selected-arch-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #0a84ff;
+  background: rgba(10, 132, 255, 0.12);
+  border: 1px solid rgba(10, 132, 255, 0.25);
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+}
+.hw-selected-node-tag {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+.hw-selected-cpu-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.015em;
+}
+.hw-selected-cpu-specs {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.4;
+}
+.hw-selected-cpu-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-shrink: 0;
+}
+.hw-change-cpu-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.hw-change-cpu-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
+}
+.hw-custom-search-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.hw-search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.hw-quick-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.hw-quick-filter {
+  padding: 0.3rem 0.7rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.74rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+.hw-quick-filter:hover {
+  background: rgba(255, 255, 255, 0.09);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.hw-quick-filter.active {
+  background: rgba(94, 92, 230, 0.3);
+  border-color: rgba(191, 90, 242, 0.55);
+  color: #ffffff;
+  font-weight: 600;
+}
+.hw-search-results-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  margin-top: 0.5rem;
+  background: rgba(18, 18, 26, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  max-height: 420px;
+  display: flex;
+  flex-direction: column;
+}
+.hw-results-header {
+  padding: 0.75rem 1.15rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.hw-results-hint {
+  font-size: 0.72rem;
+  color: #0a84ff;
+  text-transform: none;
+}
+.hw-results-list {
+  overflow-y: auto;
+  max-height: 360px;
+  display: flex;
+  flex-direction: column;
+}
+.hw-result-item {
+  padding: 0.75rem 1.15rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.035);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.hw-result-item:hover {
+  background: rgba(94, 92, 230, 0.15);
+}
+.hw-result-item.selected {
+  background: rgba(48, 209, 88, 0.12);
+  border-left: 3px solid #30d158;
+}
+.hw-result-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.hw-result-name {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: #ffffff;
+}
+.hw-result-badge-factor {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #bf5af2;
+  background: rgba(191, 90, 242, 0.12);
+  border: 1px solid rgba(191, 90, 242, 0.25);
+  padding: 0.12rem 0.45rem;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.hw-result-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.hw-result-tag {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+}
+.hw-result-tag.highlight {
+  color: #30d158;
+  background: rgba(48, 209, 88, 0.08);
+}
+.hw-no-results {
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+@media (max-width: 768px) {
+  .hw-selected-cpu-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hw-selected-cpu-actions {
+    flex-direction: row;
+    width: 100%;
+  }
+  .hw-change-cpu-btn,
+  .hw-mega-btn {
+    flex: 1;
+    justify-content: center;
+  }
+}

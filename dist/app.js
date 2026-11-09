@@ -86674,6 +86674,25 @@ function initHardwareCalculator() {
     if (specSocket) specSocket.textContent = `${cpu.socket && cpu.socket !== '—' ? cpu.socket : 'Platform Socket'} • ${cpu.igpu && cpu.igpu !== '—' ? cpu.igpu : 'Compute Fabric'}`;
     if (specStatus) specStatus.textContent = `${cpu.status && cpu.status !== '—' ? cpu.status : 'Active'} ${cpu.releaseDate && cpu.releaseDate !== '—' ? '(' + cpu.releaseDate + ')' : ''} • ${cpu.segment && cpu.segment !== '—' ? cpu.segment : 'Architecture'}`;
 
+    // Update Active Selected CPU Card
+    const selName = document.getElementById('hw-selected-name');
+    const selArch = document.getElementById('hw-selected-arch');
+    const selNode = document.getElementById('hw-selected-node');
+    const selSpecs = document.getElementById('hw-selected-specs');
+
+    if (selName) selName.textContent = cpu.name || cpuKey;
+    if (selArch) selArch.textContent = cpu.family || 'x86_64 Architecture';
+    if (selNode) selNode.textContent = (cpu.lithography && cpu.lithography !== '—') ? cpu.lithography : 'Silicon FinFET';
+    if (selSpecs) {
+      const parts = [];
+      if (cpu.cores && cpu.cores !== '—') parts.push(`${cpu.cores} Cores / ${cpu.threads || cpu.cores} Threads`);
+      if (cpu.baseFreq && cpu.baseFreq !== '—') parts.push(`${cpu.baseFreq} Base`);
+      if (cpu.turboFreq && cpu.turboFreq !== '—') parts.push(`${cpu.turboFreq} Boost`);
+      if (cpu.tdp && cpu.tdp !== '—') parts.push(`${cpu.tdp} TDP`);
+      if (cpu.socket && cpu.socket !== '—') parts.push(cpu.socket);
+      selSpecs.textContent = parts.join(' • ') || 'Verified Hardware Profile';
+    }
+
     if (vramStatVal && vramBarFill) {
       if (gpu.isUnified) {
         vramStatVal.textContent = vramUsedGB + ' GB dynamic unified pool (of ' + ram.capacity + ' GB total)';
@@ -86697,58 +86716,333 @@ function initHardwareCalculator() {
   gpuSelect.addEventListener('change', recalculate);
   ramSelect.addEventListener('change', recalculate);
 
-  
-  // Enhanced Instant CPU search filter
-  const cpuSearch = document.getElementById('hw-cpu-search');
-  const cpuSearchClear = document.getElementById('hw-search-clear');
-  const cpuCounterText = document.getElementById('hw-counter-text');
-
-  if (cpuSearch) {
-    cpuSearch.addEventListener('input', (e) => {
-      const q = e.target.value.toLowerCase().trim();
-      let totalVisible = 0;
-      const optgroups = cpuSelect.querySelectorAll('optgroup');
-
-      if (cpuSearchClear) {
-        cpuSearchClear.style.display = q ? 'flex' : 'none';
-      }
-
-      optgroups.forEach(og => {
-        let hasVisible = false;
-        const options = og.querySelectorAll('option');
-        options.forEach(opt => {
-          const match = !q || opt.textContent.toLowerCase().includes(q) || opt.value.toLowerCase().includes(q);
-          opt.style.display = match ? '' : 'none';
-          if (match) {
-            hasVisible = true;
-            totalVisible++;
-          }
-        });
-        og.style.display = hasVisible ? '' : 'none';
-      });
-
-      if (cpuCounterText) {
-        if (q) {
-          cpuCounterText.textContent = `Showing ${totalVisible.toLocaleString()} of 3,417 CPUs`;
-        } else {
-          cpuCounterText.textContent = '3,417 Processors Cataloged';
-        }
-      }
-    });
-
-    if (cpuSearchClear) {
-      cpuSearchClear.addEventListener('click', () => {
-        cpuSearch.value = '';
-        cpuSearch.dispatchEvent(new Event('input'));
-        cpuSearch.focus();
-      });
-    }
-  }
+  // Initialize Custom CPU Selector & Autocomplete
+  initCustomCpuSelector(cpuSelect, recalculate);
 
   // Initialize Mega Directory Modal
   initMegaDirectory(cpuSelect, recalculate);
 
   recalculate();
+}
+
+/* ==========================================================================
+   12. Sleek Custom CPU Selector & Autocomplete Controller
+   ========================================================================== */
+function initCustomCpuSelector(cpuSelect, recalculate) {
+  const searchInput = document.getElementById('hw-cpu-search-input');
+  const searchClearBtn = document.getElementById('hw-search-clear-btn');
+  const searchDropdown = document.getElementById('hw-search-results-dropdown');
+  const resultsList = document.getElementById('hw-results-list');
+  const resultsCount = document.getElementById('hw-results-count');
+  const openSearchBtn = document.getElementById('hw-open-search-btn');
+  const selectedCpuCard = document.getElementById('hw-selected-cpu-card');
+  const counterText = document.getElementById('hw-counter-text');
+  const quickFilters = document.querySelectorAll('#hw-quick-filters .hw-quick-filter');
+  const searchContainer = document.getElementById('hw-custom-search-box');
+
+  if (!searchInput || !resultsList || !cpuSelect) return;
+
+  function safeEscape(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  // Build indexed CPU repository (filtering out internal meta-keys)
+  const metaKeys = ['amd-zen5-ai', 'amd-zen4', 'amd-zen3', 'intel-ultra2', 'intel-ultra1', 'intel-13-14'];
+  const allCpus = [];
+
+  for (const [key, cpu] of Object.entries(HW_DATABASE.cpus)) {
+    if (metaKeys.includes(key)) continue;
+
+    let familyGroup = 'other';
+    const lk = key.toLowerCase();
+    const ln = (cpu.name || '').toLowerCase();
+    const lf = (cpu.family || '').toLowerCase();
+
+    if (lk.includes('ultra') || ln.includes('core ultra') || lf.includes('arrow') || lf.includes('lunar') || lf.includes('meteor')) {
+      familyGroup = 'intel-ultra';
+    } else if (lk.startsWith('intel-') && (ln.includes('14') || ln.includes('13') || ln.includes('12') || ln.includes('11') || ln.includes('10'))) {
+      familyGroup = 'intel-core-modern';
+    } else if (lk.startsWith('intel-') && (ln.includes('xeon') || lf.includes('xeon') || lf.includes('emerald') || lf.includes('sapphire') || lf.includes('granite'))) {
+      familyGroup = 'intel-xeon';
+    } else if (lk.startsWith('intel-') && (ln.includes('atom') || ln.includes('pentium') || ln.includes('celeron') || ln.includes('n100') || ln.includes('n200') || ln.includes('n97') || ln.includes('300'))) {
+      familyGroup = 'intel-entry';
+    } else if (lk.startsWith('intel-')) {
+      familyGroup = 'intel-core-legacy';
+    } else if (lk.startsWith('amd-') && (ln.includes('epyc') || ln.includes('threadripper'))) {
+      familyGroup = 'amd-epyc';
+    } else if (lk.startsWith('amd-')) {
+      familyGroup = 'amd-ryzen';
+    } else if (lk.includes('apple') || lk.includes('snapdragon') || lk.includes('qualcomm') || lk.includes('arm') || lf.includes('arm')) {
+      familyGroup = 'arm';
+    } else if (lk.includes('server') || ln.includes('server')) {
+      familyGroup = 'amd-epyc';
+    }
+
+    const searchTokens = [
+      cpu.name || '',
+      key,
+      cpu.family || '',
+      cpu.socket || '',
+      cpu.cores ? `${cpu.cores}c` : '',
+      cpu.tdp || '',
+      cpu.lithography || '',
+      cpu.driver || '',
+      cpu.segment || ''
+    ].join(' ').toLowerCase();
+
+    allCpus.push({
+      key,
+      cpu,
+      familyGroup,
+      searchTokens
+    });
+  }
+
+  // Update counter badge with exact catalog count
+  if (counterText) {
+    counterText.textContent = `${allCpus.length.toLocaleString()} Processors Cataloged`;
+  }
+
+  // Update 'All' quick filter pill with exact count
+  const allFilterBtn = document.querySelector('#hw-quick-filters .hw-quick-filter[data-filter="all"]');
+  if (allFilterBtn) {
+    allFilterBtn.textContent = `All (${allCpus.length.toLocaleString()})`;
+  }
+
+  let activeFilter = 'all';
+  let activeQuery = '';
+  let debounceTimer = null;
+  let focusedIndex = -1;
+
+  function renderResults() {
+    const q = activeQuery.trim();
+    const tokens = q ? q.split(/\s+/).filter(Boolean) : [];
+
+    const matches = allCpus.filter(item => {
+      if (activeFilter !== 'all' && item.familyGroup !== activeFilter) {
+        return false;
+      }
+      if (tokens.length > 0) {
+        return tokens.every(tok => item.searchTokens.includes(tok));
+      }
+      return true;
+    });
+
+    if (resultsCount) {
+      if (tokens.length > 0 || activeFilter !== 'all') {
+        resultsCount.textContent = `Found ${matches.length.toLocaleString()} of ${allCpus.length.toLocaleString()} Processors`;
+      } else {
+        resultsCount.textContent = `All Processors (${allCpus.length.toLocaleString()})`;
+      }
+    }
+
+    if (counterText) {
+      if (tokens.length > 0 || activeFilter !== 'all') {
+        counterText.textContent = `Showing ${matches.length.toLocaleString()} of ${allCpus.length.toLocaleString()} Processors`;
+      } else {
+        counterText.textContent = `${allCpus.length.toLocaleString()} Processors Cataloged`;
+      }
+    }
+
+    const displayItems = matches.slice(0, 50);
+
+    if (displayItems.length === 0) {
+      resultsList.innerHTML = `
+        <div style="padding: 1.75rem 1rem; text-align: center; color: rgba(255, 255, 255, 0.5); font-size: 0.85rem;">
+          No processors found matching "<strong>${safeEscape(q)}</strong>".<br />
+          <span style="display:inline-block; margin-top:0.35rem; font-size:0.75rem; color: rgba(255,255,255,0.35);">
+            Use the Mega Directory button to browse all ${allCpus.length.toLocaleString()} entries by family.
+          </span>
+        </div>`;
+      focusedIndex = -1;
+      return;
+    }
+
+    const currentKey = cpuSelect.value;
+    const fragment = document.createDocumentFragment();
+
+    displayItems.forEach((item, index) => {
+      const cpu = item.cpu;
+      const isSelected = item.key === currentKey;
+      const el = document.createElement('div');
+      el.className = `hw-result-item${isSelected ? ' selected' : ''}`;
+      el.setAttribute('data-key', item.key);
+      el.setAttribute('data-index', String(index));
+      el.setAttribute('role', 'option');
+      el.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+
+      const coreText = cpu.cores && cpu.cores !== '—' ? `${cpu.cores}C / ${cpu.threads || cpu.cores}T` : '';
+      const clockText = cpu.turboFreq && cpu.turboFreq !== '—' ? cpu.turboFreq : (cpu.baseFreq && cpu.baseFreq !== '—' ? cpu.baseFreq : '');
+      const factorBadge = cpu.factor ? `${cpu.factor}x Factor` : '1.0x Factor';
+
+      el.innerHTML = `
+        <div class="hw-result-top">
+          <span class="hw-result-name">${safeEscape(cpu.name || item.key)}</span>
+          <span class="hw-result-badge-factor">${factorBadge}</span>
+        </div>
+        <div class="hw-result-meta">
+          <span class="hw-result-tag">${safeEscape(cpu.family || 'x86_64')}</span>
+          ${coreText ? `<span class="hw-result-tag">${coreText}</span>` : ''}
+          ${clockText ? `<span class="hw-result-tag">${clockText}</span>` : ''}
+          ${cpu.tdp && cpu.tdp !== '—' ? `<span class="hw-result-tag">${safeEscape(cpu.tdp)}</span>` : ''}
+          ${cpu.socket && cpu.socket !== '—' ? `<span class="hw-result-tag">${safeEscape(cpu.socket)}</span>` : ''}
+          ${cpu.lithography && cpu.lithography !== '—' ? `<span class="hw-result-tag">${safeEscape(cpu.lithography)}</span>` : ''}
+          ${cpu.npuSupported ? `<span class="hw-result-tag highlight">NPU AI Engine</span>` : ''}
+        </div>
+      `;
+
+      fragment.appendChild(el);
+    });
+
+    resultsList.innerHTML = '';
+    resultsList.appendChild(fragment);
+    focusedIndex = -1;
+  }
+
+  function selectCpu(key) {
+    if (!key || !HW_DATABASE.cpus[key]) return;
+    cpuSelect.value = key;
+    cpuSelect.dispatchEvent(new Event('change'));
+    closeDropdown();
+  }
+
+  function openDropdown() {
+    if (searchDropdown) {
+      searchDropdown.style.display = 'flex';
+      renderResults();
+    }
+  }
+
+  function closeDropdown() {
+    if (searchDropdown) {
+      searchDropdown.style.display = 'none';
+      focusedIndex = -1;
+    }
+  }
+
+  // Results list click selection
+  resultsList.addEventListener('click', (e) => {
+    const itemEl = e.target.closest('.hw-result-item');
+    if (!itemEl) return;
+    const key = itemEl.getAttribute('data-key');
+    if (key) {
+      selectCpu(key);
+    }
+  });
+
+  // Focus & input handlers
+  searchInput.addEventListener('focus', openDropdown);
+
+  searchInput.addEventListener('input', (e) => {
+    activeQuery = e.target.value.toLowerCase();
+    if (searchClearBtn) {
+      searchClearBtn.style.display = activeQuery ? 'flex' : 'none';
+    }
+    openDropdown();
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(renderResults, 60);
+  });
+
+  // Clear button
+  if (searchClearBtn) {
+    searchClearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      activeQuery = '';
+      searchClearBtn.style.display = 'none';
+      renderResults();
+      searchInput.focus();
+    });
+  }
+
+  // Open search buttons & card click
+  if (openSearchBtn) {
+    openSearchBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openDropdown();
+      searchInput.focus();
+      searchInput.select();
+    });
+  }
+
+  const selCpuMain = document.querySelector('.hw-selected-cpu-main');
+  if (selCpuMain) {
+    selCpuMain.style.cursor = 'pointer';
+    selCpuMain.addEventListener('click', () => {
+      openDropdown();
+      searchInput.focus();
+      searchInput.select();
+    });
+  }
+
+  // Quick Architecture Filter Pills
+  quickFilters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      quickFilters.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.getAttribute('data-filter') || 'all';
+      openDropdown();
+      renderResults();
+    });
+  });
+
+  // Keyboard navigation inside search dropdown
+  searchInput.addEventListener('keydown', (e) => {
+    const items = resultsList.querySelectorAll('.hw-result-item');
+    if (!items.length) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      focusedIndex = (focusedIndex + 1) % items.length;
+      items.forEach((it, idx) => {
+        if (idx === focusedIndex) {
+          it.style.background = 'rgba(94, 92, 230, 0.25)';
+          it.scrollIntoView({ block: 'nearest' });
+        } else {
+          it.style.background = '';
+        }
+      });
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      focusedIndex = (focusedIndex - 1 + items.length) % items.length;
+      items.forEach((it, idx) => {
+        if (idx === focusedIndex) {
+          it.style.background = 'rgba(94, 92, 230, 0.25)';
+          it.scrollIntoView({ block: 'nearest' });
+        } else {
+          it.style.background = '';
+        }
+      });
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (focusedIndex >= 0 && items[focusedIndex]) {
+        const key = items[focusedIndex].getAttribute('data-key');
+        if (key) selectCpu(key);
+      } else if (items[0]) {
+        const key = items[0].getAttribute('data-key');
+        if (key) selectCpu(key);
+      }
+    } else if (e.key === 'Escape') {
+      closeDropdown();
+      searchInput.blur();
+    }
+  });
+
+  // Dismiss dropdown on outside clicks
+  document.addEventListener('click', (e) => {
+    if (
+      searchContainer &&
+      !searchContainer.contains(e.target) &&
+      (!selectedCpuCard || !selectedCpuCard.contains(e.target))
+    ) {
+      closeDropdown();
+    }
+  });
 }
 
 /* ==========================================================================
@@ -86771,7 +87065,7 @@ function initMegaDirectory(cpuSelect, recalculate) {
   const allEntries = [];
   const totalCount = Object.keys(HW_DATABASE.cpus).length;
   const totalCounterEl = document.getElementById('hw-mega-total-count');
-  if (totalCounterEl) totalCounterEl.textContent = totalCount.toLocaleString();
+  // Set once all real entries are populated
 
   for (const [key, cpu] of Object.entries(HW_DATABASE.cpus)) {
     if (['amd-zen5-ai', 'amd-zen4', 'amd-zen3', 'intel-ultra2', 'intel-ultra1', 'intel-13-14'].includes(key)) continue;
@@ -86795,8 +87089,10 @@ function initMegaDirectory(cpuSelect, recalculate) {
       familyGroup = 'amd-epyc';
     } else if (lk.startsWith('amd-')) {
       familyGroup = 'amd-ryzen';
-    } else if (lk.includes('apple') || lk.includes('snapdragon') || lk.includes('arm')) {
+    } else if (lk.includes('apple') || lk.includes('snapdragon') || lk.includes('qualcomm') || lk.includes('arm') || lf.includes('arm')) {
       familyGroup = 'arm';
+    } else if (lk.includes('server') || ln.includes('server')) {
+      familyGroup = 'amd-epyc';
     }
 
     allEntries.push({
@@ -86805,6 +87101,10 @@ function initMegaDirectory(cpuSelect, recalculate) {
       familyGroup,
       searchStr: `${cpu.name} ${cpu.family} ${cpu.cores} ${cpu.socket} ${cpu.driver} ${cpu.tdp} ${cpu.lithography}`.toLowerCase()
     });
+  }
+
+  if (totalCounterEl) {
+    totalCounterEl.textContent = allEntries.length.toLocaleString();
   }
 
   let activeFamily = 'all';
