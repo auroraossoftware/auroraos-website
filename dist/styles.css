@@ -3720,3 +3720,472 @@ pre code,
     transform: scale(0.85) rotate(45deg) !important;
   }
 }
+
+/* ==========================================================================
+   Official Silicon Hardware Specifications Deck & Sleek Search UI
+   ========================================================================== */
+.hw-search-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 0.95rem;
+}
+.hw-search-bar-row {
+  display: flex;
+  gap: 0.65rem;
+  align-items: center;
+}
+.hw-search-box-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.hw-search-icon {
+  position: absolute;
+  left: 0.85rem;
+  color: rgba(255, 255, 255, 0.45);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+.hw-search-filter {
+  width: 100%;
+  padding: 0.72rem 2.2rem 0.72rem 2.4rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  color: var(--text-primary, #ffffff);
+  font-size: 0.88rem;
+  font-family: inherit;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.hw-search-filter:focus {
+  outline: none;
+  border-color: rgba(94, 92, 230, 0.7);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(94, 92, 230, 0.25), 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+.hw-search-box-wrapper:focus-within .hw-search-icon {
+  color: #bf5af2;
+}
+.hw-search-filter::placeholder {
+  color: rgba(255, 255, 255, 0.38);
+}
+.hw-search-clear-btn {
+  position: absolute;
+  right: 0.75rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.65rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.hw-search-clear-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  transform: scale(1.1);
+}
+.hw-mega-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.72rem 1.15rem;
+  background: linear-gradient(135deg, rgba(94, 92, 230, 0.25), rgba(191, 90, 242, 0.18));
+  border: 1px solid rgba(191, 90, 242, 0.35);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.hw-mega-btn:hover {
+  background: linear-gradient(135deg, rgba(94, 92, 230, 0.45), rgba(191, 90, 242, 0.35));
+  border-color: rgba(191, 90, 242, 0.65);
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 20px rgba(191, 90, 242, 0.25);
+}
+.hw-search-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0 0.15rem;
+}
+.hw-counter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.28rem 0.65rem;
+  background: rgba(48, 209, 88, 0.1);
+  border: 1px solid rgba(48, 209, 88, 0.25);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #30d158;
+  letter-spacing: 0.02em;
+}
+.hw-counter-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #30d158;
+  box-shadow: 0 0 8px #30d158;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+.hw-search-hint {
+  font-size: 0.73rem;
+  color: rgba(255, 255, 255, 0.42);
+  letter-spacing: -0.01em;
+}
+
+/* Official Specs Deck */
+.hw-official-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.85rem;
+  margin: 1.5rem 0 1.25rem 0;
+  padding: 1.15rem;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.hw-mini-spec {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.hw-mini-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.5);
+}
+.hw-mini-val {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-primary, #ffffff);
+  letter-spacing: -0.01em;
+}
+
+/* ==========================================================================
+   Mega Silicon Directory Modal Dialog
+   ========================================================================== */
+.hw-mega-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hw-mega-modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.hw-mega-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+.hw-mega-dialog {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1140px;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  background: rgba(18, 18, 24, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  transform: scale(0.96) translateY(10px);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hw-mega-modal-overlay.open .hw-mega-dialog {
+  transform: scale(1) translateY(0);
+}
+.hw-mega-modal-header {
+  padding: 1.5rem 1.75rem 1rem 1.75rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.hw-mega-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.25rem 0.6rem;
+  background: rgba(10, 132, 255, 0.12);
+  border: 1px solid rgba(10, 132, 255, 0.3);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #0a84ff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.45rem;
+}
+.hw-mega-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0 0 0.35rem 0;
+}
+.hw-mega-sub {
+  font-size: 0.86rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.45;
+  margin: 0;
+  max-width: 820px;
+}
+.hw-mega-close-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+.hw-mega-close-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  transform: scale(1.08);
+}
+.hw-mega-controls-strip {
+  padding: 0.9rem 1.75rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.hw-mega-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.hw-mega-search-input {
+  width: 100%;
+  padding: 0.65rem 9rem 0.65rem 2.4rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 0.86rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+.hw-mega-search-input:focus {
+  outline: none;
+  border-color: rgba(94, 92, 230, 0.6);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(94, 92, 230, 0.2);
+}
+.hw-mega-match-counter {
+  position: absolute;
+  right: 0.85rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+}
+.hw-mega-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.hw-filter-chip {
+  padding: 0.35rem 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.74rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+.hw-filter-chip:hover {
+  background: rgba(255, 255, 255, 0.09);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+.hw-filter-chip.active {
+  background: rgba(94, 92, 230, 0.28);
+  border-color: rgba(191, 90, 242, 0.5);
+  color: #ffffff;
+  font-weight: 600;
+}
+.hw-mega-table-container {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: auto;
+  min-height: 280px;
+  max-height: 54vh;
+}
+.hw-mega-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  text-align: left;
+}
+.hw-mega-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: rgba(20, 20, 28, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.hw-mega-table th {
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+.hw-mega-table tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background 0.15s ease;
+}
+.hw-mega-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+.hw-mega-table td {
+  padding: 0.65rem 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+}
+.hw-mega-name-cell {
+  font-weight: 600;
+  color: #ffffff;
+}
+.hw-mega-sub-tag {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.45);
+  display: block;
+}
+.hw-mega-badge-factor {
+  display: inline-block;
+  padding: 0.15rem 0.45rem;
+  background: rgba(10, 132, 255, 0.12);
+  border: 1px solid rgba(10, 132, 255, 0.25);
+  border-radius: 6px;
+  color: #0a84ff;
+  font-weight: 600;
+  font-size: 0.72rem;
+}
+.hw-mega-select-btn {
+  padding: 0.32rem 0.75rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.hw-mega-select-btn:hover {
+  background: #30d158;
+  border-color: #30d158;
+  color: #000000;
+  transform: scale(1.05);
+}
+.hw-mega-footer {
+  padding: 0.85rem 1.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.015);
+}
+.hw-mega-footer-tip {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+.hw-mega-footer-close {
+  padding: 0.45rem 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.hw-mega-footer-close:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+@media (max-width: 768px) {
+  .hw-search-bar-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hw-mega-btn {
+    justify-content: center;
+  }
+  .hw-search-meta-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hw-mega-dialog {
+    max-height: 94vh;
+    border-radius: 16px;
+  }
+  .hw-official-specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .hw-official-specs-grid {
+    grid-template-columns: 1fr;
+  }
+}
